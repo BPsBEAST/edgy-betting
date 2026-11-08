@@ -1,0 +1,19 @@
+{
+  "generatedAt": null,
+  "matches": {},
+  "matchedGames": 0,
+  "withTwoSources": 0,
+  "providers": {
+    "KiqIQ": {
+      "status": "Ainda não sincronizado",
+      "matches": 0,
+      "url": "https://kiqiq.com/api"
+    },
+    "Skorbot": {
+      "status": "Ainda não sincronizado",
+      "matches": 0,
+      "url": "https://skorbot.live/en/api/"
+    }
+  },
+  "note": "Fontes gratuitas são opcionais; dados em falta nunca são inventados."
+}
