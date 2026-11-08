@@ -1,0 +1,18 @@
+{
+  "generatedAt": null,
+  "sources": {
+    "weather": "Open-Meteo — por cidade do estádio quando identificada",
+    "predictions": "API-Football — opcional, não confundir com Statarea ou SportyTrader",
+    "lineups": "API-Football — opcional",
+    "injuries": "API-Football — opcional",
+    "statarea": "não integrado",
+    "sportytrader": "não integrado",
+    "soccervital": "não integrado",
+    "soccernews": "não integrado"
+  },
+  "hasApiFootballKey": false,
+  "apiCalls": 0,
+  "matchedGames": 0,
+  "contexts": {},
+  "message": "Sem contexto automático até à próxima sincronização."
+}
