@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T19:41:55.634642+00:00",
+  "generatedAt": "2026-11-08T19:54:25.452958+00:00",
   "sources": {
     "weather": "Open-Meteo (requires verified venue city)",
     "lineups": "API-Football optional",
@@ -12,22 +12,8 @@
   },
   "hasApiFootballKey": true,
   "apiCalls": 0,
-  "matchedGames": 13,
+  "matchedGames": 15,
   "contexts": {
-    "espn-401876404": {
-      "weather": {
-        "city": "Lens",
-        "countryCode": "FR",
-        "temperatureC": 4.8,
-        "precipitationMm": 0.0,
-        "gustKmh": 6.8,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-08T19:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
     "espn-401882816": {
       "weather": {
         "city": "Madrid",
@@ -84,6 +70,20 @@
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
     },
+    "espn-401883140": {
+      "weather": {
+        "city": "Las Palmas de Gran Canaria",
+        "countryCode": "ES",
+        "temperatureC": 23.1,
+        "precipitationMm": 0.0,
+        "gustKmh": 13.0,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-09T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
     "espn-401931098": {
       "weather": {
         "city": "Plymouth",
@@ -98,16 +98,16 @@
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
     },
-    "espn-401928519": {
+    "espn-401928514": {
       "weather": {
-        "city": "Amorebieta",
+        "city": "Azkoitia",
         "countryCode": "ES",
-        "temperatureC": 19.0,
+        "temperatureC": 19.5,
         "precipitationMm": 0.0,
-        "gustKmh": 27.4,
+        "gustKmh": 35.1,
         "alert": false,
         "risk": null,
-        "forecastHourUtc": "2026-11-10T19:00Z",
+        "forecastHourUtc": "2026-11-10T18:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
@@ -192,6 +192,34 @@
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-12T18:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401932838": {
+      "weather": {
+        "city": "Dijon",
+        "countryCode": "FR",
+        "temperatureC": 5.1,
+        "precipitationMm": 0.0,
+        "gustKmh": 40.3,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-13T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401932822": {
+      "weather": {
+        "city": "Dijon",
+        "countryCode": "FR",
+        "temperatureC": 5.9,
+        "precipitationMm": 0.0,
+        "gustKmh": 19.8,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-14T17:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
