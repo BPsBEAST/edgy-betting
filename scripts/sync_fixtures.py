@@ -155,7 +155,7 @@ def normalize_team(name):
     clean=unicodedata.normalize("NFKD",str(name)).casefold()
     clean="".join(c for c in clean if not unicodedata.combining(c))
     clean=re.sub(r"[^a-z0-9]+"," ",clean)
-    clean=re.sub(r"\\b(fc|cf|sc|ac|tsg|football|club|de|do|da|04|1909)\\b"," ",clean)
+    clean=re.sub(r"\b(fc|cf|sc|ac|tsg|football|club|de|do|da|04|1909)\b"," ",clean)
     clean=" ".join(clean.split())
     aliases={
       "internazionale":"inter milan","inter":"inter milan",
