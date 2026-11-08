@@ -59,7 +59,7 @@ export function previewVerdict(game,model,quotes={},now=Date.now()){
   {key:"sources",label:"Consenso 2 fontes",ready:false,detail:"Statarea/SportyTrader e médias por verificar"},
   {key:"odds",label:"Odd Betano",ready:false,detail:priced?"Odd externa é só referência":"Ainda sem odd recolhida"},
   {key:"context",label:"Contexto",ready:false,detail:"Onzes, ausências e meteorologia por verificar"},
-  {key:"edge",label:"Edge ≥ 3 p.p.",ready:priced&&adjusted>=.03,detail:priced?"Edge do modelo: "+(adjusted*100).toFixed(1)+" p.p.":"Requer odd e fontes independentes"}
+  {key:"edge",label:"Edge ≥ 3 p.p.",ready:false,detail:priced?"Só preliminar: "+(adjusted*100).toFixed(1)+" p.p.; faltam fontes":"Requer odd e fontes independentes"}
  ];
  // A single uncalibrated historical model is not one of the user's required
  // Statarea/SportyTrader/SoccerVital probabilities. No automated bet approval.
