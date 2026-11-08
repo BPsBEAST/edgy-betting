@@ -8,7 +8,7 @@ const localTime=d=>new Intl.DateTimeFormat("pt-PT",{timeZone:"Europe/Lisbon",hou
 const niceDate=d=>new Intl.DateTimeFormat("pt-PT",{timeZone:"Europe/Lisbon",weekday:"long",day:"numeric",month:"long"}).format(new Date(d));
 const n=(v,d=1)=>Number.isFinite(v)?new Intl.NumberFormat("pt-PT",{minimumFractionDigits:d,maximumFractionDigits:d}).format(v):"—";
 const readSaved=()=>{try{let list=JSON.parse(localStorage.getItem("edgy_betting_saved_v1")||"[]");return Array.isArray(list)?list.filter(x=>x&&x.matchId):[]}catch{return []}};
-const state={games:[],source:"",generated:null,error:"",selected:null,filter:"upcoming",league:"all",query:"",view:"matches",saved:readSaved(),current:null,radar:"all",analysis:{models:{},generatedAt:null},odds:{matches:{},generatedAt:null},context:{contexts:{},generatedAt:null,hasApiFootballKey:false},free:{matches:{},providers:{},generatedAt:null},freeOdds:{matches:{},generatedAt:null,hasCredentials:false}};
+const state={games:[],source:"",generated:null,error:"",selected:null,filter:"upcoming",league:"all",query:"",view:"matches",saved:readSaved(),current:null,radar:"all",analysis:{models:{},generatedAt:null},odds:{matches:{},generatedAt:null},context:{contexts:{},generatedAt:null,hasApiFootballKey:false},free:{matches:{},providers:{},generatedAt:null},freeOdds:{matches:{},generatedAt:null,hasCredentials:false},csvOdds:{matches:{},generatedAt:null}};
 
 async function loadIntelligence(){
  const get=async name=>{
@@ -18,17 +18,19 @@ async function loadIntelligence(){
    return await response.json();
   }catch{return null;}
  };
- const [analysis,odds,context,free,freeOdds]=await Promise.all([get("analysis.json"),get("market_odds.json"),get("context.json"),get("free_predictions.json"),get("free_odds.json")]);
+ const [analysis,odds,context,free,freeOdds,csvOdds]=await Promise.all([get("analysis.json"),get("market_odds.json"),get("context.json"),get("free_predictions.json"),get("free_odds.json"),get("football_data_odds.json")]);
  state.analysis=analysis&&analysis.models&&typeof analysis.models==="object"?analysis:{models:{},generatedAt:null};
  state.odds=odds&&odds.matches&&typeof odds.matches==="object"?odds:{matches:{},generatedAt:null};
  state.context=context&&context.contexts&&typeof context.contexts==="object"?context:{contexts:{},generatedAt:null,hasApiFootballKey:false};
  state.free=free&&free.matches&&typeof free.matches==="object"?free:{matches:{},providers:{},generatedAt:null};
  state.freeOdds=freeOdds&&freeOdds.matches&&typeof freeOdds.matches==="object"?freeOdds:{matches:{},generatedAt:null,hasCredentials:false};
+ state.csvOdds=csvOdds&&csvOdds.matches&&typeof csvOdds.matches==="object"?csvOdds:{matches:{},generatedAt:null};
 }
 function modelFor(game){return state.analysis.models?.[game?.id]||null;}
 function oddsAssociation(game){
  const id=game?.id;
  if(state.freeOdds.matches?.[id]&&Date.now()-Date.parse(state.freeOdds.generatedAt)<12*3600000)return "verified-free";
+ if(state.csvOdds.matches?.[id]&&Date.now()-Date.parse(state.csvOdds.generatedAt)<36*3600000)return "verified-csv";
  if(state.odds.matches?.[id])return "provider-id";
  if(state.odds.linkedFixtureIds?.[id])return "verified";
  if(state.odds.provisionalFixtureIds?.[id])return "provisional";
@@ -39,6 +41,9 @@ function oddsFor(game){
  const received=state.freeOdds.matches?.[id];
  const recent=Number.isFinite(Date.parse(state.freeOdds.generatedAt))&&Date.now()-Date.parse(state.freeOdds.generatedAt)<12*3600000;
  if(recent&&received&&Object.keys(received).length)return received;
+ const fromCsv=state.csvOdds.matches?.[id];
+ const csvFresh=Number.isFinite(Date.parse(state.csvOdds.generatedAt))&&Date.now()-Date.parse(state.csvOdds.generatedAt)<36*3600000;
+ if(csvFresh&&fromCsv&&Object.keys(fromCsv).length)return fromCsv;
  const matched=state.odds.linkedFixtureIds?.[id]||state.odds.provisionalFixtureIds?.[id];
  return state.odds.matches?.[id]||state.odds.matches?.[matched]||{};
 }
@@ -59,7 +64,7 @@ function renderRadarOverview(){
  const date=state.analysis.generatedAt?niceDate(state.analysis.generatedAt)+" às "+localTime(state.analysis.generatedAt):"não disponível";
  const freeBlocked=(state.odds.providerRestrictions||[]).some(x=>/free plans|2022 to 2024/i.test(x));
  const coverageNote=freeBlocked?
-  '<div class="coverage-alert"><strong>⚠ API-Football gratuita não cobre odds 2026/27</strong><p>A recolha da época atual por essa API está bloqueada. '+(state.freeOdds.hasCredentials?'The Odds API está configurada para preços internacionais de referência.':'Foi preparada uma alternativa também gratuita, The Odds API (500 créditos mensais), que requer outra chave gratuita.')+' Nenhum preço substitui a confirmação na Betano Portugal.</p></div>':"";
+  '<div class="coverage-alert"><strong>⚠ API-Football gratuita não cobre odds 2026/27</strong><p>A recolha da época atual por essa API está bloqueada. '+(state.freeOdds.hasCredentials?'The Odds API está configurada para preços internacionais de referência.':'Há ainda um ficheiro de odds de referência sem conta (Football-Data), e foi preparada a The Odds API grátis como opção adicional.')+' Nenhum preço substitui a confirmação na Betano Portugal.</p></div>':"";
  $("radarOverview").innerHTML='<div class="radar-overview-head"><strong>'+upcoming.length+' próximos jogos</strong><span>·</span><strong>'+modeled.length+' com projeção</strong><span>·</span><strong>'+finished.length+' resultados</strong></div>'+
   '<p>As escolhas em destaque são <b>projeções estatísticas a investigar</b>, não apostas aprovadas. Falta cruzar Statarea/SportyTrader, contexto e odd Betano.</p>'+
   coverageNote+'<small>Fonte histórica: Football-Data.co.uk · atualização: '+esc(date)+' · '+(state.context.hasApiFootballKey?'API-Football autenticada':'API-Football sem chave')+' · '+Object.values(state.context.contexts||{}).filter(x=>Boolean(x.weather)).length+' jogos com previsão meteorológica · '+Object.keys(state.free.matches||{}).length+' jogos com previsões externas</small>';
@@ -130,8 +135,9 @@ function renderContext(game){
  const matchType=oddsAssociation(game);
  const provisional=matchType==="provisional";
  const freeOdds=matchType==="verified-free";
+ const csvOdds=matchType==="verified-csv";
  items.push('<div class="source-evidence '+(provisional?"source-warning":quoteList.length?"":"missing")+'"><strong>◎ Odds e mercado justo</strong><p>'+quoteList.length+' seleções de referência · '+books.size+' casas (API-Football, se disponível).</p>'+
- (provisional?'<small>⚠ ASSOCIAÇÃO NÃO CONFIRMADA: liga e hora coincidem, mas as equipas não foram verificadas. Não usar preços para apostar.</small>':freeOdds?'<small>Preços internacionais The Odds API (equipas, competição e hora verificados). NÃO são a odd da Betano Portugal: confirmar sempre no boletim.</small>':'<small>Não existe confirmação automática da odd no boletim Betano ou Flashscore. Validar preço, mercado e hora.</small>')+'</div>');
+ (provisional?'<small>⚠ ASSOCIAÇÃO NÃO CONFIRMADA: liga e hora coincidem, mas as equipas não foram verificadas. Não usar preços para apostar.</small>':freeOdds?'<small>Preços internacionais The Odds API (equipas, competição e hora verificados). NÃO são a odd da Betano Portugal: confirmar sempre no boletim.</small>':csvOdds?'<small>Preços publicados no CSV Football-Data, normalmente apenas em dias determinados. São snapshots internacionais, não são odds Betano nem em tempo real.</small>':'<small>Não existe confirmação automática da odd no boletim Betano ou Flashscore. Validar preço, mercado e hora.</small>')+'</div>');
  const lookup=(label,domain)=>'<a target="_blank" rel="noopener noreferrer" href="https://www.google.com/search?q='+encodeURIComponent('site:'+domain+' '+game.home+' '+game.away)+'">'+esc(label)+' ↗</a>';
  items.push('<div class="source-evidence manual-research"><strong>Consultar fontes específicas sem pagar</strong><p>Estas ligações abrem pesquisas externas para verificares previsões, onzes e notícias de cada encontro. Não são extrações automáticas nem substituem dados verificados.</p><div class="source-quicklinks">'+
   lookup("Statarea","statarea.com")+lookup("SportyTrader","sportytrader.pt")+lookup("SoccerVital","soccervital.com")+lookup("Soccernews","soccernews.com")+'</div></div>');
