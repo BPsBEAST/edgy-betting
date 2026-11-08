@@ -149,7 +149,11 @@ def targeted_fixtures(limit=3):
 def main():
     payload={"generatedAt":NOW.isoformat(),"source":"API-Football (opcional; preços de referência, não confirmados no boletim)",
        "hasCredentials":bool(KEY),"matches":{},"message":"Sem API_FOOTBALL_KEY configurada: as odds não foram recolhidas."}
-    if KEY:
+    enabled=os.environ.get("API_FOOTBALL_ODDS_ENABLED","0").lower() in ("1","true","yes")
+    if KEY and not enabled:
+        payload["providerRestrictions"]=["Free plans do not have access to season 2026/27 (blocked by supplier)."]
+        payload["message"]="API-Football gratuita: odds da época 2026/27 indisponíveis. Evitados pedidos inúteis; alternativa gratuita The Odds API opcional."
+    if KEY and enabled:
         matches={}
         fixture_meta={}
         paging_info=[]
@@ -226,7 +230,7 @@ def main():
     if DEST.exists():
         try:
             old=json.loads(DEST.read_text(encoding="utf-8"))
-            if old.get("matches")==payload["matches"] and old.get("fixtureMetadata")==payload.get("fixtureMetadata") and old.get("hasCredentials")==payload["hasCredentials"] and old.get("pagesFetched")==payload.get("pagesFetched"):
+            if old.get("matches")==payload["matches"] and old.get("fixtureMetadata")==payload.get("fixtureMetadata") and old.get("providerRestrictions")==payload.get("providerRestrictions") and old.get("hasCredentials")==payload["hasCredentials"] and old.get("pagesFetched")==payload.get("pagesFetched"):
                 print("Odds unchanged")
                 return
         except (OSError,ValueError):
