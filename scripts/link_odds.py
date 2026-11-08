@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Link API-Football pre-match odds to ESPN/TheSportsDB fixtures safely.
+"""Match odds with ESPN fixtures using strict, explicitly unverified metadata.
 
-Provider fixture IDs are unrelated. Never attach a price without a unique
-home/away/team/competition/kickoff match. Uses two /fixtures?ids calls for at
-most 40 odds event IDs (20 IDs per API-Football request).
+Free API-Football plan denies fixture-by-IDs and the current 2026/27 season.
+Never claim team identity is verified from league/time metadata alone.
+This script makes ZERO additional authenticated provider requests.
 """
 from __future__ import annotations
 from datetime import datetime, timezone
@@ -100,29 +100,60 @@ def api_get(ids):
     except (OSError,TimeoutError,urllib.error.URLError,ValueError) as exc:
         print("Link provider unavailable:",str(exc)[:100]);return []
 
+
+def match_metadata(metadata,calendar):
+    """Provisional correspondence only: unique league and exact start time.
+
+    Odds response contains no team names, so this is NOT an identity-verified
+    match and must never be promoted into an approved bet.
+    """
+    if not isinstance(metadata,dict):return None
+    try:league_code=API_LEAGUES.get(int(metadata.get("leagueId")))
+    except (ValueError,TypeError):return None
+    kickoff=iso(metadata.get("utc"))
+    if not kickoff or not league_code:return None
+    candidates=[]
+    for game in calendar:
+        if game.get("leagueCode")!=league_code:continue
+        game_time=iso(game.get("utc"))
+        if game_time and abs((game_time-kickoff).total_seconds())<=300:
+            candidates.append(game["id"])
+    return candidates[0] if len(candidates)==1 else None
+
 def main():
-    if not API_KEY:return print("No key; no odds to link")
+    if not API_KEY:return print("No API key configured; no odds to link")
     odds=json.loads(ODDS_FILE.read_text(encoding="utf-8"))
     fixtures=json.loads(FIXTURE_FILE.read_text(encoding="utf-8"))
-    ids=sorted(int(k[5:]) for k in (odds.get("matches") or {}) if k.startswith("apif-") and k[5:].isdigit())
-    mapping={}
-    attempted=0
-    for start in range(0,len(ids),20):
-        batch=ids[start:start+20]
-        if not batch:break
-        attempted+=1
-        for row in api_get(batch):
-            api_id=(row.get("fixture") or {}).get("id")
-            if api_id is None:continue
-            linked=match_fixture(row,fixtures.get("games") or [])
-            if linked and "apif-"+str(api_id) in odds["matches"]:
-                # Avoid attaching 2 API events to the same ESPN match.
-                if linked not in mapping:mapping[linked]="apif-"+str(api_id)
-    odds["linkedFixtureIds"]=mapping
-    odds["linkedFixtureCount"]=len(mapping)
-    odds["lookupRequests"]=attempted
-    # Keep raw odds for any original API-Football calendar fixture,
-    # and never replace provider keys with guessed IDs.
+    existing_matches=set((odds.get("matches") or {}).keys())
+    metadata=odds.get("fixtureMetadata") or {}
+    candidates={}
+    # API-Football free plan does not support fixtures?ids and currently blocks
+    # season 2026/27; do not waste API requests on a known forbidden endpoint.
+    for external_id,meta in metadata.items():
+        if external_id not in existing_matches:continue
+        internal=match_metadata(meta,fixtures.get("games") or [])
+        if internal:
+            candidates.setdefault(internal,[]).append(external_id)
+    provisional={internal:ids[0] for internal,ids in candidates.items() if len(ids)==1}
+    old_verified=odds.get("linkedFixtureIds") or {}
+    # Old verified IDs were produced by endpoints denied by the free plan.
+    # Recompute only if a separately authorized identity-verified feed exists.
+    verified={}
+    odds["linkedFixtureIds"]=verified
+    odds["linkedFixtureCount"]=0
+    odds["provisionalFixtureIds"]=provisional
+    odds["provisionalFixtureCount"]=len(provisional)
+    odds["matchingMethod"]="Competição e hora de início únicas (±5 min); EQUIPAS NÃO VERIFICADAS"
+    odds["linkStatus"]="provisional_only" if provisional else "unmatched"
+    odds["lookupRequests"]=0
+    odds["matchingCoverage"]={
+       "oddsFixtureCount":len(existing_matches),
+       "metadataCount":len(metadata),
+       "metadataWithLeagueAndDate":sum(bool(m.get("leagueId") and m.get("utc")) for m in metadata.values()),
+       "ambiguousKickoffs":sum(1 for ids in candidates.values() if len(ids)>1),
+       "previousVerified":len(old_verified)
+    }
     ODDS_FILE.write_text(json.dumps(odds,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    print(f"Odds linked to {len(mapping)} calendar matches; requests {attempted}; checked IDs {len(ids)}")
+    print("Odds source:",len(existing_matches),"events;",len(metadata),"metadata;",
+          len(provisional),"provisional date/league links;",0,"identity-verified links")
 if __name__=="__main__":main()
