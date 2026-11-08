@@ -8,6 +8,97 @@ const niceDate=d=>new Intl.DateTimeFormat("pt-PT",{timeZone:"Europe/Lisbon",week
 const n=(v,d=1)=>Number.isFinite(v)?new Intl.NumberFormat("pt-PT",{minimumFractionDigits:d,maximumFractionDigits:d}).format(v):"—";
 const readSaved=()=>{try{let list=JSON.parse(localStorage.getItem("edgy_betting_saved_v1")||"[]");return Array.isArray(list)?list.filter(x=>x&&x.matchId):[]}catch{return []}};
 const state={games:[],source:"",generated:null,error:"",selected:null,filter:"all",league:"all",query:"",view:"matches",saved:readSaved(),current:null,radar:"all",analysis:{models:{},generatedAt:null},odds:{matches:{},generatedAt:null}};
+
+async function loadIntelligence(){
+ const get=async name=>{
+  try{
+   const response=await fetch("./data/"+name+"?v="+Date.now(),{cache:"no-store"});
+   if(!response.ok)throw new Error("Feed "+name+" indisponível");
+   return await response.json();
+  }catch{return null;}
+ };
+ const [analysis,odds]=await Promise.all([get("analysis.json"),get("market_odds.json")]);
+ state.analysis=analysis&&analysis.models&&typeof analysis.models==="object"?analysis:{models:{},generatedAt:null};
+ state.odds=odds&&odds.matches&&typeof odds.matches==="object"?odds:{matches:{},generatedAt:null};
+}
+function modelFor(game){return state.analysis.models?.[game?.id]||null;}
+function quoteFor(game,key){return state.odds.matches?.[game?.id]?.[key]||null;}
+function percentage(v){return typeof v==="number"&&Number.isFinite(v)?n(v*100,1)+"%":"—";}
+function renderRadarOverview(){
+ const count=state.games.filter(g=>!!modelFor(g)).length;
+ const priced=state.games.filter(g=>!!Object.keys(state.odds.matches?.[g.id]||{}).length).length;
+ const timestamp=state.analysis.generatedAt?localTime(state.analysis.generatedAt):"não disponível";
+ $("radarOverview").innerHTML='<span>◎</span><b>'+count+' jogos com projeções estatísticas</b> · '+priced+' com odds de referência. <strong>0 apostas automáticas aprovadas</strong><br>'+
+ '<small>Modelo ESPN/Poisson exploratório; atualização: '+esc(timestamp)+'. Só uma fonte estatística, não equivale ao consenso obrigatório. Os jogos sem modelo continuam visíveis.</small>';
+}
+function renderGamePreview(game){
+ const model=modelFor(game),quotes=state.odds.matches?.[game.id]||{};
+ const hasPrice=Object.keys(quotes).length>0;
+ if(!model)return '<span class="game-preview no-data"><span>◉ Sem histórico suficiente para análise automática</span>'+(hasPrice?'<span class="price-flag">ODDS DE REFERÊNCIA</span>':"")+'</span>';
+ const winner=(model.markets||[]).filter(x=>x.key?.startsWith("1X2_"));
+ const total=model.markets?.find(x=>x.key==="O25");
+ const forecast=winner.length===3?
+  '<span class="forecast-mini"><span>1 <b>'+percentage(winner[0].probability)+'</b></span><span>X <b>'+percentage(winner[1].probability)+'</b></span><span>2 <b>'+percentage(winner[2].probability)+'</b></span></span>':"";
+ return '<span class="game-preview"><span class="forecast-mini">'+forecast+(total?'<span>+2,5 <b>'+percentage(total.probability)+'</b></span>':"")+'</span><span class="forecast-note">'+(hasPrice?'<span class="price-flag">◎ ODDS DE REFERÊNCIA</span>':'◉ OBSERVAR · SEM ODD CONFIRMADA')+'</span></span>';
+}
+function renderAutoPanel(){
+ const game=state.selected;
+ if(!game){$("autoPanel").innerHTML='<div class="auto-empty">Seleciona um jogo para veres os mercados e estatísticas calculadas.</div>';return;}
+ const model=modelFor(game),prices=state.odds.matches?.[game.id]||{};
+ const age=state.analysis.generatedAt?Date.now()-Date.parse(state.analysis.generatedAt):Infinity;
+ const stale=!Number.isFinite(age)||age>36*3600000;
+ const kickoff=Date.parse(game.utc);
+ const inProgress=Number.isFinite(kickoff)&&kickoff<=Date.now();
+ let html="";
+ if(!model){
+   html='<div class="no-stats"><strong>◉ Sem modelo estatístico validável</strong><p>O calendário deste jogo está disponível, mas ainda não existem resultados históricos suficientes, ou não há integração ESPN compatível, para estimar probabilidades sem inventar dados.</p></div>';
+   const options=Object.entries(prices).slice(0,9);
+   if(options.length){
+    html+='<div class="auto-section-label">ODDS DE REFERÊNCIA DISPONÍVEIS</div>'+
+      options.map(([key,item])=>'<div class="market-row"><div class="market-top"><strong>'+esc(key)+'</strong><span>Verificar</span></div><div class="market-bottom">'+esc(item.bookmaker||"Fornecedor")+' · odd '+esc(n(Number(item.odd),2))+' · sem avaliação estatística</div></div>').join("");
+   }
+ }else{
+   html='<div class="model-info"><small>ESPN · HISTÓRICO REAL</small><strong>Projeção de golos</strong>'+
+    '<div class="model-xg"><div><b>'+esc(n(model.lambdaHome,2))+'</b><small>'+esc(game.home)+'</small></div><span>×</span><div><b>'+esc(n(model.lambdaAway,2))+'</b><small>'+esc(game.away)+'</small></div></div>'+
+    '<p>Médias históricas estimadas por Poisson (não são xG oficiais). Casa: '+esc(model.home?.homeGames||0)+' partidas em casa. Fora: '+esc(model.away?.awayGames||0)+' partidas fora.</p></div>';
+   const groups=[["Resultado","RESULTADO FINAL"],["Golos","GOLOS E AMBAS MARCAM"],["Resultado exato","RESULTADO EXATO"]];
+   for(const [group,label] of groups){
+    const items=(model.markets||[]).filter(item=>item.group===group);
+    if(!items.length)continue;
+    html+='<div class="auto-section-label">'+label+'</div>';
+    html+=items.map(item=>{
+      const q=prices[item.key],odd=Number(q?.odd),hasOdd=Number.isFinite(odd)&&odd>1;
+      const edge=hasOdd?item.probability-1/odd:null;
+      const adjusted=hasOdd?edge-item.uncertainty:null;
+      const candidate=hasOdd&&adjusted>=.03;
+      const verified=false; // Never approve without required named prediction sources and a confirmed Betano slip.
+      const minOdd=Number.isFinite(item.minimumOdd)?n(item.minimumOdd,2):"N/D";
+      return '<div class="market-row '+(candidate?"highlight-model":"")+'"><div class="market-top"><strong>'+esc(item.label)+'</strong><span>'+(candidate?'EDGE PRELIMINAR':'OBSERVAR')+'</span></div>'+
+        '<div class="market-num"><div><small>Modelo ESPN</small><b>'+percentage(item.probability)+'</b></div><div><small>Odd mínima teórica</small><b class="green">'+minOdd+'</b></div><div><small>Odd recolhida</small><b>'+(hasOdd?esc(n(odd,2)):"—")+'</b></div></div>'+
+        '<div class="market-bottom"><span>'+(hasOdd?esc(q.bookmaker)+' · Edge ajust. exploratório: '+percentage(adjusted):'A aguardar odd da Betano')+'</span><button type="button" class="manual-open" data-manual-market="'+esc(item.key)+'">Detalhes ↗</button></div></div>';
+    }).join("");
+   }
+   html+='<div class="auto-warning">Nenhum mercado pode passar a <b>APOSTA</b> apenas com este modelo. Faltam a comparação com Statarea/SportyTrader/SoccerVital, o consenso mínimo, ausências/onzes e confirmação da odd no boletim da Betano.'+
+     (stale?' Os dados estatísticos podem estar desatualizados.':'')+(inProgress?' Este jogo já começou: o modelo pré-jogo não deve ser utilizado como previsão em direto.':'')+'</div>';
+ }
+ html+='<div class="sources-foot">Fonte de forma: ESPN (integração não oficial). Odds: '+(state.odds.hasCredentials?'API-Football — referência não confirmada':'nenhum fornecedor com chave configurada')+'. Minutos, cantos, remates, cartões e asiáticos de quarto não são aprovados automaticamente sem dados específicos suficientes.</div>';
+ $("autoPanel").innerHTML=html;
+}
+function openManual(key){
+ const game=state.selected;if(!game)return;
+ const item=modelFor(game)?.markets?.find(x=>x.key===key);
+ const q=quoteFor(game,key);
+ if(!item)return;
+ $("manualDetails").open=true;
+ $("selection").value=item.label;
+ $("market").value=key.startsWith("CS_")?"correct":key.startsWith("1X2_")?"result":"goals";
+ $("odds").value=q?.odd||"";
+ $("priceSource").value="reference";
+ $("p_fair").value=Number.isFinite(q?.fairProbability)?(q.fairProbability*100).toFixed(2):"";
+ $("resultPanel").hidden=true;
+ $("manualDetails").scrollIntoView({behavior:"smooth",block:"start"});
+}
+
 function store(){try{localStorage.setItem("edgy_betting_saved_v1",JSON.stringify(state.saved))}catch{}}
 function isLive(game){return ["LIVE","IN_PLAY","HT","1H","2H","ET","PEN"].includes(game.status);}
 function statusText(g){if(isLive(g))return "AO VIVO";if(["FT","FINISHED"].includes(g.status))return "TERMINADO";if(["POSTPONED","PST"].includes(g.status))return "ADIADO";return "AGENDADO";}
@@ -85,7 +176,7 @@ function renderGames(){
  return header+'<button type="button" class="game-card '+(state.selected?.id===game.id?"active":"")+'" data-game="'+esc(game.id)+'">'+
  '<span class="game-meta">'+(live?'<span class="live-badge">● LIVE</span>':'<strong>'+esc(localTime(game.utc))+'</strong>')+'<small>'+esc(score||statusText(game))+'</small></span>'+
  '<span class="fixture"><span class="fixture-league">'+esc(game.league||"Futebol")+'</span><span class="teams"><span class="team">'+logo(game.homeLogo,game.home)+'<span class="team-name">'+esc(game.home)+'</span></span><span class="team">'+logo(game.awayLogo,game.away)+'<span class="team-name">'+esc(game.away)+'</span></span></span></span>'+
- '<span class="game-action"><b>ANALISAR</b><span>↗</span></span></button>';
+ '<span class="game-action"><b>VER DADOS</b><span>↗</span></span>'+renderGamePreview(game)+'</button>';
  }).join("");
 }
 function refreshSelection(){
@@ -138,6 +229,8 @@ document.addEventListener("click",event=>{
  const game=event.target.closest("[data-game]");if(game){selectGame(game.dataset.game);return;}
  const lg=event.target.closest("[data-league]");if(lg){state.league=lg.dataset.league;renderLeagues();renderGames();return;}
  const range=event.target.closest("[data-range]");if(range){state.filter=range.dataset.range;document.querySelectorAll("[data-range]").forEach(b=>b.classList.toggle("selected",b.dataset.range===state.filter));renderGames();return;}
+ const radar=event.target.closest("[data-radar]");if(radar){state.radar=radar.dataset.radar;document.querySelectorAll("[data-radar]").forEach(b=>b.classList.toggle("active",b.dataset.radar===state.radar));renderGames();return;}
+ const marketButton=event.target.closest("[data-manual-market]");if(marketButton){openManual(marketButton.dataset.manualMarket);return;}
  const view=event.target.closest("[data-view]");if(view){setView(view.dataset.view);return;}
  const remove=event.target.closest("[data-remove]");if(remove){state.saved=state.saved.filter(x=>x.id!==remove.dataset.remove);store();updateCounters();renderSaved();}
 });
