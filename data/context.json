@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T20:00:23.795474+00:00",
+  "generatedAt": "2026-11-08T20:45:52.288998+00:00",
   "sources": {
     "weather": "Open-Meteo (requires verified venue city)",
     "lineups": "API-Football optional",
@@ -14,34 +14,6 @@
   "apiCalls": 0,
   "matchedGames": 14,
   "contexts": {
-    "espn-401885401": {
-      "weather": {
-        "city": "Amadora",
-        "countryCode": "PT",
-        "temperatureC": 18.8,
-        "precipitationMm": 0.3,
-        "gustKmh": 60.8,
-        "alert": true,
-        "risk": "Chuva intensa ou rajadas fortes previstas na zona urbana",
-        "forecastHourUtc": "2026-11-08T20:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401885397": {
-      "weather": {
-        "city": "Vila do Conde",
-        "countryCode": "PT",
-        "temperatureC": 18.9,
-        "precipitationMm": 0.2,
-        "gustKmh": 40.7,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-08T20:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
     "espn-401883139": {
       "weather": {
         "city": "Sabadell",
@@ -112,6 +84,20 @@
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
     },
+    "espn-401928528": {
+      "weather": {
+        "city": "Estepona",
+        "countryCode": "ES",
+        "temperatureC": 19.6,
+        "precipitationMm": 0.0,
+        "gustKmh": 6.8,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-10T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
     "espn-401928504": {
       "weather": {
         "city": "Manises",
@@ -122,20 +108,6 @@
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-10T20:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401928506": {
-      "weather": {
-        "city": "Ciudad Real",
-        "countryCode": "ES",
-        "temperatureC": 14.9,
-        "precipitationMm": 0.0,
-        "gustKmh": 40.0,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-12T17:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
@@ -192,6 +164,34 @@
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-13T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401932845": {
+      "weather": {
+        "city": "Saint-Philbert-de-Grand-Lieu",
+        "countryCode": "FR",
+        "temperatureC": 7.1,
+        "precipitationMm": 0.0,
+        "gustKmh": 34.6,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-13T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401928487": {
+      "weather": {
+        "city": "Villares de la Reina",
+        "countryCode": "ES",
+        "temperatureC": 10.6,
+        "precipitationMm": 0.0,
+        "gustKmh": 15.8,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-13T20:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }

@@ -1,10 +1,12 @@
 {
-  "generatedAt": null,
-  "source": "Football-Data.co.uk — fixtures.csv",
-  "sourceUrl": "https://www.football-data.co.uk/matches/fixtures.csv",
-  "downloaded": false,
-  "csvRows": 0,
+  "generatedAt": "2026-11-08T20:45:49.176698+00:00",
+  "source": "Football-Data.co.uk — free pre-match fixture CSV",
+  "sourceUrl": "https://www.football-data.co.uk/fixtures.csv",
+  "downloaded": true,
+  "csvRows": 160,
+  "unmatchedRows": 160,
   "matchedGames": 0,
   "matches": {},
-  "note": "Sem dados importados. Odd internacional de referência, não Betano Portugal."
+  "matchEvidence": {},
+  "note": "Internacional: odds recolhidas periodicamente pelo publisher, não ao vivo. Não inclui Betano Portugal e nunca confirma o boletim."
 }

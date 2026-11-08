@@ -1,145 +1,10 @@
 {
-  "generatedAt": "2026-11-08T20:00:15.246636+00:00",
+  "generatedAt": "2026-11-08T20:45:37.577913+00:00",
   "source": "Football-Data.co.uk — resultados CSV publicados",
-  "fixtureGeneratedAt": "2026-11-08T19:59:38.917705Z",
-  "count": 10,
-  "coverage": 14,
+  "fixtureGeneratedAt": "2026-11-08T20:44:41.175182Z",
+  "count": 9,
+  "coverage": 12,
   "models": {
-    "espn-401885401": {
-      "lambdaHome": 1.043,
-      "lambdaAway": 2.514,
-      "home": {
-        "sample": 10,
-        "homeGames": 5,
-        "awayGames": 5,
-        "goalsForHome": 1.2,
-        "goalsAgainstHome": 1.8
-      },
-      "away": {
-        "sample": 10,
-        "homeGames": 5,
-        "awayGames": 5,
-        "goalsForAway": 3.4,
-        "goalsAgainstAway": 0.8
-      },
-      "model": "Poisson exploratório sobre resultados anteriores; não representa xG oficial nem prognóstico calibrado.",
-      "sources": [
-        "Football-Data.co.uk — resultados CSV publicados"
-      ],
-      "markets": [
-        {
-          "key": "1X2_H",
-          "group": "Resultado",
-          "label": "Vitória casa",
-          "probability": 0.13743,
-          "uncertainty": 0.07764,
-          "minimumOdd": 33.58,
-          "status": "OBSERVAR",
-          "reason": "Modelo estatístico ESPN sem duas fontes independentes e sem odd Betano confirmada."
-        },
-        {
-          "key": "1X2_D",
-          "group": "Resultado",
-          "label": "Empate",
-          "probability": 0.16941,
-          "uncertainty": 0.08764,
-          "minimumOdd": 19.32,
-          "status": "OBSERVAR",
-          "reason": "Modelo estatístico ESPN sem duas fontes independentes e sem odd Betano confirmada."
-        },
-        {
-          "key": "1X2_A",
-          "group": "Resultado",
-          "label": "Vitória fora",
-          "probability": 0.69316,
-          "uncertainty": 0.07764,
-          "minimumOdd": 1.71,
-          "status": "OBSERVAR",
-          "reason": "Modelo estatístico ESPN sem duas fontes independentes e sem odd Betano confirmada."
-        },
-        {
-          "key": "O15",
-          "group": "Golos",
-          "label": "Mais de 1,5 golos",
-          "probability": 0.86987,
-          "uncertainty": 0.07764,
-          "minimumOdd": 1.32,
-          "status": "OBSERVAR",
-          "reason": "Modelo estatístico ESPN sem duas fontes independentes e sem odd Betano confirmada."
-        },
-        {
-          "key": "U15",
-          "group": "Golos",
-          "label": "Menos de 1,5 golos",
-          "probability": 0.13013,
-          "uncertainty": 0.07764,
-          "minimumOdd": 44.48,
-          "status": "OBSERVAR",
-          "reason": "Modelo estatístico ESPN sem duas fontes independentes e sem odd Betano confirmada."
-        },
-        {
-          "key": "O25",
-          "group": "Golos",
-          "label": "Mais de 2,5 golos",
-          "probability": 0.68922,
-          "uncertainty": 0.08264,
-          "minimumOdd": 1.74,
-          "status": "OBSERVAR",
-          "reason": "Modelo estatístico ESPN sem duas fontes independentes e sem odd Betano confirmada."
-        },
-        {
-          "key": "U25",
-          "group": "Golos",
-          "label": "Menos de 2,5 golos",
-          "probability": 0.31078,
-          "uncertainty": 0.08264,
-          "minimumOdd": 5.05,
-          "status": "OBSERVAR",
-          "reason": "Modelo estatístico ESPN sem duas fontes independentes e sem odd Betano confirmada."
-        },
-        {
-          "key": "BTTS_Y",
-          "group": "Golos",
-          "label": "Ambas marcam — Sim",
-          "probability": 0.59509,
-          "uncertainty": 0.08764,
-          "minimumOdd": 2.1,
-          "status": "OBSERVAR",
-          "reason": "Modelo estatístico ESPN sem duas fontes independentes e sem odd Betano confirmada."
-        },
-        {
-          "key": "BTTS_N",
-          "group": "Golos",
-          "label": "Ambas marcam — Não",
-          "probability": 0.40491,
-          "uncertainty": 0.08764,
-          "minimumOdd": 3.49,
-          "status": "OBSERVAR",
-          "reason": "Modelo estatístico ESPN sem duas fontes independentes e sem odd Betano confirmada."
-        },
-        {
-          "key": "CS_1_2",
-          "group": "Resultado exato",
-          "label": "Resultado exato 1-2",
-          "probability": 0.09412,
-          "uncertainty": 0.13264,
-          "minimumOdd": null,
-          "status": "OBSERVAR",
-          "reason": "Modelo estatístico ESPN sem duas fontes independentes e sem odd Betano confirmada."
-        },
-        {
-          "key": "CS_0_2",
-          "group": "Resultado exato",
-          "label": "Resultado exato 0-2",
-          "probability": 0.09025,
-          "uncertainty": 0.13264,
-          "minimumOdd": null,
-          "status": "OBSERVAR",
-          "reason": "Modelo estatístico ESPN sem duas fontes independentes e sem odd Betano confirmada."
-        }
-      ],
-      "sourceDate": "2026-11-02"
-    },
     "espn-401883140": {
       "lambdaHome": 1.292,
       "lambdaAway": 1.104,
@@ -1369,5 +1234,5 @@
     "SP1",
     "SP2"
   ],
-  "unmatchedTeams": 4
+  "unmatchedTeams": 3
 }
