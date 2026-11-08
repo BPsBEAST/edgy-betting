@@ -18,7 +18,7 @@ import urllib.error
 
 ROOT=Path(__file__).resolve().parents[1]
 FIXTURES=ROOT/"data"/"fixtures.json"
-FORM=ROOT/"data"/"team_form.json"
+FORM=ROOT/"data"/"historical_results.json"
 OUTPUT=ROOT/"data"/"analysis.json"
 NOW=datetime.now(timezone.utc)
 STALE_HOURS=24
@@ -106,31 +106,36 @@ def event_to_record(event,teamid):
         return None
     return {"date":date.isoformat(),"side":side,"scored":own,"conceded":other}
 
-def fetch_team(item):
-    slug,tid=item
-    # ESPN season year is normally the start of the current season.
-    season=NOW.year if NOW.month>=7 else NOW.year-1
-    url=f"https://site.api.espn.com/apis/site/v2/sports/soccer/{slug}/teams/{tid}/schedule?season={season}"
+def fetch_day(item):
+    slug,day=item
+    target=day.strftime("%Y%m%d")
+    url=f"https://site.api.espn.com/apis/site/v2/sports/soccer/{slug}/scoreboard?dates={target}&limit=250"
     raw=get_json(url)
     if raw.get("_error"):
-        return item,{"fetchedAt":NOW.isoformat(),"matches":[],"error":raw["_error"]}
-    games=raw.get("events") or []
-    rows=[rec for event in games if (rec:=event_to_record(event,tid))]
-    rows.sort(key=lambda r:r["date"],reverse=True)
-    return item,{"fetchedAt":NOW.isoformat(),"matches":rows[:MAX_HISTORY],"error":None}
-
-def enough_form(rows):
-    recent=rows[:12]
-    h=[m for m in recent if m["side"]=="home"]
-    a=[m for m in recent if m["side"]=="away"]
-    return len(recent)>=MODEL_MIN_GAMES and len(h)>=2 and len(a)>=2
+        return slug+":"+target,{"fetchedAt":NOW.isoformat(),"matches":[],"error":raw["_error"]}
+    matches=[]
+    for event in raw.get("events") or []:
+        if not completed(event):continue
+        event_date=parsedate(event.get("date"))
+        if not event_date or event_date>=NOW:continue
+        participants=((event.get("competitions") or [{}])[0].get("competitors") or [])
+        if len(participants)!=2:continue
+        home=next((x for x in participants if x.get("homeAway")=="home"),None)
+        away=next((x for x in participants if x.get("homeAway")=="away"),None)
+        if not home or not away:continue
+        hi=str((home.get("team") or {}).get("id") or home.get("id") or "")
+        ai=str((away.get("team") or {}).get("id") or away.get("id") or "")
+        hs=score(home.get("score"));a_s=score(away.get("score"))
+        if not hi or not ai or hs is None or a_s is None:continue
+        matches.append({"date":event_date.isoformat(),"homeId":hi,"awayId":ai,"homeScore":hs,"awayScore":a_s})
+    return slug+":"+target,{"fetchedAt":NOW.isoformat(),"matches":matches,"error":None}
 
 def calculate_rates(rows):
-    recent=rows[:12]
-    if not enough_form(recent):
-        return None
+    recent=sorted(rows,key=lambda r:r["date"],reverse=True)[:12]
     home=[m for m in recent if m["side"]=="home"][:6]
     away=[m for m in recent if m["side"]=="away"][:6]
+    if len(recent)<4 or len(home)<2 or len(away)<2:
+        return None
     def avg(arr,key):
         return sum(m[key] for m in arr)/len(arr)
     return {"games":len(recent),"homeGames":len(home),"awayGames":len(away),
@@ -197,44 +202,53 @@ def main():
     upcoming=[g for g in fixtures if g.get("source")=="ESPN" and parsedate(g.get("utc")) and
       NOW<=parsedate(g["utc"])<=NOW+timedelta(days=10) and g.get("homeId") and g.get("awayId")]
     upcoming.sort(key=lambda g:g["utc"])
-    unique=[]
-    seen=set()
-    for g in upcoming:
-        for tid in (g["homeId"],g["awayId"]):
-            entry=(g["leagueCode"],str(tid))
-            if entry not in seen and len(unique)<MAX_TEAMS:
-                unique.append(entry);seen.add(entry)
-    cache=read_json(FORM,{"teams":{}})
-    cache_entries=cache.get("teams") if isinstance(cache.get("teams"),dict) else {}
-    def cachekey(item):
-        return item[0]+":"+item[1]
-    def is_fresh(item):
-        entry=cache_entries.get(cachekey(item),{})
-        when=parsedate(entry.get("fetchedAt"))
-        return when and when>NOW-timedelta(hours=STALE_HOURS) and bool(entry.get("matches"))
-    missing=[item for item in unique if not is_fresh(item)]
-    with ThreadPoolExecutor(max_workers=5) as pool:
-        tasks=[pool.submit(fetch_team,item) for item in missing]
-        for future in as_completed(tasks):
-            item,team_data=future.result()
-            cache_entries[cachekey(item)]=team_data
-    write_json(FORM,{"generatedAt":NOW.isoformat(),"teams":cache_entries})
+    # Keep the workload bounded; all games still appear even if a league has no model.
+    leagues=list(dict.fromkeys(g["leagueCode"] for g in upcoming))[:12]
+    cache=read_json(FORM,{"days":{}})
+    days=cache.get("days") if isinstance(cache.get("days"),dict) else {}
+    wanted=[]
+    for slug in leagues:
+        for offset in range(42,0,-1):
+            day=(NOW-timedelta(days=offset)).date()
+            label=slug+":"+day.strftime("%Y%m%d")
+            entry=days.get(label)
+            # Cache historical results permanently; recheck the last 48 hours.
+            if not entry or entry.get("error") or (offset<=2):
+                wanted.append((slug,day))
+    with ThreadPoolExecutor(max_workers=6) as pool:
+        futures=[pool.submit(fetch_day,item) for item in wanted]
+        for fut in as_completed(futures):
+            label,payload=fut.result()
+            days[label]=payload
+    # Store only days still relevant to the current season's last ~6 weeks.
+    active={slug+":"+(NOW-timedelta(days=offset)).strftime("%Y%m%d") for slug in leagues for offset in range(42,0,-1)}
+    days={key:val for key,val in days.items() if key in active}
+    write_json(FORM,{"generatedAt":NOW.isoformat(),"days":days})
+    by_team={}
+    for key,entry in days.items():
+        slug=key.split(":")[0]
+        for event in entry.get("matches") or []:
+            for side,tid,gf,ga in (("home",event["homeId"],event["homeScore"],event["awayScore"]),
+                                   ("away",event["awayId"],event["awayScore"],event["homeScore"])):
+                teamkey=slug+":"+str(tid)
+                by_team.setdefault(teamkey,[]).append({
+                  "date":event["date"],"side":side,"scored":gf,"conceded":ga})
     result={}
     for game in upcoming:
-        home=cache_entries.get(cachekey((game["leagueCode"],str(game["homeId"]))),{})
-        away=cache_entries.get(cachekey((game["leagueCode"],str(game["awayId"]))),{})
-        hs=calculate_rates(home.get("matches") or [])
-        ats=calculate_rates(away.get("matches") or [])
-        if hs and ats:
-            result[game["id"]]=project(hs,ats,game.get("division",1))
+        slug=game["leagueCode"]
+        home=calculate_rates(by_team.get(slug+":"+str(game["homeId"]),[]))
+        away=calculate_rates(by_team.get(slug+":"+str(game["awayId"]),[]))
+        if home and away:
+            result[game["id"]]=project(home,away,game.get("division",1))
     output={
-      "generatedAt":NOW.isoformat(),"source":"ESPN — histórico de jogos; integração não oficial",
+      "generatedAt":NOW.isoformat(),"source":"ESPN — resultados públicos por jornada",
       "fixtureGeneratedAt":fixture_data.get("generatedAt"),
       "count":len(result),"coverage":len(upcoming),"models":result,
-      "method":"Médias de golos dos últimos 12 jogos de cada equipa, separadas por casa/fora; Poisson exploratório. SEM confirmação de odds ou outras fontes.",
+      "method":"Médias verificadas de golos casa/fora nas últimas seis semanas. Poisson exploratório, não xG oficial.",
       "message":"Uma projeção estatística ESPN não cumpre sozinha as regras de consenso de apostas."
     }
     write_json(OUTPUT,output)
-    print(f"Statistical models: {len(result)}/{len(upcoming)} ESPN fixtures; refreshed schedules: {len(missing)}")
+    errors=sum(1 for x in days.values() if x.get("error"))
+    print(f"Statistical models: {len(result)}/{len(upcoming)}; scoreboard daily requests: {len(wanted)}; failed days: {errors}")
 if __name__=="__main__":
     main()
