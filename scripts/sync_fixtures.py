@@ -32,10 +32,10 @@ LEAGUES=[
  ("uefa.europa","UEFA · Europa League",1),
  ("uefa.europa.conf","UEFA · Conference League",1),
  ("uefa.super_cup","UEFA · Supertaça Europeia",1),
- ("eng.fa","Inglaterra · FA Cup",1),("eng.league_cup","Inglaterra · League Cup",1),
- ("esp.copa_del_rey","Espanha · Copa del Rey",1),("ita.coppa_italia","Itália · Coppa Italia",1),
- ("ger.dfb_pokal","Alemanha · DFB-Pokal",1),("fra.coupe_de_france","França · Coupe de France",1),
- ("por.taca_de_portugal","Portugal · Taça de Portugal",1)
+ ("eng.fa","Inglaterra · FA Cup",1),("eng.league_cup","Inglaterra · League Cup",1),("eng.charity","Inglaterra · Community Shield",1),
+ ("esp.copa_del_rey","Espanha · Copa del Rey",1),("esp.super_cup","Espanha · Supertaça",1),("ita.coppa_italia","Itália · Coppa Italia",1),("ita.super_cup","Itália · Supertaça",1),
+ ("ger.dfb_pokal","Alemanha · DFB-Pokal",1),("ger.super_cup","Alemanha · Supertaça",1),("fra.coupe_de_france","França · Coupe de France",1),("fra.super_cup","França · Supertaça",1),
+ ("por.taca.portugal","Portugal · Taça de Portugal",1)
 ]
 TSDB=[
  ("4328","Inglaterra · Premier League",1),("4329","Inglaterra · Championship",2),
@@ -106,7 +106,7 @@ def espn():
                     value=competitor.get("score")
                     return int(value) if str(value).isdigit() else None
                 item={"id":"espn-"+str(event.get("id")),"home":hteam.get("displayName") or hteam.get("name"),"away":ateam.get("displayName") or ateam.get("name"),
-                    "league":name,"leagueCode":slug,"division":division,"utc":stamp,"status":rawstatus.get("abbreviation") or rawstatus.get("name") or "NS",
+                    "league":name,"leagueCode":slug,"division":division,"utc":stamp,"status":("LIVE" if rawstatus.get("state")=="in" else (rawstatus.get("abbreviation") or rawstatus.get("name") or "NS")),
                     "homeScore":score(home),"awayScore":score(away),"homeLogo":hteam.get("logo"),"awayLogo":ateam.get("logo"),
                     "source":"ESPN"}
                 if eligible(item):result.append(item)
