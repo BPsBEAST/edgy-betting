@@ -8,6 +8,21 @@ Site (publicação GitHub Pages verificada pelos workflows): https://bpsbeast.gi
 
 Desenvolvimento local: `python -m http.server 8080`, depois abrir `http://localhost:8080`. A interface não precisa de backend para ler os dados já sincronizados. `npm test` (Node 22+) valida as fórmulas e controlos de risco.
 
+## Novas integrações gratuitas (8 de novembro de 2026)
+
+A EDGY Betting funciona sem pagamentos e não necessita de mais chaves para as seguintes fontes:
+
+- **Football-Data.co.uk — `matches/fixtures.csv`**: ficheiro público com odds pré-jogo de casas identificadas, quando publicado. O programa exige duas equipas, divisão e hora compatíveis; ignora partidas passadas e preços sem mercado completo. As odds do CSV são fotografias recolhidas pelo fornecedor às terças/sextas, **não preços ao vivo nem Betano Portugal**. `scripts/sync_football_data_odds.py`, `data/football_data_odds.json`.
+- **TipsAudit — `/api/v1/predictions`**: API pública e gratuita com **probabilidades justas do mercado sharp para resultado 1X2**, sem margem. Por condição do fornecedor, os dados são apresentados com a respetiva hiperligação de atribuição; a EDGY só usa uma leitura marcada `live`, identificada por duas equipas, competição e hora, com menos de cinco horas. Uma leitura `logged` antiga não serve de preço atual. `scripts/sync_market_fair.py`, `data/market_fair.json`.
+- **Football-Data.co.uk — CSV históricos 2026/27**: além dos golos, aproveitamos **golos ao intervalo (HTHG/HTAG), cantos (HC/AC), remates (HS/AS) e remates à baliza (HST/AST)**. Um modelo Poisson exploratório produz probabilidades de intervalo, totais de cantos/remates e algumas combinadas, calculadas diretamente numa única distribuição conjunta de resultados para não tratar eventos correlacionados como independentes. Apenas apresenta mercados quando há amostras suficientes. `scripts/extra_markets.py`.
+- **ESPN — resumo público do jogo**: consulta limitada aos encontros mais próximos, tentando identificar os titulares e os relatórios de lesões. Só marca XI confirmado quando há exatamente 11 jogadores identificados como titulares para cada equipa nas duas horas antes do encontro. Sem dados, não supõe que a equipa está completa. Esta integração pública é **não oficial** e não garante cobertura. `scripts/sync_espn_context.py`, `data/espn_context.json`.
+
+### Resultado técnico confirmado nesta atualização
+
+Na sincronização de 8 de novembro de 2026, a API gratuita da TipsAudit associou seis encontros com probabilidades justas 1X2; cinco tinham também modelo histórico. O modelo conseguiu gerar mercados suplementares nos nove encontros com histórico suficiente, e o contexto ESPN encontrou oito encontros consultáveis, mas **não confirmou onzes nem lesões**. O CSV de odds pré-jogo continha 160 linhas e nessa recolha **não tinha preços identificados de jogos futuros com correspondência segura**, pelo que nenhuma odd foi inventada.
+
+O sistema **continua sem poder confirmar diretamente as odds da Betano Portugal, as probabilidades da Statarea/SportyTrader ou o contexto crítico de todos os jogos**. O motor mantém as condições de veto, identifica as fontes e marca as projeções `OBSERVAR`, sem promover falsamente picks para `APOSTA`. Em particular, o desvio entre probabilidade histórica e mercado justo **não é um edge de aposta** até existir uma odd real verificada.
+
 ## Soluções gratuitas — estado 2026/27
 
 A EDGY utiliza apenas fontes com ficheiros públicos ou APIs de acesso autorizado. Nenhuma integração contorna paywalls, CAPTCHA ou condições de acesso. A plataforma pública apresenta previsões e dados desportivos, nunca aposta por ti.
