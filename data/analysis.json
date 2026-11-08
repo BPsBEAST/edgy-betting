@@ -1,10 +1,10 @@
 {
-  "generatedAt": null,
-  "source": "ESPN",
-  "fixtureGeneratedAt": null,
+  "generatedAt": "2026-11-08T16:46:29.881401+00:00",
+  "source": "ESPN — histórico de jogos; integração não oficial",
+  "fixtureGeneratedAt": "2026-11-08T16:45:22.632624Z",
   "count": 0,
-  "coverage": 0,
+  "coverage": 125,
   "models": {},
-  "method": "Aguardando recolha de resultados anteriores.",
-  "message": "Não há probabilidades automáticas até ser possível verificar resultados históricos."
+  "method": "Médias de golos dos últimos 12 jogos de cada equipa, separadas por casa/fora; Poisson exploratório. SEM confirmação de odds ou outras fontes.",
+  "message": "Uma projeção estatística ESPN não cumpre sozinha as regras de consenso de apostas."
 }

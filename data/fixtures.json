@@ -1,25 +1,10 @@
 {
-  "generatedAt": "2026-11-08T15:15:53.882597Z",
+  "generatedAt": "2026-11-08T16:45:22.632624Z",
   "sources": [
     "ESPN (integração não oficial)",
     "TheSportsDB (plano gratuito limitado)"
   ],
   "games": [
-    {
-      "id": "espn-401899553",
-      "home": "Mantova",
-      "away": "Hellas Verona",
-      "league": "Itália · Serie B",
-      "leagueCode": "ita.2",
-      "division": 2,
-      "utc": "2026-11-07T16:15:00Z",
-      "status": "STATUS_FULL_TIME",
-      "homeScore": 0,
-      "awayScore": 0,
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3991.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/119.png",
-      "source": "ESPN"
-    },
     {
       "id": "espn-401874974",
       "home": "Parma",
@@ -31,6 +16,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 1,
       "awayScore": 2,
+      "homeId": "115",
+      "awayId": "107",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/115.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/107.png",
       "source": "ESPN"
@@ -46,6 +33,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 3,
       "awayScore": 1,
+      "homeId": "393",
+      "awayId": "382",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/393.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/382.png",
       "source": "ESPN"
@@ -61,6 +50,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 1,
       "awayScore": 1,
+      "homeId": "97",
+      "awayId": "93",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/97.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/93.png",
       "source": "ESPN"
@@ -76,6 +67,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 3,
       "awayScore": 0,
+      "homeId": "8447",
+      "awayId": "5404",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/8447.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/5404.png",
       "source": "ESPN"
@@ -91,6 +84,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 1,
       "awayScore": 3,
+      "homeId": "17534",
+      "awayId": "2737",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/17534.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2737.png",
       "source": "ESPN"
@@ -106,6 +101,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 1,
       "awayScore": 0,
+      "homeId": "134",
+      "awayId": "137",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/134.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/137.png",
       "source": "ESPN"
@@ -121,6 +118,8 @@
       "status": "STATUS_FINAL_PEN",
       "homeScore": 2,
       "awayScore": 2,
+      "homeId": "633",
+      "awayId": "340",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/633.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/340.png",
       "source": "ESPN"
@@ -136,6 +135,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 1,
       "awayScore": 1,
+      "homeId": "21613",
+      "awayId": "21581",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/21613.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/21581.png",
       "source": "ESPN"
@@ -151,6 +152,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 0,
       "awayScore": 1,
+      "homeId": "172",
+      "awayId": "6851",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/172.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6851.png",
       "source": "ESPN"
@@ -166,6 +169,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 1,
       "awayScore": 1,
+      "homeId": "4059",
+      "awayId": "4055",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4059.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4055.png",
       "source": "ESPN"
@@ -181,6 +186,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 0,
       "awayScore": 2,
+      "homeId": "10678",
+      "awayId": "165",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/10678.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/165.png",
       "source": "ESPN"
@@ -196,6 +203,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 2,
       "awayScore": 0,
+      "homeId": "178",
+      "awayId": "3266",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/178.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3266.png",
       "source": "ESPN"
@@ -211,6 +220,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 2,
       "awayScore": 1,
+      "homeId": "129",
+      "awayId": "138",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/129.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/138.png",
       "source": "ESPN"
@@ -226,6 +237,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 3,
       "awayScore": 0,
+      "homeId": "104",
+      "awayId": "3997",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/104.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3997.png",
       "source": "ESPN"
@@ -241,6 +254,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 0,
       "awayScore": 3,
+      "homeId": "94",
+      "awayId": "86",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/94.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/86.png",
       "source": "ESPN"
@@ -256,6 +271,8 @@
       "status": "STATUS_POSTPONED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "3747",
+      "awayId": "245",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3747.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/245.png",
       "source": "ESPN"
@@ -271,6 +288,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 0,
       "awayScore": 5,
+      "homeId": "342",
+      "awayId": "338",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/342.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/338.png",
       "source": "ESPN"
@@ -286,6 +305,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 1,
       "awayScore": 0,
+      "homeId": "160",
+      "awayId": "170",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/160.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/170.png",
       "source": "ESPN"
@@ -301,6 +322,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 1,
       "awayScore": 0,
+      "homeId": "2250",
+      "awayId": "3696",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2250.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3696.png",
       "source": "ESPN"
@@ -316,6 +339,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 1,
       "awayScore": 1,
+      "homeId": "114",
+      "awayId": "112",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/114.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/112.png",
       "source": "ESPN"
@@ -331,6 +356,8 @@
       "status": "STATUS_FINAL_PEN",
       "homeScore": 3,
       "awayScore": 3,
+      "homeId": "2589",
+      "awayId": "386",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/386.png",
       "source": "ESPN"
@@ -346,6 +373,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 2,
       "awayScore": 2,
+      "homeId": "6418",
+      "awayId": "2428",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6418.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2428.png",
       "source": "ESPN"
@@ -361,6 +390,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 4,
       "awayScore": 1,
+      "homeId": "10382",
+      "awayId": "270",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/10382.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/270.png",
       "source": "ESPN"
@@ -376,6 +407,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 3,
       "awayScore": 2,
+      "homeId": "121",
+      "awayId": "4471",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/121.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4471.png",
       "source": "ESPN"
@@ -391,6 +424,8 @@
       "status": "STATUS_FULL_TIME",
       "homeScore": 0,
       "awayScore": 2,
+      "homeId": "3751",
+      "awayId": "244",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3751.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/244.png",
       "source": "ESPN"
@@ -406,6 +441,8 @@
       "status": "STATUS_POSTPONED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "20179",
+      "awayId": "84",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/20179.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/84.png",
       "source": "ESPN"
@@ -418,9 +455,11 @@
       "leagueCode": "eng.1",
       "division": 1,
       "utc": "2026-11-08T14:00:00Z",
-      "status": "STATUS_SECOND_HALF",
+      "status": "STATUS_FULL_TIME",
       "homeScore": 2,
       "awayScore": 0,
+      "homeId": "331",
+      "awayId": "337",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/331.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/337.png",
       "source": "ESPN"
@@ -433,9 +472,11 @@
       "leagueCode": "eng.1",
       "division": 1,
       "utc": "2026-11-08T14:00:00Z",
-      "status": "STATUS_SECOND_HALF",
-      "homeScore": 0,
-      "awayScore": 2,
+      "status": "STATUS_FULL_TIME",
+      "homeScore": 1,
+      "awayScore": 3,
+      "homeId": "384",
+      "awayId": "364",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/384.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/364.png",
       "source": "ESPN"
@@ -448,9 +489,11 @@
       "leagueCode": "eng.1",
       "division": 1,
       "utc": "2026-11-08T14:00:00Z",
-      "status": "STATUS_SECOND_HALF",
-      "homeScore": 0,
+      "status": "STATUS_FULL_TIME",
+      "homeScore": 1,
       "awayScore": 2,
+      "homeId": "373",
+      "awayId": "349",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/373.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/349.png",
       "source": "ESPN"
@@ -463,9 +506,11 @@
       "leagueCode": "eng.1",
       "division": 1,
       "utc": "2026-11-08T14:00:00Z",
-      "status": "STATUS_SECOND_HALF",
+      "status": "STATUS_FULL_TIME",
       "homeScore": 1,
       "awayScore": 0,
+      "homeId": "366",
+      "awayId": "363",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/366.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/363.png",
       "source": "ESPN"
@@ -478,9 +523,11 @@
       "leagueCode": "ita.1",
       "division": 1,
       "utc": "2026-11-08T14:00:00Z",
-      "status": "STATUS_SECOND_HALF",
-      "homeScore": 0,
+      "status": "STATUS_FULL_TIME",
+      "homeScore": 1,
       "awayScore": 2,
+      "homeId": "3263",
+      "awayId": "103",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3263.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
       "source": "ESPN"
@@ -493,9 +540,11 @@
       "leagueCode": "ita.1",
       "division": 1,
       "utc": "2026-11-08T14:00:00Z",
-      "status": "STATUS_SECOND_HALF",
+      "status": "STATUS_FULL_TIME",
       "homeScore": 0,
       "awayScore": 1,
+      "homeId": "4007",
+      "awayId": "105",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4007.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/105.png",
       "source": "ESPN"
@@ -508,9 +557,11 @@
       "leagueCode": "ita.2",
       "division": 2,
       "utc": "2026-11-08T14:00:00Z",
-      "status": "STATUS_SECOND_HALF",
+      "status": "STATUS_FULL_TIME",
       "homeScore": 0,
       "awayScore": 2,
+      "homeId": "11137",
+      "awayId": "2573",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/11137.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2573.png",
       "source": "ESPN"
@@ -523,9 +574,11 @@
       "leagueCode": "fra.1",
       "division": 1,
       "utc": "2026-11-08T14:00:00Z",
-      "status": "STATUS_SECOND_HALF",
+      "status": "STATUS_FULL_TIME",
       "homeScore": 1,
-      "awayScore": 1,
+      "awayScore": 2,
+      "homeId": "169",
+      "awayId": "166",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/169.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/166.png",
       "source": "ESPN"
@@ -538,9 +591,11 @@
       "leagueCode": "eng.fa",
       "division": 1,
       "utc": "2026-11-08T14:15:00Z",
-      "status": "STATUS_HALFTIME",
+      "status": "LIVE",
       "homeScore": 2,
-      "awayScore": 0,
+      "awayScore": 3,
+      "homeId": "20770",
+      "awayId": "400",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/400.png",
       "source": "ESPN"
@@ -553,9 +608,11 @@
       "leagueCode": "ger.1",
       "division": 1,
       "utc": "2026-11-08T14:30:00Z",
-      "status": "STATUS_FIRST_HALF",
-      "homeScore": 0,
-      "awayScore": 1,
+      "status": "STATUS_FULL_TIME",
+      "homeScore": 1,
+      "awayScore": 2,
+      "homeId": "122",
+      "awayId": "131",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/122.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/131.png",
       "source": "ESPN"
@@ -568,9 +625,11 @@
       "leagueCode": "eng.fa",
       "division": 1,
       "utc": "2026-11-08T15:00:00Z",
-      "status": "STATUS_FIRST_HALF",
-      "homeScore": 1,
+      "status": "LIVE",
+      "homeScore": 2,
       "awayScore": 0,
+      "homeId": "133370",
+      "awayId": "2594",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2594.png",
       "source": "ESPN"
@@ -583,9 +642,11 @@
       "leagueCode": "esp.1",
       "division": 1,
       "utc": "2026-11-08T15:15:00Z",
-      "status": "STATUS_SCHEDULED",
-      "homeScore": 0,
+      "status": "LIVE",
+      "homeScore": 1,
       "awayScore": 0,
+      "homeId": "89",
+      "awayId": "101",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/89.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/101.png",
       "source": "ESPN"
@@ -598,9 +659,11 @@
       "leagueCode": "esp.2",
       "division": 2,
       "utc": "2026-11-08T15:15:00Z",
-      "status": "STATUS_FIRST_HALF",
+      "status": "LIVE",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 1,
+      "homeId": "9812",
+      "awayId": "6832",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/9812.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6832.png",
       "source": "ESPN"
@@ -613,9 +676,11 @@
       "leagueCode": "por.1",
       "division": 1,
       "utc": "2026-11-08T15:30:00Z",
-      "status": "STATUS_SCHEDULED",
+      "status": "LIVE",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "3472",
+      "awayId": "21607",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3472.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/21607.png",
       "source": "ESPN"
@@ -631,6 +696,8 @@
       "status": "STATUS_POSTPONED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "12216",
+      "awayId": "552",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/12216.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/552.png",
       "source": "ESPN"
@@ -643,9 +710,11 @@
       "leagueCode": "por.1",
       "division": 1,
       "utc": "2026-11-08T15:30:00Z",
-      "status": "STATUS_SCHEDULED",
-      "homeScore": 0,
-      "awayScore": 0,
+      "status": "LIVE",
+      "homeScore": 1,
+      "awayScore": 1,
+      "homeId": "12215",
+      "awayId": "3699",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/12215.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3699.png",
       "source": "ESPN"
@@ -658,9 +727,11 @@
       "leagueCode": "ita.2",
       "division": 2,
       "utc": "2026-11-08T16:15:00Z",
-      "status": "STATUS_SCHEDULED",
+      "status": "LIVE",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 1,
+      "homeId": "3988",
+      "awayId": "2734",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3988.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2734.png",
       "source": "ESPN"
@@ -673,9 +744,11 @@
       "leagueCode": "fra.1",
       "division": 1,
       "utc": "2026-11-08T16:15:00Z",
-      "status": "STATUS_SCHEDULED",
+      "status": "LIVE",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 1,
+      "homeId": "7868",
+      "awayId": "2502",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7868.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2502.png",
       "source": "ESPN"
@@ -688,9 +761,11 @@
       "leagueCode": "fra.1",
       "division": 1,
       "utc": "2026-11-08T16:15:00Z",
-      "status": "STATUS_SCHEDULED",
-      "homeScore": 0,
+      "status": "LIVE",
+      "homeScore": 1,
       "awayScore": 0,
+      "homeId": "6997",
+      "awayId": "167",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6997.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/167.png",
       "source": "ESPN"
@@ -703,9 +778,11 @@
       "leagueCode": "fra.1",
       "division": 1,
       "utc": "2026-11-08T16:15:00Z",
-      "status": "STATUS_SCHEDULED",
+      "status": "LIVE",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 1,
+      "homeId": "3236",
+      "awayId": "273",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3236.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/273.png",
       "source": "ESPN"
@@ -718,9 +795,11 @@
       "leagueCode": "fra.1",
       "division": 1,
       "utc": "2026-11-08T16:15:00Z",
-      "status": "STATUS_SCHEDULED",
+      "status": "LIVE",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "2697",
+      "awayId": "174",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2697.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/174.png",
       "source": "ESPN"
@@ -733,9 +812,11 @@
       "leagueCode": "eng.1",
       "division": 1,
       "utc": "2026-11-08T16:30:00Z",
-      "status": "STATUS_SCHEDULED",
+      "status": "LIVE",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 2,
+      "homeId": "360",
+      "awayId": "362",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/360.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/362.png",
       "source": "ESPN"
@@ -748,27 +829,14 @@
       "leagueCode": "ger.1",
       "division": 1,
       "utc": "2026-11-08T16:30:00Z",
-      "status": "STATUS_SCHEDULED",
+      "status": "LIVE",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "126",
+      "awayId": "598",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/126.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/598.png",
       "source": "ESPN"
-    },
-    {
-      "id": "tsdb-2508405",
-      "home": "Freiburg",
-      "away": "Union Berlin",
-      "league": "Alemanha · Bundesliga",
-      "leagueCode": "tsdb-4331",
-      "division": 1,
-      "utc": "2026-11-08T16:30:00Z",
-      "status": "NS",
-      "homeScore": null,
-      "awayScore": null,
-      "homeLogo": "https://r2.thesportsdb.com/images/media/team/badge/urwtup1473453288.png",
-      "awayLogo": "https://r2.thesportsdb.com/images/media/team/badge/q0o5001599679795.png",
-      "source": "TheSportsDB"
     },
     {
       "id": "espn-401874808",
@@ -781,6 +849,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "110",
+      "awayId": "2572",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/110.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2572.png",
       "source": "ESPN"
@@ -796,6 +866,8 @@
       "status": "NS",
       "homeScore": null,
       "awayScore": null,
+      "homeId": "133681",
+      "awayId": "134243",
       "homeLogo": "https://r2.thesportsdb.com/images/media/team/badge/ryhu6d1617113103.png",
       "awayLogo": "https://r2.thesportsdb.com/images/media/team/badge/02x81t1627405841.png",
       "source": "TheSportsDB"
@@ -811,6 +883,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "332",
+      "awayId": "399",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/332.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/399.png",
       "source": "ESPN"
@@ -826,6 +900,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "85",
+      "awayId": "1538",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/85.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/1538.png",
       "source": "ESPN"
@@ -841,6 +917,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "102",
+      "awayId": "2922",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/102.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2922.png",
       "source": "ESPN"
@@ -856,6 +934,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "98",
+      "awayId": "7320",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/98.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7320.png",
       "source": "ESPN"
@@ -871,6 +951,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "3788",
+      "awayId": "95",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3788.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/95.png",
       "source": "ESPN"
@@ -886,6 +968,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "5309",
+      "awayId": "437",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/5309.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/437.png",
       "source": "ESPN"
@@ -901,6 +985,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "120",
+      "awayId": "4050",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/120.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4050.png",
       "source": "ESPN"
@@ -916,9 +1002,28 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "7911",
+      "awayId": "133",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7911.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/133.png",
       "source": "ESPN"
+    },
+    {
+      "id": "tsdb-2508408",
+      "home": "Hoffenheim",
+      "away": "Schalke 04",
+      "league": "Alemanha · Bundesliga",
+      "leagueCode": "tsdb-4331",
+      "division": 1,
+      "utc": "2026-11-08T18:30:00Z",
+      "status": "NS",
+      "homeScore": null,
+      "awayScore": null,
+      "homeId": "133657",
+      "awayId": "133661",
+      "homeLogo": "https://r2.thesportsdb.com/images/media/team/badge/9hwvb21621593919.png",
+      "awayLogo": "https://r2.thesportsdb.com/images/media/team/badge/hnci291621593978.png",
+      "source": "TheSportsDB"
     },
     {
       "id": "espn-401875003",
@@ -931,6 +1036,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "109",
+      "awayId": "111",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/109.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/111.png",
       "source": "ESPN"
@@ -946,6 +1053,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "175",
+      "awayId": "176",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/175.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/176.png",
       "source": "ESPN"
@@ -961,6 +1070,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "1068",
+      "awayId": "83",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/83.png",
       "source": "ESPN"
@@ -976,6 +1087,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "21610",
+      "awayId": "1929",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/21610.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/1929.png",
       "source": "ESPN"
@@ -991,6 +1104,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "3822",
+      "awayId": "2994",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3822.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2994.png",
       "source": "ESPN"
@@ -1006,6 +1121,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "11487",
+      "awayId": "20983",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/11487.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/20983.png",
       "source": "ESPN"
@@ -1021,6 +1138,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "132948",
+      "awayId": "132350",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1036,6 +1155,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "20776",
+      "awayId": "96",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/96.png",
       "source": "ESPN"
@@ -1051,6 +1172,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "133835",
+      "awayId": "3752",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3752.png",
       "source": "ESPN"
@@ -1066,6 +1189,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "12587",
+      "awayId": "7206",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/12587.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7206.png",
       "source": "ESPN"
@@ -1081,6 +1206,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "22043",
+      "awayId": "5401",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1096,6 +1223,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "17573",
+      "awayId": "17534",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/17534.png",
       "source": "ESPN"
@@ -1111,6 +1240,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "133846",
+      "awayId": "94",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/94.png",
       "source": "ESPN"
@@ -1126,6 +1257,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "21291",
+      "awayId": "2737",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2737.png",
       "source": "ESPN"
@@ -1141,6 +1274,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "19288",
+      "awayId": "244",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/244.png",
       "source": "ESPN"
@@ -1156,6 +1291,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "133837",
+      "awayId": "1538",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/1538.png",
       "source": "ESPN"
@@ -1171,6 +1308,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134117",
+      "awayId": "6994",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6994.png",
       "source": "ESPN"
@@ -1186,6 +1325,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "3170",
+      "awayId": "17483",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3170.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/17483.png",
       "source": "ESPN"
@@ -1201,6 +1342,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134079",
+      "awayId": "6732",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6732.png",
       "source": "ESPN"
@@ -1216,6 +1359,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "22476",
+      "awayId": "16917",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1231,6 +1376,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "17534",
+      "awayId": "12597",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/17534.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/12597.png",
       "source": "ESPN"
@@ -1246,6 +1393,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "22440",
+      "awayId": "85",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/85.png",
       "source": "ESPN"
@@ -1261,6 +1410,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "95",
+      "awayId": "4438",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/95.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4438.png",
       "source": "ESPN"
@@ -1276,6 +1427,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134128",
+      "awayId": "274",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/274.png",
       "source": "ESPN"
@@ -1291,6 +1444,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "18906",
+      "awayId": "21804",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1306,6 +1461,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134138",
+      "awayId": "21769",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1321,6 +1478,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134109",
+      "awayId": "3243",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3243.png",
       "source": "ESPN"
@@ -1336,6 +1495,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "10675",
+      "awayId": "7719",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/10675.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7719.png",
       "source": "ESPN"
@@ -1351,6 +1512,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134069",
+      "awayId": "272",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/272.png",
       "source": "ESPN"
@@ -1366,6 +1529,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134153",
+      "awayId": "9021",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1381,6 +1546,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134147",
+      "awayId": "18101",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1396,6 +1563,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134091",
+      "awayId": "2927",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2927.png",
       "source": "ESPN"
@@ -1411,6 +1580,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "11313",
+      "awayId": "3171",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3171.png",
       "source": "ESPN"
@@ -1426,6 +1597,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "20983",
+      "awayId": "3788",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/20983.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3788.png",
       "source": "ESPN"
@@ -1441,6 +1614,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134108",
+      "awayId": "18066",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/18066.png",
       "source": "ESPN"
@@ -1456,6 +1631,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "16916",
+      "awayId": "21303",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1471,6 +1648,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "9024",
+      "awayId": "11303",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1486,6 +1665,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134146",
+      "awayId": "11895",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/11895.png",
       "source": "ESPN"
@@ -1501,6 +1682,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134152",
+      "awayId": "134121",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1516,6 +1699,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134125",
+      "awayId": "7718",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7718.png",
       "source": "ESPN"
@@ -1531,6 +1716,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134088",
+      "awayId": "18901",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1546,6 +1733,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "7725",
+      "awayId": "134097",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1561,6 +1750,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134090",
+      "awayId": "9011",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1576,6 +1767,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "2927",
+      "awayId": "11880",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2927.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/11880.png",
       "source": "ESPN"
@@ -1591,6 +1784,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134080",
+      "awayId": "20275",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1606,6 +1801,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134134",
+      "awayId": "134063",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1621,6 +1818,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "7732",
+      "awayId": "7721",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7732.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7721.png",
       "source": "ESPN"
@@ -1636,6 +1835,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134127",
+      "awayId": "134135",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1651,6 +1852,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "19393",
+      "awayId": "10677",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1666,6 +1869,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134126",
+      "awayId": "9017",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1681,6 +1886,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134150",
+      "awayId": "22138",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1696,6 +1903,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134101",
+      "awayId": "21817",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1711,6 +1920,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "18064",
+      "awayId": "18120",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1726,6 +1937,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "18068",
+      "awayId": "9009",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1741,6 +1954,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "10689",
+      "awayId": "7869",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7869.png",
       "source": "ESPN"
@@ -1756,6 +1971,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "131572",
+      "awayId": "3267",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3267.png",
       "source": "ESPN"
@@ -1771,6 +1988,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "21773",
+      "awayId": "134120",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1786,6 +2005,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134142",
+      "awayId": "10235",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1801,6 +2022,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "7296",
+      "awayId": "18400",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1816,6 +2039,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "10232",
+      "awayId": "134087",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1831,6 +2056,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "6832",
+      "awayId": "20179",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6832.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/20179.png",
       "source": "ESPN"
@@ -1846,6 +2073,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "84",
+      "awayId": "8447",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/84.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/8447.png",
       "source": "ESPN"
@@ -1861,6 +2090,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "10680",
+      "awayId": "134106",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1876,6 +2107,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "14381",
+      "awayId": "134067",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1891,6 +2124,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134107",
+      "awayId": "17621",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1906,6 +2141,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "16925",
+      "awayId": "20272",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1921,6 +2158,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134149",
+      "awayId": "7720",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1936,6 +2175,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134068",
+      "awayId": "134071",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1951,6 +2192,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "10225",
+      "awayId": "134113",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1966,6 +2209,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134130",
+      "awayId": "134144",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1981,6 +2226,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134118",
+      "awayId": "12957",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -1996,6 +2243,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134122",
+      "awayId": "10678",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/10678.png",
       "source": "ESPN"
@@ -2011,6 +2260,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "21772",
+      "awayId": "171",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/171.png",
       "source": "ESPN"
@@ -2026,6 +2277,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134132",
+      "awayId": "134103",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2041,6 +2294,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134148",
+      "awayId": "134105",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2056,6 +2311,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134065",
+      "awayId": "3335",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3335.png",
       "source": "ESPN"
@@ -2071,6 +2328,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "92",
+      "awayId": "9812",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/92.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/9812.png",
       "source": "ESPN"
@@ -2086,6 +2345,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134076",
+      "awayId": "10683",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2101,6 +2362,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "7729",
+      "awayId": "134074",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2116,6 +2379,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "245",
+      "awayId": "5404",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/245.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/5404.png",
       "source": "ESPN"
@@ -2131,6 +2396,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134123",
+      "awayId": "134085",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2146,6 +2413,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134066",
+      "awayId": "134129",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2161,6 +2430,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134102",
+      "awayId": "134098",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2176,6 +2447,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134131",
+      "awayId": "14439",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2191,6 +2464,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "131576",
+      "awayId": "20876",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2206,6 +2481,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "16735",
+      "awayId": "134119",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2221,6 +2498,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134064",
+      "awayId": "16913",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2236,6 +2515,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "132434",
+      "awayId": "11884",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/11884.png",
       "source": "ESPN"
@@ -2251,6 +2532,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134078",
+      "awayId": "3200",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2266,6 +2549,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134133",
+      "awayId": "19388",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2281,6 +2566,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134115",
+      "awayId": "10685",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2296,6 +2583,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134070",
+      "awayId": "134093",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2311,6 +2600,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134082",
+      "awayId": "7733",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2326,6 +2617,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134114",
+      "awayId": "177",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/177.png",
       "source": "ESPN"
@@ -2341,6 +2634,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134151",
+      "awayId": "3266",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3266.png",
       "source": "ESPN"
@@ -2356,6 +2651,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "168",
+      "awayId": "18085",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2371,6 +2668,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "18907",
+      "awayId": "19386",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2386,6 +2685,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134072",
+      "awayId": "7730",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7730.png",
       "source": "ESPN"
@@ -2401,6 +2702,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134124",
+      "awayId": "22139",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2416,6 +2719,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134111",
+      "awayId": "165",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/165.png",
       "source": "ESPN"
@@ -2431,6 +2736,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "19390",
+      "awayId": "10693",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2446,6 +2753,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134116",
+      "awayId": "134110",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2461,6 +2770,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134086",
+      "awayId": "134077",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2476,6 +2787,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "17623",
+      "awayId": "132785",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2491,6 +2804,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134094",
+      "awayId": "134092",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2506,6 +2821,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134084",
+      "awayId": "9010",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2521,6 +2838,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134081",
+      "awayId": "134089",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2536,6 +2855,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134075",
+      "awayId": "4744",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2551,6 +2872,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134112",
+      "awayId": "134145",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2566,6 +2889,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134083",
+      "awayId": "7574",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2581,6 +2906,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134099",
+      "awayId": "134104",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2596,6 +2923,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "134096",
+      "awayId": "21306",
       "homeLogo": "",
       "awayLogo": "",
       "source": "ESPN"
@@ -2611,6 +2940,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "20871",
+      "awayId": "178",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/178.png",
       "source": "ESPN"
@@ -2626,6 +2957,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "3747",
+      "awayId": "98",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3747.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/98.png",
       "source": "ESPN"
@@ -2641,6 +2974,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "3752",
+      "awayId": "3842",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3752.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3842.png",
       "source": "ESPN"
@@ -2656,6 +2991,8 @@
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
+      "homeId": "7320",
+      "awayId": "11487",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7320.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/11487.png",
       "source": "ESPN"
