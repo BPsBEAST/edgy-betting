@@ -8,7 +8,7 @@ const localTime=d=>new Intl.DateTimeFormat("pt-PT",{timeZone:"Europe/Lisbon",hou
 const niceDate=d=>new Intl.DateTimeFormat("pt-PT",{timeZone:"Europe/Lisbon",weekday:"long",day:"numeric",month:"long"}).format(new Date(d));
 const n=(v,d=1)=>Number.isFinite(v)?new Intl.NumberFormat("pt-PT",{minimumFractionDigits:d,maximumFractionDigits:d}).format(v):"—";
 const readSaved=()=>{try{let list=JSON.parse(localStorage.getItem("edgy_betting_saved_v1")||"[]");return Array.isArray(list)?list.filter(x=>x&&x.matchId):[]}catch{return []}};
-const state={games:[],source:"",generated:null,error:"",selected:null,filter:"upcoming",league:"all",query:"",view:"matches",saved:readSaved(),current:null,radar:"all",analysis:{models:{},generatedAt:null},odds:{matches:{},generatedAt:null},context:{contexts:{},generatedAt:null,hasApiFootballKey:false},free:{matches:{},providers:{},generatedAt:null},freeOdds:{matches:{},generatedAt:null,hasCredentials:false},csvOdds:{matches:{},generatedAt:null},espnContext:{contexts:{},generatedAt:null}};
+const state={games:[],source:"",generated:null,error:"",selected:null,filter:"upcoming",league:"all",query:"",view:"matches",saved:readSaved(),current:null,radar:"all",analysis:{models:{},generatedAt:null},odds:{matches:{},generatedAt:null},context:{contexts:{},generatedAt:null,hasApiFootballKey:false},free:{matches:{},providers:{},generatedAt:null},freeOdds:{matches:{},generatedAt:null,hasCredentials:false},csvOdds:{matches:{},generatedAt:null},espnContext:{contexts:{},generatedAt:null},marketFair:{matches:{},generatedAt:null}};
 
 async function loadIntelligence(){
  const get=async name=>{
@@ -18,7 +18,7 @@ async function loadIntelligence(){
    return await response.json();
   }catch{return null;}
  };
- const [analysis,odds,context,free,freeOdds,csvOdds,espnContext]=await Promise.all([get("analysis.json"),get("market_odds.json"),get("context.json"),get("free_predictions.json"),get("free_odds.json"),get("football_data_odds.json"),get("espn_context.json")]);
+ const [analysis,odds,context,free,freeOdds,csvOdds,espnContext,marketFair]=await Promise.all([get("analysis.json"),get("market_odds.json"),get("context.json"),get("free_predictions.json"),get("free_odds.json"),get("football_data_odds.json"),get("espn_context.json"),get("market_fair.json")]);
  state.analysis=analysis&&analysis.models&&typeof analysis.models==="object"?analysis:{models:{},generatedAt:null};
  state.odds=odds&&odds.matches&&typeof odds.matches==="object"?odds:{matches:{},generatedAt:null};
  state.context=context&&context.contexts&&typeof context.contexts==="object"?context:{contexts:{},generatedAt:null,hasApiFootballKey:false};
@@ -26,6 +26,7 @@ async function loadIntelligence(){
  state.freeOdds=freeOdds&&freeOdds.matches&&typeof freeOdds.matches==="object"?freeOdds:{matches:{},generatedAt:null,hasCredentials:false};
  state.csvOdds=csvOdds&&csvOdds.matches&&typeof csvOdds.matches==="object"?csvOdds:{matches:{},generatedAt:null};
  state.espnContext=espnContext&&espnContext.contexts&&typeof espnContext.contexts==="object"?espnContext:{contexts:{},generatedAt:null};
+ state.marketFair=marketFair&&marketFair.matches&&typeof marketFair.matches==="object"?marketFair:{matches:{},generatedAt:null};
 }
 function modelFor(game){return state.analysis.models?.[game?.id]||null;}
 function oddsAssociation(game){
@@ -100,6 +101,20 @@ function renderFreeForecast(game){
   rows.map(p=>'<div class="external-forecast"><div class="external-name"><strong>'+esc(p.provider)+'</strong><small>Data: '+esc(niceDate(p.updatedAt))+'</small></div>'+
   tr(keys.map(k=>p.probabilities[k]))+'<p>'+esc(p.method||"Estimativa externa")+'</p><a href="'+esc(p.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Ver origem ↗</a></div>').join("")+
   consensus+'<p class="external-foot">Os dois serviços não são Statarea ou SportyTrader. Mesmo sendo fornecedores distintos podem usar métodos ou dados correlacionados, pelo que não aprovam automaticamente apostas.</p></div>';
+}
+function fairFor(game){
+ const obj=state.marketFair.matches?.[game?.id];
+ const read=Date.parse(obj?.readAt||""),gen=Date.parse(state.marketFair.generatedAt||"");
+ return obj&&Number.isFinite(read)&&Number.isFinite(gen)&&Date.now()-read<5*3600000&&Date.now()-gen<8*3600000?obj:null;
+}
+function renderFairMarket(game){
+ const item=fairFor(game);
+ if(!item)return '<div class="source-evidence missing"><strong>Probabilidade justa 1X2</strong><p>Sem cotação sharp recente e verificada deste encontro.</p><small>Fonte: <a href="https://tipsaudit.com/api" target="_blank" rel="noopener noreferrer">TipsAudit ↗</a></small></div>';
+ const p=item.fairProbability||{},q=item.quote;
+ return '<div class="fair-market"><div class="auto-section-label">MERCADO JUSTO · SEM MARGEM</div><p>Probabilidades implícitas do mercado sharp, não outra previsão independente.</p>'+
+ '<div class="external-triple"><span><small>1 · Casa</small><b>'+pct(p["1X2_H"])+'</b></span><span><small>X · Empate</small><b>'+pct(p["1X2_D"])+'</b></span><span><small>2 · Fora</small><b>'+pct(p["1X2_A"])+'</b></span></div>'+
+ (q?'<p>Odd internacional: '+esc(q.bookmaker)+' · '+safeOdd(q.odd)+' ('+esc(q.market)+'). Não é a Betano Portugal.</p>':'<p>Sem odd de aposta de referência recente nesta fonte.</p>')+
+ '<small>Hora da leitura: '+esc(niceDate(item.readAt))+' · <a href="'+esc(item.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Consultar TipsAudit ↗</a></small></div>';
 }
 function contextFor(game){
  const previous=state.context.contexts?.[game?.id]||{};
@@ -200,7 +215,7 @@ function renderAutoPanel(){
   return;
  }
  if(!model){
-  $("autoPanel").innerHTML='<div class="no-stats"><strong>Sem tip fundamentada</strong><p>Há jogo no calendário, mas não há resultados históricos suficientes para este encontro. Não será apresentada uma seleção inventada.</p></div>'+renderFreeForecast(game)+renderContext(game);
+  $("autoPanel").innerHTML='<div class="no-stats"><strong>Sem tip fundamentada</strong><p>Há jogo no calendário, mas não há resultados históricos suficientes para este encontro. Não será apresentada uma seleção inventada.</p></div>'+renderFairMarket(game)+renderFreeForecast(game)+renderContext(game);
   return;
  }
  const verdict=previewVerdict(game,model,prices),pick=verdict.tip;
@@ -234,6 +249,7 @@ function renderAutoPanel(){
  if(oddsLink==="provisional"){
    html+='<div class="auto-warning">⚠ As odds recolhidas para este encontro foram associadas apenas por liga e hora. <strong>As equipas não foram confirmadas</strong> pela API-Football do plano gratuito. Estes preços e quaisquer edges são exploratórios: não utilizar para tomar decisões de aposta.</div>';
  }
+ html+=renderFairMarket(game);
  html+=renderFreeForecast(game);
  html+=renderContext(game);
  html+='<div class="sources-foot">Poisson exploratório de resultados anteriores. Odd mínima ilustrativa calculada apenas com este modelo, <strong>não</strong> com a média ponderada de todas as tuas fontes. Não são apresentados cartões nem picks inventadas.</div>';
