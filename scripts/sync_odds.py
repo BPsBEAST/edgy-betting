@@ -21,7 +21,8 @@ GROUPS=[
  ("1X2",{"1X2_H","1X2_D","1X2_A"}),
  ("O15",{"O15","U15"}),
  ("O25",{"O25","U25"}),
- ("BTTS",{"BTTS_Y","BTTS_N"})
+ ("BTTS",{"BTTS_Y","BTTS_N"}),
+ ("HT",{"HT_H","HT_D","HT_A"})
 ]
 def get(url):
     req=urllib.request.Request(url,headers={"x-apisports-key":KEY,"Accept":"application/json","User-Agent":"EDGY-Betting/1.1"})
@@ -32,16 +33,26 @@ def get(url):
         print("Odds provider error:",str(exc)[:120])
         return None
 def key_for(bet,value):
-    bet=str(bet).strip().casefold()
-    value=str(value).strip().casefold()
+    bet=str(bet or "").strip().casefold()
+    value=str(value or "").strip().casefold()
+    home={"home":"H","1":"H","draw":"D","x":"D","away":"A","2":"A"}.get(value)
     if bet in ("match winner","1x2","fulltime result","full time result","winner"):
-        return {"home":"1X2_H","1":"1X2_H","draw":"1X2_D","x":"1X2_D","away":"1X2_A","2":"1X2_A"}.get(value)
-    if bet in ("goals over/under","goals over under","over/under","total goals","total - over/under","total - over / under"):
-        match=re.search(r"(over|under)\s*(1[.,]5|2[.,]5)",value)
+        return "1X2_"+home if home else None
+    if bet in ("first half winner","1st half winner","half time result","halftime result","1st half - 1x2"):
+        return "HT_"+home if home else None
+    if bet in ("draw no bet","draw no bet (dnb)","home/away") and value in ("home","away","1","2"):
+        return "DNB_"+home
+    if bet in ("goals over/under","goals over under","over/under","total goals",
+      "total - over/under","total - over / under","over/under 2.5","over/under 1.5"):
+        value=(bet+" "+value)
+        match=re.search(r"(over|under)\\s*(1[.,]5|2[.,]5|3[.,]5|4[.,]5)",value)
         if match:
             return ("O" if match.group(1)=="over" else "U")+match.group(2).replace(",","").replace(".","")
     if bet in ("both teams score","both teams to score","btts","both teams to score (btts)"):
         return {"yes":"BTTS_Y","no":"BTTS_N"}.get(value)
+    if bet in ("correct score","correct score - fulltime","exact score","fulltime correct score"):
+        match=re.fullmatch(r"(\\d{1,2})\\s*[-:]\\s*(\\d{1,2})",value)
+        if match:return "CS_"+match.group(1)+"_"+match.group(2)
     return None
 def valid_price(value):
     try:
@@ -66,7 +77,7 @@ def decode_event(event):
         rows[name]=prices
     all_keys=set(k for p in rows.values() for k in p)
     consolidated={}
-    for outcome in all_keys:
+    for outcome in sorted(all_keys):
         available=[]
         for bookmaker,prices in rows.items():
             if outcome not in prices:
@@ -74,32 +85,38 @@ def decode_event(event):
             group=next((g for g,keys in GROUPS if outcome in keys),None)
             cohort=next((keys for g,keys in GROUPS if g==group),set())
             fair=None
-            if cohort.issubset(prices.keys()):
+            if cohort and cohort.issubset(prices.keys()):
                 norm=sum(1/prices[k] for k in cohort)
-                fair=round((1/prices[outcome])/norm,6) if norm else None
+                fair=round((1/prices[outcome])/norm,6) if norm>0 else None
             available.append({"bookmaker":bookmaker,"odd":prices[outcome],"fairProbability":fair})
         if not available:
             continue
         preferred=next((x for x in available if "betano" in x["bookmaker"].casefold()),None)
         selected=preferred or max(available,key=lambda x:x["odd"])
+        fairvalues=[x["fairProbability"] for x in available if isinstance(x["fairProbability"],float)]
+        consensus=round(sum(fairvalues)/len(fairvalues),6) if len(fairvalues)>=2 else None
         consolidated[outcome]={
             "odd":selected["odd"],"bookmaker":selected["bookmaker"],
             "source":"API-Football / bookmaker reportado",
             "betanoInFeed":bool(preferred),
             "betanoConfirmedOnSlip":False,
             "fairProbability":selected["fairProbability"],
+            "fairMarketConsensus":consensus,
+            "fairBooks":len(fairvalues),
             "availableBookmakers":len(available),
-            "quotes":available[:12]}
+            "quotes":available[:18]}
     return consolidated
 def main():
     payload={"generatedAt":NOW.isoformat(),"source":"API-Football (opcional; preços de referência, não confirmados no boletim)",
        "hasCredentials":bool(KEY),"matches":{},"message":"Sem API_FOOTBALL_KEY configurada: as odds não foram recolhidas."}
     if KEY:
         matches={}
+        days=max(1,min(7,int(os.environ.get("API_FOOTBALL_ODDS_DAYS","2"))))
+        pages=max(1,min(25,int(os.environ.get("API_FOOTBALL_ODDS_MAX_PAGES","3"))))
         # 2 days, max 3 pages/day (<=6 API requests per sync)
-        for offset in range(2):
+        for offset in range(days):
             target=(NOW+timedelta(days=offset)).date().isoformat()
-            for page in range(1,4):
+            for page in range(1,pages+1):
                 args=urllib.parse.urlencode({"date":target,"page":page})
                 data=get("https://v3.football.api-sports.io/odds?"+args)
                 if not isinstance(data,dict):
@@ -118,6 +135,22 @@ def main():
                 paging=data.get("paging") or {}
                 if not data.get("response") or int(paging.get("current") or page)>=int(paging.get("total") or page):
                     break
+        old_data={}
+        if DEST.exists():
+            try:old_data=json.loads(DEST.read_text(encoding="utf-8"))
+            except (ValueError,OSError):pass
+        prior=old_data.get("matches") or {}
+        for fixture,outcomes in matches.items():
+            for market,item in outcomes.items():
+                previous=(prior.get(fixture) or {}).get(market) or {}
+                history=list(previous.get("snapshots") or [])
+                if not history and previous.get("odd"):
+                    history=[{"at":old_data.get("generatedAt"),"bookmaker":previous.get("bookmaker"),
+                              "odd":previous["odd"],"fairProbability":previous.get("fairProbability")}]
+                if not history or history[-1].get("odd")!=item["odd"] or history[-1].get("bookmaker")!=item["bookmaker"]:
+                    history.append({"at":NOW.isoformat(),"bookmaker":item["bookmaker"],
+                      "odd":item["odd"],"fairProbability":item.get("fairProbability")})
+                item["snapshots"]=history[-12:]
         payload["matches"]=matches
         if not payload["message"].startswith("API-Football"):
             payload["message"]="Odds indicativas; confirmar sempre na Betano antes da decisão."
