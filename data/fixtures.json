@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T16:50:34.618648Z",
+  "generatedAt": "2026-11-08T16:55:48.704463Z",
   "sources": [
     "ESPN (integração não oficial)",
     "TheSportsDB (plano gratuito limitado)"
@@ -591,7 +591,7 @@
       "leagueCode": "eng.fa",
       "division": 1,
       "utc": "2026-11-08T14:15:00Z",
-      "status": "LIVE",
+      "status": "STATUS_FINAL_AET",
       "homeScore": 2,
       "awayScore": 3,
       "homeId": "20770",
@@ -625,7 +625,7 @@
       "leagueCode": "eng.fa",
       "division": 1,
       "utc": "2026-11-08T15:00:00Z",
-      "status": "LIVE",
+      "status": "STATUS_FULL_TIME",
       "homeScore": 2,
       "awayScore": 0,
       "homeId": "133370",
@@ -729,7 +729,7 @@
       "utc": "2026-11-08T16:15:00Z",
       "status": "LIVE",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 1,
       "homeId": "3988",
       "awayId": "2734",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3988.png",
@@ -813,7 +813,7 @@
       "division": 1,
       "utc": "2026-11-08T16:30:00Z",
       "status": "LIVE",
-      "homeScore": 0,
+      "homeScore": 1,
       "awayScore": 2,
       "homeId": "360",
       "awayId": "362",
