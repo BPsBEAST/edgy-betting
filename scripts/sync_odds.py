@@ -40,9 +40,13 @@ def key_for(bet,value):
         return "1X2_"+home if home else None
     if bet in ("first half winner","1st half winner","half time result","halftime result","1st half - 1x2"):
         return "HT_"+home if home else None
-    if bet in ("draw no bet","draw no bet (dnb)","home/away") and value in ("home","away","1","2"):
+    if bet in ("draw no bet","draw no bet (dnb)","draw no bet - fulltime") and value in ("home","away","1","2"):
         return "DNB_"+home
-    if ("over/under" in bet or "over under" in bet or bet=="total goals"):
+    # Half-time, team and corner totals are entirely different markets.
+    # Never pass them off as full-match goals (the API contains many variants).
+    if (("over/under" in bet or "over under" in bet or bet=="total goals")
+        and not any(term in bet for term in
+          ("half","1st","2nd","first","second","corner","booking","card","team","home","away","asian","minute","period"))):
         operation=re.search(r"^(over|under)\b",value)
         line=re.search(r"([1-4][.,]5)",value) or re.search(r"([1-4][.,]5)",bet)
         if operation and line:
@@ -110,6 +114,8 @@ def main():
        "hasCredentials":bool(KEY),"matches":{},"message":"Sem API_FOOTBALL_KEY configurada: as odds não foram recolhidas."}
     if KEY:
         matches={}
+        fixture_meta={}
+        paging_info=[]
         days=max(1,min(7,int(os.environ.get("API_FOOTBALL_ODDS_DAYS","2"))))
         pages=max(1,min(25,int(os.environ.get("API_FOOTBALL_ODDS_MAX_PAGES","3"))))
         # 2 days, max 3 pages/day (<=6 API requests per sync)
@@ -123,6 +129,8 @@ def main():
                 if data.get("errors"):
                     payload["message"]="API-Football devolveu um erro ou a conta atingiu o limite."
                     break
+                paging=data.get("paging") or {}
+                paging_info.append({"date":target,"page":page,"totalPages":paging.get("total"),"events":len(data.get("response") or [])})
                 for event in data.get("response") or []:
                     fixture=event.get("fixture") or {}
                     fixtureid=fixture.get("id")
@@ -130,7 +138,14 @@ def main():
                         continue
                     decoded=decode_event(event)
                     if decoded:
-                        matches["apif-"+str(fixtureid)]=decoded
+                        matchkey="apif-"+str(fixtureid)
+                        matches[matchkey]=decoded
+                        lg=event.get("league") or {}
+                        fixture_meta[matchkey]={
+                          "utc":fixture.get("date"),"leagueId":lg.get("id"),
+                          "leagueName":lg.get("name"),"leagueCountry":lg.get("country"),
+                          "season":lg.get("season"),"utcTimestamp":fixture.get("timestamp")
+                        }
                 paging=data.get("paging") or {}
                 if not data.get("response") or int(paging.get("current") or page)>=int(paging.get("total") or page):
                     break
@@ -151,12 +166,14 @@ def main():
                       "odd":item["odd"],"fairProbability":item.get("fairProbability")})
                 item["snapshots"]=history[-12:]
         payload["matches"]=matches
+        payload["fixtureMetadata"]=fixture_meta
+        payload["pagesFetched"]=paging_info
         if not payload["message"].startswith("API-Football"):
             payload["message"]="Odds indicativas; confirmar sempre na Betano antes da decisão."
     if DEST.exists():
         try:
             old=json.loads(DEST.read_text(encoding="utf-8"))
-            if old.get("matches")==payload["matches"] and old.get("hasCredentials")==payload["hasCredentials"]:
+            if old.get("matches")==payload["matches"] and old.get("fixtureMetadata")==payload.get("fixtureMetadata") and old.get("hasCredentials")==payload["hasCredentials"] and old.get("pagesFetched")==payload.get("pagesFetched"):
                 print("Odds unchanged")
                 return
         except (OSError,ValueError):
