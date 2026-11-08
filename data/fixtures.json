@@ -1,9 +1,88 @@
 {
-  "generatedAt": null,
-  "sources": [],
-  "games": [],
-  "message": "Aguardando a primeira execução do sincronizador.",
+  "generatedAt": "2026-11-08T15:06:21.029366Z",
+  "sources": [
+    "TheSportsDB (plano gratuito limitado)"
+  ],
+  "games": [
+    {
+      "id": "tsdb-2506286",
+      "home": "Real Sociedad",
+      "away": "Rayo Vallecano",
+      "league": "Espanha · La Liga",
+      "leagueCode": "tsdb-4335",
+      "division": 1,
+      "utc": "2026-11-08T15:15:00Z",
+      "status": "NS",
+      "homeScore": null,
+      "awayScore": null,
+      "homeLogo": "https://r2.thesportsdb.com/images/media/team/badge/vptvpr1473502986.png",
+      "awayLogo": "https://r2.thesportsdb.com/images/media/team/badge/nzhu941655595465.png",
+      "source": "TheSportsDB"
+    },
+    {
+      "id": "tsdb-2489543",
+      "home": "Angers",
+      "away": "Nice",
+      "league": "França · Ligue 1",
+      "leagueCode": "tsdb-4334",
+      "division": 1,
+      "utc": "2026-11-08T16:15:00Z",
+      "status": "NS",
+      "homeScore": null,
+      "awayScore": null,
+      "homeLogo": "https://r2.thesportsdb.com/images/media/team/badge/ix6q4w1678808069.png",
+      "awayLogo": "https://r2.thesportsdb.com/images/media/team/badge/msy7ly1621593859.png",
+      "source": "TheSportsDB"
+    },
+    {
+      "id": "tsdb-2494090",
+      "home": "Manchester United",
+      "away": "Aston Villa",
+      "league": "Inglaterra · Premier League",
+      "leagueCode": "tsdb-4328",
+      "division": 1,
+      "utc": "2026-11-08T16:30:00Z",
+      "status": "NS",
+      "homeScore": null,
+      "awayScore": null,
+      "homeLogo": "https://r2.thesportsdb.com/images/media/team/badge/xzqdr11517660252.png",
+      "awayLogo": "https://r2.thesportsdb.com/images/media/team/badge/uwzw561787679026.png",
+      "source": "TheSportsDB"
+    },
+    {
+      "id": "tsdb-2508405",
+      "home": "Freiburg",
+      "away": "Union Berlin",
+      "league": "Alemanha · Bundesliga",
+      "leagueCode": "tsdb-4331",
+      "division": 1,
+      "utc": "2026-11-08T16:30:00Z",
+      "status": "NS",
+      "homeScore": null,
+      "awayScore": null,
+      "homeLogo": "https://r2.thesportsdb.com/images/media/team/badge/urwtup1473453288.png",
+      "awayLogo": "https://r2.thesportsdb.com/images/media/team/badge/q0o5001599679795.png",
+      "source": "TheSportsDB"
+    },
+    {
+      "id": "tsdb-2482244",
+      "home": "Inter Milan",
+      "away": "Como",
+      "league": "Itália · Serie A",
+      "leagueCode": "tsdb-4332",
+      "division": 1,
+      "utc": "2026-11-08T17:00:00Z",
+      "status": "NS",
+      "homeScore": null,
+      "awayScore": null,
+      "homeLogo": "https://r2.thesportsdb.com/images/media/team/badge/ryhu6d1617113103.png",
+      "awayLogo": "https://r2.thesportsdb.com/images/media/team/badge/02x81t1627405841.png",
+      "source": "TheSportsDB"
+    }
+  ],
+  "message": "",
   "notes": [
-    "Os dados de exemplo nunca são apresentados como reais."
+    "Jogos reais de fornecedores identificados",
+    "Sem probabilidades, odds ou apostas automáticas"
   ]
 }
