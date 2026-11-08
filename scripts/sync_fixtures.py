@@ -111,6 +111,7 @@ def espn():
                 item={"id":"espn-"+str(event.get("id")),"home":hteam.get("displayName") or hteam.get("name"),"away":ateam.get("displayName") or ateam.get("name"),
                     "league":name,"leagueCode":slug,"division":division,"utc":stamp,"status":("LIVE" if rawstatus.get("state")=="in" else (rawstatus.get("abbreviation") or rawstatus.get("name") or "NS")),
                     "homeScore":score(home),"awayScore":score(away),"homeId":hteam.get("id"),"awayId":ateam.get("id"),"homeLogo":hteam.get("logo"),"awayLogo":ateam.get("logo"),
+                    "venueCity":str(((comp.get("venue") or {}).get("address") or {}).get("city") or (comp.get("venue") or {}).get("city") or "").strip() or None,
                     "source":"ESPN"}
                 if eligible(item):result.append(item)
             time.sleep(.06)
@@ -136,7 +137,9 @@ def api_football(key):
     result=[]
     headers={"x-apisports-key":key}
     season=TODAY.year if TODAY.month>=7 else TODAY.year-1
-    for league,name,division in APILEAGUES:
+    max_leagues=max(0,min(len(APILEAGUES),int(os.environ.get("API_FOOTBALL_FIXTURE_MAX_LEAGUES","8"))))
+    prioritized=sorted(APILEAGUES,key=lambda entry:entry[2])
+    for league,name,division in prioritized[:max_leagues]:
         args=urllib.parse.urlencode({"league":league,"season":season,"from":TODAY.strftime("%Y-%m-%d"),"to":END.strftime("%Y-%m-%d")})
         data=get_json("https://v3.football.api-sports.io/fixtures?"+args,headers)
         if not isinstance(data,dict):continue
@@ -146,7 +149,9 @@ def api_football(key):
             item={"id":"apif-"+str(fixture.get("id")),"home":home.get("name"),"away":away.get("name"),
               "league":name,"leagueCode":"apif-"+str(league),"division":division,"utc":iso(fixture.get("date")),
               "status":(fixture.get("status") or {}).get("short") or "NS","homeScore":goals.get("home"),"awayScore":goals.get("away"),"homeId":home.get("id"),"awayId":away.get("id"),
-              "homeLogo":home.get("logo"),"awayLogo":away.get("logo"),"source":"API-Football"}
+              "homeLogo":home.get("logo"),"awayLogo":away.get("logo"),
+              "venueCity":str((fixture.get("venue") or {}).get("city") or "").strip() or None,
+              "source":"API-Football"}
             if eligible(item):result.append(item)
         time.sleep(.15)
     return result
