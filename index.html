@@ -4,9 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#090d16">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="EDGY Betting">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="./assets/edgy-icon-180.png">
 <meta name="description" content="EDGY Betting — análise de jogos, probabilidades, consenso, edge, incerteza e gestão prudente de banca. Não coloca apostas.">
 <title>EDGY Betting — Intelligence for the game</title>
 <link rel="icon" type="image/svg+xml" href="./assets/edgy-mark.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="./assets/edgy-icon-192.png">
 <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -33,11 +40,11 @@
         <div class="status-guide" aria-label="Significado das classificações">
          <span class="guide-item"><b class="status-pill status-aposta">✓ Aposta</b><small>Critérios completos</small></span>
          <span class="guide-item"><b class="status-pill status-verificar">⌕ Verificar</b><small>Confirmar odd</small></span>
-         <span class="guide-item"><b class="status-pill status-observar">◉ Observar</b><small>Dados insuficientes</small></span>
+         <span class="guide-item"><b class="status-pill status-observar">◉ Observar</b><small>Tip por validar</small></span>
          <span class="guide-item"><b class="status-pill status-excluida">⨯ Excluída</b><small>Fator crítico</small></span>
         </div>
         <div class="radar-filter"><button data-radar="all" class="radar-tab active">Todos os jogos</button><button data-radar="modeled" class="radar-tab">Com análise</button><button data-radar="priced" class="radar-tab">Com odds</button><button data-radar="unmodeled" class="radar-tab">Sem dados suficientes</button></div>
-        <div class="filter-row"><div class="segmented" role="group" aria-label="Filtrar datas"><button type="button" data-range="all" class="selected">Todos</button><button type="button" data-range="today">Hoje</button><button type="button" data-range="tomorrow">Amanhã</button><button type="button" data-range="live">Em direto</button></div><span id="filterResult" class="small-muted"></span></div>
+        <div class="filter-row"><div class="segmented" role="group" aria-label="Filtrar jogos por estado"><button type="button" data-range="upcoming" class="selected">Próximos</button><button type="button" data-range="today">Hoje</button><button type="button" data-range="live">Em direto</button><button type="button" data-range="results">Resultados</button></div><span id="filterResult" class="small-muted"></span></div>
         <div id="games" class="games-list" aria-live="polite"><div class="empty">A carregar calendário atualizado…</div></div>
         <div class="source-note"><strong>Origem dos jogos:</strong> <span id="sourceLabel">à espera da sincronização</span>. A cobertura pode variar por competição. As odds podem ser obtidas de fornecedor externo configurado, mas exigem confirmação no boletim da Betano.</div>
       </div>
@@ -119,8 +126,14 @@
       <div class="inspector-bottom"><strong>Nota:</strong> a EDGY Betting não faz apostas. O radar mostra estimativas, não garantias de lucro. Confirma as fontes e o boletim antes de decidir.</div>
     </aside>
   </div>
+  <div class="install-hint">No iPhone, para veres o logótipo no ecrã principal: abre o site no Safari e escolhe <strong>Partilhar → Adicionar ao ecrã principal</strong>.</div>
   <footer class="footer"><span>© 2026 EDGY BETTING</span><span>ANALYSE. VALIDATE. DECIDE.</span><a href="https://www.thesportsdb.com/docs_terms_of_use.php" target="_blank" rel="noreferrer">Dados: TheSportsDB</a></footer>
 </div>
 <script type="module" src="./app.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+ window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {}));
+}
+</script>
 </body>
 </html>
