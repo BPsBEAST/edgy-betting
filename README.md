@@ -8,6 +8,39 @@ Site (publicação GitHub Pages verificada pelos workflows): https://bpsbeast.gi
 
 Desenvolvimento local: `python -m http.server 8080`, depois abrir `http://localhost:8080`. A interface não precisa de backend para ler os dados já sincronizados. `npm test` (Node 22+) valida as fórmulas e controlos de risco.
 
+## Fontes de dados: integração e estado real
+
+O programa **não inventa preços ou probabilidades** para preencher lacunas. É importante separar informação que foi recolhida de integrações apenas preparadas.
+
+| Origem | Usado para | Integração | Observações |
+| --- | --- | --- | --- |
+| ESPN (não oficial) / TheSportsDB | Jogos, datas e resultados | Ativa | A cobertura pode variar e o feed ESPN pode falhar |
+| Football-Data.co.uk | Resultados históricos, estatísticas e Poisson exploratório | Ativa | Não são as previsões independentes pedidas |
+| Open-Meteo | Chuva, vento e temperatura na hora do jogo | Ativa **apenas quando existe cidade de estádio confirmada** | Previsão urbana não confirma condições no relvado; plano gratuito sujeito a uso não comercial |
+| API-Football | 1X2, golos, mercados adicionais e probabilidades justas das casas | Preparada; **precisa de chave** | Odds de referência, não lidas diretamente no boletim Betano |
+| API-Football | Lesões, castigos, onzes e previsões 1X2 próprias | Preparada; **precisa de chave** | Cobertura variável, limite de pedidos; não substituir automaticamente Statarea/SportyTrader |
+| Statarea / SportyTrader | Probabilidades independentes ponderadas | **Não ligadas** | Precisam de alimentação autorizada, sem inventar valores |
+| SoccerVital / Statarea golos | Comportamento casa/fora e médias | **Não ligadas** | Exigem alimentação verificável com condições de utilização apropriadas |
+| Soccernews.com | Notícias sobre indisponíveis | **Não ligada** | Sem API validada para extracção automática |
+| Flashscore | Preços Betano/Betclic/Solverde/bwin | **Não ligado** | O serviço proíbe extração/republicação não autorizada |
+| Betano (boletim PT) | Confirmação final da odd | **Não ligada** | A confirmação deve ser feita no boletim ou em feed com licença/consentimento |
+
+### Ativar o fornecedor de odds e contexto
+
+1. Criar conta no [API-Football](https://dashboard.api-football.com/) (plano gratuito limitado de 100 pedidos/dia, com limitações de cobertura de época).
+2. No GitHub ir a **Settings → Secrets and variables → Actions → New repository secret**.
+3. Criar a secret **`API_FOOTBALL_KEY`** com a chave da API. Nunca colocar esta chave em `app.js`, HTML, no chat público ou em `data/`.
+4. Em **Actions**, executar o workflow **Refresh fixtures and publish EDGY Betting** manualmente ou deixar o agendamento regular atualizar.
+5. Verificar os sinais das fontes na interface do jogo. Se um mercado não estiver disponível no fornecedor, permanece marcado como não verificado.
+
+Em contas gratuitas o workflow limita as chamadas para não ultrapassar sistematicamente as quotas: `API_FOOTBALL_FIXTURE_MAX_LEAGUES` (8 primeiras competições selecionadas, dando prioridade à 1.ª divisão), `API_FOOTBALL_ODDS_DAYS` (2), `API_FOOTBALL_ODDS_MAX_PAGES` (3 por dia) e `API_FOOTBALL_CONTEXT_CALL_LIMIT` (6 por sincronização). Com um plano maior é possível aumentar estes limites. **A chave não garante Betano, todos os mercados, nem todos os jogos**.
+
+Os novos ficheiros de dados são `data/context.json` (meteorologia, onzes, lesões, previsões e proveniência) e `data/market_odds.json` (odds e consenso justo de várias casas quando disponíveis). `scripts/sync_odds.py` também guarda alterações dos preços observados ao longo das sincronizações, mas isso **não mede dinheiro efetivamente apostado**. Os scripts nunca tentam contornar proteções do Flashscore ou Betano.
+
+### Critérios que continuam a bloquear Aposta
+
+Sem 2 fontes independentes favoráveis, sem preço confirmado no boletim, com onzes/contexto não verificados ou com sinais de risco relevantes, a decisão é **OBSERVAR** e nunca **APOSTA**. Os parâmetros de incerteza e o Poisson histórico não foram estatisticamente calibrados/backtestados e não representam uma garantia de lucratividade.
+
 ## O que funciona nesta versão
 
 ### Radar automático — versão 1.1
