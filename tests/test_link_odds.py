@@ -32,4 +32,16 @@ class SafeProviderMatching(unittest.TestCase):
  def test_alias_normalization(self):
   self.assertEqual(module.norm("Man Utd"),module.norm("Manchester United"))
   self.assertEqual(module.norm("Vitória de Guimarães"),module.norm("Vitória Guimarães"))
+ def test_metadata_unique_kickoff_is_provisional_only(self):
+  meta={"leagueId":94,"utc":"2026-11-11T20:00:00Z"}
+  self.assertEqual(module.match_metadata(meta,CAL),"espn-777")
+ def test_metadata_fails_on_ambiguous_simultaneous_match(self):
+  meta={"leagueId":94,"utc":"2026-11-11T20:00:00Z"}
+  self.assertIsNone(module.match_metadata(meta,CAL+[dict(CAL[0],id="espn-888")]))
+ def test_metadata_fails_when_competition_differs(self):
+  self.assertIsNone(module.match_metadata({"leagueId":39,"utc":"2026-11-11T20:00:00Z"},CAL))
+ def test_metadata_fails_when_kickoff_differs(self):
+  self.assertIsNone(module.match_metadata({"leagueId":94,"utc":"2026-11-11T20:25:00Z"},CAL))
+ def test_metadata_fails_without_time(self):
+  self.assertIsNone(module.match_metadata({"leagueId":94},CAL))
 if __name__=="__main__":unittest.main()
