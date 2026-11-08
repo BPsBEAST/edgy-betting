@@ -163,3 +163,19 @@
  .manual-details>summary{padding:16px 15px}
  .inspector-bottom{padding-bottom:24px}
 }
+
+/* Grounded source coverage per fixture */
+.source-evidence-panel{margin-top:12px}
+.source-evidence{border:1px solid #31433f;background:#18272a;border-radius:10px;margin:7px 0;padding:11px 12px}
+.source-evidence strong{display:block;font-size:11px;color:#d9e8da;line-height:1.35}
+.source-evidence p{font-size:10px;color:#a9c0bf;margin:6px 0;line-height:1.55}
+.source-evidence small{font-size:9px;color:#90aaa5;line-height:1.5;display:block}
+.source-evidence.missing{border-color:#303a4a;background:#161e2b}
+.source-evidence.missing strong{color:#acbace}
+.source-evidence.missing p{color:#8d9fb1}
+.source-evidence.source-warning{background:#35291f;border-color:#8d6336}
+.source-evidence.source-warning strong{color:#f3d29c}
+.source-evidence.source-warning small{color:#eac59a}
+.source-evidence details{margin:8px 0 5px;border-top:1px solid #43554c;padding-top:7px}
+.source-evidence details summary{font-size:10px;color:#c1edb3;cursor:pointer}
+.source-evidence details p{padding:4px 0;border-bottom:1px solid #2c413c}
