@@ -158,7 +158,7 @@ def project(home,away,division):
         minodd=math.ceil((1/min_target)*100)/100 if min_target>.01 else None
         markets.append({"key":key,"group":group,"label":label,"probability":round(p,5),
           "uncertainty":round(unc,5),"minimumOdd":minodd,"status":"OBSERVAR",
-          "reason":"Modelo estatístico ESPN sem duas fontes independentes e sem odd Betano confirmada."})
+          "reason":"Modelo estatístico Football-Data sem duas fontes independentes e sem odd Betano confirmada."})
     return {"lambdaHome":round(lh,3),"lambdaAway":round(la,3),
       "home":{"sample":home["games"],"homeGames":home["homeGames"],"awayGames":home["awayGames"],
        "goalsForHome":round(home["homeFor"],2),"goalsAgainstHome":round(home["homeAgainst"],2)},
@@ -169,6 +169,7 @@ def project(home,away,division):
 
 
 def main():
+    import extra_markets
     data=read_json(FIXTURES)
     games=data.get("games") or []
     divisions=set()
@@ -200,6 +201,7 @@ def main():
         away=calculate_rates(form_for(at,rows))
         if not home or not away:continue
         result=project(home,away,game.get("division",1))
+        extra_markets.enrich(result,ht,at,rows,game.get("division",1))
         result["sources"]=[SOURCE]
         result["sourceDate"]=max((d.date().isoformat() for r in rows if (d:=parse_date(r.get("Date")))),default=None)
         models[game["id"]]=result
