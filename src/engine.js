@@ -58,7 +58,7 @@ export function evaluate(input={}, existing=[]){
  const stake=clamp(Math.min(bank*.01,bank*.1*kelly),0,bank);
  const minimumOdd=(["void","quarter"].includes(input.market)?equivalent:p)-prudent*uncertainty-.03;
  const requiredOdds=minimumOdd>0?1/minimumOdd:Infinity;
- const unique=[...new Set(sources.filter(s=>s.p>implied).map(s=>s.provider))];
+ const unique=[...new Set(sources.filter(s=>(["void","quarter"].includes(input.market)&&push<1?s.p/(1-push):s.p)>implied).map(s=>s.provider))];
  const records=Array.isArray(input.bookmakers)?input.bookmakers:[];
  const moves=records.filter(x=>validProbability(x.open)&&validProbability(x.current)).map(x=>({name:x.name,delta:(Number(x.current)-Number(x.open))/100}));
  const negativeMoves=moves.filter(x=>x.delta<-.015).length;
@@ -72,11 +72,14 @@ export function evaluate(input={}, existing=[]){
  let status="OBSERVAR";
  if(input.criticalRotation||input.criticalWeather){status="EXCLUIDA";reasons.push("Fator crítico registado: rotação ou meteorologia incompatível.");}
  else if(input.market==="quarter"){reasons.push("Linhas asiáticas de quarto exigem modelação separada de meia vitória/derrota.");}
+ else if(input.market==="void" && (winProb>1-push || !validProbability(input.pushProbability))){reasons.push("No mercado com devolução, introduz a probabilidade de devolução e probabilidades de vitória coerentes.");}
  else if(!Number.isFinite(odds)||odds<=1){reasons.push("Introduz uma odd decimal real e válida.");}
  else if(!sources.length){reasons.push("Faltam probabilidades das fontes. Não existem estimativas automáticas inventadas.");}
+ else if(["corners","shots"].includes(input.market)){reasons.push("Sem duas fontes estatísticas independentes para cantos ou remates, manter em observação.");}
  else if(sources.length<2 || unique.length<2){reasons.push("É necessário consenso de pelo menos duas fontes independentes que vejam valor.");}
  else if(odds<minOdds||odds>maxOdds){reasons.push("Odd fora dos limites configurados.");}
  else if(adjusted<.03){reasons.push("Edge ajustado inferior a 3%.");}
+ else if(Math.abs(p-implied)>.18){reasons.push("Estimativa demasiado afastada do mercado (>18 p.p.): possível informação não refletida nas fontes.");}
  else if(exitTrend){reasons.push("Probabilidade justa a cair na maioria das casas comparadas: sinal contrário.");}
  else if(correlated||maxPerMatch){reasons.push("Limite de duas escolhas por jogo ou correlação com uma escolha já guardada.");}
  else if(maxPerDay>0&&dayCount>=maxPerDay){reasons.push("Limite diário de seleções já atingido.");}
