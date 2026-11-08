@@ -196422,5 +196422,8 @@
       }
     }
   },
-  "message": "Odds indicativas; confirmar sempre na Betano antes da decisão."
+  "message": "Odds indicativas; confirmar sempre na Betano antes da decisão.",
+  "linkedFixtureIds": {},
+  "linkedFixtureCount": 0,
+  "lookupRequests": 2
 }

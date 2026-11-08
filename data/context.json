@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T19:31:02.271840+00:00",
+  "generatedAt": "2026-11-08T19:41:55.634642+00:00",
   "sources": {
     "weather": "Open-Meteo (requires verified venue city)",
     "lineups": "API-Football optional",
@@ -12,15 +12,15 @@
   },
   "hasApiFootballKey": true,
   "apiCalls": 0,
-  "matchedGames": 14,
+  "matchedGames": 13,
   "contexts": {
     "espn-401876404": {
       "weather": {
         "city": "Lens",
         "countryCode": "FR",
-        "temperatureC": 4.9,
+        "temperatureC": 4.8,
         "precipitationMm": 0.0,
-        "gustKmh": 8.6,
+        "gustKmh": 6.8,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-08T19:00Z",
@@ -94,20 +94,6 @@
         "alert": true,
         "risk": "Chuva intensa ou rajadas fortes previstas na zona urbana",
         "forecastHourUtc": "2026-11-09T19:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401928514": {
-      "weather": {
-        "city": "Azkoitia",
-        "countryCode": "ES",
-        "temperatureC": 19.5,
-        "precipitationMm": 0.0,
-        "gustKmh": 35.1,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-10T18:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
