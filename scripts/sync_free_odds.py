@@ -64,6 +64,7 @@ def parse_event(event,fixtures,sport):
         if not bookmaker:continue
         prices={}
         updated=book.get("last_update")
+        if not free_pred.fresh(updated,NOW,max_age_hours=8):continue
         for market in book.get("markets") or []:
             key=market.get("key")
             for out in market.get("outcomes") or []:
