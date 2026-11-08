@@ -14,12 +14,12 @@
     <a class="brand" href="./" aria-label="EDGY Betting"><span class="brand-symbol">E<span>·</span></span><span class="brand-name">EDGY <strong>BETTING</strong><small>FOOTBALL INTELLIGENCE</small></span></a>
     <div class="top-right"><span class="dotlive"></span><span id="syncStatus" class="sync-status">A carregar jogos</span><button id="reload" type="button" class="button-ghost">↻ <span>Atualizar</span></button></div>
   </header>
-  <section class="hero"><div><div class="overline">INTELIGÊNCIA DESPORTIVA <span> / </span> V1.0</div><h1>Decisões com <em>dados.</em><br>Não com palpites.</h1><p>Analisa os próximos jogos, compara probabilidades e acompanha apenas oportunidades sustentadas por fontes verificáveis.</p></div><div class="hero-orbit" aria-hidden="true"><div class="orbit-one"></div><div class="orbit-two"></div><div class="orbit-core"><span>EDGY</span><b>01</b></div></div></section>
-  <section class="metrics" aria-label="Resumo"><article class="metric"><div class="metric-icon">◫</div><div><small>JOGOS NO CALENDÁRIO</small><strong id="gameCount">—</strong><span id="gamesUpdated">Sincronização pendente</span></div></article><article class="metric"><div class="metric-icon accent">◎</div><div><small>ANÁLISES GUARDADAS</small><strong id="analysisCount">0</strong><span>Registos neste dispositivo</span></div></article><article class="metric"><div class="metric-icon violet">↗</div><div><small>ODDS VALIDADAS</small><strong id="confirmedCount">0</strong><span>Verificadas manualmente</span></div></article></section>
+  <section class="hero"><div><div class="overline">INTELIGÊNCIA DESPORTIVA <span> / </span> V1.0</div><h1>Os jogos. <em>Os números.</em><br>A tua análise.</h1><p>Os jogos aparecem automaticamente, com estatísticas verificáveis, mercados calculados e odds quando disponíveis. Sem palpites disfarçados de dados.</p></div><div class="hero-orbit" aria-hidden="true"><div class="orbit-one"></div><div class="orbit-two"></div><div class="orbit-core"><span>EDGY</span><b>01</b></div></div></section>
+  <section class="metrics" aria-label="Resumo"><article class="metric"><div class="metric-icon">◫</div><div><small>JOGOS NO CALENDÁRIO</small><strong id="gameCount">—</strong><span id="gamesUpdated">Sincronização pendente</span></div></article><article class="metric"><div class="metric-icon accent">◎</div><div><small>MODELOS AUTOMÁTICOS</small><strong id="analysisCount">0</strong><span>Com histórico ESPN</span></div></article><article class="metric"><div class="metric-icon violet">↗</div><div><small>JOGOS COM ODDS</small><strong id="confirmedCount">0</strong><span>Preços internacionais, se disponíveis</span></div></article></section>
   <div class="content-grid">
     <aside class="sidebar">
       <div class="section-title"><span>EXPLORAR</span></div>
-      <nav class="nav-links" aria-label="Navegação"><button type="button" data-view="matches" class="nav-item active"><span>▦</span> Jogos e análises <b id="sidebarCount">0</b></button><button type="button" data-view="saved" class="nav-item"><span>◈</span> Guardadas <b id="savedCount">0</b></button></nav>
+      <nav class="nav-links" aria-label="Navegação"><button type="button" data-view="matches" class="nav-item active"><span>▦</span> Radar de jogos <b id="sidebarCount">0</b></button><button type="button" data-view="saved" class="nav-item"><span>◈</span> Guardadas <b id="savedCount">0</b></button></nav>
       <div class="section-title gap-top"><span>COMPETIÇÕES</span></div>
       <div class="league-search"><input id="leagueSearch" type="search" placeholder="Pesquisar liga ou jogo…" aria-label="Pesquisar jogo ou competição"></div>
       <nav id="leagues" class="league-list" aria-label="Competições"><button class="league active">Todas as competições</button></nav>
@@ -27,10 +27,12 @@
     </aside>
     <main class="main-content">
       <div id="matchesView">
-        <div class="block-head"><div><div class="overline">MATCH CENTER</div><h2>Jogos de futebol</h2></div><span id="dateRangeLabel" class="muted-pill">Próximos dias</span></div>
+        <div class="block-head"><div><div class="overline">LIVE MATCH INTELLIGENCE</div><h2>Radar de jogos</h2></div><span id="dateRangeLabel" class="muted-pill">Próximos dias</span></div>
+        <div id="radarOverview" class="radar-overview"><span>◎</span> A recolher estatísticas e odds reais…</div>
+        <div class="radar-filter"><button data-radar="all" class="radar-tab active">Todos os jogos</button><button data-radar="modeled" class="radar-tab">Com análise</button><button data-radar="priced" class="radar-tab">Com odds</button><button data-radar="unmodeled" class="radar-tab">Sem dados suficientes</button></div>
         <div class="filter-row"><div class="segmented" role="group" aria-label="Filtrar datas"><button type="button" data-range="all" class="selected">Todos</button><button type="button" data-range="today">Hoje</button><button type="button" data-range="tomorrow">Amanhã</button><button type="button" data-range="live">Em direto</button></div><span id="filterResult" class="small-muted"></span></div>
         <div id="games" class="games-list" aria-live="polite"><div class="empty">A carregar calendário atualizado…</div></div>
-        <div class="source-note"><strong>Origem dos jogos:</strong> <span id="sourceLabel">à espera da sincronização</span>. A cobertura pode variar por competição. As odds não são extraídas automaticamente da Betano.</div>
+        <div class="source-note"><strong>Origem dos jogos:</strong> <span id="sourceLabel">à espera da sincronização</span>. A cobertura pode variar por competição. As odds podem ser obtidas de fornecedor externo configurado, mas exigem confirmação no boletim da Betano.</div>
       </div>
       <div id="savedView" hidden>
         <div class="block-head"><div><div class="overline">WATCHLIST</div><h2>Análises guardadas</h2></div><button id="clearSaved" class="button-ghost" type="button">Limpar lista</button></div>
@@ -39,8 +41,11 @@
       </div>
     </main>
     <aside class="inspector" id="inspector">
-      <div class="inspector-head"><div><div class="overline">ANALYSIS ENGINE / 01</div><h2>Analisar mercado</h2></div><span class="version">V1.0</span></div>
+      <div class="inspector-head"><div><div class="overline">AUTOMATIC INTELLIGENCE</div><h2>Análise do jogo</h2></div><span class="version">V1.1</span></div>
       <div id="selectedMatch" class="selected-match"><div class="pick-placeholder"><span>◎</span><strong>Seleciona um jogo</strong><small>Escolhe um jogo da lista para iniciar a análise.</small></div></div>
+      <div id="autoPanel" class="auto-panel" aria-live="polite"><div class="auto-empty">Seleciona um jogo para veres os mercados e estatísticas calculadas.</div></div>
+      <details id="manualDetails" class="manual-details">
+        <summary><span>✎</span> Análise manual avançada <span>＋</span></summary>
       <form id="analysisForm">
         <fieldset id="analysisFields" disabled>
           <div class="group-title"><b>01</b> MERCADO & ODD</div>
@@ -89,7 +94,8 @@
         <button class="analyze-button" id="analyze" type="submit" disabled>ANALISAR OPORTUNIDADE <span>↗</span></button>
       </form>
       <div id="resultPanel" class="result-panel" aria-live="polite" hidden></div>
-      <div class="inspector-bottom">A EDGY Betting <b>não faz apostas</b>. Dados introduzidos manualmente devem ser conferidos nas fontes e no boletim.</div>
+      </details>
+      <div class="inspector-bottom">A EDGY Betting <b>não faz apostas</b>. As projeções automáticas não bastam para aprovação: é necessário consenso e confirmação no boletim.</div>
     </aside>
   </div>
   <footer class="footer"><span>© 2026 EDGY BETTING</span><span>ANALYSE. VALIDATE. DECIDE.</span><a href="https://www.thesportsdb.com/docs_terms_of_use.php" target="_blank" rel="noreferrer">Dados: TheSportsDB</a></footer>
