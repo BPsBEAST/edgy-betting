@@ -138,6 +138,22 @@ document.addEventListener("click",event=>{
 });
 $("leagueSearch").addEventListener("input",e=>{state.query=e.target.value.toLowerCase().trim();renderGames()});
 $("analysisForm").addEventListener("submit",e=>{e.preventDefault();if(!state.selected)return;const input=formInput(),result=evaluate(input,state.saved);state.current=result;showResult(input,result)});
+$("fairCalc").addEventListener("click",()=>{
+ const raw=[$("fairA").value,$("fairB").value,$("fairC").value];
+ const odds=raw.filter(x=>x!=="").map(Number);
+ const picked=Number($("fairOutcome").value);
+ if(odds.length<2 || odds.length>3 || odds.some(x=>!Number.isFinite(x)||x<=1) || (raw[2]===""&&picked===2)){
+  $("fairMessage").textContent="Indica duas ou três odds válidas e escolhe o resultado correspondente.";
+  return;
+ }
+ const probabilities=odds.map(x=>1/x);
+ const sum=probabilities.reduce((a,b)=>a+b,0);
+ if(sum<=0 || sum<.85 || sum>1.5){$("fairMessage").textContent="Margem invulgar: verifica se as odds são do mesmo mercado e casa.";return;}
+ const percent=probabilities[picked]/sum*100;
+ $("p_fair").value=percent.toFixed(2);
+ $("fairMessage").textContent="Probabilidade justa da seleção: "+n(percent,2)+"%. Margem total removida: "+n((sum-1)*100,2)+" p.p.";
+ $("resultPanel").hidden=true;
+});
 $("market").addEventListener("change",updatePushField);
 $("analysisForm").addEventListener("input",()=>{$("resultPanel").hidden=true;state.current=null;});
 $("reload").addEventListener("click",loadGames);
