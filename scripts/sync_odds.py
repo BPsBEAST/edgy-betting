@@ -43,14 +43,14 @@ def key_for(bet,value):
     if bet in ("draw no bet","draw no bet (dnb)","home/away") and value in ("home","away","1","2"):
         return "DNB_"+home
     if ("over/under" in bet or "over under" in bet or bet=="total goals"):
-        operation=re.search(r"^(over|under)\\b",value)
+        operation=re.search(r"^(over|under)\b",value)
         line=re.search(r"([1-4][.,]5)",value) or re.search(r"([1-4][.,]5)",bet)
         if operation and line:
             return ("O" if operation.group(1)=="over" else "U")+line.group(1).replace(",","").replace(".","")
     if bet in ("both teams score","both teams to score","btts","both teams to score (btts)"):
         return {"yes":"BTTS_Y","no":"BTTS_N"}.get(value)
     if bet in ("correct score","correct score - fulltime","exact score","fulltime correct score"):
-        match=re.fullmatch(r"(\\d{1,2})\\s*[-:]\\s*(\\d{1,2})",value)
+        match=re.fullmatch(r"(\d{1,2})\s*[-:]\s*(\d{1,2})",value)
         if match:return "CS_"+match.group(1)+"_"+match.group(2)
     return None
 def valid_price(value):
