@@ -24,7 +24,12 @@ async function loadIntelligence(){
  state.context=context&&context.contexts&&typeof context.contexts==="object"?context:{contexts:{},generatedAt:null,hasApiFootballKey:false};
 }
 function modelFor(game){return state.analysis.models?.[game?.id]||null;}
-function quoteFor(game,key){return state.odds.matches?.[game?.id]?.[key]||null;}
+function oddsFor(game){
+ const id=game?.id;
+ const linked=state.odds.linkedFixtureIds?.[id];
+ return state.odds.matches?.[id]||state.odds.matches?.[linked]||{};
+}
+function quoteFor(game,key){return oddsFor(game)?.[key]||null;}
 function percentage(v){return typeof v==="number"&&Number.isFinite(v)?n(v*100,1)+"%":"—";}
 
 const pct=x=>Number.isFinite(x)?n(x*100,1)+"%":"—";
@@ -49,7 +54,7 @@ function renderGamePreview(game){
  if(phase.kind==="postponed")return '<span class="game-preview result-preview">Encontro adiado · sem análise de apostas</span>';
  if(phase.kind==="live")return '<span class="game-preview result-preview">Jogo em direto'+(phase.score?" · "+esc(phase.score):"")+' · não há modelo in-play</span>';
  if(phase.kind==="awaiting")return '<span class="game-preview result-preview">Encontro iniciado · resultado ainda não confirmado na fonte</span>';
- const info=previewVerdict(game,model,state.odds.matches?.[game.id]||{});
+ const info=previewVerdict(game,model,oddsFor(game));
  if(!info.tip)return '<span class="game-preview no-data"><span>'+esc(info.reason)+'</span><span class="price-flag">SEM TIP VALIDADA</span></span>';
  const pick=info.tip,odd=info.quote?.odd;
  return '<span class="game-preview game-tip"><span class="tip-caption">PROJEÇÃO PARA INVESTIGAR</span>'+
@@ -86,7 +91,7 @@ function renderContext(game){
     '<p>1: '+pct(p["1X2_H"])+' · X: '+pct(p["1X2_D"])+' · 2: '+pct(p["1X2_A"])+'</p>'+
     '<small>É uma fonte adicional identificada, não é Statarea nem SportyTrader.</small></div>');
  }else items.push('<div class="source-evidence missing"><strong>◈ Previsões independentes</strong><p>Statarea, SportyTrader e API-Football: ainda sem números confirmados para este jogo.</p></div>');
- const quoteList=Object.values(state.odds.matches?.[game?.id]||{});
+ const quoteList=Object.values(oddsFor(game));
  const books=new Set(quoteList.flatMap(q=>(q.quotes||[]).map(x=>x.bookmaker)));
  items.push('<div class="source-evidence '+(quoteList.length?"":"missing")+'"><strong>◎ Odds e mercado justo</strong><p>'+quoteList.length+' seleções de referência · '+books.size+' casas (API-Football, se disponível).</p><small>Betano e Flashscore não estão ligados ao boletim. Confirmar preço, mercado e hora.</small></div>');
  return '<div class="source-evidence-panel"><div class="auto-section-label">FONTES CONSULTADAS / POR VALIDAR</div>'+items.join("")+'</div>';
@@ -101,7 +106,7 @@ function renderWorkflowChecklist(){
    '<p class="workflow-checklist-sub">As projeções pré-jogo só são apresentadas para encontros que ainda não começaram. '+(phase.score?'Resultado: '+esc(phase.score)+'.':'')+'</p>';
   return;
  }
- const info=previewVerdict(game,modelFor(game),state.odds.matches?.[game.id]||{});
+ const info=previewVerdict(game,modelFor(game),oddsFor(game));
  const requirements=info.requirements||[
   {label:"Histórico",ready:false,detail:"Aguarda dados suficientes"},
   {label:"Consenso 2 fontes",ready:false,detail:"Previsões por integrar"},
@@ -123,7 +128,7 @@ function renderWorkflowChecklist(){
 function renderAutoPanel(){
  const game=state.selected;
  if(!game){$("autoPanel").innerHTML='<div class="auto-empty">Escolhe um jogo para veres uma seleção estatística, as probabilidades e o que falta validar.</div>';renderWorkflowChecklist();return;}
- const phase=fixtureState(game),model=modelFor(game),prices=state.odds.matches?.[game.id]||{};
+ const phase=fixtureState(game),model=modelFor(game),prices=oddsFor(game);
  renderWorkflowChecklist();
  if(phase.kind!=="upcoming"){
   const result=phase.score?'<span class="final-score">'+esc(game.home)+' <b>'+esc(phase.score)+'</b> '+esc(game.away)+'</span>':"";
@@ -191,7 +196,7 @@ function updateCounters(){
  const upcoming=state.games.filter(g=>isBettablePeriod(g));
  $("gameCount").textContent=String(upcoming.length);
  $("analysisCount").textContent=String(upcoming.filter(g=>Boolean(modelFor(g))).length);
- $("confirmedCount").textContent=String(upcoming.filter(g=>Object.keys(state.odds.matches?.[g.id]||{}).length>0).length);
+ $("confirmedCount").textContent=String(upcoming.filter(g=>Object.keys(oddsFor(g)).length>0).length);
  $("sidebarCount").textContent=String(state.games.length);$("savedCount").textContent=String(state.saved.length);
  $("gamesUpdated").textContent=state.generated?"Atualizado: "+localTime(state.generated):"Sem atualização confirmada";
  $("syncStatus").textContent=state.generated?"Dados: "+localTime(state.generated):"Sem sincronização";
@@ -250,7 +255,7 @@ function filteredGames(){
   if(state.filter==="live"&&phase.kind!=="live")return false;
   if(state.filter==="results"&&!["finished","awaiting","postponed"].includes(phase.kind))return false;
   if(state.radar==="modeled"&&!modelFor(g))return false;
-  if(state.radar==="priced"&&!Object.keys(state.odds.matches?.[g.id]||{}).length)return false;
+  if(state.radar==="priced"&&!Object.keys(oddsFor(g)).length)return false;
   if(state.radar==="unmodeled"&&modelFor(g))return false;
   return true;
  });
@@ -274,7 +279,7 @@ function renderGames(){
    date=today;
   }
   const value=phase.score||phase.label;
-  const verdict=previewVerdict(game,modelFor(game),state.odds.matches?.[game.id]||{});
+  const verdict=previewVerdict(game,modelFor(game),oddsFor(game));
   const recommendation=verdict.tip?statusPill("OBSERVAR","◉ Observar"):
    (phase.kind==="finished"?statusPill("TERMINADO","Resultado"):
    (phase.kind==="postponed"?statusPill("EXCLUIDA","Adiado"):
