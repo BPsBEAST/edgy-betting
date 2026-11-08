@@ -51,9 +51,12 @@ function renderRadarOverview(){
  const finished=state.games.filter(g=>fixtureState(g).kind==="finished");
  const modeled=upcoming.filter(g=>Boolean(modelFor(g)));
  const date=state.analysis.generatedAt?niceDate(state.analysis.generatedAt)+" às "+localTime(state.analysis.generatedAt):"não disponível";
+ const freeBlocked=(state.odds.providerRestrictions||[]).some(x=>/free plans|2022 to 2024/i.test(x));
+ const coverageNote=freeBlocked?
+  '<div class="coverage-alert"><strong>⚠ Odds atuais indisponíveis no plano gratuito</strong><p>A chave API-Football funciona, mas a API bloqueia as odds da época 2026/27. Continuamos a mostrar as projeções históricas sem aprovar apostas. É necessário um fornecedor com cobertura da época atual.</p></div>':"";
  $("radarOverview").innerHTML='<div class="radar-overview-head"><strong>'+upcoming.length+' próximos jogos</strong><span>·</span><strong>'+modeled.length+' com projeção</strong><span>·</span><strong>'+finished.length+' resultados</strong></div>'+
   '<p>As escolhas em destaque são <b>projeções estatísticas a investigar</b>, não apostas aprovadas. Falta cruzar Statarea/SportyTrader, contexto e odd Betano.</p>'+
-  '<small>Fonte histórica: Football-Data.co.uk · atualização: '+esc(date)+' · '+(state.context.hasApiFootballKey?'API-Football ligada':'API-Football sem chave')+' · '+Object.values(state.context.contexts||{}).filter(x=>Boolean(x.weather)).length+' jogos com previsão meteorológica</small>';
+  coverageNote+'<small>Fonte histórica: Football-Data.co.uk · atualização: '+esc(date)+' · '+(state.context.hasApiFootballKey?'API-Football autenticada':'API-Football sem chave')+' · '+Object.values(state.context.contexts||{}).filter(x=>Boolean(x.weather)).length+' jogos com previsão meteorológica</small>';
 }
 function renderGamePreview(game){
  const phase=fixtureState(game),model=modelFor(game);
