@@ -1,44 +1,10 @@
 {
-  "generatedAt": "2026-11-08T17:59:13.969150Z",
+  "generatedAt": "2026-11-08T18:20:28.092335Z",
   "sources": [
     "ESPN (integração não oficial)",
     "TheSportsDB (plano gratuito limitado)"
   ],
   "games": [
-    {
-      "id": "espn-401885402",
-      "home": "Alverca",
-      "away": "Casa Pia",
-      "league": "Portugal · Primeira Liga",
-      "leagueCode": "por.1",
-      "division": 1,
-      "utc": "2026-11-07T18:00:00Z",
-      "status": "STATUS_FULL_TIME",
-      "homeScore": 1,
-      "awayScore": 1,
-      "homeId": "21613",
-      "awayId": "21581",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/21613.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/21581.png",
-      "source": "ESPN"
-    },
-    {
-      "id": "espn-401876411",
-      "home": "AJ Auxerre",
-      "away": "Paris FC",
-      "league": "França · Ligue 1",
-      "leagueCode": "fra.1",
-      "division": 1,
-      "utc": "2026-11-07T18:00:00Z",
-      "status": "STATUS_FULL_TIME",
-      "homeScore": 0,
-      "awayScore": 1,
-      "homeId": "172",
-      "awayId": "6851",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/172.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6851.png",
-      "source": "ESPN"
-    },
     {
       "id": "espn-401899558",
       "home": "Benevento",
@@ -54,6 +20,7 @@
       "awayId": "4055",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4059.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4055.png",
+      "venueCity": "Benevento",
       "source": "ESPN"
     },
     {
@@ -71,6 +38,7 @@
       "awayId": "165",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/10678.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/165.png",
+      "venueCity": "Pau",
       "source": "ESPN"
     },
     {
@@ -88,6 +56,7 @@
       "awayId": "3266",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/178.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3266.png",
+      "venueCity": "Saint-Etienne",
       "source": "ESPN"
     },
     {
@@ -105,6 +74,7 @@
       "awayId": "138",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/129.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/138.png",
+      "venueCity": "Berlin",
       "source": "ESPN"
     },
     {
@@ -122,6 +92,7 @@
       "awayId": "3997",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/104.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3997.png",
+      "venueCity": "Roma",
       "source": "ESPN"
     },
     {
@@ -139,6 +110,7 @@
       "awayId": "86",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/94.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/86.png",
+      "venueCity": "Manises",
       "source": "ESPN"
     },
     {
@@ -156,6 +128,7 @@
       "awayId": "245",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3747.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/245.png",
+      "venueCity": "Granada",
       "source": "ESPN"
     },
     {
@@ -173,6 +146,7 @@
       "awayId": "338",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/342.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/338.png",
+      "venueCity": "Peterborough",
       "source": "ESPN"
     },
     {
@@ -190,6 +164,7 @@
       "awayId": "170",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/160.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/170.png",
+      "venueCity": "Paris",
       "source": "ESPN"
     },
     {
@@ -207,6 +182,7 @@
       "awayId": "3696",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2250.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3696.png",
+      "venueCity": "Lisbon",
       "source": "ESPN"
     },
     {
@@ -224,6 +200,7 @@
       "awayId": "112",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/114.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/112.png",
+      "venueCity": "Napoli",
       "source": "ESPN"
     },
     {
@@ -241,6 +218,7 @@
       "awayId": "386",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/386.png",
+      "venueCity": "Stafford",
       "source": "ESPN"
     },
     {
@@ -258,6 +236,7 @@
       "awayId": "2428",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6418.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2428.png",
+      "venueCity": "Heidenheim",
       "source": "ESPN"
     },
     {
@@ -275,6 +254,7 @@
       "awayId": "270",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/10382.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/270.png",
+      "venueCity": "Magdeburg",
       "source": "ESPN"
     },
     {
@@ -292,6 +272,7 @@
       "awayId": "4471",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/121.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4471.png",
+      "venueCity": "Bochum",
       "source": "ESPN"
     },
     {
@@ -309,6 +290,7 @@
       "awayId": "244",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3751.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/244.png",
+      "venueCity": "Elche",
       "source": "ESPN"
     },
     {
@@ -326,6 +308,7 @@
       "awayId": "84",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/20179.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/84.png",
+      "venueCity": "Encamp",
       "source": "ESPN"
     },
     {
@@ -343,6 +326,7 @@
       "awayId": "337",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/331.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/337.png",
+      "venueCity": "Falmer",
       "source": "ESPN"
     },
     {
@@ -360,6 +344,7 @@
       "awayId": "364",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/384.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/364.png",
+      "venueCity": "London",
       "source": "ESPN"
     },
     {
@@ -377,6 +362,7 @@
       "awayId": "349",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/373.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/349.png",
+      "venueCity": "Ipswich",
       "source": "ESPN"
     },
     {
@@ -394,6 +380,7 @@
       "awayId": "363",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/366.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/363.png",
+      "venueCity": "Sunderland",
       "source": "ESPN"
     },
     {
@@ -411,6 +398,7 @@
       "awayId": "103",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3263.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+      "venueCity": "Genova",
       "source": "ESPN"
     },
     {
@@ -428,6 +416,7 @@
       "awayId": "105",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4007.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/105.png",
+      "venueCity": "Monza",
       "source": "ESPN"
     },
     {
@@ -445,6 +434,7 @@
       "awayId": "2573",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/11137.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2573.png",
+      "venueCity": "Chiavari",
       "source": "ESPN"
     },
     {
@@ -462,6 +452,7 @@
       "awayId": "166",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/169.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/166.png",
+      "venueCity": "Rennes",
       "source": "ESPN"
     },
     {
@@ -479,6 +470,7 @@
       "awayId": "400",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/400.png",
+      "venueCity": "Chislehurst",
       "source": "ESPN"
     },
     {
@@ -496,6 +488,7 @@
       "awayId": "131",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/122.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/131.png",
+      "venueCity": "Cologne",
       "source": "ESPN"
     },
     {
@@ -513,6 +506,7 @@
       "awayId": "2594",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2594.png",
+      "venueCity": "Somerset",
       "source": "ESPN"
     },
     {
@@ -530,6 +524,7 @@
       "awayId": "101",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/89.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/101.png",
+      "venueCity": "San Sebastian",
       "source": "ESPN"
     },
     {
@@ -547,6 +542,7 @@
       "awayId": "6832",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/9812.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6832.png",
+      "venueCity": "Girona",
       "source": "ESPN"
     },
     {
@@ -564,6 +560,7 @@
       "awayId": "21607",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3472.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/21607.png",
+      "venueCity": "Funchal",
       "source": "ESPN"
     },
     {
@@ -581,6 +578,7 @@
       "awayId": "552",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/12216.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/552.png",
+      "venueCity": "Estoril",
       "source": "ESPN"
     },
     {
@@ -598,6 +596,7 @@
       "awayId": "3699",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/12215.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3699.png",
+      "venueCity": "Ponta Delgada",
       "source": "ESPN"
     },
     {
@@ -608,13 +607,14 @@
       "leagueCode": "ita.2",
       "division": 2,
       "utc": "2026-11-08T16:15:00Z",
-      "status": "LIVE",
+      "status": "STATUS_FULL_TIME",
       "homeScore": 0,
       "awayScore": 1,
       "homeId": "3988",
       "awayId": "2734",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3988.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2734.png",
+      "venueCity": "Carrara",
       "source": "ESPN"
     },
     {
@@ -625,13 +625,14 @@
       "leagueCode": "fra.1",
       "division": 1,
       "utc": "2026-11-08T16:15:00Z",
-      "status": "LIVE",
+      "status": "STATUS_FULL_TIME",
       "homeScore": 0,
       "awayScore": 2,
       "homeId": "7868",
       "awayId": "2502",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7868.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2502.png",
+      "venueCity": "Angers",
       "source": "ESPN"
     },
     {
@@ -642,13 +643,14 @@
       "leagueCode": "fra.1",
       "division": 1,
       "utc": "2026-11-08T16:15:00Z",
-      "status": "LIVE",
-      "homeScore": 1,
+      "status": "STATUS_FULL_TIME",
+      "homeScore": 2,
       "awayScore": 0,
       "homeId": "6997",
       "awayId": "167",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6997.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/167.png",
+      "venueCity": "Brest",
       "source": "ESPN"
     },
     {
@@ -659,13 +661,14 @@
       "leagueCode": "fra.1",
       "division": 1,
       "utc": "2026-11-08T16:15:00Z",
-      "status": "LIVE",
+      "status": "STATUS_FULL_TIME",
       "homeScore": 0,
-      "awayScore": 1,
+      "awayScore": 2,
       "homeId": "3236",
       "awayId": "273",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3236.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/273.png",
+      "venueCity": "Le Havre",
       "source": "ESPN"
     },
     {
@@ -676,13 +679,14 @@
       "leagueCode": "fra.1",
       "division": 1,
       "utc": "2026-11-08T16:15:00Z",
-      "status": "LIVE",
-      "homeScore": 0,
+      "status": "STATUS_FULL_TIME",
+      "homeScore": 1,
       "awayScore": 1,
       "homeId": "2697",
       "awayId": "174",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2697.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/174.png",
+      "venueCity": "Le Mans",
       "source": "ESPN"
     },
     {
@@ -700,6 +704,7 @@
       "awayId": "362",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/360.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/362.png",
+      "venueCity": "Manchester",
       "source": "ESPN"
     },
     {
@@ -717,6 +722,7 @@
       "awayId": "598",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/126.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/598.png",
+      "venueCity": "Freiburg im Breisgau",
       "source": "ESPN"
     },
     {
@@ -734,6 +740,7 @@
       "awayId": "2572",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/110.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2572.png",
+      "venueCity": "Milano",
       "source": "ESPN"
     },
     {
@@ -751,6 +758,7 @@
       "awayId": "399",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/332.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/399.png",
+      "venueCity": "Oldham",
       "source": "ESPN"
     },
     {
@@ -768,6 +776,7 @@
       "awayId": "1538",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/85.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/1538.png",
+      "venueCity": "Vigo",
       "source": "ESPN"
     },
     {
@@ -785,6 +794,7 @@
       "awayId": "2922",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/102.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2922.png",
+      "venueCity": "Villarreal",
       "source": "ESPN"
     },
     {
@@ -802,6 +812,7 @@
       "awayId": "7320",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/98.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7320.png",
+      "venueCity": "Las Palmas de Gran Canaria",
       "source": "ESPN"
     },
     {
@@ -814,11 +825,12 @@
       "utc": "2026-11-08T17:30:00Z",
       "status": "LIVE",
       "homeScore": 0,
-      "awayScore": 1,
+      "awayScore": 2,
       "homeId": "3788",
       "awayId": "95",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3788.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/95.png",
+      "venueCity": "Gijón",
       "source": "ESPN"
     },
     {
@@ -829,13 +841,14 @@
       "leagueCode": "por.1",
       "division": 1,
       "utc": "2026-11-08T18:00:00Z",
-      "status": "STATUS_SCHEDULED",
+      "status": "LIVE",
       "homeScore": 0,
       "awayScore": 0,
       "homeId": "5309",
       "awayId": "437",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/5309.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/437.png",
+      "venueCity": "Guimarães",
       "source": "ESPN"
     },
     {
@@ -853,6 +866,7 @@
       "awayId": "4050",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/120.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4050.png",
+      "venueCity": "Vicenza",
       "source": "ESPN"
     },
     {
@@ -870,6 +884,7 @@
       "awayId": "133",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7911.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/133.png",
+      "venueCity": "Sinsheim",
       "source": "ESPN"
     },
     {
@@ -887,6 +902,7 @@
       "awayId": "111",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/109.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/111.png",
+      "venueCity": "Firenze",
       "source": "ESPN"
     },
     {
@@ -904,6 +920,7 @@
       "awayId": "176",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/175.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/176.png",
+      "venueCity": "Lens",
       "source": "ESPN"
     },
     {
@@ -921,6 +938,7 @@
       "awayId": "83",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/83.png",
+      "venueCity": "Madrid",
       "source": "ESPN"
     },
     {
@@ -938,6 +956,7 @@
       "awayId": "1929",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/21610.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/1929.png",
+      "venueCity": "Amadora",
       "source": "ESPN"
     },
     {
@@ -955,6 +974,7 @@
       "awayId": "2994",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3822.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2994.png",
+      "venueCity": "Vila do Conde",
       "source": "ESPN"
     },
     {
@@ -972,6 +992,7 @@
       "awayId": "20983",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/11487.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/20983.png",
+      "venueCity": "Sabadell",
       "source": "ESPN"
     },
     {
@@ -989,6 +1010,7 @@
       "awayId": "132350",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Plymouth",
       "source": "ESPN"
     },
     {
@@ -1006,6 +1028,7 @@
       "awayId": "96",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/96.png",
+      "venueCity": "Azkoitia",
       "source": "ESPN"
     },
     {
@@ -1023,6 +1046,7 @@
       "awayId": "3752",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3752.png",
+      "venueCity": "Valle de Aranguren",
       "source": "ESPN"
     },
     {
@@ -1040,6 +1064,7 @@
       "awayId": "7206",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/12587.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7206.png",
+      "venueCity": "Amorebieta",
       "source": "ESPN"
     },
     {
@@ -1057,6 +1082,7 @@
       "awayId": "5401",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Estepona",
       "source": "ESPN"
     },
     {
@@ -1074,6 +1100,7 @@
       "awayId": "17534",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/17534.png",
+      "venueCity": "Leganés, Madrid",
       "source": "ESPN"
     },
     {
@@ -1091,6 +1118,7 @@
       "awayId": "94",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/94.png",
+      "venueCity": "Manises",
       "source": "ESPN"
     },
     {
@@ -1108,6 +1136,7 @@
       "awayId": "2737",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2737.png",
+      "venueCity": "Ciudad Real",
       "source": "ESPN"
     },
     {
@@ -1125,6 +1154,7 @@
       "awayId": "244",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/244.png",
+      "venueCity": "Madrid",
       "source": "ESPN"
     },
     {
@@ -1142,6 +1172,7 @@
       "awayId": "1538",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/1538.png",
+      "venueCity": "Cuenca",
       "source": "ESPN"
     },
     {
@@ -1159,6 +1190,7 @@
       "awayId": "6994",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6994.png",
+      "venueCity": "Chambery",
       "source": "ESPN"
     },
     {
@@ -1176,6 +1208,7 @@
       "awayId": "17483",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3170.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/17483.png",
+      "venueCity": "Dijon",
       "source": "ESPN"
     },
     {
@@ -1193,6 +1226,7 @@
       "awayId": "6732",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6732.png",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -1210,6 +1244,7 @@
       "awayId": "16917",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Saint-Philbert-de-Grand-Lieu",
       "source": "ESPN"
     },
     {
@@ -1227,6 +1262,7 @@
       "awayId": "12597",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/17534.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/12597.png",
+      "venueCity": "Leganés, Madrid",
       "source": "ESPN"
     },
     {
@@ -1244,6 +1280,7 @@
       "awayId": "85",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/85.png",
+      "venueCity": "Villares de la Reina",
       "source": "ESPN"
     },
     {
@@ -1261,6 +1298,7 @@
       "awayId": "4438",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/95.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/4438.png",
+      "venueCity": "Valladolid",
       "source": "ESPN"
     },
     {
@@ -1278,6 +1316,7 @@
       "awayId": "274",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/274.png",
+      "venueCity": "Corsica",
       "source": "ESPN"
     },
     {
@@ -1295,6 +1334,7 @@
       "awayId": "21804",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Espaly-Saint-Marcel",
       "source": "ESPN"
     },
     {
@@ -1312,6 +1352,7 @@
       "awayId": "21769",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -1329,6 +1370,7 @@
       "awayId": "3243",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3243.png",
+      "venueCity": "Tourcoining",
       "source": "ESPN"
     },
     {
@@ -1346,6 +1388,7 @@
       "awayId": "7719",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/10675.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7719.png",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -1363,6 +1406,7 @@
       "awayId": "272",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/272.png",
+      "venueCity": "Boulay-Moselle",
       "source": "ESPN"
     },
     {
@@ -1380,6 +1424,7 @@
       "awayId": "9021",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -1397,6 +1442,7 @@
       "awayId": "18101",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Chalone-sur-Saône",
       "source": "ESPN"
     },
     {
@@ -1414,6 +1460,7 @@
       "awayId": "2927",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2927.png",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -1431,6 +1478,7 @@
       "awayId": "3171",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3171.png",
+      "venueCity": "Fontenay-le-Comte",
       "source": "ESPN"
     },
     {
@@ -1448,6 +1496,7 @@
       "awayId": "3788",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/20983.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3788.png",
+      "venueCity": "San Sebastian",
       "source": "ESPN"
     },
     {
@@ -1465,6 +1514,7 @@
       "awayId": "18066",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/18066.png",
+      "venueCity": "Firminy",
       "source": "ESPN"
     },
     {
@@ -1482,6 +1532,7 @@
       "awayId": "21303",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Croix",
       "source": "ESPN"
     },
     {
@@ -1499,6 +1550,7 @@
       "awayId": "11303",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -1516,6 +1568,7 @@
       "awayId": "11895",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/11895.png",
+      "venueCity": "Pont-de-Chéruy",
       "source": "ESPN"
     },
     {
@@ -1533,6 +1586,7 @@
       "awayId": "134121",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -1550,6 +1604,7 @@
       "awayId": "7718",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7718.png",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -1567,6 +1622,7 @@
       "awayId": "18901",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -1584,6 +1640,7 @@
       "awayId": "134097",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Amneville-les-Thermes",
       "source": "ESPN"
     },
     {
@@ -1601,6 +1658,7 @@
       "awayId": "9011",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Dijon",
       "source": "ESPN"
     },
     {
@@ -1618,6 +1676,7 @@
       "awayId": "11880",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2927.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/11880.png",
+      "venueCity": "Caen",
       "source": "ESPN"
     },
     {
@@ -1635,6 +1694,7 @@
       "awayId": "20275",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Contres",
       "source": "ESPN"
     },
     {
@@ -1652,6 +1712,7 @@
       "awayId": "134063",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Cournon-d'Auvergne",
       "source": "ESPN"
     },
     {
@@ -1669,6 +1730,7 @@
       "awayId": "7721",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7732.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7721.png",
+      "venueCity": "Dunkerque",
       "source": "ESPN"
     },
     {
@@ -1686,6 +1748,7 @@
       "awayId": "134135",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Le Grau-du-Roi",
       "source": "ESPN"
     },
     {
@@ -1703,6 +1766,7 @@
       "awayId": "10677",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Pontivy",
       "source": "ESPN"
     },
     {
@@ -1720,6 +1784,7 @@
       "awayId": "9017",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Lyon",
       "source": "ESPN"
     },
     {
@@ -1737,6 +1802,7 @@
       "awayId": "22138",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Lyon",
       "source": "ESPN"
     },
     {
@@ -1754,6 +1820,7 @@
       "awayId": "21817",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Saint-Omer",
       "source": "ESPN"
     },
     {
@@ -1771,6 +1838,7 @@
       "awayId": "18120",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Besançon",
       "source": "ESPN"
     },
     {
@@ -1788,6 +1856,7 @@
       "awayId": "9009",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Saint-Brieuc",
       "source": "ESPN"
     },
     {
@@ -1805,6 +1874,7 @@
       "awayId": "7869",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7869.png",
+      "venueCity": "Villiers-le-Bel",
       "source": "ESPN"
     },
     {
@@ -1822,6 +1892,7 @@
       "awayId": "3267",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3267.png",
+      "venueCity": "Béthune",
       "source": "ESPN"
     },
     {
@@ -1839,6 +1910,7 @@
       "awayId": "134120",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Strasbourg",
       "source": "ESPN"
     },
     {
@@ -1856,6 +1928,7 @@
       "awayId": "10235",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Paray-le-Monial",
       "source": "ESPN"
     },
     {
@@ -1873,6 +1946,7 @@
       "awayId": "18400",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Vesoul",
       "source": "ESPN"
     },
     {
@@ -1890,6 +1964,7 @@
       "awayId": "134087",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -1907,6 +1982,7 @@
       "awayId": "20179",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6832.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/20179.png",
+      "venueCity": "Almería",
       "source": "ESPN"
     },
     {
@@ -1924,6 +2000,7 @@
       "awayId": "8447",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/84.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/8447.png",
+      "venueCity": "Palma de Mallorca",
       "source": "ESPN"
     },
     {
@@ -1941,6 +2018,7 @@
       "awayId": "134106",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Balma",
       "source": "ESPN"
     },
     {
@@ -1958,6 +2036,7 @@
       "awayId": "134067",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Mende",
       "source": "ESPN"
     },
     {
@@ -1975,6 +2054,7 @@
       "awayId": "17621",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -1992,6 +2072,7 @@
       "awayId": "20272",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Bressuire",
       "source": "ESPN"
     },
     {
@@ -2009,6 +2090,7 @@
       "awayId": "7720",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -2026,6 +2108,7 @@
       "awayId": "134071",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Rennes",
       "source": "ESPN"
     },
     {
@@ -2043,6 +2126,7 @@
       "awayId": "134113",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Chauny",
       "source": "ESPN"
     },
     {
@@ -2060,6 +2144,7 @@
       "awayId": "134144",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Canet-en-Roussillon",
       "source": "ESPN"
     },
     {
@@ -2077,6 +2162,7 @@
       "awayId": "12957",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Buxerolles",
       "source": "ESPN"
     },
     {
@@ -2094,6 +2180,7 @@
       "awayId": "10678",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/10678.png",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -2111,6 +2198,7 @@
       "awayId": "171",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/171.png",
+      "venueCity": "Lannion",
       "source": "ESPN"
     },
     {
@@ -2128,6 +2216,7 @@
       "awayId": "134103",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -2145,6 +2234,7 @@
       "awayId": "134105",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Le Bouscat",
       "source": "ESPN"
     },
     {
@@ -2162,6 +2252,7 @@
       "awayId": "3335",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3335.png",
+      "venueCity": "Cambrai",
       "source": "ESPN"
     },
     {
@@ -2179,6 +2270,7 @@
       "awayId": "9812",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/92.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/9812.png",
+      "venueCity": "Oviedo",
       "source": "ESPN"
     },
     {
@@ -2196,6 +2288,7 @@
       "awayId": "10683",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -2213,6 +2306,7 @@
       "awayId": "134074",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Châteaubriant",
       "source": "ESPN"
     },
     {
@@ -2230,6 +2324,7 @@
       "awayId": "5404",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/245.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/5404.png",
+      "venueCity": "Santa Cruz de Tenerife",
       "source": "ESPN"
     },
     {
@@ -2247,6 +2342,7 @@
       "awayId": "134085",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -2264,6 +2360,7 @@
       "awayId": "134129",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Metz",
       "source": "ESPN"
     },
     {
@@ -2281,6 +2378,7 @@
       "awayId": "134098",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Massay",
       "source": "ESPN"
     },
     {
@@ -2298,6 +2396,7 @@
       "awayId": "14439",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Metz",
       "source": "ESPN"
     },
     {
@@ -2315,6 +2414,7 @@
       "awayId": "20876",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -2332,6 +2432,7 @@
       "awayId": "134119",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -2349,6 +2450,7 @@
       "awayId": "16913",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -2366,6 +2468,7 @@
       "awayId": "11884",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/11884.png",
+      "venueCity": "Paris",
       "source": "ESPN"
     },
     {
@@ -2383,6 +2486,7 @@
       "awayId": "3200",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Villenave",
       "source": "ESPN"
     },
     {
@@ -2400,6 +2504,7 @@
       "awayId": "19388",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -2417,6 +2522,7 @@
       "awayId": "10685",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -2434,6 +2540,7 @@
       "awayId": "134093",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -2451,6 +2558,7 @@
       "awayId": "7733",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -2468,6 +2576,7 @@
       "awayId": "177",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/177.png",
+      "venueCity": "Saint-Dié-des-Vosges",
       "source": "ESPN"
     },
     {
@@ -2485,6 +2594,7 @@
       "awayId": "3266",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3266.png",
+      "venueCity": "Saint-Renan",
       "source": "ESPN"
     },
     {
@@ -2502,6 +2612,7 @@
       "awayId": "18085",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Sedan",
       "source": "ESPN"
     },
     {
@@ -2519,6 +2630,7 @@
       "awayId": "19386",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -2536,6 +2648,7 @@
       "awayId": "7730",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7730.png",
+      "venueCity": "Seyssinet-Pariset",
       "source": "ESPN"
     },
     {
@@ -2553,6 +2666,7 @@
       "awayId": "22139",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Saint-Omer",
       "source": "ESPN"
     },
     {
@@ -2570,6 +2684,7 @@
       "awayId": "165",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/165.png",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -2587,6 +2702,7 @@
       "awayId": "10693",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Pontivy",
       "source": "ESPN"
     },
     {
@@ -2604,6 +2720,7 @@
       "awayId": "134110",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Houilles",
       "source": "ESPN"
     },
     {
@@ -2621,6 +2738,7 @@
       "awayId": "134077",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -2638,6 +2756,7 @@
       "awayId": "132785",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Marseille",
       "source": "ESPN"
     },
     {
@@ -2655,6 +2774,7 @@
       "awayId": "134092",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -2672,6 +2792,7 @@
       "awayId": "9010",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Vandoeuvre-les-Nancy",
       "source": "ESPN"
     },
     {
@@ -2689,6 +2810,7 @@
       "awayId": "134089",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Veauche",
       "source": "ESPN"
     },
     {
@@ -2706,6 +2828,7 @@
       "awayId": "4744",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -2723,6 +2846,7 @@
       "awayId": "134145",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -2740,6 +2864,7 @@
       "awayId": "7574",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -2757,6 +2882,7 @@
       "awayId": "134104",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -2774,6 +2900,7 @@
       "awayId": "21306",
       "homeLogo": "",
       "awayLogo": "",
+      "venueCity": "Montpellier",
       "source": "ESPN"
     },
     {
@@ -2791,6 +2918,7 @@
       "awayId": "178",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/178.png",
+      "venueCity": "Annecy",
       "source": "ESPN"
     },
     {
@@ -2808,6 +2936,7 @@
       "awayId": "98",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3747.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/98.png",
+      "venueCity": "Granada",
       "source": "ESPN"
     },
     {
@@ -2825,6 +2954,7 @@
       "awayId": "3842",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3752.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3842.png",
+      "venueCity": "Eibar",
       "source": "ESPN"
     },
     {
@@ -2842,6 +2972,7 @@
       "awayId": "11487",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7320.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/11487.png",
+      "venueCity": "Elda",
       "source": "ESPN"
     }
   ],

@@ -1,18 +1,201 @@
 {
-  "generatedAt": null,
+  "generatedAt": "2026-11-08T18:21:33.132479+00:00",
   "sources": {
-    "weather": "Open-Meteo — por cidade do estádio quando identificada",
-    "predictions": "API-Football — opcional, não confundir com Statarea ou SportyTrader",
-    "lineups": "API-Football — opcional",
-    "injuries": "API-Football — opcional",
-    "statarea": "não integrado",
-    "sportytrader": "não integrado",
-    "soccervital": "não integrado",
-    "soccernews": "não integrado"
+    "weather": "Open-Meteo (requires verified venue city)",
+    "lineups": "API-Football optional",
+    "injuries": "API-Football optional",
+    "predictions": "API-Football optional (distinct from Statarea/SportyTrader)",
+    "soccernews": "not connected",
+    "statarea": "not connected",
+    "sportytrader": "not connected",
+    "soccervital": "not connected"
   },
   "hasApiFootballKey": false,
   "apiCalls": 0,
-  "matchedGames": 0,
-  "contexts": {},
-  "message": "Sem contexto automático até à próxima sincronização."
+  "matchedGames": 13,
+  "contexts": {
+    "espn-401899554": {
+      "weather": {
+        "city": "Vicenza",
+        "countryCode": "IT",
+        "temperatureC": 9.7,
+        "precipitationMm": 0.0,
+        "gustKmh": 5.4,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-08T18:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401884742": {
+      "weather": {
+        "city": "Sinsheim",
+        "countryCode": "DE",
+        "temperatureC": 6.8,
+        "precipitationMm": 0.0,
+        "gustKmh": 6.8,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-08T18:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401876404": {
+      "weather": {
+        "city": "Lens",
+        "countryCode": "FR",
+        "temperatureC": 5.5,
+        "precipitationMm": 0.0,
+        "gustKmh": 13.3,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-08T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401882816": {
+      "weather": {
+        "city": "Madrid",
+        "countryCode": "ES",
+        "temperatureC": 13.8,
+        "precipitationMm": 0.0,
+        "gustKmh": 14.4,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-08T20:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401885401": {
+      "weather": {
+        "city": "Amadora",
+        "countryCode": "PT",
+        "temperatureC": 18.8,
+        "precipitationMm": 0.3,
+        "gustKmh": 60.8,
+        "alert": true,
+        "risk": "Chuva intensa ou rajadas fortes previstas na zona urbana",
+        "forecastHourUtc": "2026-11-08T20:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401883139": {
+      "weather": {
+        "city": "Sabadell",
+        "countryCode": "ES",
+        "temperatureC": 15.4,
+        "precipitationMm": 0.0,
+        "gustKmh": 6.5,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-09T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401931098": {
+      "weather": {
+        "city": "Plymouth",
+        "countryCode": "GB",
+        "temperatureC": 11.8,
+        "precipitationMm": 0.0,
+        "gustKmh": 57.6,
+        "alert": true,
+        "risk": "Chuva intensa ou rajadas fortes previstas na zona urbana",
+        "forecastHourUtc": "2026-11-09T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401928514": {
+      "weather": {
+        "city": "Azkoitia",
+        "countryCode": "ES",
+        "temperatureC": 19.6,
+        "precipitationMm": 0.0,
+        "gustKmh": 37.8,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-10T18:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401928519": {
+      "weather": {
+        "city": "Amorebieta",
+        "countryCode": "ES",
+        "temperatureC": 19.0,
+        "precipitationMm": 0.0,
+        "gustKmh": 27.4,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-10T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401928528": {
+      "weather": {
+        "city": "Estepona",
+        "countryCode": "ES",
+        "temperatureC": 19.6,
+        "precipitationMm": 0.0,
+        "gustKmh": 6.8,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-10T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401928504": {
+      "weather": {
+        "city": "Manises",
+        "countryCode": "ES",
+        "temperatureC": 19.0,
+        "precipitationMm": 0.0,
+        "gustKmh": 13.0,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-10T20:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401928506": {
+      "weather": {
+        "city": "Ciudad Real",
+        "countryCode": "ES",
+        "temperatureC": 14.9,
+        "precipitationMm": 0.0,
+        "gustKmh": 40.0,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-12T17:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401928551": {
+      "weather": {
+        "city": "Madrid",
+        "countryCode": "ES",
+        "temperatureC": 13.8,
+        "precipitationMm": 0.0,
+        "gustKmh": 42.1,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-12T18:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    }
+  },
+  "message": "Missing data is reported as unavailable. No automatic critical exclusion without confirmed match-specific evidence."
 }
