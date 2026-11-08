@@ -57,17 +57,20 @@ jobs:
       - name: Fetch actual football fixtures
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          API_FOOTBALL_FIXTURE_MAX_LEAGUES: "6"
         run: python scripts/sync_fixtures.py
       - name: Build automatic match projections from published season results
         run: python scripts/sync_analysis.py
       - name: Load reference odds where API-Football is configured
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          API_FOOTBALL_ODDS_DAYS: "2"
+          API_FOOTBALL_ODDS_MAX_PAGES: "2"
         run: python scripts/sync_odds.py
       - name: Collect licensed match context and verified venue-city forecasts
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
-          API_FOOTBALL_CONTEXT_CALL_LIMIT: '6'
+          API_FOOTBALL_CONTEXT_CALL_LIMIT: '4'
         run: python scripts/sync_context.py
       - name: Build mobile icons from the existing logo
         run: |
