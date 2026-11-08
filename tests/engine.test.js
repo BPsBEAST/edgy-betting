@@ -44,3 +44,19 @@ test("void bets use win/push/loss settlement correctly",()=>{
  assert.ok(Math.abs(a.equivalent-.45/.7)<1e-10);
 });
 test("quarter asian lines never approve using the whole-win model",()=>assert.equal(evaluate({...base,market:"quarter"}).status,"OBSERVAR"));
+
+test("pre-match model never approves a past kickoff",()=>{
+ assert.equal(evaluate({...base,kickoff:"2020-01-01T12:00:00Z"}).status,"OBSERVAR");
+});
+test("combined bets depend on both goals and results",()=>{
+ const r=evaluate({...base,market:"combo"},[{matchId:base.matchId,group:"golos",day:base.day}]);
+ assert.equal(r.correlated,true);
+});
+test("an exact score correlates with an existing goals market",()=>{
+ const r=evaluate({...base,market:"correct"},[{matchId:base.matchId,group:"golos",day:base.day}]);
+ assert.equal(r.correlated,true);
+});
+test("unusually distant selections remain observing despite nominal edge",()=>{
+ const r=evaluate({...base,probabilities:{fair:80,statarea:78,sporty:77}});
+ assert.equal(r.status,"OBSERVAR");
+});
