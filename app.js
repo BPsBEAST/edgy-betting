@@ -199,7 +199,7 @@ function renderAutoPanel(){
    '<div class="featured-grid"><div><small>Prob. estimada</small><b>'+pct(pick.probability)+'</b></div><div><small>Odd mín. teórica</small><b>'+safeOdd(pick.minimumOdd)+'</b></div><div><small>Odd Betano</small><b>Por confirmar</b></div></div>'+
    '<button class="feature-action" data-manual-market="'+esc(pick.key)+'" type="button">Completar dados desta seleção ↗</button></div>';
  }else html+='<div class="no-stats"><strong>Sem seleção preferencial</strong><p>Os mercados modelados não cumprem os limites exploratórios mínimos para uma sugestão estatística.</p></div>';
- const groups=[["Resultado","RESULTADO FINAL"],["Golos","GOLOS / AMBAS MARCAM"],["Resultado exato","RESULTADO EXATO"]];
+ const groups=[["Resultado","RESULTADO FINAL"],["Golos","GOLOS / AMBAS MARCAM"],["Intervalo","INTERVALO"],["Cantos","CANTOS · HISTÓRICO"],["Remates","REMATES E REMATES À BALIZA"],["Combinadas","COMBINADAS · PROB. CONJUNTA"],["Resultado exato","RESULTADO EXATO"]];
  for(const [group,title] of groups){
   const items=(model.markets||[]).filter(x=>x.group===group);
   if(!items.length)continue;
@@ -230,7 +230,7 @@ function openManual(key){
  if(!item)return;
  $("manualDetails").open=true;
  $("selection").value=item.label;
- $("market").value=key.startsWith("CS_")?"correct":key.startsWith("1X2_")?"result":"goals";
+ $("market").value=key.startsWith("CS_")?"correct":key.startsWith("1X2_")?"result":key.startsWith("HT_")?"half":key.startsWith("CMB_")?"combo":key.startsWith("C_")?"corners":(key.startsWith("S_")||key.startsWith("ST_"))?"shots":"goals";
  $("odds").value=q?.odd||"";
  $("priceSource").value="reference";
  $("p_fair").value=Number.isFinite(q?.fairProbability)?(q.fairProbability*100).toFixed(2):"";
