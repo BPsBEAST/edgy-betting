@@ -54,6 +54,7 @@ jobs:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
         run: python scripts/sync_fixtures.py
       - name: Commit updated public fixture cache
+        if: github.event_name != 'push'
         run: |
           if ! git diff --quiet -- data/fixtures.json; then
             git config user.name "github-actions[bot]"
