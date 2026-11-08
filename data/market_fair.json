@@ -1,9 +1,97 @@
 {
-  "generatedAt": null,
-  "provider": "TipsAudit / fair odds",
+  "generatedAt": "2026-11-08T20:53:55.351936+00:00",
+  "provider": "TipsAudit (API pública gratuita, atribuição obrigatória)",
   "sourceUrl": "https://tipsaudit.com/api",
-  "status": "Ainda não sincronizado",
-  "matchedGames": 0,
-  "matches": {},
-  "note": "Mercado sharp sem margem; não confirma odd Betano."
+  "status": "Disponível",
+  "feedGeneratedAt": "2026-11-08T20:53:55+00:00",
+  "matchedGames": 6,
+  "matches": {
+    "espn-401883139": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/16007/sabadell-vs-real-sociedad-ii-2026-11-09",
+      "fairProbability": {
+        "1X2_H": 0.5648,
+        "1X2_D": 0.2543,
+        "1X2_A": 0.1809
+      },
+      "readAt": "2026-11-08T19:34:57+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401883136": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/16669/leganes-vs-burgos-2026-11-13",
+      "fairProbability": {
+        "1X2_H": 0.4514,
+        "1X2_D": 0.288,
+        "1X2_A": 0.2606
+      },
+      "readAt": "2026-11-08T19:34:57+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401883118": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/17062/almeria-vs-fc-andorra-2026-11-14",
+      "fairProbability": {
+        "1X2_H": 0.5718,
+        "1X2_D": 0.2268,
+        "1X2_A": 0.2013
+      },
+      "readAt": "2026-11-08T19:34:57+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401883135": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/17063/mallorca-vs-cordoba-2026-11-14",
+      "fairProbability": {
+        "1X2_H": 0.5889,
+        "1X2_D": 0.215,
+        "1X2_A": 0.1961
+      },
+      "readAt": "2026-11-08T19:34:57+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": {
+        "market": "1X2_H",
+        "odd": 1.71,
+        "bookmaker": "Unibet (NL)",
+        "source": "TipsAudit / soft-book market",
+        "referenceOnly": true,
+        "betanoConfirmedOnSlip": false
+      }
+    },
+    "espn-401883116": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/17564/granada-cf-vs-las-palmas-2026-11-15",
+      "fairProbability": {
+        "1X2_H": 0.5745,
+        "1X2_D": 0.2462,
+        "1X2_A": 0.1793
+      },
+      "readAt": "2026-11-08T19:34:57+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401883117": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/17567/eibar-vs-cadiz-2026-11-15",
+      "fairProbability": {
+        "1X2_H": 0.6005,
+        "1X2_D": 0.2273,
+        "1X2_A": 0.1722
+      },
+      "readAt": "2026-11-08T19:34:57+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": {
+        "market": "1X2_H",
+        "odd": 1.71,
+        "bookmaker": "Unibet (NL)",
+        "source": "TipsAudit / soft-book market",
+        "referenceOnly": true,
+        "betanoConfirmedOnSlip": false
+      }
+    }
+  },
+  "note": "Probabilidade justa do mercado sharp. Não conta como prognóstico Statarea/SportyTrader, não confirma Betano Portugal. URL de origem obrigatória."
 }
