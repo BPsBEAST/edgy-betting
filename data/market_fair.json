@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-11-08T20:53:55.351936+00:00",
+  "generatedAt": "2026-11-08T21:05:50.693844+00:00",
   "provider": "TipsAudit (API pública gratuita, atribuição obrigatória)",
   "sourceUrl": "https://tipsaudit.com/api",
   "status": "Disponível",
-  "feedGeneratedAt": "2026-11-08T20:53:55+00:00",
+  "feedGeneratedAt": "2026-11-08T21:05:51+00:00",
   "matchedGames": 6,
   "matches": {
     "espn-401883139": {
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/16007/sabadell-vs-real-sociedad-ii-2026-11-09",
       "fairProbability": {
-        "1X2_H": 0.5648,
-        "1X2_D": 0.2543,
-        "1X2_A": 0.1809
+        "1X2_H": 0.5622,
+        "1X2_D": 0.2559,
+        "1X2_A": 0.1819
       },
-      "readAt": "2026-11-08T19:34:57+00:00",
+      "readAt": "2026-11-08T20:34:32+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -26,7 +26,7 @@
         "1X2_D": 0.288,
         "1X2_A": 0.2606
       },
-      "readAt": "2026-11-08T19:34:57+00:00",
+      "readAt": "2026-11-08T20:34:32+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -38,7 +38,7 @@
         "1X2_D": 0.2268,
         "1X2_A": 0.2013
       },
-      "readAt": "2026-11-08T19:34:57+00:00",
+      "readAt": "2026-11-08T20:34:32+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -50,7 +50,7 @@
         "1X2_D": 0.215,
         "1X2_A": 0.1961
       },
-      "readAt": "2026-11-08T19:34:57+00:00",
+      "readAt": "2026-11-08T20:34:32+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
         "market": "1X2_H",
@@ -69,7 +69,7 @@
         "1X2_D": 0.2462,
         "1X2_A": 0.1793
       },
-      "readAt": "2026-11-08T19:34:57+00:00",
+      "readAt": "2026-11-08T20:34:32+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -81,7 +81,7 @@
         "1X2_D": 0.2273,
         "1X2_A": 0.1722
       },
-      "readAt": "2026-11-08T19:34:57+00:00",
+      "readAt": "2026-11-08T20:34:32+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
         "market": "1X2_H",

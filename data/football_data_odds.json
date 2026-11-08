@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T21:01:56.781682+00:00",
+  "generatedAt": "2026-11-08T21:05:44.999054+00:00",
   "source": "Football-Data.co.uk — free pre-match fixture CSV",
   "sourceUrl": "https://www.football-data.co.uk/fixtures.csv",
   "downloaded": true,
@@ -7,6 +7,15 @@
   "unmatchedRows": 160,
   "futureRows": 1,
   "futureSupportedRows": 1,
+  "unmatchedFutureExamples": [
+    {
+      "division": "SP2",
+      "date": "09/11/2026",
+      "time": "19:30",
+      "home": "Sabadell",
+      "away": "Sociedad B"
+    }
+  ],
   "matchedGames": 0,
   "matches": {},
   "matchEvidence": {},
