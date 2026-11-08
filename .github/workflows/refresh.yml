@@ -67,11 +67,19 @@ jobs:
         id: pages_setup
         continue-on-error: true
         uses: actions/configure-pages@v5
+      - name: Prepare safe static site
+        if: steps.pages_setup.outcome == 'success'
+        run: |
+          mkdir -p ./site/src ./site/data
+          cp index.html styles.css app.js ./site/
+          cp src/engine.js ./site/src/
+          cp data/fixtures.json ./site/data/
+          touch ./site/.nojekyll
       - name: Upload website
         if: steps.pages_setup.outcome == 'success'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ./site
       - name: Publish website
         if: steps.pages_setup.outcome == 'success'
         id: deployment
