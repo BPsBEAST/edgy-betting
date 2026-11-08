@@ -1,4 +1,5 @@
 import {MARKETS,evaluate} from "./src/engine.js";
+import {fixtureState,isBettablePeriod,selectPreview,previewVerdict} from "./src/radar.js";
 const $=id=>document.getElementById(id);
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const safeImg=url=>typeof url==="string"&&/^https:\/\/[a-z0-9.-]+\//i.test(url)?url:"";
@@ -7,7 +8,7 @@ const localTime=d=>new Intl.DateTimeFormat("pt-PT",{timeZone:"Europe/Lisbon",hou
 const niceDate=d=>new Intl.DateTimeFormat("pt-PT",{timeZone:"Europe/Lisbon",weekday:"long",day:"numeric",month:"long"}).format(new Date(d));
 const n=(v,d=1)=>Number.isFinite(v)?new Intl.NumberFormat("pt-PT",{minimumFractionDigits:d,maximumFractionDigits:d}).format(v):"—";
 const readSaved=()=>{try{let list=JSON.parse(localStorage.getItem("edgy_betting_saved_v1")||"[]");return Array.isArray(list)?list.filter(x=>x&&x.matchId):[]}catch{return []}};
-const state={games:[],source:"",generated:null,error:"",selected:null,filter:"all",league:"all",query:"",view:"matches",saved:readSaved(),current:null,radar:"all",analysis:{models:{},generatedAt:null},odds:{matches:{},generatedAt:null}};
+const state={games:[],source:"",generated:null,error:"",selected:null,filter:"upcoming",league:"all",query:"",view:"matches",saved:readSaved(),current:null,radar:"all",analysis:{models:{},generatedAt:null},odds:{matches:{},generatedAt:null}};
 
 async function loadIntelligence(){
  const get=async name=>{
@@ -24,64 +25,103 @@ async function loadIntelligence(){
 function modelFor(game){return state.analysis.models?.[game?.id]||null;}
 function quoteFor(game,key){return state.odds.matches?.[game?.id]?.[key]||null;}
 function percentage(v){return typeof v==="number"&&Number.isFinite(v)?n(v*100,1)+"%":"—";}
+
+const pct=x=>Number.isFinite(x)?n(x*100,1)+"%":"—";
+function safeOdd(value){const x=Number(value);return Number.isFinite(x)&&x>1?n(x,2):"—";}
+function statusPill(key,label){
+ const styles={APOSTA:"aposta",VERIFICAR:"verificar",OBSERVAR:"observar",EXCLUIDA:"excluida",
+  SEM_DADOS:"incompleto",SEM_INPLAY:"incompleto",TERMINADO:"incompleto",A_CONFIRMAR:"incompleto"};
+ return '<span class="status-pill status-'+(styles[key]||"incompleto")+'">'+esc(label)+'</span>';
+}
 function renderRadarOverview(){
- const count=state.games.filter(g=>!!modelFor(g)).length;
- const priced=state.games.filter(g=>!!Object.keys(state.odds.matches?.[g.id]||{}).length).length;
- const timestamp=state.analysis.generatedAt?localTime(state.analysis.generatedAt):"não disponível";
- $("radarOverview").innerHTML='<span>◎</span><b>'+count+' jogos com projeções estatísticas</b> · '+priced+' com odds de referência. <strong>0 apostas automáticas aprovadas</strong><br>'+
- '<small>Modelo Football-Data/Poisson exploratório; atualização: '+esc(timestamp)+'. Só uma fonte estatística, não equivale ao consenso obrigatório. Os jogos sem modelo continuam visíveis.</small>';
+ const upcoming=state.games.filter(g=>isBettablePeriod(g));
+ const finished=state.games.filter(g=>fixtureState(g).kind==="finished");
+ const modeled=upcoming.filter(g=>Boolean(modelFor(g)));
+ const date=state.analysis.generatedAt?niceDate(state.analysis.generatedAt)+" às "+localTime(state.analysis.generatedAt):"não disponível";
+ $("radarOverview").innerHTML='<div class="radar-overview-head"><strong>'+upcoming.length+' próximos jogos</strong><span>·</span><strong>'+modeled.length+' com projeção</strong><span>·</span><strong>'+finished.length+' resultados</strong></div>'+
+  '<p>As escolhas em destaque são <b>projeções estatísticas a investigar</b>, não apostas aprovadas. Falta cruzar Statarea/SportyTrader, contexto e odd Betano.</p>'+
+  '<small>Fonte histórica: Football-Data.co.uk · atualização: '+esc(date)+'</small>';
 }
 function renderGamePreview(game){
- const model=modelFor(game),quotes=state.odds.matches?.[game.id]||{};
- const hasPrice=Object.keys(quotes).length>0;
- if(!model)return '<span class="game-preview no-data"><span>◉ Sem histórico suficiente para análise automática</span>'+(hasPrice?'<span class="price-flag">ODDS DE REFERÊNCIA</span>':"")+'</span>';
- const winner=(model.markets||[]).filter(x=>x.key?.startsWith("1X2_"));
- const total=model.markets?.find(x=>x.key==="O25");
- const forecast=winner.length===3?
-  '<span class="forecast-mini"><span>1 <b>'+percentage(winner[0].probability)+'</b></span><span>X <b>'+percentage(winner[1].probability)+'</b></span><span>2 <b>'+percentage(winner[2].probability)+'</b></span></span>':"";
- return '<span class="game-preview"><span class="forecast-mini">'+forecast+(total?'<span>+2,5 <b>'+percentage(total.probability)+'</b></span>':"")+'</span><span class="forecast-note">'+(hasPrice?'<span class="price-flag">◎ ODDS DE REFERÊNCIA</span>':'◉ OBSERVAR · SEM ODD CONFIRMADA')+'</span></span>';
+ const phase=fixtureState(game),model=modelFor(game);
+ if(phase.kind==="finished")return '<span class="game-preview result-preview"><strong>Resultado final: '+esc(phase.score||"por confirmar")+'</strong><small>Jogo terminado · sem tips retroativas</small></span>';
+ if(phase.kind==="postponed")return '<span class="game-preview result-preview">Encontro adiado · sem análise de apostas</span>';
+ if(phase.kind==="live")return '<span class="game-preview result-preview">Jogo em direto'+(phase.score?" · "+esc(phase.score):"")+' · não há modelo in-play</span>';
+ if(phase.kind==="awaiting")return '<span class="game-preview result-preview">Encontro iniciado · resultado ainda não confirmado na fonte</span>';
+ const info=previewVerdict(game,model,state.odds.matches?.[game.id]||{});
+ if(!info.tip)return '<span class="game-preview no-data"><span>'+esc(info.reason)+'</span><span class="price-flag">SEM TIP VALIDADA</span></span>';
+ const pick=info.tip,odd=info.quote?.odd;
+ return '<span class="game-preview game-tip"><span class="tip-caption">PROJEÇÃO PARA INVESTIGAR</span>'+
+   '<span class="tip-line"><strong>'+esc(pick.label)+'</strong><b>'+pct(pick.probability)+'</b></span>'+
+   '<span class="tip-foot">Odd mínima do modelo: <b>'+safeOdd(pick.minimumOdd)+'</b>'+(odd?' · referência: '+safeOdd(odd):' · sem odd Betano')+'</span></span>';
+}
+function renderWorkflowChecklist(){
+ const game=state.selected;
+ if(!game){$("workflowChecklist").innerHTML="";return;}
+ const phase=fixtureState(game);
+ if(phase.kind!=="upcoming"){
+  $("workflowChecklist").innerHTML='<div class="workflow-checklist-head"><b>Estado do encontro</b>'+statusPill(phase.kind==="postponed"?"EXCLUIDA":"A_CONFIRMAR",phase.label)+'</div>'+
+   '<p class="workflow-checklist-sub">As projeções pré-jogo só são apresentadas para encontros que ainda não começaram. '+(phase.score?'Resultado: '+esc(phase.score)+'.':'')+'</p>';
+  return;
+ }
+ const info=previewVerdict(game,modelFor(game),state.odds.matches?.[game.id]||{});
+ const requirements=info.requirements||[
+  {label:"Histórico",ready:false,detail:"Aguarda dados suficientes"},
+  {label:"Consenso 2 fontes",ready:false,detail:"Previsões por integrar"},
+  {label:"Odd Betano",ready:false,detail:"Por confirmar no boletim"},
+  {label:"Contexto",ready:false,detail:"Onzes e ausências por confirmar"},
+  {label:"Edge ≥ 3 p.p.",ready:false,detail:"Sem odds e probabilidades cruzadas"}
+ ];
+ const done=requirements.filter(x=>x.ready).length;
+ $("workflowChecklist").innerHTML='<div class="workflow-checklist-head"><b>Critérios das tuas regras</b>'+statusPill("OBSERVAR","◉ Observar")+'</div>'+
+ '<p class="workflow-checklist-sub">'+done+' de '+requirements.length+' verificações preliminares disponíveis. '+esc(info.reason)+'</p>'+
+ '<div class="workflow-grid">'+requirements.map(x=>'<div class="workflow-step '+(x.ready?"ready":"waiting")+'"><span class="step-icon">'+(x.ready?"✓":"○")+'</span><div><strong>'+esc(x.label)+'</strong><small>'+esc(x.detail)+'</small></div></div>').join("")+'</div>'+
+ '<div class="workflow-foot"><span>Nenhuma odd é confirmada automaticamente no boletim.</span><button type="button" data-open-manual="1">Completar análise ↗</button></div>';
 }
 function renderAutoPanel(){
  const game=state.selected;
- if(!game){$("autoPanel").innerHTML='<div class="auto-empty">Seleciona um jogo para veres os mercados e estatísticas calculadas.</div>';return;}
- const model=modelFor(game),prices=state.odds.matches?.[game.id]||{};
- const age=state.analysis.generatedAt?Date.now()-Date.parse(state.analysis.generatedAt):Infinity;
- const stale=!Number.isFinite(age)||age>36*3600000;
- const kickoff=Date.parse(game.utc);
- const inProgress=Number.isFinite(kickoff)&&kickoff<=Date.now();
- let html="";
- if(!model){
-   html='<div class="no-stats"><strong>◉ Sem modelo estatístico validável</strong><p>O calendário deste jogo está disponível, mas ainda não existem resultados históricos suficientes, ou não há integração ESPN compatível, para estimar probabilidades sem inventar dados.</p></div>';
-   const options=Object.entries(prices).slice(0,9);
-   if(options.length){
-    html+='<div class="auto-section-label">ODDS DE REFERÊNCIA DISPONÍVEIS</div>'+
-      options.map(([key,item])=>'<div class="market-row"><div class="market-top"><strong>'+esc(key)+'</strong><span>Verificar</span></div><div class="market-bottom">'+esc(item.bookmaker||"Fornecedor")+' · odd '+esc(n(Number(item.odd),2))+' · sem avaliação estatística</div></div>').join("");
-   }
- }else{
-   html='<div class="model-info"><small>FOOTBALL-DATA · RESULTADOS REAIS</small><strong>Projeção de golos</strong>'+
-    '<div class="model-xg"><div><b>'+esc(n(model.lambdaHome,2))+'</b><small>'+esc(game.home)+'</small></div><span>×</span><div><b>'+esc(n(model.lambdaAway,2))+'</b><small>'+esc(game.away)+'</small></div></div>'+
-    '<p>Médias históricas estimadas por Poisson (não são xG oficiais). Casa: '+esc(model.home?.homeGames||0)+' partidas em casa. Fora: '+esc(model.away?.awayGames||0)+' partidas fora.</p></div>';
-   const groups=[["Resultado","RESULTADO FINAL"],["Golos","GOLOS E AMBAS MARCAM"],["Resultado exato","RESULTADO EXATO"]];
-   for(const [group,label] of groups){
-    const items=(model.markets||[]).filter(item=>item.group===group);
-    if(!items.length)continue;
-    html+='<div class="auto-section-label">'+label+'</div>';
-    html+=items.map(item=>{
-      const q=prices[item.key],odd=Number(q?.odd),hasOdd=Number.isFinite(odd)&&odd>1;
-      const edge=hasOdd?item.probability-1/odd:null;
-      const adjusted=hasOdd?edge-item.uncertainty:null;
-      const candidate=hasOdd&&adjusted>=.03;
-      // Never approve without required named prediction sources and a confirmed Betano slip.
-      const minOdd=Number.isFinite(item.minimumOdd)?n(item.minimumOdd,2):"N/D";
-      return '<div class="market-row '+(candidate?"highlight-model":"")+'"><div class="market-top"><strong>'+esc(item.label)+'</strong><span>'+(candidate?'EDGE PRELIMINAR':'OBSERVAR')+'</span></div>'+
-        '<div class="market-num"><div><small>Modelo histórico</small><b>'+percentage(item.probability)+'</b></div><div><small>Odd mínima teórica</small><b class="green">'+minOdd+'</b></div><div><small>Odd recolhida</small><b>'+(hasOdd?esc(n(odd,2)):"—")+'</b></div></div>'+
-        '<div class="market-bottom"><span>'+(hasOdd?esc(q.bookmaker)+' · Edge ajust. exploratório: '+percentage(adjusted):'A aguardar odd da Betano')+'</span><button type="button" class="manual-open" data-manual-market="'+esc(item.key)+'">Detalhes ↗</button></div></div>';
-    }).join("");
-   }
-   html+='<div class="auto-warning">Nenhum mercado pode passar a <b>APOSTA</b> apenas com este modelo. Faltam a comparação com Statarea/SportyTrader/SoccerVital, o consenso mínimo, ausências/onzes e confirmação da odd no boletim da Betano.'+
-     (stale?' Os dados estatísticos podem estar desatualizados.':'')+(inProgress?' Este jogo já começou: o modelo pré-jogo não deve ser utilizado como previsão em direto.':'')+'</div>';
+ if(!game){$("autoPanel").innerHTML='<div class="auto-empty">Escolhe um jogo para veres uma seleção estatística, as probabilidades e o que falta validar.</div>';renderWorkflowChecklist();return;}
+ const phase=fixtureState(game),model=modelFor(game),prices=state.odds.matches?.[game.id]||{};
+ renderWorkflowChecklist();
+ if(phase.kind!=="upcoming"){
+  const result=phase.score?'<span class="final-score">'+esc(game.home)+' <b>'+esc(phase.score)+'</b> '+esc(game.away)+'</span>':"";
+  $("autoPanel").innerHTML='<div class="model-info phase-result">'+statusPill(phase.kind==="postponed"?"EXCLUIDA":"A_CONFIRMAR",phase.label)+
+   (result||'<p>O resultado oficial ainda não foi sincronizado.</p>')+
+   '<p>Este separador apresenta resultados ou estados do jogo. Não calculamos tips retroativas nem apostas em direto.</p></div>';
+  return;
  }
- html+='<div class="sources-foot">Fonte de resultados: Football-Data.co.uk (CSV da época corrente). Odds: '+(state.odds.hasCredentials?'API-Football — referência não confirmada':'nenhum fornecedor com chave configurada')+'. Minutos, cantos, remates, cartões e asiáticos de quarto não são aprovados automaticamente sem dados específicos suficientes.</div>';
+ if(!model){
+  $("autoPanel").innerHTML='<div class="no-stats"><strong>Sem tip fundamentada</strong><p>Há jogo no calendário, mas não há resultados históricos suficientes para este encontro. Não será apresentada uma seleção inventada.</p></div>';
+  return;
+ }
+ const verdict=previewVerdict(game,model,prices),pick=verdict.tip;
+ const stale=!state.analysis.generatedAt||Date.now()-Date.parse(state.analysis.generatedAt)>36*3600000;
+ let html='<div class="model-info"><small>RESULTADOS REAIS · FOOTBALL-DATA</small><strong>Médias de golos para este encontro</strong>'+
+   '<div class="model-xg"><div><b>'+esc(n(model.lambdaHome,2))+'</b><small>'+esc(game.home)+'</small></div><span>×</span><div><b>'+esc(n(model.lambdaAway,2))+'</b><small>'+esc(game.away)+'</small></div></div>'+
+   '<p>Projeção matemática baseada no histórico (não é xG oficial). Amostra: '+esc(model.home?.sample||0)+' jogos da equipa da casa e '+esc(model.away?.sample||0)+' da equipa visitante.</p></div>';
+ if(pick){
+  html+='<div class="featured-pick"><div class="featured-pick-heading"><span>ESCOLHA DO MODELO</span>'+statusPill("OBSERVAR","◉ Observar")+'</div>'+
+   '<strong>'+esc(pick.label)+'</strong><p>Uma opção estatística para analisares — <b>não é uma aposta validada</b>.</p>'+
+   '<div class="featured-grid"><div><small>Prob. estimada</small><b>'+pct(pick.probability)+'</b></div><div><small>Odd mín. teórica</small><b>'+safeOdd(pick.minimumOdd)+'</b></div><div><small>Odd Betano</small><b>Por confirmar</b></div></div>'+
+   '<button class="feature-action" data-manual-market="'+esc(pick.key)+'" type="button">Completar dados desta seleção ↗</button></div>';
+ }else html+='<div class="no-stats"><strong>Sem seleção preferencial</strong><p>Os mercados modelados não cumprem os limites exploratórios mínimos para uma sugestão estatística.</p></div>';
+ const groups=[["Resultado","RESULTADO FINAL"],["Golos","GOLOS / AMBAS MARCAM"],["Resultado exato","RESULTADO EXATO"]];
+ for(const [group,title] of groups){
+  const items=(model.markets||[]).filter(x=>x.group===group);
+  if(!items.length)continue;
+  html+='<details class="market-group"><summary>'+esc(title)+' <small>'+items.length+' mercados</small></summary>';
+  html+=items.map(item=>{
+   const q=prices[item.key],od=Number(q?.odd),hasOdd=Number.isFinite(od)&&od>1;
+   const edge=hasOdd?item.probability-1/od-item.uncertainty:null;
+   return '<div class="market-row"><div class="market-top"><strong>'+esc(item.label)+'</strong>'+statusPill("OBSERVAR","Observar")+'</div>'+
+   '<div class="market-num"><div><small>Modelo</small><b>'+pct(item.probability)+'</b></div><div><small>Odd mín. do modelo</small><b class="green">'+safeOdd(item.minimumOdd)+'</b></div><div><small>Odd recebida</small><b>'+(hasOdd?safeOdd(od):"—")+'</b></div></div>'+
+   '<div class="market-bottom"><span>'+(hasOdd?esc(q.bookmaker||"Fornecedor")+' · Edge preliminar: '+pct(edge):'Sem preço Betano confirmado')+'</span><button type="button" class="manual-open" data-manual-market="'+esc(item.key)+'">Validar ↗</button></div></div>';
+  }).join("");
+  html+='</details>';
+ }
+ html+='<div class="auto-warning"><strong>Porque não é uma Aposta?</strong> A projeção utiliza apenas o histórico Football-Data. As tuas regras exigem odds justas de mercado, consenso de pelo menos duas fontes independentes, verificações de contexto e odd confirmada na Betano.'+
+ (stale?' Esta atualização estatística pode estar desatualizada.':'')+'</div>';
+ html+='<div class="sources-foot">Poisson exploratório de resultados anteriores. Odd mínima ilustrativa calculada apenas com este modelo, <strong>não</strong> com a média ponderada de todas as tuas fontes. Não são apresentados cartões nem picks inventadas.</div>';
  $("autoPanel").innerHTML=html;
 }
 function openManual(key){
