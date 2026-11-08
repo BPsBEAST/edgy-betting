@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T18:21:33.132479+00:00",
+  "generatedAt": "2026-11-08T19:31:02.271840+00:00",
   "sources": {
     "weather": "Open-Meteo (requires verified venue city)",
     "lineups": "API-Football optional",
@@ -10,45 +10,17 @@
     "sportytrader": "not connected",
     "soccervital": "not connected"
   },
-  "hasApiFootballKey": false,
+  "hasApiFootballKey": true,
   "apiCalls": 0,
-  "matchedGames": 13,
+  "matchedGames": 14,
   "contexts": {
-    "espn-401899554": {
-      "weather": {
-        "city": "Vicenza",
-        "countryCode": "IT",
-        "temperatureC": 9.7,
-        "precipitationMm": 0.0,
-        "gustKmh": 5.4,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-08T18:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401884742": {
-      "weather": {
-        "city": "Sinsheim",
-        "countryCode": "DE",
-        "temperatureC": 6.8,
-        "precipitationMm": 0.0,
-        "gustKmh": 6.8,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-08T18:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
     "espn-401876404": {
       "weather": {
         "city": "Lens",
         "countryCode": "FR",
-        "temperatureC": 5.5,
+        "temperatureC": 4.9,
         "precipitationMm": 0.0,
-        "gustKmh": 13.3,
+        "gustKmh": 8.6,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-08T19:00Z",
@@ -84,6 +56,20 @@
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
     },
+    "espn-401885397": {
+      "weather": {
+        "city": "Vila do Conde",
+        "countryCode": "PT",
+        "temperatureC": 18.9,
+        "precipitationMm": 0.2,
+        "gustKmh": 40.7,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-08T20:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
     "espn-401883139": {
       "weather": {
         "city": "Sabadell",
@@ -104,7 +90,7 @@
         "countryCode": "GB",
         "temperatureC": 11.8,
         "precipitationMm": 0.0,
-        "gustKmh": 57.6,
+        "gustKmh": 56.5,
         "alert": true,
         "risk": "Chuva intensa ou rajadas fortes previstas na zona urbana",
         "forecastHourUtc": "2026-11-09T19:00Z",
@@ -116,9 +102,9 @@
       "weather": {
         "city": "Azkoitia",
         "countryCode": "ES",
-        "temperatureC": 19.6,
+        "temperatureC": 19.5,
         "precipitationMm": 0.0,
-        "gustKmh": 37.8,
+        "gustKmh": 35.1,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-10T18:00Z",
@@ -189,6 +175,34 @@
         "temperatureC": 13.8,
         "precipitationMm": 0.0,
         "gustKmh": 42.1,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-12T18:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401928527": {
+      "weather": {
+        "city": "Cuenca",
+        "countryCode": "ES",
+        "temperatureC": 11.9,
+        "precipitationMm": 0.0,
+        "gustKmh": 47.2,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-12T18:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401932846": {
+      "weather": {
+        "city": "Chambery",
+        "countryCode": "FR",
+        "temperatureC": 12.7,
+        "precipitationMm": 0.1,
+        "gustKmh": 14.8,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-12T18:00Z",
