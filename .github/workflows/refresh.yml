@@ -51,7 +51,7 @@ jobs:
           node --check app.js
           node --check src/engine.js
           node --check src/radar.js
-          python -m py_compile scripts/sync_fixtures.py scripts/sync_analysis.py scripts/sync_odds.py scripts/link_odds.py scripts/sync_context.py scripts/sync_free_predictions.py scripts/sync_free_odds.py scripts/sync_football_data_odds.py scripts/extra_markets.py
+          python -m py_compile scripts/sync_fixtures.py scripts/sync_analysis.py scripts/sync_odds.py scripts/link_odds.py scripts/sync_context.py scripts/sync_free_predictions.py scripts/sync_free_odds.py scripts/sync_football_data_odds.py scripts/extra_markets.py scripts/sync_espn_context.py
           npm test
           python -m unittest discover -s tests -p "test_*.py"
       - name: Fetch actual football fixtures
@@ -85,6 +85,8 @@ jobs:
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
         run: python scripts/link_odds.py
+      - name: Read public ESPN team news and verified starting lineups (no keys)
+        run: python scripts/sync_espn_context.py
       - name: Collect licensed match context and verified venue-city forecasts
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
@@ -115,7 +117,7 @@ jobs:
           mkdir -p ./site/src ./site/data
           cp index.html styles.css app.js manifest.webmanifest sw.js ./site/
           cp src/engine.js src/radar.js ./site/src/
-          cp data/fixtures.json data/analysis.json data/market_odds.json data/context.json data/free_predictions.json data/free_odds.json data/football_data_odds.json ./site/data/
+          cp data/fixtures.json data/analysis.json data/market_odds.json data/context.json data/free_predictions.json data/free_odds.json data/football_data_odds.json data/espn_context.json ./site/data/
           mkdir -p ./site/assets
           cp assets/edgy-mark.svg assets/edgy-icon-180.png assets/edgy-icon-192.png assets/edgy-icon-512.png ./site/assets/
           touch ./site/.nojekyll
