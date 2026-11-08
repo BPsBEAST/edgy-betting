@@ -4,18 +4,34 @@
 
 ## Aceder e instalar
 
-Site (depois de ativares o GitHub Pages em **Settings → Pages → Source: GitHub Actions**): https://bpsbeast.github.io/edgy-betting/
+Site (publicação GitHub Pages verificada pelos workflows): https://bpsbeast.github.io/edgy-betting/
 
-Desenvolvimento local: `python -m http.server 8080`, depois abrir `http://localhost:8080`. A interface não precisa de backend para análise manual. `npm test` (Node 22+) valida as fórmulas e controlos de risco.
+Desenvolvimento local: `python -m http.server 8080`, depois abrir `http://localhost:8080`. A interface não precisa de backend para ler os dados já sincronizados. `npm test` (Node 22+) valida as fórmulas e controlos de risco.
 
 ## O que funciona nesta versão
+
+### Radar automático — versão 1.1
+
+A página principal já mostra os **jogos reais** automaticamente, sem obrigar a selecionar e preencher tudo manualmente. Ao selecionar um encontro:
+- Distribuição de **resultados 1 / X / 2**, **mais/menos de 1,5 e 2,5 golos**, **ambas marcam** e **dois resultados exatos** com maior probabilidade, sempre identificados como **Poisson exploratório**.
+- Estimativa de golos por equipa e médias das últimas partidas em casa/fora.
+- **Odd mínima teórica** que corresponderia a 3 pontos de edge após a penalização de incerteza do modelo exploratório, **não é recomendação validada**.
+- Preço de referência, nome da casa e probabilidade justa sem margem **quando** houver API-Football configurada e mercado disponível.
+- Filtros "Com análise", "Com odds" e "Sem dados suficientes".
+- **Zero apostas aprovadas automaticamente** sem Statarea, SportyTrader/SoccerVital, consenso real, preço validado e verificações contextuais.
+
+Os resultados históricos são obtidos em CSV de **[Football-Data.co.uk](https://www.football-data.co.uk/)** para a época corrente (até 11 divisões quando disponíveis). São dados diferentes das previsões da Statarea e SportyTrader: servem **só** para uma projeção estatística exploratória, não contam automaticamente como as duas fontes de consenso das regras.
+
+O código de recolha está em `scripts/sync_analysis.py` e o resultado em `data/analysis.json`. Não inclui dados inventados; quando o histórico ou um mercado falta, a UI mostra esse estado.
+
+**Odds opcionais:** a integração `scripts/sync_odds.py` consome odds pré-jogo da API-Football (máximo 3 páginas por dia de dois dias), reconhece mercados 1X2, over/under 1,5 ou 2,5 e ambas marcam, e grava preços com identificação da casa em `data/market_odds.json`. Sem a secret `API_FOOTBALL_KEY`, não apresenta odds. Mesmo uma odd de um bookmaker chamado Betano na API é uma **referência**, não uma odd confirmada no boletim.
 
 - Interface responsiva com jogos pesquisáveis, filtros Hoje / Amanhã / Em direto, seleção de competições e inspeção por jogo.
 - Sincronização real em `scripts/sync_fixtures.py` via GitHub Actions (quatro vezes por dia e quando há alterações no código).
 - **ESPN:** feed público não oficial; pode mudar, falhar, ou não cobrir algumas competições.
 - **TheSportsDB:** API gratuita, usada como fallback limitado. A edição gratuita pode devolver apenas um próximo jogo por liga. Respeita os termos e atribuição do fornecedor.
 - **API-Football (opcional):** se criares o secret GitHub Actions `API_FOOTBALL_KEY`, o sincronizador inclui fixtures via API autenticada. Este serviço tem limites de utilização e cobertura por plano/temporada.
-- Zero odds inventadas: o utilizador introduz a odd observada e assinala se a confirmou na Betano.
+- Zero odds inventadas: a app recolhe preços de referência com credenciais ou o utilizador introduz a odd observada e assinala se a confirmou na Betano.
 - Probabilidades por fonte: odds **justas sem margem** do mercado (peso 3), Statarea (1), SportyTrader (1), SoccerVital (0,5), Statarea golos (0,5; entre ligas 0,15), ESPN cantos/remates (1).
 - Ajustes contextuais **apenas nas fontes não-mercado**, com origem manual explícita: ausências, rotação, descanso, onzes, importância e meteorologia.
 - Edge, edge ajustado, retorno esperado e sugestão teórica de stake (menor entre 1% da banca e 10% de Kelly prudente).
@@ -43,11 +59,11 @@ Desenvolvimento local: `python -m http.server 8080`, depois abrir `http://localh
 - Statarea, SportyTrader, SoccerVital e Soccernews: fontes **a consultar/importar**, sem ligação oficial automática nesta versão.
 - Onzes, lesões, cartões e estatísticas de cantos/remates: não recolhidos automaticamente para avaliação; a ESPN pode fornecer dados desportivos, mas a transformação em probabilidades calibradas está pendente.
 - Tempo via Open-Meteo: previsto, não utilizado até existirem localizações validadas dos estádios e horários fiáveis.
-- Resultados e eventos de mercado (exato, cantos, remates, combinadas): o motor aceita probabilidades para esses mercados, mas ainda não dispõe de modelos próprios calibrados (Poisson/correlações). Isto **não é** um sinal automático de aposta.
+- A projeção exploratória por Poisson já inclui resultados exatos; cantos, remates, intervalos, minutos, combinadas e asiáticos de quarto ainda não têm modelos automáticos calibrados para aprovação. Isto **não é** um sinal automático de aposta.
 
 ## Segurança e credibilidade
 
-O cache `data/fixtures.json` contém apenas jogos reais de feeds com origem identificada. Se faltar o feed, o painel mostra indisponibilidade em vez de criar partidas. Não coloques chaves em ficheiros públicos: usa **Settings → Secrets and variables → Actions**. O JavaScript corre no navegador e nunca envia informações bancárias a servidores nossos; os dados manuais só ficam no dispositivo via armazenamento local.
+Os caches `data/fixtures.json`, `data/analysis.json` e `data/market_odds.json` identificam respetivamente os jogos, as projeções históricas e as odds de referência. Se faltar o feed, o painel mostra indisponibilidade em vez de criar partidas. Não coloques chaves em ficheiros públicos: usa **Settings → Secrets and variables → Actions**. O JavaScript corre no navegador e nunca envia informações bancárias a servidores nossos; os dados manuais só ficam no dispositivo via armazenamento local.
 
 Dados desportivos: [TheSportsDB](https://www.thesportsdb.com/) e [ESPN](https://www.espn.com/soccer/) (integração de calendário não oficial), [API-Football](https://www.api-football.com/) se configurado. O utilizador é responsável por confirmar as odds e respeitar as condições aplicáveis. Nenhum algoritmo garante lucro.
 
@@ -59,7 +75,12 @@ styles.css             Design responsivo
 app.js                 Calendário, formulários e lista local
 src/engine.js          Fórmulas, classificação e risco
 scripts/sync_fixtures.py  Ingestão do calendário
-data/fixtures.json     Cache público identificado
-tests/engine.test.js   Testes automáticos
+scripts/sync_analysis.py  Modelos históricos com CSVs de resultados
+scripts/sync_odds.py      Odds de referência opcionais
+data/fixtures.json     Calendário sincronizado
+data/analysis.json     Projeções exploratórias por jogo
+data/market_odds.json  Odds de referência, quando configuradas
+tests/engine.test.js   Testes do motor de decisão
+tests/test_analysis.py  Testes do modelo e dos nomes de equipas
 .github/workflows/refresh.yml  Sincronizar, testar e publicar
 ```
