@@ -1,6 +1,6 @@
 // Pure fixture and preview rules. Never equate Poisson output to approved picks.
-const FINISHED = new Set(["FT","AET","AFTER_EXTRA_TIME","STATUS_FULL_TIME","STATUS_FINAL","FINISHED","FULL_TIME","FINAL","STATUS_FULL_TIME_PENALTIES","PEN"]);
-const LIVE = new Set(["LIVE","IN_PLAY","STATUS_IN_PROGRESS","STATUS_HALFTIME","HT","1H","2H","ET","STATUS_EXTRA_TIME","STATUS_PENALTY_SHOOTOUT"]);
+const FINISHED = new Set(["FT","AET","AFTER_EXTRA_TIME","STATUS_FULL_TIME","STATUS_FINAL","FINISHED","FULL_TIME","FINAL","STATUS_FULL_TIME_PENALTIES"]);
+const LIVE = new Set(["LIVE","IN_PLAY","STATUS_IN_PROGRESS","STATUS_HALFTIME","HT","1H","2H","ET","PEN","STATUS_EXTRA_TIME","STATUS_PENALTY_SHOOTOUT"]);
 const POSTPONED = new Set(["PST","POSTPONED","STATUS_POSTPONED","CANC","CANCELLED","STATUS_CANCELED","ABD","ABANDONED","SUSPENDED"]);
 function numericScore(value) {return value!==null&&value!==undefined&&value!==""&&Number.isFinite(Number(value))?Number(value):null;}
 export function fixtureState(game={},now=Date.now()){
