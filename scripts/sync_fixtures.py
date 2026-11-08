@@ -107,7 +107,7 @@ def espn():
                     return int(value) if str(value).isdigit() else None
                 item={"id":"espn-"+str(event.get("id")),"home":hteam.get("displayName") or hteam.get("name"),"away":ateam.get("displayName") or ateam.get("name"),
                     "league":name,"leagueCode":slug,"division":division,"utc":stamp,"status":("LIVE" if rawstatus.get("state")=="in" else (rawstatus.get("abbreviation") or rawstatus.get("name") or "NS")),
-                    "homeScore":score(home),"awayScore":score(away),"homeLogo":hteam.get("logo"),"awayLogo":ateam.get("logo"),
+                    "homeScore":score(home),"awayScore":score(away),"homeId":hteam.get("id"),"awayId":ateam.get("id"),"homeLogo":hteam.get("logo"),"awayLogo":ateam.get("logo"),
                     "source":"ESPN"}
                 if eligible(item):result.append(item)
             time.sleep(.06)
@@ -123,7 +123,7 @@ def thesportsdb():
             timestamp=iso(raw) if raw else iso(str(event.get("dateEvent") or "")+"T"+str(event.get("strTime") or "12:00:00"))
             item={"id":"tsdb-"+str(event.get("idEvent")),"home":event.get("strHomeTeam"),"away":event.get("strAwayTeam"),
                   "league":name,"leagueCode":"tsdb-"+lid,"division":division,"utc":timestamp,"status":event.get("strStatus") or "NS",
-                  "homeScore":event.get("intHomeScore"),"awayScore":event.get("intAwayScore"),
+                  "homeScore":event.get("intHomeScore"),"awayScore":event.get("intAwayScore"),"homeId":event.get("idHomeTeam"),"awayId":event.get("idAwayTeam"),
                   "homeLogo":event.get("strHomeTeamBadge"),"awayLogo":event.get("strAwayTeamBadge"),"source":"TheSportsDB"}
             if eligible(item):result.append(item)
         time.sleep(.08)
@@ -142,7 +142,7 @@ def api_football(key):
             fixture=row.get("fixture") or {};teams=row.get("teams") or {};goals=row.get("goals") or {};home=teams.get("home") or {};away=teams.get("away") or {}
             item={"id":"apif-"+str(fixture.get("id")),"home":home.get("name"),"away":away.get("name"),
               "league":name,"leagueCode":"apif-"+str(league),"division":division,"utc":iso(fixture.get("date")),
-              "status":(fixture.get("status") or {}).get("short") or "NS","homeScore":goals.get("home"),"awayScore":goals.get("away"),
+              "status":(fixture.get("status") or {}).get("short") or "NS","homeScore":goals.get("home"),"awayScore":goals.get("away"),"homeId":home.get("id"),"awayId":away.get("id"),
               "homeLogo":home.get("logo"),"awayLogo":away.get("logo"),"source":"API-Football"}
             if eligible(item):result.append(item)
         time.sleep(.15)
