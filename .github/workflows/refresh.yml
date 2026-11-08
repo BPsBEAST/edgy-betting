@@ -47,21 +47,28 @@ jobs:
         run: |
           node --check app.js
           node --check src/engine.js
-          python -m py_compile scripts/sync_fixtures.py
+          python -m py_compile scripts/sync_fixtures.py scripts/sync_analysis.py scripts/sync_odds.py
           npm test
       - name: Fetch actual football fixtures
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
         run: python scripts/sync_fixtures.py
-      - name: Commit updated public fixture cache
-        if: github.event_name != 'push'
+      - name: Build automatic match projections from ESPN form
+        run: python scripts/sync_analysis.py
+      - name: Load reference odds where API-Football is configured
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+        run: python scripts/sync_odds.py
+      - name: Commit public data snapshots
         run: |
-          if ! git diff --quiet -- data/fixtures.json; then
+          if ! git diff --quiet -- data/; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/fixtures.json
-            git commit -m "data: refresh verified football fixtures [skip ci]"
-            git push
+            git add data/
+            git commit -m "data: update fixtures and automatic previews [skip ci]"
+            # New code commits may land during the sync; rebase only the data commit.
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
       - name: Configure GitHub Pages
         id: pages_setup
@@ -73,7 +80,7 @@ jobs:
           mkdir -p ./site/src ./site/data
           cp index.html styles.css app.js ./site/
           cp src/engine.js ./site/src/
-          cp data/fixtures.json ./site/data/
+          cp data/fixtures.json data/analysis.json data/market_odds.json ./site/data/
           touch ./site/.nojekyll
       - name: Upload website
         if: steps.pages_setup.outcome == 'success'
