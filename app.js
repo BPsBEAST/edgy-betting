@@ -24,10 +24,17 @@ async function loadIntelligence(){
  state.context=context&&context.contexts&&typeof context.contexts==="object"?context:{contexts:{},generatedAt:null,hasApiFootballKey:false};
 }
 function modelFor(game){return state.analysis.models?.[game?.id]||null;}
+function oddsAssociation(game){
+ const id=game?.id;
+ if(state.odds.matches?.[id])return "provider-id";
+ if(state.odds.linkedFixtureIds?.[id])return "verified";
+ if(state.odds.provisionalFixtureIds?.[id])return "provisional";
+ return "none";
+}
 function oddsFor(game){
  const id=game?.id;
- const linked=state.odds.linkedFixtureIds?.[id];
- return state.odds.matches?.[id]||state.odds.matches?.[linked]||{};
+ const matched=state.odds.linkedFixtureIds?.[id]||state.odds.provisionalFixtureIds?.[id];
+ return state.odds.matches?.[id]||state.odds.matches?.[matched]||{};
 }
 function quoteFor(game,key){return oddsFor(game)?.[key]||null;}
 function percentage(v){return typeof v==="number"&&Number.isFinite(v)?n(v*100,1)+"%":"—";}
@@ -93,7 +100,10 @@ function renderContext(game){
  }else items.push('<div class="source-evidence missing"><strong>◈ Previsões independentes</strong><p>Statarea, SportyTrader e API-Football: ainda sem números confirmados para este jogo.</p></div>');
  const quoteList=Object.values(oddsFor(game));
  const books=new Set(quoteList.flatMap(q=>(q.quotes||[]).map(x=>x.bookmaker)));
- items.push('<div class="source-evidence '+(quoteList.length?"":"missing")+'"><strong>◎ Odds e mercado justo</strong><p>'+quoteList.length+' seleções de referência · '+books.size+' casas (API-Football, se disponível).</p><small>Betano e Flashscore não estão ligados ao boletim. Confirmar preço, mercado e hora.</small></div>');
+ const matchType=oddsAssociation(game);
+ const provisional=matchType==="provisional";
+ items.push('<div class="source-evidence '+(provisional?"source-warning":quoteList.length?"":"missing")+'"><strong>◎ Odds e mercado justo</strong><p>'+quoteList.length+' seleções de referência · '+books.size+' casas (API-Football, se disponível).</p>'+
+ (provisional?'<small>⚠ ASSOCIAÇÃO NÃO CONFIRMADA: liga e hora coincidem, mas os nomes das equipas não foram verificados pelo fornecedor. Não usar estes preços para apostar.</small>':'<small>Não existe confirmação automática da odd no boletim Betano ou Flashscore. Validar preço, mercado e hora.</small>')+'</div>');
  return '<div class="source-evidence-panel"><div class="auto-section-label">FONTES CONSULTADAS / POR VALIDAR</div>'+items.join("")+'</div>';
 }
 
@@ -142,6 +152,7 @@ function renderAutoPanel(){
   return;
  }
  const verdict=previewVerdict(game,model,prices),pick=verdict.tip;
+ const oddsLink=oddsAssociation(game);
  const stale=!state.analysis.generatedAt||Date.now()-Date.parse(state.analysis.generatedAt)>36*3600000;
  let html='<div class="model-info"><small>RESULTADOS REAIS · FOOTBALL-DATA</small><strong>Médias de golos para este encontro</strong>'+
    '<div class="model-xg"><div><b>'+esc(n(model.lambdaHome,2))+'</b><small>'+esc(game.home)+'</small></div><span>×</span><div><b>'+esc(n(model.lambdaAway,2))+'</b><small>'+esc(game.away)+'</small></div></div>'+
@@ -168,6 +179,9 @@ function renderAutoPanel(){
  }
  html+='<div class="auto-warning"><strong>Porque não é uma Aposta?</strong> A projeção utiliza apenas o histórico Football-Data. As tuas regras exigem odds justas de mercado, consenso de pelo menos duas fontes independentes, verificações de contexto e odd confirmada na Betano.'+
  (stale?' Esta atualização estatística pode estar desatualizada.':'')+'</div>';
+ if(oddsLink==="provisional"){
+   html+='<div class="auto-warning">⚠ As odds recolhidas para este encontro foram associadas apenas por liga e hora. <strong>As equipas não foram confirmadas</strong> pela API-Football do plano gratuito. Estes preços e quaisquer edges são exploratórios: não utilizar para tomar decisões de aposta.</div>';
+ }
  html+=renderContext(game);
  html+='<div class="sources-foot">Poisson exploratório de resultados anteriores. Odd mínima ilustrativa calculada apenas com este modelo, <strong>não</strong> com a média ponderada de todas as tuas fontes. Não são apresentados cartões nem picks inventadas.</div>';
  $("autoPanel").innerHTML=html;
