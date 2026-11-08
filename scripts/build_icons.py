@@ -4,7 +4,7 @@ from pathlib import Path
 import cairosvg
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/"site"/"assets"
+OUT=ROOT/"assets"
 OUT.mkdir(parents=True,exist_ok=True)
 logo=(ROOT/"assets"/"edgy-mark.svg").read_bytes()
 for size in (180,192,512):
