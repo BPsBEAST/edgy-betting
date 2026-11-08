@@ -5,6 +5,9 @@ Optional API-FOOTBALL_KEY provides broader licensed coverage on supported plans.
 """
 from __future__ import annotations
 import datetime as dt
+import re
+import unicodedata
+from difflib import SequenceMatcher
 import json
 import os
 import pathlib
@@ -148,6 +151,32 @@ def api_football(key):
         time.sleep(.15)
     return result
 
+def normalize_team(name):
+    clean=unicodedata.normalize("NFKD",str(name)).casefold()
+    clean="".join(c for c in clean if not unicodedata.combining(c))
+    clean=re.sub(r"[^a-z0-9]+"," ",clean)
+    clean=re.sub(r"\\b(fc|cf|sc|ac|tsg|football|club|de|do|da|04|1909)\\b"," ",clean)
+    clean=" ".join(clean.split())
+    aliases={
+      "internazionale":"inter milan","inter":"inter milan",
+      "man utd":"manchester united","man united":"manchester united",
+      "man city":"manchester city","spurs":"tottenham hotspur",
+      "nott m forest":"nottingham forest","wolves":"wolverhampton wanderers",
+      "schalke":"schalke","porto":"porto",
+      "vitoria de guimaraes":"vitoria guimaraes",
+      "vitoria guimaraes":"vitoria guimaraes",
+      "sporting cp":"sporting lisbon","paris sg":"paris saint germain",
+      "milan":"ac milan"
+    }
+    return aliases.get(clean,clean)
+
+def duplicates(first,second):
+    if first["utc"][:10]!=second["utc"][:10] or first["league"]!=second["league"]:
+        return False
+    def sim(a,b):
+        return SequenceMatcher(None,normalize_team(a),normalize_team(b)).ratio()
+    return sim(first["home"],second["home"])>=.85 and sim(first["away"],second["away"])>=.85
+
 def main():
     all_matches=[]
     source_names=[]
@@ -162,15 +191,14 @@ def main():
     rows=thesportsdb()
     all_matches.extend(rows)
     if rows:source_names.append("TheSportsDB (plano gratuito limitado)")
-    # Prefer API-Football > ESPN > TheSportsDB for the same teams and calendar date.
-    seen=set()
+    # Prefer API-Football > ESPN > TheSportsDB. Match on both teams,
+    # date and competition, tolerant of common naming differences.
     priority={"API-Football":0,"ESPN":1,"TheSportsDB":2}
     clean=[]
-    for x in sorted(all_matches,key=lambda x:priority.get(x.get("source"),9)):
-        # Team naming can differ between providers; exact dedup is conservative.
-        key=(x["utc"][:10],x["home"].casefold().replace(" fc","").replace(" cf","").strip(),x["away"].casefold().replace(" fc","").replace(" cf","").strip())
-        if key in seen:continue
-        seen.add(key);clean.append(x)
+    for item in sorted(all_matches,key=lambda x:priority.get(x.get("source"),9)):
+        if any(duplicates(item,prior) for prior in clean):
+            continue
+        clean.append(item)
     clean.sort(key=lambda x:x["utc"])
     if DEST.exists():
         try:old=json.loads(DEST.read_text())
