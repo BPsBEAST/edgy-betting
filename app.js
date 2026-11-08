@@ -258,7 +258,8 @@ function selectGame(id){
  const game=state.games.find(x=>x.id===id);if(!game)return;
  state.selected=game;state.current=null;$("analysisForm").reset();$("analysisFields").disabled=!isBettablePeriod(game);$("analyze").disabled=!isBettablePeriod(game);$("resultPanel").hidden=true;updatePushField();refreshSelection();renderAutoPanel();renderGames();
  $("manualDetails").open=false;
- if(matchMedia("(max-width:1020px)").matches)$("inspector").scrollIntoView({behavior:"smooth",block:"start"});
+ if(matchMedia("(max-width:700px)").matches){$("inspector").classList.add("is-open");document.body.classList.add("details-open");$("inspector").scrollTop=0;}
+ else if(matchMedia("(max-width:1020px)").matches)$("inspector").scrollIntoView({behavior:"smooth",block:"start"});
 }
 function formInput(){
  const selected=state.selected,g=$("market").value,ctx=Number($("contextAdjustment").value)||0;
@@ -293,9 +294,11 @@ function renderSaved(){
  if(!state.saved.length){$("savedList").innerHTML='<div class="empty"><strong>Lista vazia</strong>Escolhe um jogo e guarda uma análise para a acompanhares aqui.</div>';return;}
  $("savedList").innerHTML=state.saved.slice().reverse().map(x=>'<article class="saved-item"><div class="saved-item-header"><span>'+esc(x.home)+' × '+esc(x.away)+'</span><button class="remove-button" data-remove="'+esc(x.id)+'" type="button">Remover</button></div><p>'+esc(MARKETS[x.market]?.label||x.market)+' · '+esc(x.selection)+'</p><small>'+esc(x.status)+' · Odd '+esc(n(x.odds,2))+' · Edge ajustado '+esc(n(x.edgeAdjusted*100,1))+'% · '+esc(x.priceSource==="betano"?"Betano confirmada na análise":"Odd por verificar")+'</small></article>').join("");
 }
-function setView(next){state.view=next;document.querySelector(".app-shell").dataset.view=next;$("matchesView").hidden=next!=="matches";$("savedView").hidden=next!=="saved";$("rulesView").hidden=next!=="rules";document.querySelectorAll("[data-view]").forEach(el=>el.classList.toggle("active",el.dataset.view===next));if(next==="saved")renderSaved();if(next==="matches")renderGames();}
+function closeInspector(){$("inspector").classList.remove("is-open");document.body.classList.remove("details-open");}
+function setView(next){closeInspector();state.view=next;document.querySelector(".app-shell").dataset.view=next;$("matchesView").hidden=next!=="matches";$("savedView").hidden=next!=="saved";$("rulesView").hidden=next!=="rules";document.querySelectorAll("[data-view]").forEach(el=>el.classList.toggle("active",el.dataset.view===next));if(next==="saved")renderSaved();if(next==="matches")renderGames();}
 function updatePushField(){$("pushField").hidden=!["void","quarter"].includes($("market").value);}
 document.addEventListener("click",event=>{
+ const close=event.target.closest("#closeInspector");if(close){closeInspector();return;}
  const game=event.target.closest("[data-game]");if(game){selectGame(game.dataset.game);return;}
  const lg=event.target.closest("[data-league]");if(lg){state.league=lg.dataset.league;renderLeagues();renderGames();return;}
  const range=event.target.closest("[data-range]");if(range){state.filter=range.dataset.range;document.querySelectorAll("[data-range]").forEach(b=>b.classList.toggle("selected",b.dataset.range===state.filter));renderGames();return;}
@@ -327,4 +330,5 @@ $("market").addEventListener("change",updatePushField);
 $("analysisForm").addEventListener("input",()=>{$("resultPanel").hidden=true;state.current=null;});
 $("reload").addEventListener("click",loadGames);
 $("clearSaved").addEventListener("click",()=>{if(!state.saved.length)return;if(confirm("Eliminar todas as análises guardadas neste dispositivo?")){state.saved=[];store();updateCounters();renderSaved()}});
+window.addEventListener("keydown",event=>{if(event.key==="Escape")closeInspector();});
 loadGames();
