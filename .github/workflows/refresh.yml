@@ -57,7 +57,10 @@ jobs:
       - name: Fetch actual football fixtures
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
-          API_FOOTBALL_FIXTURE_MAX_LEAGUES: "6"
+          # The current free plan denies fixtures from season 2026/27.
+          # Leave off instead of spending 24 denied requests/day.
+          # Paid/current-season plans may set this value to 6-12.
+          API_FOOTBALL_FIXTURE_MAX_LEAGUES: "0"
         run: python scripts/sync_fixtures.py
       - name: Build automatic match projections from published season results
         run: python scripts/sync_analysis.py
@@ -67,7 +70,7 @@ jobs:
           API_FOOTBALL_ODDS_DAYS: "2"
           API_FOOTBALL_ODDS_MAX_PAGES: "2"
         run: python scripts/sync_odds.py
-      - name: Link odds to verified ESPN fixtures (batched API IDs)
+      - name: Match odds by supported metadata (free plan; no API requests)
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
         run: python scripts/link_odds.py
