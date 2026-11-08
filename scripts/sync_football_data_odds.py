@@ -160,7 +160,7 @@ def main():
         "note":"Internacional: odds recolhidas periodicamente pelo publisher, não ao vivo. Não inclui Betano Portugal e nunca confirma o boletim."
     }
     old=read(DEST)
-    if old.get("matches")==matches and old.get("downloaded")==output["downloaded"] and old.get("csvRows")==len(rows):
+    if old.get("matches")==matches and old.get("downloaded")==output["downloaded"] and old.get("csvRows")==len(rows) and old.get("futureRows")==future_rows and old.get("futureSupportedRows")==future_supported:
         print("Football-Data fixtures odds unchanged;",len(matches),"matches");return
     DEST.parent.mkdir(parents=True,exist_ok=True)
     DEST.write_text(json.dumps(output,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
