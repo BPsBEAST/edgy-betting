@@ -17,8 +17,8 @@ O programa **não inventa preços ou probabilidades** para preencher lacunas. É
 | ESPN (não oficial) / TheSportsDB | Jogos, datas e resultados | Ativa | A cobertura pode variar e o feed ESPN pode falhar |
 | Football-Data.co.uk | Resultados históricos, estatísticas e Poisson exploratório | Ativa | Não são as previsões independentes pedidas |
 | Open-Meteo | Chuva, vento e temperatura na hora do jogo | Ativa **apenas quando existe cidade de estádio confirmada** | Previsão urbana não confirma condições no relvado; plano gratuito sujeito a uso não comercial |
-| API-Football | 1X2, golos, mercados adicionais e probabilidades justas das casas | Preparada; **precisa de chave** | Odds de referência, não lidas diretamente no boletim Betano |
-| API-Football | Lesões, castigos, onzes e previsões 1X2 próprias | Preparada; **precisa de chave** | Cobertura variável, limite de pedidos; não substituir automaticamente Statarea/SportyTrader |
+| API-Football | Odds e probabilidades justas das casas | **Chave configurada**, cobertura efetiva limitada | API gratuita devolve preços, mas grande parte dos eventos globais não pertence às ligas selecionadas. As odds nunca equivalem ao boletim Betano. |
+| API-Football | Lesões, castigos, onzes e previsões 1X2 próprias | **Ainda não há dados do período solicitado** | O plano gratuito não permite consultar fixtures 2026/27 nem o parâmetro `ids`; não substituir automaticamente Statarea/SportyTrader |
 | Statarea / SportyTrader | Probabilidades independentes ponderadas | **Não ligadas** | Precisam de alimentação autorizada, sem inventar valores |
 | SoccerVital / Statarea golos | Comportamento casa/fora e médias | **Não ligadas** | Exigem alimentação verificável com condições de utilização apropriadas |
 | Soccernews.com | Notícias sobre indisponíveis | **Não ligada** | Sem API validada para extracção automática |
@@ -33,9 +33,19 @@ O programa **não inventa preços ou probabilidades** para preencher lacunas. É
 4. Em **Actions**, executar o workflow **Refresh fixtures and publish EDGY Betting** manualmente ou deixar o agendamento regular atualizar.
 5. Verificar os sinais das fontes na interface do jogo. Se um mercado não estiver disponível no fornecedor, permanece marcado como não verificado.
 
-Em contas gratuitas o workflow limita as chamadas para não ultrapassar sistematicamente as quotas: `API_FOOTBALL_FIXTURE_MAX_LEAGUES` (8 primeiras competições selecionadas, dando prioridade à 1.ª divisão), `API_FOOTBALL_ODDS_DAYS` (2), `API_FOOTBALL_ODDS_MAX_PAGES` (3 por dia) e `API_FOOTBALL_CONTEXT_CALL_LIMIT` (6 por sincronização). Com um plano maior é possível aumentar estes limites. **A chave não garante Betano, todos os mercados, nem todos os jogos**.
+**A chave já foi configurada.** No plano gratuito a API devolve `Free plans do not have access to this season, try from 2022 to 2024` para a época atual e proíbe `ids`. Assim, definimos `API_FOOTBALL_FIXTURE_MAX_LEAGUES=0` e a associação das odds usa apenas os metadados do próprio feed, sem pedidos proibidos. A recolha direcionada de odds consulta por omissão até 3 competições/datas próximas, interrompendo as tentativas se surgir um erro de plano. Mesmo com chave ativa, **não há garantia de preço Betano, de jogos 2026/27 ou de cobertura de todos os mercados**.
 
-Os novos ficheiros de dados são `data/context.json` (meteorologia, onzes, lesões, previsões e proveniência) e `data/market_odds.json` (odds e consenso justo de várias casas quando disponíveis). `scripts/sync_odds.py` também guarda alterações dos preços observados ao longo das sincronizações, mas isso **não mede dinheiro efetivamente apostado**. Os scripts nunca tentam contornar proteções do Flashscore ou Betano.
+Os ficheiros de dados incluem `data/context.json` (meteorologia, onzes, lesões, previsões e proveniência) e `data/market_odds.json` (odds e consenso justo de várias casas quando disponíveis). `scripts/sync_odds.py` também guarda alterações dos preços observados ao longo das sincronizações, mas isso **não mede dinheiro efetivamente apostado**. Os scripts nunca tentam contornar proteções do Flashscore ou Betano.
+
+### Correspondência entre odds e calendário
+
+Os identificadores ESPN e API-Football são diferentes. No plano gratuito, **não existe confirmação automática das equipas para um preço recolhido**. A app preserva a separação entre:
+
+- `linkedFixtureIds`: apenas correspondências por identidade verificada, nunca fabricadas.
+- `provisionalFixtureIds`: correspondências únicas por competição e hora, **não verificadas nas equipas**. São sinalizadas na interface, não podem fundamentar uma aposta aprovada.
+- Sem correspondência: odds não são atribuídas a qualquer jogo.
+
+O feed gratuito pode apresentar início `00:00 UTC` para vários encontros; essa hora não equivale necessariamente à hora de jogo. Se a liga e o horário não identificarem univocamente um encontro, o programa não deve associar preços. A recolha global anteriormente devolvia sobretudo mercados fora das seis ligas pedidas, pelo que agora é feita uma pesquisa direcionada por competição e data.
 
 ### Critérios que continuam a bloquear Aposta
 
