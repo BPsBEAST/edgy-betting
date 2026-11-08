@@ -1,27 +1,10 @@
 {
-  "generatedAt": "2026-11-08T16:55:48.704463Z",
+  "generatedAt": "2026-11-08T17:01:53.282170Z",
   "sources": [
     "ESPN (integração não oficial)",
     "TheSportsDB (plano gratuito limitado)"
   ],
   "games": [
-    {
-      "id": "espn-401874974",
-      "home": "Parma",
-      "away": "Bologna",
-      "league": "Itália · Serie A",
-      "leagueCode": "ita.1",
-      "division": 1,
-      "utc": "2026-11-07T17:00:00Z",
-      "status": "STATUS_FULL_TIME",
-      "homeScore": 1,
-      "awayScore": 2,
-      "homeId": "115",
-      "awayId": "107",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/115.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/107.png",
-      "source": "ESPN"
-    },
     {
       "id": "espn-401878757",
       "home": "Nottingham Forest",
@@ -591,7 +574,7 @@
       "leagueCode": "eng.fa",
       "division": 1,
       "utc": "2026-11-08T14:15:00Z",
-      "status": "STATUS_FINAL_AET",
+      "status": "LIVE",
       "homeScore": 2,
       "awayScore": 3,
       "homeId": "20770",
@@ -856,23 +839,6 @@
       "source": "ESPN"
     },
     {
-      "id": "tsdb-2482244",
-      "home": "Inter Milan",
-      "away": "Como",
-      "league": "Itália · Serie A",
-      "leagueCode": "tsdb-4332",
-      "division": 1,
-      "utc": "2026-11-08T17:00:00Z",
-      "status": "NS",
-      "homeScore": null,
-      "awayScore": null,
-      "homeId": "133681",
-      "awayId": "134243",
-      "homeLogo": "https://r2.thesportsdb.com/images/media/team/badge/ryhu6d1617113103.png",
-      "awayLogo": "https://r2.thesportsdb.com/images/media/team/badge/02x81t1627405841.png",
-      "source": "TheSportsDB"
-    },
-    {
       "id": "espn-401931108",
       "home": "Oldham Athletic",
       "away": "Sheffield Wednesday",
@@ -1007,23 +973,6 @@
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7911.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/133.png",
       "source": "ESPN"
-    },
-    {
-      "id": "tsdb-2508408",
-      "home": "Hoffenheim",
-      "away": "Schalke 04",
-      "league": "Alemanha · Bundesliga",
-      "leagueCode": "tsdb-4331",
-      "division": 1,
-      "utc": "2026-11-08T18:30:00Z",
-      "status": "NS",
-      "homeScore": null,
-      "awayScore": null,
-      "homeId": "133657",
-      "awayId": "133661",
-      "homeLogo": "https://r2.thesportsdb.com/images/media/team/badge/9hwvb21621593919.png",
-      "awayLogo": "https://r2.thesportsdb.com/images/media/team/badge/hnci291621593978.png",
-      "source": "TheSportsDB"
     },
     {
       "id": "espn-401875003",
