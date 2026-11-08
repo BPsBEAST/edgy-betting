@@ -58,6 +58,14 @@
           <div class="source-input"><div><strong>SoccerVital</strong><small>Médias de golos · peso 0,5</small></div><input type="number" id="p_soccer" aria-label="SoccerVital probabilidade" min="0" max="100" step=".1" placeholder="—"><span>%</span></div>
           <div class="source-input"><div><strong>Statarea (golos)</strong><small>Médias de golos · peso 0,5</small></div><input type="number" id="p_stataGoals" aria-label="Statarea golos probabilidade" min="0" max="100" step=".1" placeholder="—"><span>%</span></div>
           <div class="source-input"><div><strong>ESPN</strong><small>Cantos / remates · peso 1</small></div><input type="number" id="p_espn" aria-label="ESPN probabilidade" min="0" max="100" step=".1" placeholder="—"><span>%</span></div>
+          <details class="advanced">
+            <summary>Calcular odd justa sem margem (2 ou 3 resultados)</summary>
+            <p class="form-help">Introduz todas as odds do mesmo mercado e da mesma casa. Para mercados com dois resultados, deixa a opção C vazia. A margem da casa será eliminada antes de preencher a probabilidade do mercado.</p>
+            <div class="two-fields"><div class="field"><label for="fairA">Odd A (1 / Sim)</label><input id="fairA" type="number" min="1.01" step=".01" placeholder="1.90"></div><div class="field"><label for="fairB">Odd B (X / Não)</label><input id="fairB" type="number" min="1.01" step=".01" placeholder="3.40"></div></div>
+            <div class="two-fields"><div class="field"><label for="fairC">Odd C (2 / opcional)</label><input id="fairC" type="number" min="1.01" step=".01" placeholder="4.20"></div><div class="field"><label for="fairOutcome">A minha seleção</label><select id="fairOutcome"><option value="0">A — 1 / Sim</option><option value="1">B — X / Não</option><option value="2">C — 2</option></select></div></div>
+            <button id="fairCalc" class="button-ghost" type="button">Calcular probabilidade justa</button>
+            <div id="fairMessage" class="hint" role="status"></div>
+          </details>
           <div class="group-title"><b>03</b> CONTEXTO & RISCO</div>
           <div class="field"><label for="contextAdjustment">Ajuste nas fontes não-mercado (pontos percentuais)</label><input id="contextAdjustment" type="number" step=".5" min="-20" max="20" value="0"><small class="hint">Apenas se fundamentado em ausências, descanso, onzes, importância ou meteorologia. Nunca se aplica ao mercado.</small></div>
           <div class="check-line"><label><input id="crossLeague" type="checkbox"> Comparação entre ligas diferentes</label></div>
