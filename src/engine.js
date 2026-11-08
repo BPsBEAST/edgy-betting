@@ -85,6 +85,7 @@ export function evaluate(input={}, existing=[]){
  else if(correlated||maxPerMatch){reasons.push("Limite de duas escolhas por jogo ou correlação com uma escolha já guardada.");}
  else if(maxPerDay>0&&dayCount>=maxPerDay){reasons.push("Limite diário de seleções já atingido.");}
  else if(weeklyLoss<=-3){reasons.push("Stop semanal: perda de 3% ou mais da banca.");}
+ else if(!input.confirmedLineups){reasons.push("Onzes, ausências e contexto sem verificação: manter em observação.");}
  else if(input.priceSource!=="betano"){status="VERIFICAR";reasons.push("Odd de referência ou por confirmar. Verificar no boletim da Betano.");}
  else {status="APOSTA";reasons.push("Critérios quantitativos cumpridos com os dados introduzidos. Confirmar antes de qualquer decisão.");}
  if(sources.length===1)warnings.push("Fonte única: elevada incerteza.");
