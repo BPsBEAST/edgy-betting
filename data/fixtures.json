@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T17:52:02.442511Z",
+  "generatedAt": "2026-11-08T17:54:38.697347Z",
   "sources": [
     "ESPN (integração não oficial)",
     "TheSportsDB (plano gratuito limitado)"
@@ -627,7 +627,7 @@
       "utc": "2026-11-08T16:15:00Z",
       "status": "LIVE",
       "homeScore": 0,
-      "awayScore": 1,
+      "awayScore": 2,
       "homeId": "7868",
       "awayId": "2502",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7868.png",
