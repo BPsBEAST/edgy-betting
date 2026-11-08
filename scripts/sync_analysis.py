@@ -201,7 +201,7 @@ def main():
         if not home or not away:continue
         result=project(home,away,game.get("division",1))
         result["sources"]=[SOURCE]
-        result["sourceDate"]=max(str(r.get("Date") or "") for r in rows)
+        result["sourceDate"]=max((d.date().isoformat() for r in rows if (d:=parse_date(r.get("Date")))),default=None)
         models[game["id"]]=result
     payload={
       "generatedAt":NOW.isoformat(),"source":SOURCE,"fixtureGeneratedAt":data.get("generatedAt"),
