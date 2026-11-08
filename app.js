@@ -8,7 +8,7 @@ const localTime=d=>new Intl.DateTimeFormat("pt-PT",{timeZone:"Europe/Lisbon",hou
 const niceDate=d=>new Intl.DateTimeFormat("pt-PT",{timeZone:"Europe/Lisbon",weekday:"long",day:"numeric",month:"long"}).format(new Date(d));
 const n=(v,d=1)=>Number.isFinite(v)?new Intl.NumberFormat("pt-PT",{minimumFractionDigits:d,maximumFractionDigits:d}).format(v):"—";
 const readSaved=()=>{try{let list=JSON.parse(localStorage.getItem("edgy_betting_saved_v1")||"[]");return Array.isArray(list)?list.filter(x=>x&&x.matchId):[]}catch{return []}};
-const state={games:[],source:"",generated:null,error:"",selected:null,filter:"upcoming",league:"all",query:"",view:"matches",saved:readSaved(),current:null,radar:"all",analysis:{models:{},generatedAt:null},odds:{matches:{},generatedAt:null},context:{contexts:{},generatedAt:null,hasApiFootballKey:false}};
+const state={games:[],source:"",generated:null,error:"",selected:null,filter:"upcoming",league:"all",query:"",view:"matches",saved:readSaved(),current:null,radar:"all",analysis:{models:{},generatedAt:null},odds:{matches:{},generatedAt:null},context:{contexts:{},generatedAt:null,hasApiFootballKey:false},free:{matches:{},providers:{},generatedAt:null}};
 
 async function loadIntelligence(){
  const get=async name=>{
@@ -18,10 +18,11 @@ async function loadIntelligence(){
    return await response.json();
   }catch{return null;}
  };
- const [analysis,odds,context]=await Promise.all([get("analysis.json"),get("market_odds.json"),get("context.json")]);
+ const [analysis,odds,context,free]=await Promise.all([get("analysis.json"),get("market_odds.json"),get("context.json"),get("free_predictions.json")]);
  state.analysis=analysis&&analysis.models&&typeof analysis.models==="object"?analysis:{models:{},generatedAt:null};
  state.odds=odds&&odds.matches&&typeof odds.matches==="object"?odds:{matches:{},generatedAt:null};
  state.context=context&&context.contexts&&typeof context.contexts==="object"?context:{contexts:{},generatedAt:null,hasApiFootballKey:false};
+ state.free=free&&free.matches&&typeof free.matches==="object"?free:{matches:{},providers:{},generatedAt:null};
 }
 function modelFor(game){return state.analysis.models?.[game?.id]||null;}
 function oddsAssociation(game){
@@ -56,7 +57,7 @@ function renderRadarOverview(){
   '<div class="coverage-alert"><strong>⚠ Odds atuais indisponíveis no plano gratuito</strong><p>A chave API-Football funciona, mas a API bloqueia as odds da época 2026/27. Continuamos a mostrar as projeções históricas sem aprovar apostas. É necessário um fornecedor com cobertura da época atual.</p></div>':"";
  $("radarOverview").innerHTML='<div class="radar-overview-head"><strong>'+upcoming.length+' próximos jogos</strong><span>·</span><strong>'+modeled.length+' com projeção</strong><span>·</span><strong>'+finished.length+' resultados</strong></div>'+
   '<p>As escolhas em destaque são <b>projeções estatísticas a investigar</b>, não apostas aprovadas. Falta cruzar Statarea/SportyTrader, contexto e odd Betano.</p>'+
-  coverageNote+'<small>Fonte histórica: Football-Data.co.uk · atualização: '+esc(date)+' · '+(state.context.hasApiFootballKey?'API-Football autenticada':'API-Football sem chave')+' · '+Object.values(state.context.contexts||{}).filter(x=>Boolean(x.weather)).length+' jogos com previsão meteorológica</small>';
+  coverageNote+'<small>Fonte histórica: Football-Data.co.uk · atualização: '+esc(date)+' · '+(state.context.hasApiFootballKey?'API-Football autenticada':'API-Football sem chave')+' · '+Object.values(state.context.contexts||{}).filter(x=>Boolean(x.weather)).length+' jogos com previsão meteorológica · '+Object.keys(state.free.matches||{}).length+' jogos com previsões externas</small>';
 }
 function renderGamePreview(game){
  const phase=fixtureState(game),model=modelFor(game);
@@ -70,6 +71,24 @@ function renderGamePreview(game){
  return '<span class="game-preview game-tip"><span class="tip-caption">PROJEÇÃO PARA INVESTIGAR</span>'+
    '<span class="tip-line"><strong>'+esc(pick.label)+'</strong><b>'+pct(pick.probability)+'</b></span>'+
    '<span class="tip-foot">Odd mínima do modelo: <b>'+safeOdd(pick.minimumOdd)+'</b>'+(odd?' · referência: '+safeOdd(odd):' · sem odd Betano')+'</span></span>';
+}
+function freeFor(game){return state.free.matches?.[game?.id]||[];}
+function renderFreeForecast(game){
+ const rows=freeFor(game),providers=state.free.providers||{};
+ if(!rows.length){
+  const details=Object.entries(providers).map(([name,p])=>esc(name)+": "+esc(p.status||"indisponível")).join(" · ");
+  return '<div class="external-forecasts unavailable"><div class="auto-section-label">MODELOS EXTERNOS · APIS GRATUITAS</div><p>Nenhuma previsão externa recente e identificada para este encontro.</p><small>'+(details||"Aguardam-se fontes válidas")+'</small></div>';
+ }
+ const keys=["1X2_H","1X2_D","1X2_A"],labels=["1 · Casa","X · Empate","2 · Fora"];
+ const means=keys.map(k=>{const arr=rows.map(p=>p.probabilities?.[k]).filter(x=>Number.isFinite(x));return arr.length===rows.length&&arr.length>=2?arr.reduce((a,b)=>a+b,0)/arr.length:null;});
+ const tr=vals=>'<div class="external-triple">'+keys.map((k,i)=>'<span><small>'+labels[i]+'</small><b>'+pct(vals[i])+'</b></span>').join("")+'</div>';
+ const consensus=means.every(Number.isFinite)?
+  '<div class="external-consensus"><strong>Média indicativa de '+rows.length+' serviços</strong>'+tr(means)+'<small>Não é a nossa probabilidade final. Faltam mercado justo, validação da independência e confirmação da Betano.</small></div>':
+  '<small>Uma fonte externa não constitui consenso suficiente para recomendar apostas.</small>';
+ return '<div class="external-forecasts"><div class="auto-section-label">MODELOS EXTERNOS · FONTES GRATUITAS</div>'+
+  rows.map(p=>'<div class="external-forecast"><div class="external-name"><strong>'+esc(p.provider)+'</strong><small>Data: '+esc(niceDate(p.updatedAt))+'</small></div>'+
+  tr(keys.map(k=>p.probabilities[k]))+'<p>'+esc(p.method||"Estimativa externa")+'</p><a href="'+esc(p.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Ver origem ↗</a></div>').join("")+
+  consensus+'<p class="external-foot">Os dois serviços não são Statarea ou SportyTrader. Mesmo sendo fornecedores distintos podem usar métodos ou dados correlacionados, pelo que não aprovam automaticamente apostas.</p></div>';
 }
 function contextFor(game){return state.context.contexts?.[game?.id]||{};}
 function renderContext(game){
@@ -128,6 +147,11 @@ function renderWorkflowChecklist(){
   {label:"Edge ≥ 3 p.p.",ready:false,detail:"Sem odds e probabilidades cruzadas"}
  ];
  const ctx=contextFor(game);
+ const external=freeFor(game);
+ if(external.length){
+  const item=requirements.find(x=>x.key==="sources"||x.label==="Consenso 2 fontes");
+  if(item)item.detail=external.length+" previsão(ões) externas recentes; independência estatística e pesos por verificar.";
+ }
  if(ctx.injuries?.dataPresent||ctx.weather||ctx.lineups?.confirmed){
   const item=requirements.find(x=>x.key==="context");
   if(item)item.detail="Parte do contexto já recolhida; ainda falta verificar impactos e rotação.";
@@ -151,7 +175,7 @@ function renderAutoPanel(){
   return;
  }
  if(!model){
-  $("autoPanel").innerHTML='<div class="no-stats"><strong>Sem tip fundamentada</strong><p>Há jogo no calendário, mas não há resultados históricos suficientes para este encontro. Não será apresentada uma seleção inventada.</p></div>'+renderContext(game);
+  $("autoPanel").innerHTML='<div class="no-stats"><strong>Sem tip fundamentada</strong><p>Há jogo no calendário, mas não há resultados históricos suficientes para este encontro. Não será apresentada uma seleção inventada.</p></div>'+renderFreeForecast(game)+renderContext(game);
   return;
  }
  const verdict=previewVerdict(game,model,prices),pick=verdict.tip;
@@ -185,6 +209,7 @@ function renderAutoPanel(){
  if(oddsLink==="provisional"){
    html+='<div class="auto-warning">⚠ As odds recolhidas para este encontro foram associadas apenas por liga e hora. <strong>As equipas não foram confirmadas</strong> pela API-Football do plano gratuito. Estes preços e quaisquer edges são exploratórios: não utilizar para tomar decisões de aposta.</div>';
  }
+ html+=renderFreeForecast(game);
  html+=renderContext(game);
  html+='<div class="sources-foot">Poisson exploratório de resultados anteriores. Odd mínima ilustrativa calculada apenas com este modelo, <strong>não</strong> com a média ponderada de todas as tuas fontes. Não são apresentados cartões nem picks inventadas.</div>';
  $("autoPanel").innerHTML=html;
