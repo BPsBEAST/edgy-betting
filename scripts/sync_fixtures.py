@@ -79,30 +79,38 @@ def eligible(item):
     return START<=stamp<=END
 
 def espn():
+    # ESPN ceased supporting multi-day date ranges in late 2026.
+    # Request a bounded set of individual dates; stop early on unsupported leagues.
     result=[]
-    a=START.strftime("%Y%m%d")
-    b=END.strftime("%Y%m%d")
+    day_zero=(TODAY-dt.timedelta(days=1)).date()
     for slug,name,division in LEAGUES:
-        url=f"https://site.api.espn.com/apis/site/v2/sports/soccer/{slug}/scoreboard?dates={a}-{b}&limit=250"
-        response=get_json(url)
-        if not isinstance(response,dict):continue
-        for event in response.get("events") or []:
-            comp=(event.get("competitions") or [{}])[0]
-            team_list=comp.get("competitors") or []
-            home=next((t for t in team_list if t.get("homeAway")=="home"),{})
-            away=next((t for t in team_list if t.get("homeAway")=="away"),{})
-            if not home or not away:continue
-            hteam=home.get("team") or {}
-            ateam=away.get("team") or {}
-            stamp=iso(event.get("date") or comp.get("date"))
-            rawstatus=(event.get("status") or {}).get("type") or {}
-            score=lambda x: (int(x["score"]) if str(x.get("score","")).isdigit() else None)
-            item={"id":"espn-"+str(event.get("id")),"home":hteam.get("displayName") or hteam.get("name"),"away":ateam.get("displayName") or ateam.get("name"),
-                "league":name,"leagueCode":slug,"division":division,"utc":stamp,"status":rawstatus.get("abbreviation") or rawstatus.get("name") or "NS",
-                "homeScore":score(home),"awayScore":score(away),"homeLogo":hteam.get("logo"),"awayLogo":ateam.get("logo"),
-                "source":"ESPN"}
-            if eligible(item):result.append(item)
-        time.sleep(.08)
+        days=9 if slug.count(".")==1 or slug.startswith("uefa.") else 5
+        for offset in range(days):
+            day=(day_zero+dt.timedelta(days=offset)).strftime("%Y%m%d")
+            url=f"https://site.api.espn.com/apis/site/v2/sports/soccer/{slug}/scoreboard?dates={day}&limit=250"
+            response=get_json(url)
+            if not isinstance(response,dict):
+                # Unsupported ESPN competitions often fail on every date.
+                break
+            for event in response.get("events") or []:
+                comp=(event.get("competitions") or [{}])[0]
+                team_list=comp.get("competitors") or []
+                home=next((t for t in team_list if t.get("homeAway")=="home"),{})
+                away=next((t for t in team_list if t.get("homeAway")=="away"),{})
+                if not home or not away:continue
+                hteam=home.get("team") or {}
+                ateam=away.get("team") or {}
+                stamp=iso(event.get("date") or comp.get("date"))
+                rawstatus=(event.get("status") or {}).get("type") or {}
+                def score(competitor):
+                    value=competitor.get("score")
+                    return int(value) if str(value).isdigit() else None
+                item={"id":"espn-"+str(event.get("id")),"home":hteam.get("displayName") or hteam.get("name"),"away":ateam.get("displayName") or ateam.get("name"),
+                    "league":name,"leagueCode":slug,"division":division,"utc":stamp,"status":rawstatus.get("abbreviation") or rawstatus.get("name") or "NS",
+                    "homeScore":score(home),"awayScore":score(away),"homeLogo":hteam.get("logo"),"awayLogo":ateam.get("logo"),
+                    "source":"ESPN"}
+                if eligible(item):result.append(item)
+            time.sleep(.06)
     return result
 
 def thesportsdb():
