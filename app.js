@@ -111,10 +111,20 @@ function renderFairMarket(game){
  const item=fairFor(game);
  if(!item)return '<div class="source-evidence missing"><strong>Probabilidade justa 1X2</strong><p>Sem cotação sharp recente e verificada deste encontro.</p><small>Fonte: <a href="https://tipsaudit.com/api" target="_blank" rel="noopener noreferrer">TipsAudit ↗</a></small></div>';
  const p=item.fairProbability||{},q=item.quote;
+ const historic=modelFor(game);
+ const diffs=["1X2_H","1X2_D","1X2_A"].map(k=>{
+  const point=historic?.markets?.find(m=>m.key===k);
+  return Number.isFinite(point?.probability)&&Number.isFinite(p[k])?100*(point.probability-p[k]):null;
+ });
+ const contrast=diffs.every(Number.isFinite)?
+  '<div class="fair-contrast"><strong>Desvio do nosso modelo histórico face ao mercado justo (p.p.)</strong><div class="external-triple">'+
+  diffs.map((v,i)=>'<span><small>'+["1 · Casa","X · Empate","2 · Fora"][i]+'</small><b>'+(v>=0?"+":"")+n(v,1)+'</b></span>').join("")+
+  '</div><small>Isto não é edge de aposta: para calcular edge é necessária uma odd real. Uma diferença grande pode indicar informação ausente.</small></div>':"";
+
  return '<div class="fair-market"><div class="auto-section-label">MERCADO JUSTO · SEM MARGEM</div><p>Probabilidades implícitas do mercado sharp, não outra previsão independente.</p>'+
  '<div class="external-triple"><span><small>1 · Casa</small><b>'+pct(p["1X2_H"])+'</b></span><span><small>X · Empate</small><b>'+pct(p["1X2_D"])+'</b></span><span><small>2 · Fora</small><b>'+pct(p["1X2_A"])+'</b></span></div>'+
  (q?'<p>Odd internacional: '+esc(q.bookmaker)+' · '+safeOdd(q.odd)+' ('+esc(q.market)+'). Não é a Betano Portugal.</p>':'<p>Sem odd de aposta de referência recente nesta fonte.</p>')+
- '<small>Hora da leitura: '+esc(niceDate(item.readAt))+' · <a href="'+esc(item.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Consultar TipsAudit ↗</a></small></div>';
+ contrast+'<small>Hora da leitura: '+esc(niceDate(item.readAt))+' · <a href="'+esc(item.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Consultar TipsAudit ↗</a></small></div>';
 }
 function contextFor(game){
  const previous=state.context.contexts?.[game?.id]||{};
@@ -230,6 +240,17 @@ function renderAutoPanel(){
    '<div class="featured-grid"><div><small>Prob. estimada</small><b>'+pct(pick.probability)+'</b></div><div><small>Odd mín. teórica</small><b>'+safeOdd(pick.minimumOdd)+'</b></div><div><small>Odd Betano</small><b>Por confirmar</b></div></div>'+
    '<button class="feature-action" data-manual-market="'+esc(pick.key)+'" type="button">Completar dados desta seleção ↗</button></div>';
  }else html+='<div class="no-stats"><strong>Sem seleção preferencial</strong><p>Os mercados modelados não cumprem os limites exploratórios mínimos para uma sugestão estatística.</p></div>';
+ if(model.extraStats&&Object.keys(model.extraStats).length){
+  const stats=[
+   ["Cantos",model.extraStats.C?.expectedTotal],
+   ["Remates",model.extraStats.S?.expectedTotal],
+   ["À baliza",model.extraStats.ST?.expectedTotal],
+   ["Golos HT",model.extraStats.halftime?model.extraStats.halftime.expectedHome+model.extraStats.halftime.expectedAway:null]
+  ].filter(x=>Number.isFinite(x[1]));
+  if(stats.length)html+='<div class="extra-stats-title">MÉDIAS ESTIMADAS DO JOGO · HISTÓRICO</div>'+
+   '<div class="extra-stats-grid">'+stats.map(x=>'<div><small>'+esc(x[0])+'</small><b>'+n(x[1],1)+'</b></div>').join("")+'</div>'+
+   '<small class="extra-stats-note">Aproximações a partir de uma única fonte histórica. Não são xG nem previsões calibradas.</small>';
+ }
  const groups=[["Resultado","RESULTADO FINAL"],["Golos","GOLOS / AMBAS MARCAM"],["Intervalo","INTERVALO"],["Cantos","CANTOS · HISTÓRICO"],["Remates","REMATES E REMATES À BALIZA"],["Combinadas","COMBINADAS · PROB. CONJUNTA"],["Resultado exato","RESULTADO EXATO"]];
  for(const [group,title] of groups){
   const items=(model.markets||[]).filter(x=>x.group===group);
