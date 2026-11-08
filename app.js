@@ -132,6 +132,9 @@ function renderContext(game){
  const freeOdds=matchType==="verified-free";
  items.push('<div class="source-evidence '+(provisional?"source-warning":quoteList.length?"":"missing")+'"><strong>◎ Odds e mercado justo</strong><p>'+quoteList.length+' seleções de referência · '+books.size+' casas (API-Football, se disponível).</p>'+
  (provisional?'<small>⚠ ASSOCIAÇÃO NÃO CONFIRMADA: liga e hora coincidem, mas as equipas não foram verificadas. Não usar preços para apostar.</small>':freeOdds?'<small>Preços internacionais The Odds API (equipas, competição e hora verificados). NÃO são a odd da Betano Portugal: confirmar sempre no boletim.</small>':'<small>Não existe confirmação automática da odd no boletim Betano ou Flashscore. Validar preço, mercado e hora.</small>')+'</div>');
+ const lookup=(label,domain)=>'<a target="_blank" rel="noopener noreferrer" href="https://www.google.com/search?q='+encodeURIComponent('site:'+domain+' '+game.home+' '+game.away)+'">'+esc(label)+' ↗</a>';
+ items.push('<div class="source-evidence manual-research"><strong>Consultar fontes específicas sem pagar</strong><p>Estas ligações abrem pesquisas externas para verificares previsões, onzes e notícias de cada encontro. Não são extrações automáticas nem substituem dados verificados.</p><div class="source-quicklinks">'+
+  lookup("Statarea","statarea.com")+lookup("SportyTrader","sportytrader.pt")+lookup("SoccerVital","soccervital.com")+lookup("Soccernews","soccernews.com")+'</div></div>');
  return '<div class="source-evidence-panel"><div class="auto-section-label">FONTES CONSULTADAS / POR VALIDAR</div>'+items.join("")+'</div>';
 }
 
