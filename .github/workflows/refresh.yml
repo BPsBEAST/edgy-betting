@@ -7,6 +7,9 @@ on:
       - 'index.html'
       - 'styles.css'
       - 'app.js'
+      - 'assets/**'
+      - 'manifest.webmanifest'
+      - 'sw.js'
       - 'src/**'
       - 'scripts/**'
       - 'tests/**'
@@ -47,6 +50,7 @@ jobs:
         run: |
           node --check app.js
           node --check src/engine.js
+          node --check src/radar.js
           python -m py_compile scripts/sync_fixtures.py scripts/sync_analysis.py scripts/sync_odds.py
           npm test
           python -m unittest discover -s tests -p "test_*.py"
@@ -79,9 +83,13 @@ jobs:
         if: steps.pages_setup.outcome == 'success'
         run: |
           mkdir -p ./site/src ./site/data
-          cp index.html styles.css app.js ./site/
-          cp src/engine.js ./site/src/
+          cp index.html styles.css app.js manifest.webmanifest sw.js ./site/
+          cp src/engine.js src/radar.js ./site/src/
           cp data/fixtures.json data/analysis.json data/market_odds.json ./site/data/
+          mkdir -p ./site/assets
+          cp assets/edgy-mark.svg ./site/assets/
+          python -m pip install --quiet cairosvg
+          python scripts/build_icons.py
           touch ./site/.nojekyll
       - name: Upload website
         if: steps.pages_setup.outcome == 'success'
