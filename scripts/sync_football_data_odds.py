@@ -134,7 +134,13 @@ def main():
     matches={}
     identity={}
     unknown=0
+    future_rows=0
+    future_supported=0
     for row in rows:
+        t=kickoff(row)
+        if t and NOW<t<=NOW+timedelta(days=8):
+            future_rows+=1
+            if CODES.get(str(row.get("Div") or "").strip()):future_supported+=1
         gid=fixture_for(row,games)
         if not gid:
             unknown+=1
@@ -148,7 +154,8 @@ def main():
     output={
         "generatedAt":NOW.isoformat(),"source":"Football-Data.co.uk — free pre-match fixture CSV",
         "sourceUrl":url or URLS[0],"downloaded":bool(rows),"csvRows":len(rows),
-        "unmatchedRows":unknown,"matchedGames":len(matches),"matches":matches,
+        "unmatchedRows":unknown,"futureRows":future_rows,"futureSupportedRows":future_supported,
+        "matchedGames":len(matches),"matches":matches,
         "matchEvidence":identity,
         "note":"Internacional: odds recolhidas periodicamente pelo publisher, não ao vivo. Não inclui Betano Portugal e nunca confirma o boletim."
     }
@@ -157,5 +164,5 @@ def main():
         print("Football-Data fixtures odds unchanged;",len(matches),"matches");return
     DEST.parent.mkdir(parents=True,exist_ok=True)
     DEST.write_text(json.dumps(output,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    print("Football-Data pre-match odds:",len(rows),"rows,",len(matches),"verified games,",unknown,"unmatched")
+    print("Football-Data pre-match odds:",len(rows),"rows,",future_rows,"future,",future_supported,"supported future,",len(matches),"verified games")
 if __name__=="__main__":main()
