@@ -8,7 +8,7 @@ const localTime=d=>new Intl.DateTimeFormat("pt-PT",{timeZone:"Europe/Lisbon",hou
 const niceDate=d=>new Intl.DateTimeFormat("pt-PT",{timeZone:"Europe/Lisbon",weekday:"long",day:"numeric",month:"long"}).format(new Date(d));
 const n=(v,d=1)=>Number.isFinite(v)?new Intl.NumberFormat("pt-PT",{minimumFractionDigits:d,maximumFractionDigits:d}).format(v):"—";
 const readSaved=()=>{try{let list=JSON.parse(localStorage.getItem("edgy_betting_saved_v1")||"[]");return Array.isArray(list)?list.filter(x=>x&&x.matchId):[]}catch{return []}};
-const state={games:[],source:"",generated:null,error:"",selected:null,filter:"upcoming",league:"all",query:"",view:"matches",saved:readSaved(),current:null,radar:"all",analysis:{models:{},generatedAt:null},odds:{matches:{},generatedAt:null},context:{contexts:{},generatedAt:null,hasApiFootballKey:false},free:{matches:{},providers:{},generatedAt:null},freeOdds:{matches:{},generatedAt:null,hasCredentials:false},csvOdds:{matches:{},generatedAt:null}};
+const state={games:[],source:"",generated:null,error:"",selected:null,filter:"upcoming",league:"all",query:"",view:"matches",saved:readSaved(),current:null,radar:"all",analysis:{models:{},generatedAt:null},odds:{matches:{},generatedAt:null},context:{contexts:{},generatedAt:null,hasApiFootballKey:false},free:{matches:{},providers:{},generatedAt:null},freeOdds:{matches:{},generatedAt:null,hasCredentials:false},csvOdds:{matches:{},generatedAt:null},espnContext:{contexts:{},generatedAt:null}};
 
 async function loadIntelligence(){
  const get=async name=>{
@@ -18,13 +18,14 @@ async function loadIntelligence(){
    return await response.json();
   }catch{return null;}
  };
- const [analysis,odds,context,free,freeOdds,csvOdds]=await Promise.all([get("analysis.json"),get("market_odds.json"),get("context.json"),get("free_predictions.json"),get("free_odds.json"),get("football_data_odds.json")]);
+ const [analysis,odds,context,free,freeOdds,csvOdds,espnContext]=await Promise.all([get("analysis.json"),get("market_odds.json"),get("context.json"),get("free_predictions.json"),get("free_odds.json"),get("football_data_odds.json"),get("espn_context.json")]);
  state.analysis=analysis&&analysis.models&&typeof analysis.models==="object"?analysis:{models:{},generatedAt:null};
  state.odds=odds&&odds.matches&&typeof odds.matches==="object"?odds:{matches:{},generatedAt:null};
  state.context=context&&context.contexts&&typeof context.contexts==="object"?context:{contexts:{},generatedAt:null,hasApiFootballKey:false};
  state.free=free&&free.matches&&typeof free.matches==="object"?free:{matches:{},providers:{},generatedAt:null};
  state.freeOdds=freeOdds&&freeOdds.matches&&typeof freeOdds.matches==="object"?freeOdds:{matches:{},generatedAt:null,hasCredentials:false};
  state.csvOdds=csvOdds&&csvOdds.matches&&typeof csvOdds.matches==="object"?csvOdds:{matches:{},generatedAt:null};
+ state.espnContext=espnContext&&espnContext.contexts&&typeof espnContext.contexts==="object"?espnContext:{contexts:{},generatedAt:null};
 }
 function modelFor(game){return state.analysis.models?.[game?.id]||null;}
 function oddsAssociation(game){
@@ -67,7 +68,7 @@ function renderRadarOverview(){
   '<div class="coverage-alert"><strong>⚠ API-Football gratuita não cobre odds 2026/27</strong><p>A recolha da época atual por essa API está bloqueada. '+(state.freeOdds.hasCredentials?'The Odds API está configurada para preços internacionais de referência.':'Há ainda um ficheiro de odds de referência sem conta (Football-Data), e foi preparada a The Odds API grátis como opção adicional.')+' Nenhum preço substitui a confirmação na Betano Portugal.</p></div>':"";
  $("radarOverview").innerHTML='<div class="radar-overview-head"><strong>'+upcoming.length+' próximos jogos</strong><span>·</span><strong>'+modeled.length+' com projeção</strong><span>·</span><strong>'+finished.length+' resultados</strong></div>'+
   '<p>As escolhas em destaque são <b>projeções estatísticas a investigar</b>, não apostas aprovadas. Falta cruzar Statarea/SportyTrader, contexto e odd Betano.</p>'+
-  coverageNote+'<small>Fonte histórica: Football-Data.co.uk · atualização: '+esc(date)+' · '+(state.context.hasApiFootballKey?'API-Football autenticada':'API-Football sem chave')+' · '+Object.values(state.context.contexts||{}).filter(x=>Boolean(x.weather)).length+' jogos com previsão meteorológica · '+Object.keys(state.free.matches||{}).length+' jogos com previsões externas</small>';
+  coverageNote+'<small>Fonte histórica: Football-Data.co.uk · atualização: '+esc(date)+' · '+(state.context.hasApiFootballKey?'API-Football autenticada':'API-Football sem chave')+' · '+Object.values(state.context.contexts||{}).filter(x=>Boolean(x.weather)).length+' jogos com previsão meteorológica · '+Object.values(state.espnContext.contexts||{}).filter(x=>Boolean(x.lineups)).length+' com XI ESPN · '+Object.keys(state.free.matches||{}).length+' jogos com previsões externas</small>';
 }
 function renderGamePreview(game){
  const phase=fixtureState(game),model=modelFor(game);
@@ -100,7 +101,16 @@ function renderFreeForecast(game){
   tr(keys.map(k=>p.probabilities[k]))+'<p>'+esc(p.method||"Estimativa externa")+'</p><a href="'+esc(p.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Ver origem ↗</a></div>').join("")+
   consensus+'<p class="external-foot">Os dois serviços não são Statarea ou SportyTrader. Mesmo sendo fornecedores distintos podem usar métodos ou dados correlacionados, pelo que não aprovam automaticamente apostas.</p></div>';
 }
-function contextFor(game){return state.context.contexts?.[game?.id]||{};}
+function contextFor(game){
+ const previous=state.context.contexts?.[game?.id]||{};
+ const espn=state.espnContext.contexts?.[game?.id]||{};
+ const generated=Date.parse(state.espnContext.generatedAt||"");
+ const age=Number.isFinite(generated)?Date.now()-generated:Infinity;
+ return {...previous,
+  injuries:age<24*3600000&&espn.injuries?espn.injuries:previous.injuries,
+  lineups:age<4*3600000&&espn.lineups?espn.lineups:previous.lineups,
+  espnPage:espn.matchPage||null};
+}
 function renderContext(game){
  const data=contextFor(game),items=[];
  if(data.weather){
@@ -115,12 +125,12 @@ function renderContext(game){
  }else items.push('<div class="source-evidence missing"><strong>☁ Meteorologia</strong><p>Não há localização de estádio/cidade confirmada ou previsão horária disponível.</p></div>');
  if(data.injuries?.dataPresent){
    const players=Array.isArray(data.injuries.players)?data.injuries.players:[];
-   items.push('<div class="source-evidence"><strong>✚ Lesões / castigos · API-Football</strong><p>'+players.length+' registos na fonte (a cobertura depende da liga).</p>'+
-    (players.length?'<details><summary>Ver jogadores</summary>'+players.slice(0,15).map(p=>'<p>'+esc(p.team)+' — '+esc(p.name)+' · '+esc(p.type||p.reason||"Estado não indicado")+'</p>').join("")+'</details>':"")+
+   items.push('<div class="source-evidence"><strong>✚ Lesões / castigos · '+esc(data.injuries.provider||"Fonte externa")+':</strong><p>'+players.length+' registos na fonte (a cobertura depende da liga).</p>'+
+    (players.length?'<details><summary>Ver jogadores</summary>'+players.slice(0,15).map(p=>'<p>'+esc(p.team)+' — '+esc(p.name)+' · '+esc(p.type||p.reason||p.status||"Estado não indicado")+'</p>').join("")+'</details>':"")+
     '<small>Não é confirmação de ausência de outros jogadores.</small></div>');
- }else items.push('<div class="source-evidence missing"><strong>✚ Lesões / castigos</strong><p>Não recolhidos; Soccernews ainda sem integração autorizada.</p></div>');
+ }else items.push('<div class="source-evidence missing"><strong>✚ Lesões / castigos</strong><p>Sem relatório confirmado para as duas equipas. ESPN pode não ter cobertura; Soccernews sem integração automática.</p></div>');
  if(data.lineups?.confirmed&&Array.isArray(data.lineups.teams)){
-    items.push('<div class="source-evidence"><strong>✓ Onzes titulares · API-Football</strong>'+
+    items.push('<div class="source-evidence"><strong>✓ Onzes titulares · '+esc(data.lineups.provider||"Fonte externa")+'</strong>'+
       data.lineups.teams.map(t=>'<details><summary>'+esc(t.team)+'</summary><p>'+esc((t.startingXI||[]).join(" · "))+'</p></details>').join("")+
       '<small>Serem conhecidos os onzes não significa que rotação/ausências já foram avaliadas.</small></div>');
  }else items.push('<div class="source-evidence missing"><strong>◷ Onzes confirmados</strong><p>Por verificar (normalmente são divulgados pouco antes do jogo).</p></div>');
