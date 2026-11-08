@@ -90,8 +90,8 @@ def apif_request(endpoint,fixture):
     raw=get("https://v3.football.api-sports.io/"+endpoint+"?"+args,{"x-apisports-key":API_KEY})
     if not isinstance(raw,dict) or raw.get("errors"):return None
     return raw.get("response")
-def licensed_context(game):
-    fixture=int(game["id"].removeprefix("apif-"))
+def licensed_context(game,fixture_id):
+    fixture=int(str(fixture_id).removeprefix("apif-"))
     stamp=parse_time(game.get("utc"))
     output={}
     # API-Football predictions are their own named provider, NOT Statarea or SportyTrader.
@@ -156,12 +156,17 @@ def main():
                     forecast_cache[cachekey]=weather_forecast(*position,when)
                 weather=forecast_cache[cachekey]
                 if weather:contexts.setdefault(g["id"],{})["weather"]={"city":city,"countryCode":iso,**weather}
-    # Respect low API request budgets: focus only on the nearest licensed fixtures.
+    # Strict links from API fixture metadata let licensed context attach to
+    # an ESPN calendar record without ever guessing a provider fixture ID.
+    aliases=load(ROOT/"data"/"market_odds.json").get("linkedFixtureIds") or {}
+    # Respect low API request budgets: focus only on nearest linked games.
     for g in upcoming:
         if CALLS>=MAX_API_CALLS:break
-        if str(g.get("id","")).startswith("apif-"):
-            info=licensed_context(g)
-            if info:contexts.setdefault(g["id"],{}).update(info)
+        original=str(g.get("id") or "")
+        fixture=original if original.startswith("apif-") else aliases.get(original)
+        if fixture and str(fixture).startswith("apif-"):
+            info=licensed_context(g,fixture)
+            if info:contexts.setdefault(original,{}).update(info)
     output={"generatedAt":NOW.isoformat(),"sources":{"weather":"Open-Meteo (requires verified venue city)",
       "lineups":"API-Football optional","injuries":"API-Football optional",
       "predictions":"API-Football optional (distinct from Statarea/SportyTrader)",
