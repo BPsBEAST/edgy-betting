@@ -67,6 +67,9 @@ jobs:
       - name: Collect optional free third-party forecasts (no API keys)
         run: python scripts/sync_free_predictions.py
       - name: Optional EU odds from free monthly The Odds API tier
+        # Code pushes never consume the 500-credit monthly free quota.
+        # Only the schedule and workflow_dispatch refresh prices.
+        if: github.event_name != 'push'
         env:
           THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
         run: python scripts/sync_free_odds.py
