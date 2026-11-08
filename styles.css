@@ -179,3 +179,8 @@
 .source-evidence details{margin:8px 0 5px;border-top:1px solid #43554c;padding-top:7px}
 .source-evidence details summary{font-size:10px;color:#c1edb3;cursor:pointer}
 .source-evidence details p{padding:4px 0;border-bottom:1px solid #2c413c}
+
+/* Provider-access transparency: visible before any statistical tip */
+.coverage-alert{padding:11px 13px;margin:9px 0;border:1px solid #87633d;border-radius:10px;background:#33291f}
+.coverage-alert strong{display:block;font-size:11px;color:#ffdaa2}
+.coverage-alert p{color:#e0cbb1!important;font-size:10px!important;line-height:1.6!important;margin:5px 0 0!important}
