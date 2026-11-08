@@ -203,3 +203,9 @@
 .external-consensus strong{font-size:11px;color:#c8e5c8}
 .external-foot{font-size:10px!important;color:#a6b6bb!important}
 @media(max-width:700px){.external-forecasts{margin:12px 0;padding:12px}.external-triple b{font-size:14px}}
+
+/* Voluntary human review where publisher APIs do not allow bulk reuse */
+.source-quicklinks{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.source-quicklinks a{display:inline-flex;align-items:center;padding:8px 9px;border-radius:8px;border:1px solid #446445;background:#20342a;color:#ccf0b9;font-size:10px;font-weight:750;text-decoration:none}
+.source-quicklinks a:hover{background:#2f4835}
+.manual-research{border-style:dashed}
