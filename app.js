@@ -140,12 +140,15 @@ function openManual(key){
 }
 
 function store(){try{localStorage.setItem("edgy_betting_saved_v1",JSON.stringify(state.saved))}catch{}}
-function isLive(game){return ["LIVE","IN_PLAY","HT","1H","2H","ET","PEN"].includes(game.status);}
-function statusText(g){if(isLive(g))return "AO VIVO";if(["FT","FINISHED"].includes(g.status))return "TERMINADO";if(["POSTPONED","PST"].includes(g.status))return "ADIADO";return "AGENDADO";}
+function isLive(game){return fixtureState(game).kind==="live";}
+function statusText(g){return fixtureState(g).label;}
 function logo(src,name){return safeImg(src)?'<img loading="lazy" referrerpolicy="no-referrer" alt="" src="'+esc(src)+'">':'<span class="placeholder-logo" aria-hidden="true"></span>';}
 function uniqueGames(list){const ids=new Set();return list.filter(g=>{if(!g||!g.id||!g.home||!g.away||!g.utc||!Number.isFinite(Date.parse(g.utc)))return false;const key=g.home.toLowerCase()+"|"+g.away.toLowerCase()+"|"+localDate(g.utc);if(ids.has(key))return false;ids.add(key);return true;}).sort((a,b)=>a.utc.localeCompare(b.utc));}
 function updateCounters(){
- $("gameCount").textContent=String(state.games.length);$("analysisCount").textContent=String(Object.keys(state.analysis.models||{}).length);$("confirmedCount").textContent=String(Object.keys(state.odds.matches||{}).length);
+ const upcoming=state.games.filter(g=>isBettablePeriod(g));
+ $("gameCount").textContent=String(upcoming.length);
+ $("analysisCount").textContent=String(upcoming.filter(g=>Boolean(modelFor(g))).length);
+ $("confirmedCount").textContent=String(upcoming.filter(g=>Object.keys(state.odds.matches?.[g.id]||{}).length>0).length);
  $("sidebarCount").textContent=String(state.games.length);$("savedCount").textContent=String(state.saved.length);
  $("gamesUpdated").textContent=state.generated?"Atualizado: "+localTime(state.generated):"Sem atualização confirmada";
  $("syncStatus").textContent=state.generated?"Dados: "+localTime(state.generated):"Sem sincronização";
@@ -179,7 +182,7 @@ async function loadGames(){
  }
  await loadIntelligence();
  if(!state.selected){
-  const future=state.games.filter(g=>Date.parse(g.utc)>=Date.now()).sort((a,b)=>a.utc.localeCompare(b.utc));
+  const future=state.games.filter(g=>isBettablePeriod(g)).sort((a,b)=>a.utc.localeCompare(b.utc));
   state.selected=future.find(g=>modelFor(g))||future[0]||null;
   if(state.selected){$("analysisFields").disabled=false;$("analyze").disabled=false;}
  }
@@ -193,37 +196,58 @@ function renderLeagues(){
  available.map(item=>'<button type="button" class="league '+(state.league===item.key?"active":"")+'" data-league="'+esc(item.key)+'"><span>'+esc(item.label)+'</span><small>'+state.games.filter(g=>(g.leagueCode||g.league)===item.key).length+'</small></button>').join("");
 }
 function filteredGames(){
- const now=new Date(),today=localDate(now),tomorrow=localDate(new Date(now.getTime()+86400000));
- return state.games.filter(g=>{
- const query=(g.home+" "+g.away+" "+g.league).toLowerCase();
- if(state.query&&!query.includes(state.query))return false;
- if(state.league!=="all"&&(g.leagueCode||g.league)!==state.league)return false;
- if(state.filter==="today"&&localDate(g.utc)!==today)return false;
- if(state.filter==="tomorrow"&&localDate(g.utc)!==tomorrow)return false;
- if(state.filter==="live"&&!isLive(g))return false;
- if(state.filter==="all"&&Date.parse(g.utc)<Date.now()-6*3600000)return false;
- if(state.radar==="modeled"&&!state.analysis.models?.[g.id])return false;
- if(state.radar==="priced"&&!Object.keys(state.odds.matches?.[g.id]||{}).length)return false;
- if(state.radar==="unmodeled"&&state.analysis.models?.[g.id])return false;
- return true;
+ const now=Date.now(),today=localDate(now),tomorrow=localDate(now+86400000);
+ const games=state.games.filter(g=>{
+  const phase=fixtureState(g,now),date=localDate(g.utc);
+  if(state.query&&!(g.home+" "+g.away+" "+g.league).toLowerCase().includes(state.query))return false;
+  if(state.league!=="all"&&(g.leagueCode||g.league)!==state.league)return false;
+  if(state.filter==="upcoming"&&phase.kind!=="upcoming")return false;
+  if(state.filter==="today"&&date!==today)return false;
+  if(state.filter==="tomorrow"&&date!==tomorrow)return false;
+  if(state.filter==="live"&&phase.kind!=="live")return false;
+  if(state.filter==="results"&&!["finished","awaiting","postponed"].includes(phase.kind))return false;
+  if(state.radar==="modeled"&&!modelFor(g))return false;
+  if(state.radar==="priced"&&!Object.keys(state.odds.matches?.[g.id]||{}).length)return false;
+  if(state.radar==="unmodeled"&&modelFor(g))return false;
+  return true;
  });
+ return games.sort((a,b)=>state.filter==="results"?b.utc.localeCompare(a.utc):a.utc.localeCompare(b.utc));
 }
 function renderGames(){
- const list=filteredGames();$("filterResult").textContent=list.length+" encontrados";
- $("dateRangeLabel").textContent=state.generated?"Fuso: Lisboa":"A aguardar dados";
- if(!list.length){$("games").innerHTML='<div class="empty"><strong>'+(!state.games.length?"Ainda não há calendário disponível":"Nenhum jogo encontrado")+'</strong>'+
- (state.games.length?"Altera os filtros para veres outros encontros.":"A sincronização automática depende do GitHub Actions e da cobertura dos fornecedores. Não são apresentados jogos fictícios.")+
- (state.error?'<br><small>'+esc(state.error)+'</small>':"")+'</div>';return;}
- let lastDate="";
- $("games").innerHTML=list.map(game=>{
- const date=localDate(game.utc),header=date===lastDate?"":'<div class="day-heading">'+esc(niceDate(game.utc))+'</div>';lastDate=date;
- const live=isLive(game);
- const score=game.homeScore!==null&&game.homeScore!==undefined&&game.awayScore!==null&&game.awayScore!==undefined?game.homeScore+" : "+game.awayScore:"";
- return header+'<button type="button" class="game-card '+(state.selected?.id===game.id?"active":"")+'" data-game="'+esc(game.id)+'">'+
- '<span class="game-meta">'+(live?'<span class="live-badge">● LIVE</span>':'<strong>'+esc(localTime(game.utc))+'</strong>')+'<small>'+esc(score||statusText(game))+'</small></span>'+
- '<span class="fixture"><span class="fixture-league">'+esc(game.league||"Futebol")+'</span><span class="teams"><span class="team">'+logo(game.homeLogo,game.home)+'<span class="team-name">'+esc(game.home)+'</span></span><span class="team">'+logo(game.awayLogo,game.away)+'<span class="team-name">'+esc(game.away)+'</span></span></span></span>'+
- '<span class="game-action"><b>VER DADOS</b><span>↗</span></span>'+renderGamePreview(game)+'</button>';
- }).join("");
+ const list=filteredGames();
+ $("filterResult").textContent=list.length+" jogos";
+ $("dateRangeLabel").textContent=state.generated?"Horário de Lisboa":"Fonte por sincronizar";
+ if(!list.length){
+  const message=state.filter==="live"?"Não há jogos em direto confirmados pela fonte.":state.filter==="results"?
+   "Ainda não há resultados sincronizados para os dias disponíveis.":"Altera os filtros para veres outros encontros.";
+  $("games").innerHTML='<div class="empty"><strong>Nenhum encontro encontrado</strong>'+message+(state.error?'<br><small>'+esc(state.error)+'</small>':"")+'</div>';
+  return;
+ }
+ let date="",html="";
+ for(const game of list.slice(0,120)){
+  const today=localDate(game.utc),phase=fixtureState(game);
+  if(today!==date){
+   html+='<div class="day-heading">'+esc(niceDate(game.utc))+'</div>';
+   date=today;
+  }
+  const value=phase.score||phase.label;
+  const verdict=previewVerdict(game,modelFor(game),state.odds.matches?.[game.id]||{});
+  const recommendation=verdict.tip?statusPill("OBSERVAR","◉ Observar"):
+   (phase.kind==="finished"?statusPill("TERMINADO","Resultado"):
+   (phase.kind==="postponed"?statusPill("EXCLUIDA","Adiado"):
+    statusPill("SEM_DADOS",phase.kind==="upcoming"?"Sem tip":"A confirmar")));
+  html+='<button type="button" class="game-card '+(state.selected?.id===game.id?"active":"")+
+   '" data-game="'+esc(game.id)+'" aria-label="'+esc(game.home+" contra "+game.away+", "+phase.label)+'">'+
+   '<span class="game-meta">'+(phase.kind==="live"?'<span class="live-badge">● DIRETO</span>':'<strong>'+esc(localTime(game.utc))+'</strong>')+
+   '<small>'+esc(value)+'</small></span>'+
+   '<span class="fixture"><span class="fixture-league">'+esc(game.league||"Futebol")+'</span>'+
+   '<span class="teams"><span class="team">'+logo(game.homeLogo,game.home)+'<span class="team-name">'+esc(game.home)+'</span></span>'+
+   '<span class="team">'+logo(game.awayLogo,game.away)+'<span class="team-name">'+esc(game.away)+'</span></span></span></span>'+
+   '<span class="game-action"><span class="game-status">'+recommendation+'</span><small>'+(phase.kind==="finished"?"VER RESULTADO":"VER ANÁLISE")+' ↗</small></span>'+
+   renderGamePreview(game)+'</button>';
+ }
+ if(list.length>120)html+='<div class="source-note">A mostrar 120 de '+list.length+' encontros. Filtra por liga, data ou pesquisa.</div>';
+ $("games").innerHTML=html;
 }
 function refreshSelection(){
  if(!state.selected){$("selectedMatch").innerHTML='<div class="pick-placeholder"><span>◎</span><strong>Seleciona um jogo</strong><small>Escolhe um jogo da lista para iniciar a análise.</small></div>';return;}
@@ -232,7 +256,7 @@ function refreshSelection(){
 }
 function selectGame(id){
  const game=state.games.find(x=>x.id===id);if(!game)return;
- state.selected=game;state.current=null;$("analysisForm").reset();$("analysisFields").disabled=false;$("analyze").disabled=false;$("resultPanel").hidden=true;updatePushField();refreshSelection();renderAutoPanel();renderGames();
+ state.selected=game;state.current=null;$("analysisForm").reset();$("analysisFields").disabled=!isBettablePeriod(game);$("analyze").disabled=!isBettablePeriod(game);$("resultPanel").hidden=true;updatePushField();refreshSelection();renderAutoPanel();renderGames();
  $("manualDetails").open=false;
  if(matchMedia("(max-width:1020px)").matches)$("inspector").scrollIntoView({behavior:"smooth",block:"start"});
 }
@@ -269,13 +293,14 @@ function renderSaved(){
  if(!state.saved.length){$("savedList").innerHTML='<div class="empty"><strong>Lista vazia</strong>Escolhe um jogo e guarda uma análise para a acompanhares aqui.</div>';return;}
  $("savedList").innerHTML=state.saved.slice().reverse().map(x=>'<article class="saved-item"><div class="saved-item-header"><span>'+esc(x.home)+' × '+esc(x.away)+'</span><button class="remove-button" data-remove="'+esc(x.id)+'" type="button">Remover</button></div><p>'+esc(MARKETS[x.market]?.label||x.market)+' · '+esc(x.selection)+'</p><small>'+esc(x.status)+' · Odd '+esc(n(x.odds,2))+' · Edge ajustado '+esc(n(x.edgeAdjusted*100,1))+'% · '+esc(x.priceSource==="betano"?"Betano confirmada na análise":"Odd por verificar")+'</small></article>').join("");
 }
-function setView(next){state.view=next;$("matchesView").hidden=next!=="matches";$("savedView").hidden=next!=="saved";document.querySelectorAll("[data-view]").forEach(el=>el.classList.toggle("active",el.dataset.view===next));if(next==="saved")renderSaved();}
+function setView(next){state.view=next;document.querySelector(".app-shell").dataset.view=next;$("matchesView").hidden=next!=="matches";$("savedView").hidden=next!=="saved";$("rulesView").hidden=next!=="rules";document.querySelectorAll("[data-view]").forEach(el=>el.classList.toggle("active",el.dataset.view===next));if(next==="saved")renderSaved();if(next==="matches")renderGames();}
 function updatePushField(){$("pushField").hidden=!["void","quarter"].includes($("market").value);}
 document.addEventListener("click",event=>{
  const game=event.target.closest("[data-game]");if(game){selectGame(game.dataset.game);return;}
  const lg=event.target.closest("[data-league]");if(lg){state.league=lg.dataset.league;renderLeagues();renderGames();return;}
  const range=event.target.closest("[data-range]");if(range){state.filter=range.dataset.range;document.querySelectorAll("[data-range]").forEach(b=>b.classList.toggle("selected",b.dataset.range===state.filter));renderGames();return;}
  const radar=event.target.closest("[data-radar]");if(radar){state.radar=radar.dataset.radar;document.querySelectorAll("[data-radar]").forEach(b=>b.classList.toggle("active",b.dataset.radar===state.radar));renderGames();return;}
+ const openDetails=event.target.closest("[data-open-manual]");if(openDetails){$("manualDetails").open=true;$("manualDetails").scrollIntoView({behavior:"smooth",block:"start"});return;}
  const marketButton=event.target.closest("[data-manual-market]");if(marketButton){openManual(marketButton.dataset.manualMarket);return;}
  const view=event.target.closest("[data-view]");if(view){setView(view.dataset.view);return;}
  const remove=event.target.closest("[data-remove]");if(remove){state.saved=state.saved.filter(x=>x.id!==remove.dataset.remove);store();updateCounters();renderSaved();}
