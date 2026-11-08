@@ -43,8 +43,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Test probability engine
-        run: npm test
+      - name: Test probability engine and check source syntax
+        run: |
+          node --check app.js
+          node --check src/engine.js
+          python -m py_compile scripts/sync_fixtures.py
+          npm test
       - name: Fetch actual football fixtures
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
@@ -59,11 +63,15 @@ jobs:
             git push
           fi
       - name: Configure GitHub Pages
+        id: pages_setup
+        continue-on-error: true
         uses: actions/configure-pages@v5
       - name: Upload website
+        if: steps.pages_setup.outcome == 'success'
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
       - name: Publish website
+        if: steps.pages_setup.outcome == 'success'
         id: deployment
         uses: actions/deploy-pages@v4
