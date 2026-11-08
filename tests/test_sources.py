@@ -26,6 +26,18 @@ class MarketSourceTests(unittest.TestCase):
         for bet,value,expected in cases:
             with self.subTest(bet=bet,value=value):
                 self.assertEqual(odds.key_for(bet,value),expected)
+    def test_first_half_goals_are_not_full_time_goals(self):
+        self.assertIsNone(odds.key_for("Goals Over/Under - First Half","Over 1.5"))
+        self.assertIsNone(odds.key_for("Over/Under - Home Team","Over 2.5"))
+        self.assertIsNone(odds.key_for("Corner Over/Under","Under 9.5"))
+        self.assertEqual(odds.key_for("Goals Over/Under","Over 2.5"),"O25")
+    def test_same_bet_different_bookmakers_never_create_false_consensus(self):
+        raw={"bookmakers":[{"name":"Betano","bets":[
+          {"name":"Match Winner","values":[{"value":"Home","odd":"2.1"}]}]}]}
+        one=odds.decode_event(raw)["1X2_H"]
+        self.assertEqual(one["fairBooks"],0)
+        self.assertIsNone(one["fairMarketConsensus"])
+        self.assertFalse(one["betanoConfirmedOnSlip"])
     def test_no_vig_requires_complete_bookmaker_market(self):
         raw={"bookmakers":[
          {"name":"Betano","bets":[{"name":"Match Winner","values":[{"value":"Home","odd":"2.15"},{"value":"Draw","odd":"3.4"},{"value":"Away","odd":"3.2"}]}]},
