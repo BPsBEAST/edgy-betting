@@ -8,6 +8,28 @@ Site (publicação GitHub Pages verificada pelos workflows): https://bpsbeast.gi
 
 Desenvolvimento local: `python -m http.server 8080`, depois abrir `http://localhost:8080`. A interface não precisa de backend para ler os dados já sincronizados. `npm test` (Node 22+) valida as fórmulas e controlos de risco.
 
+## Soluções gratuitas — estado 2026/27
+
+A EDGY utiliza apenas fontes com ficheiros públicos ou APIs de acesso autorizado. Nenhuma integração contorna paywalls, CAPTCHA ou condições de acesso. A plataforma pública apresenta previsões e dados desportivos, nunca aposta por ti.
+
+**Novas APIs públicas sem necessidade de conta:**
+
+- **KiqIQ** ([documentação](https://kiqiq.com/api)): probabilidades 1X2 da sua própria modelação Poisson; sincronização gratuita em `scripts/sync_free_predictions.py`.
+- **Skorbot** ([documentação](https://skorbot.live/en/api/), [termos](https://skorbot.live/en/terms/)): probabilidades 1X2 com atribuição obrigatória; a API pública pode estar desatualizada e tem política de uso razoável.
+- Ambas exigem equipas, competição, horário e feed atualizado há menos de 48 horas. Se não há previsão recente, a EDGY mostra "não disponível" — nunca reutiliza previsões antigas.
+- **NÃO** equivalem à Statarea, SportyTrader ou SoccerVital. Mesmo existindo dois serviços, podem partilhar dados e modelos estatísticos; não assumimos consenso independente sem validação.
+
+**Alternativa gratuita para odds atuais, sem pagares plano:**
+
+- [The Odds API](https://the-odds-api.com/) tem plano **Starter gratuito com 500 créditos/mês** e cobre muitas das competições pedidas.
+- O código `scripts/sync_free_odds.py` já está preparado. Para ativar: criar uma conta no plano gratuito e guardar no GitHub → Actions Secrets uma key chamada `THE_ODDS_API_KEY`. Não publicar a chave em código ou no chat.
+- Configuração por omissão: **máximo duas competições por execução**, uma região europeia e dois mercados básicos (`h2h` e `totals`). A execução agendada (4 vezes por dia) fica, teoricamente, dentro de 496 créditos em 31 dias. Execuções manuais adicionais gastam mais créditos; monitorizar o painel do fornecedor.
+- Faz correspondência **verificada pelas duas equipas, competição e hora de início**; rejeita odds antigas e jogos ambíguos. A Betano Reino Unido aparece na lista pública do fornecedor, mas **não é o boletim da Betano Portugal**.
+- Sem a nova secret, o feed não executa pedidos e mostra que está pendente. Se o fornecedor não tiver odds para uma liga, não são inventadas.
+- O feed da API-Football gratuita não suporta odds/fixtures da época atual 2026/27. A EDGY desativa esses pedidos por omissão, preservando a chave e os 100 pedidos/dia para outras utilizações possíveis.
+
+**Limitações permanentes do plano gratuito:** as previsões das fontes exatas Statarea/SportyTrader, estatísticas SoccerVital, lesões/lineups verificadas e odds da Betano Portugal **não possuem todos feeds automáticos gratuitos e autorizados identificados**. Para seguir todas as regras, podem ser consultadas manualmente; sem dados, a classificação mantém-se OBSERVAR. A extração/republicação automatizada pode depender de autorização de cada fornecedor.
+
 ## Fontes de dados: integração e estado real
 
 O programa **não inventa preços ou probabilidades** para preencher lacunas. É importante separar informação que foi recolhida de integrações apenas preparadas.
@@ -17,9 +39,9 @@ O programa **não inventa preços ou probabilidades** para preencher lacunas. É
 | ESPN (não oficial) / TheSportsDB | Jogos, datas e resultados | Ativa | A cobertura pode variar e o feed ESPN pode falhar |
 | Football-Data.co.uk | Resultados históricos, estatísticas e Poisson exploratório | Ativa | Não são as previsões independentes pedidas |
 | Open-Meteo | Chuva, vento e temperatura na hora do jogo | Ativa **apenas quando existe cidade de estádio confirmada** | Previsão urbana não confirma condições no relvado; plano gratuito sujeito a uso não comercial |
-| API-Football | Odds e probabilidades justas das casas | **Chave configurada**, cobertura efetiva limitada | API gratuita devolve preços, mas grande parte dos eventos globais não pertence às ligas selecionadas. As odds nunca equivalem ao boletim Betano. |
+| API-Football | Odds e probabilidades justas das casas | **Chave configurada**, época atual bloqueada no plano gratuito | Desativámos pedidos de odds 2026/27 que a conta gratuita não pode satisfazer |
 | API-Football | Lesões, castigos, onzes e previsões 1X2 próprias | **Ainda não há dados do período solicitado** | O plano gratuito não permite consultar fixtures 2026/27 nem o parâmetro `ids`; não substituir automaticamente Statarea/SportyTrader |
-| Statarea / SportyTrader | Probabilidades independentes ponderadas | **Não ligadas** | Precisam de alimentação autorizada, sem inventar valores |
+| KiqIQ / Skorbot | Probabilidades de fontes externas em JSON | **Ligadas**, podem não ter jogos atuais | APIs públicas gratuitas, verificações rigorosas de data, equipas e competição; não contam como Statarea/SportyTrader |\n| The Odds API (opcional) | Odds internacionais atuais com equipas identificadas | **Preparada, falta secret gratuita** | 500 créditos/mês; não é confirmação da Betano Portugal |\n| Statarea / SportyTrader | Probabilidades independentes ponderadas | **Não ligadas** | Precisam de alimentação autorizada, sem inventar valores |
 | SoccerVital / Statarea golos | Comportamento casa/fora e médias | **Não ligadas** | Exigem alimentação verificável com condições de utilização apropriadas |
 | Soccernews.com | Notícias sobre indisponíveis | **Não ligada** | Sem API validada para extracção automática |
 | Flashscore | Preços Betano/Betclic/Solverde/bwin | **Não ligado** | O serviço proíbe extração/republicação não autorizada |
