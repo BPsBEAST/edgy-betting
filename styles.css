@@ -147,3 +147,19 @@
  .featured-grid b{font-size:13px}.workflow-step small{font-size:9px}
  .top-right{gap:8px}.sync-status{font-size:10px}
 }
+
+/* Fast mobile full-screen match analysis: no journey through the entire fixture list */
+.inspector-actions{display:flex;align-items:center;gap:9px}
+.close-inspector{display:none;border:1px solid #354454;background:#1e2b3b;color:#f1f5fa;width:37px;height:37px;align-items:center;justify-content:center;border-radius:10px;font-size:17px}
+@media(max-width:700px){
+ body.details-open{overflow:hidden;overscroll-behavior:none}
+ .content-grid .inspector{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:1500;width:100%;height:100dvh;max-height:100dvh;overflow-y:auto;overflow-x:hidden;background:#111924;border-radius:0;border:0;box-shadow:none;padding-bottom:env(safe-area-inset-bottom)}
+ .content-grid .inspector.is-open{display:block}
+ .inspector-head{position:sticky;top:0;z-index:3;background:#111924;border-bottom:1px solid #334153;padding:13px 16px}
+ .close-inspector{display:flex}
+ .inspector-head h2{font-size:18px;margin-top:5px}
+ .selected-match{margin:14px 15px}
+ .auto-panel{padding:4px 15px 15px}
+ .manual-details>summary{padding:16px 15px}
+ .inspector-bottom{padding-bottom:24px}
+}
