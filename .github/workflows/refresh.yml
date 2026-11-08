@@ -23,7 +23,7 @@ permissions:
 
 concurrency:
   group: edgy-betting-deploy
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   sync-build-deploy:
@@ -49,11 +49,12 @@ jobs:
           node --check src/engine.js
           python -m py_compile scripts/sync_fixtures.py scripts/sync_analysis.py scripts/sync_odds.py
           npm test
+          python -m unittest discover -s tests -p "test_*.py"
       - name: Fetch actual football fixtures
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
         run: python scripts/sync_fixtures.py
-      - name: Build automatic match projections from ESPN form
+      - name: Build automatic match projections from published season results
         run: python scripts/sync_analysis.py
       - name: Load reference odds where API-Football is configured
         env:
