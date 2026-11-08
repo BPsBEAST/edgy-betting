@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T19:54:25.452958+00:00",
+  "generatedAt": "2026-11-08T19:57:21.243365+00:00",
   "sources": {
     "weather": "Open-Meteo (requires verified venue city)",
     "lineups": "API-Football optional",
@@ -112,6 +112,20 @@
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
     },
+    "espn-401928519": {
+      "weather": {
+        "city": "Amorebieta",
+        "countryCode": "ES",
+        "temperatureC": 19.0,
+        "precipitationMm": 0.0,
+        "gustKmh": 27.4,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-10T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
     "espn-401928528": {
       "weather": {
         "city": "Estepona",
@@ -122,20 +136,6 @@
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-10T19:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401928504": {
-      "weather": {
-        "city": "Manises",
-        "countryCode": "ES",
-        "temperatureC": 19.0,
-        "precipitationMm": 0.0,
-        "gustKmh": 13.0,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-10T20:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
