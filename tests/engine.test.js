@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import {evaluate} from "../src/engine.js";
 const base={
  matchId:"fixture-123",day:"2026-11-08",market:"result",selection:"Vitória equipa da casa",
- odds:2,priceSource:"betano",probabilities:{fair:80,statarea:78,sporty:77},
+ odds:2,priceSource:"betano",probabilities:{fair:62,statarea:60,sporty:61},
  bank:100,weeklyLoss:0,maxPerDay:3,minOdds:1.3,maxOdds:5,prudence:1
 };
 test("missing probabilities never approve a bet",()=>assert.equal(evaluate({...base,probabilities:{}}).status,"OBSERVAR"));
