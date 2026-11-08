@@ -1,15 +1,15 @@
 // EDGY Betting — deterministic, source-aware evaluation. No external network calls.
 export const MARKETS = {
-  result: {label:"Resultado / dupla hipótese", group:"resultado", difficulty:0.022},
-  goals: {label:"Golos / ambas marcam",group:"golos",difficulty:0.027},
-  half: {label:"Intervalo",group:"resultado",difficulty:0.037},
-  minutes: {label:"Minutos / eventos",group:"golos",difficulty:0.064},
-  combo: {label:"Combinada do jogo",group:"combinada",difficulty:0.065},
-  correct: {label:"Resultado exato",group:"resultado",difficulty:0.09},
-  corners: {label:"Cantos",group:"cantos",difficulty:0.065},
-  shots: {label:"Remates",group:"remates",difficulty:0.069},
-  void: {label:"Empate anula / asiático inteiro",group:"resultado",difficulty:0.038},
-  quarter: {label:"Handicap asiático de quarto",group:"resultado",difficulty:0.09}
+  result: {label:"Resultado / dupla hipótese", group:"resultado",deps:["resultado"],difficulty:0.022},
+  goals: {label:"Golos / ambas marcam",group:"golos",deps:["golos"],difficulty:0.027},
+  half: {label:"Intervalo",group:"resultado",deps:["resultado"],difficulty:0.037},
+  minutes: {label:"Minutos / eventos",group:"golos",deps:["golos"],difficulty:0.064},
+  combo: {label:"Combinada do jogo",group:"combinada",deps:["resultado","golos","combinada"],difficulty:0.065},
+  correct: {label:"Resultado exato",group:"resultado",deps:["resultado","golos"],difficulty:0.09},
+  corners: {label:"Cantos",group:"cantos",deps:["cantos"],difficulty:0.065},
+  shots: {label:"Remates",group:"remates",deps:["remates"],difficulty:0.069},
+  void: {label:"Empate anula / asiático inteiro",group:"resultado",deps:["resultado"],difficulty:0.038},
+  quarter: {label:"Handicap asiático de quarto",group:"resultado",deps:["resultado"],difficulty:0.09}
 };
 const SOURCES=[
  {key:"fair",name:"Mercado justo (sem margem)",provider:"Mercado",weight:3},
@@ -64,7 +64,7 @@ export function evaluate(input={}, existing=[]){
  const negativeMoves=moves.filter(x=>x.delta<-.015).length;
  const exitTrend=moves.length>=2&&negativeMoves>moves.length/2;
  const sameGame=existing.filter(x=>x.matchId===input.matchId);
- const correlated=sameGame.some(x=>x.group===market.group);
+ const correlated=sameGame.some(x=>(x.deps||[x.group]).some(dep=>(market.deps||[market.group]).includes(dep)));
  const maxPerMatch=sameGame.length>=2;
  const dayCount=existing.filter(x=>x.day===input.day).length;
  const maxPerDay=Math.max(0,Math.floor(Number(input.maxPerDay)||0));
@@ -73,6 +73,7 @@ export function evaluate(input={}, existing=[]){
  if(input.criticalRotation||input.criticalWeather){status="EXCLUIDA";reasons.push("Fator crítico registado: rotação ou meteorologia incompatível.");}
  else if(input.market==="quarter"){reasons.push("Linhas asiáticas de quarto exigem modelação separada de meia vitória/derrota.");}
  else if(input.market==="void" && (winProb>1-push || !validProbability(input.pushProbability))){reasons.push("No mercado com devolução, introduz a probabilidade de devolução e probabilidades de vitória coerentes.");}
+ else if(input.kickoff && Number.isFinite(Date.parse(input.kickoff)) && Date.parse(input.kickoff)<=Date.now()){reasons.push("Jogo já iniciado ou terminado: sem modelo in-play validado, não aprovar apostas.");}
  else if(!Number.isFinite(odds)||odds<=1){reasons.push("Introduz uma odd decimal real e válida.");}
  else if(!sources.length){reasons.push("Faltam probabilidades das fontes. Não existem estimativas automáticas inventadas.");}
  else if(["corners","shots"].includes(input.market)){reasons.push("Sem duas fontes estatísticas independentes para cantos ou remates, manter em observação.");}
