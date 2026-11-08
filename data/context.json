@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T21:05:54.300712+00:00",
+  "generatedAt": "2026-11-08T21:13:46.283250+00:00",
   "sources": {
     "weather": "Open-Meteo (requires verified venue city)",
     "lineups": "API-Football optional",
@@ -140,20 +140,6 @@
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
     },
-    "espn-401928527": {
-      "weather": {
-        "city": "Cuenca",
-        "countryCode": "ES",
-        "temperatureC": 11.9,
-        "precipitationMm": 0.0,
-        "gustKmh": 47.2,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-12T18:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
     "espn-401932846": {
       "weather": {
         "city": "Chambery",
@@ -192,6 +178,20 @@
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-13T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401928487": {
+      "weather": {
+        "city": "Villares de la Reina",
+        "countryCode": "ES",
+        "temperatureC": 10.6,
+        "precipitationMm": 0.0,
+        "gustKmh": 15.8,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-13T20:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
