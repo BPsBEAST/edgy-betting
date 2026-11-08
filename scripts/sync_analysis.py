@@ -1,148 +1,119 @@
 #!/usr/bin/env python3
-"""Collect real ESPN match histories and calculate exploratory Poisson probabilities.
+"""Create provisional statistics from published 2026/27 Football-Data CSVs.
 
-This does NOT produce verified betting tips. Official user rules require two
-independent named prediction sources and a Betano price; those inputs are absent
-unless expressly integrated. No fabricated data, odds or lineups.
+Only actual settled match results, never made-up fixtures, odds, xG or tips.
+Every preview must remain OBSERVAR until independent predictions and a verified
+Betano price fulfil all the user's conditions.
 """
 from __future__ import annotations
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime, timedelta, timezone
+import csv
+from datetime import datetime,timezone
+from difflib import SequenceMatcher
+from io import StringIO
 import json
 import math
-import os
 from pathlib import Path
-import time
-import urllib.request
-import urllib.error
+import re
+import unicodedata
+from urllib.request import Request,urlopen
+from urllib.error import URLError
 
 ROOT=Path(__file__).resolve().parents[1]
 FIXTURES=ROOT/"data"/"fixtures.json"
-FORM=ROOT/"data"/"historical_results.json"
-OUTPUT=ROOT/"data"/"analysis.json"
+DEST=ROOT/"data"/"analysis.json"
 NOW=datetime.now(timezone.utc)
-STALE_HOURS=24
-MAX_TEAMS=90
-USER_AGENT="EDGY-Betting/1.1 (public project, aggregated match results)"
-MAX_HISTORY=18
-MODEL_MIN_GAMES=5
+SOURCE="Football-Data.co.uk — resultados CSV publicados"
 MAX_EVENTS=8
-SOURCE="ESPN (histórico não oficial)"
-WARNINGS=[]
-
-def read_json(path, default):
+DIVISIONS={
+ "por.1":"P1","eng.1":"E0","eng.2":"E1","ita.1":"I1","ita.2":"I2",
+ "esp.1":"SP1","esp.2":"SP2","ger.1":"D1","ger.2":"D2",
+ "fra.1":"F1","fra.2":"F2"
+}
+NAMES={
+ "man united":"manchester united","man city":"manchester city",
+ "nottm forest":"nottingham forest","wolves":"wolverhampton wanderers",
+ "spurs":"tottenham","newcastle":"newcastle united",
+ "ath madrid":"atletico madrid","atl madrid":"atletico madrid",
+ "sociedad":"real sociedad","betis":"real betis",
+ "ath bilbao":"athletic club","athletic bilbao":"athletic club",
+ "vallecano":"rayo vallecano","celta":"celta vigo",
+ "alaves":"deportivo alaves","cadiz":"cadiz",
+ "paris sg":"paris saint germain","psg":"paris saint germain",
+ "inter":"inter milan","internazionale":"inter milan",
+ "milan":"ac milan","verona":"hellas verona",
+ "bayern munich":"bayern munchen","bayern":"bayern munchen",
+ "dortmund":"borussia dortmund","mgladbach":"borussia monchengladbach",
+ "leverkusen":"bayer leverkusen","frankfurt":"eintracht frankfurt",
+ "fc porto":"porto","sporting cp":"sporting lisbon",
+ "sporting":"sporting lisbon","sp lisbon":"sporting lisbon",
+ "vitoria guimaraes":"vitoria sc","guimaraes":"vitoria sc",
+ "famalicao":"famalicao","santa clara":"santa clara"
+}
+def normalize(name):
+    s=unicodedata.normalize("NFKD",str(name or ""))
+    s="".join(c for c in s if not unicodedata.combining(c))
+    s=s.casefold().replace("&","and")
+    s=re.sub(r"[^a-z0-9]+"," ",s)
+    s=re.sub(r"\b(fc|cf|afc|football|club|de|do|da|the|fk|sc|ac|calcio|sad)\b"," ",s)
+    s=" ".join(s.split())
+    return NAMES.get(s,s)
+def read_json(path):
+    try:return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError,ValueError):return {}
+def download(div):
+    season=f"{NOW.year%100:02d}{(NOW.year+1)%100:02d}" if NOW.month>=7 else f"{(NOW.year-1)%100:02d}{NOW.year%100:02d}"
+    url=f"https://www.football-data.co.uk/mmz4281/{season}/{div}.csv"
     try:
-        data=json.loads(path.read_text(encoding="utf-8"))
-        return data if isinstance(data,dict) else default
-    except (OSError,ValueError):
-        return default
-
-def write_json(path, value):
-    path.parent.mkdir(parents=True,exist_ok=True)
-    content=json.dumps(value,ensure_ascii=False,indent=2,sort_keys=False)+"\n"
-    # Preserve a stable generated timestamp when content is unchanged.
-    if path.exists():
-        old=read_json(path,{})
-        new=dict(value)
-        if {k:v for k,v in old.items() if k!="generatedAt"}=={k:v for k,v in new.items() if k!="generatedAt"}:
-            print("No changes:",path.name)
-            return
-    path.write_text(content,encoding="utf-8")
-    print("Updated",path.name)
-
-def parsedate(value):
-    try:
-        v=datetime.fromisoformat(str(value).replace("Z","+00:00"))
-        return v if v.tzinfo else v.replace(tzinfo=timezone.utc)
-    except (ValueError,TypeError):
-        return None
-
-def get_json(url):
-    try:
-        req=urllib.request.Request(url,headers={"User-Agent":USER_AGENT,"Accept":"application/json"})
-        with urllib.request.urlopen(req,timeout=10) as resp:
-            return json.load(resp)
-    except (urllib.error.URLError,TimeoutError,ValueError,UnicodeError) as error:
-        return {"_error":str(error)[:100]}
-
-def score(number):
-    try:
-        if isinstance(number,dict):
-            number=number.get("value") or number.get("displayValue")
-        if isinstance(number,(int,float,str)) and str(number).strip().isdigit():
-            return int(number)
-        return None
-    except (ValueError,TypeError):
-        return None
-
-def completed(event):
-    status=(event.get("status") or {}).get("type") or {}
-    return bool(status.get("completed")) or status.get("name") in ("STATUS_FULL_TIME","STATUS_FINAL") or status.get("abbreviation") in ("FT","AET")
-
-def event_to_record(event,teamid):
-    if not completed(event):
-        return None
-    date=parsedate(event.get("date"))
-    if not date or date>=NOW:
-        return None
-    games=event.get("competitions") or []
-    if not games:
-        return None
-    participants=games[0].get("competitors") or []
-    if len(participants)<2:
-        return None
-    team=next((p for p in participants if str((p.get("team") or {}).get("id") or p.get("id"))==str(teamid)),None)
-    if team is None:
-        return None
-    opponent=next((p for p in participants if p is not team),None)
-    if opponent is None:
-        return None
-    own=score(team.get("score"))
-    other=score(opponent.get("score"))
-    if own is None or other is None:
-        return None
-    side=team.get("homeAway")
-    if side not in ("home","away"):
-        return None
-    return {"date":date.isoformat(),"side":side,"scored":own,"conceded":other}
-
-def fetch_day(item):
-    slug,day=item
-    target=day.strftime("%Y%m%d")
-    url=f"https://site.api.espn.com/apis/site/v2/sports/soccer/{slug}/scoreboard?dates={target}&limit=250"
-    raw=get_json(url)
-    if raw.get("_error"):
-        return slug+":"+target,{"fetchedAt":NOW.isoformat(),"matches":[],"error":raw["_error"]}
-    matches=[]
-    for event in raw.get("events") or []:
-        if not completed(event):continue
-        event_date=parsedate(event.get("date"))
-        if not event_date or event_date>=NOW:continue
-        participants=((event.get("competitions") or [{}])[0].get("competitors") or [])
-        if len(participants)!=2:continue
-        home=next((x for x in participants if x.get("homeAway")=="home"),None)
-        away=next((x for x in participants if x.get("homeAway")=="away"),None)
-        if not home or not away:continue
-        hi=str((home.get("team") or {}).get("id") or home.get("id") or "")
-        ai=str((away.get("team") or {}).get("id") or away.get("id") or "")
-        hs=score(home.get("score"));a_s=score(away.get("score"))
-        if not hi or not ai or hs is None or a_s is None:continue
-        matches.append({"date":event_date.isoformat(),"homeId":hi,"awayId":ai,"homeScore":hs,"awayScore":a_s})
-    return slug+":"+target,{"fetchedAt":NOW.isoformat(),"matches":matches,"error":None}
-
+        req=Request(url,headers={"User-Agent":"Mozilla/5.0 (compatible; EDGY-Betting; research)","Accept":"text/csv,*/*"})
+        with urlopen(req,timeout=18) as response:
+            raw=response.read(2_000_000).decode("utf-8-sig",errors="replace")
+        rows=list(csv.DictReader(StringIO(raw)))
+        return [r for r in rows if r.get("HomeTeam") and r.get("AwayTeam") and str(r.get("FTHG","")).strip().isdigit() and str(r.get("FTAG","")).strip().isdigit()]
+    except (OSError,URLError,ValueError) as exc:
+        print("CSV failed",div,str(exc)[:100])
+        return []
+def parse_date(value):
+    text=str(value or "").strip()
+    for fmt in ("%d/%m/%Y","%d/%m/%y","%Y-%m-%d"):
+        try:return datetime.strptime(text,fmt).replace(tzinfo=timezone.utc)
+        except ValueError:pass
+    return None
+def team_match(requested,names):
+    n=normalize(requested)
+    if not n:return None
+    exact=[t for t in names if normalize(t)==n]
+    if len(exact)==1:return exact[0]
+    # Conservative fuzzy matching avoids accidentally assigning another club's results.
+    scores=sorted(((SequenceMatcher(None,n,normalize(t)).ratio(),t) for t in names),reverse=True)
+    if not scores:return None
+    best=scores[0]
+    second=scores[1][0] if len(scores)>1 else 0
+    if best[0]>=.79 and best[0]-second>=.075:return best[1]
+    return None
+def form_for(team,rows):
+    results=[]
+    for r in rows:
+        h=r["HomeTeam"];a=r["AwayTeam"]
+        if team==h:
+            side="home";scored=int(r["FTHG"]);conceded=int(r["FTAG"])
+        elif team==a:
+            side="away";scored=int(r["FTAG"]);conceded=int(r["FTHG"])
+        else:continue
+        date=parse_date(r.get("Date"))
+        if not date or date>=NOW:continue
+        results.append({"date":date.isoformat(),"side":side,"scored":scored,"conceded":conceded})
+    results.sort(key=lambda r:r["date"],reverse=True)
+    return results[:12]
 def calculate_rates(rows):
-    recent=sorted(rows,key=lambda r:r["date"],reverse=True)[:12]
+    recent=rows[:12]
     home=[m for m in recent if m["side"]=="home"][:6]
     away=[m for m in recent if m["side"]=="away"][:6]
-    if len(recent)<4 or len(home)<2 or len(away)<2:
-        return None
-    def avg(arr,key):
-        return sum(m[key] for m in arr)/len(arr)
+    if len(recent)<5 or len(home)<2 or len(away)<2:return None
+    def avg(records,key):return sum(m[key] for m in records)/len(records)
     return {"games":len(recent),"homeGames":len(home),"awayGames":len(away),
       "homeFor":avg(home,"scored"),"homeAgainst":avg(home,"conceded"),
       "awayFor":avg(away,"scored"),"awayAgainst":avg(away,"conceded"),
       "allFor":avg(recent,"scored"),"allAgainst":avg(recent,"conceded")}
-
 def poisson(lam,k):
     return math.exp(-lam)*(lam**k)/math.factorial(k)
 
@@ -196,59 +167,56 @@ def project(home,away,division):
       "model":"Poisson exploratório sobre resultados anteriores; não representa xG oficial nem prognóstico calibrado.",
       "sources":[SOURCE],"markets":markets}
 
+
 def main():
-    fixture_data=read_json(FIXTURES,{})
-    fixtures=fixture_data.get("games") or []
-    upcoming=[g for g in fixtures if g.get("source")=="ESPN" and parsedate(g.get("utc")) and
-      NOW<=parsedate(g["utc"])<=NOW+timedelta(days=10) and g.get("homeId") and g.get("awayId")]
-    upcoming.sort(key=lambda g:g["utc"])
-    # Keep the workload bounded; all games still appear even if a league has no model.
-    leagues=list(dict.fromkeys(g["leagueCode"] for g in upcoming))[:12]
-    cache=read_json(FORM,{"days":{}})
-    days=cache.get("days") if isinstance(cache.get("days"),dict) else {}
-    wanted=[]
-    for slug in leagues:
-        for offset in range(42,0,-1):
-            day=(NOW-timedelta(days=offset)).date()
-            label=slug+":"+day.strftime("%Y%m%d")
-            entry=days.get(label)
-            # Cache historical results permanently; recheck the last 48 hours.
-            if not entry or entry.get("error") or (offset<=2):
-                wanted.append((slug,day))
-    with ThreadPoolExecutor(max_workers=6) as pool:
-        futures=[pool.submit(fetch_day,item) for item in wanted]
-        for fut in as_completed(futures):
-            label,payload=fut.result()
-            days[label]=payload
-    # Store only days still relevant to the current season's last ~6 weeks.
-    active={slug+":"+(NOW-timedelta(days=offset)).strftime("%Y%m%d") for slug in leagues for offset in range(42,0,-1)}
-    days={key:val for key,val in days.items() if key in active}
-    write_json(FORM,{"generatedAt":NOW.isoformat(),"days":days})
-    by_team={}
-    for key,entry in days.items():
-        slug=key.split(":")[0]
-        for event in entry.get("matches") or []:
-            for side,tid,gf,ga in (("home",event["homeId"],event["homeScore"],event["awayScore"]),
-                                   ("away",event["awayId"],event["awayScore"],event["homeScore"])):
-                teamkey=slug+":"+str(tid)
-                by_team.setdefault(teamkey,[]).append({
-                  "date":event["date"],"side":side,"scored":gf,"conceded":ga})
-    result={}
-    for game in upcoming:
-        slug=game["leagueCode"]
-        home=calculate_rates(by_team.get(slug+":"+str(game["homeId"]),[]))
-        away=calculate_rates(by_team.get(slug+":"+str(game["awayId"]),[]))
-        if home and away:
-            result[game["id"]]=project(home,away,game.get("division",1))
-    output={
-      "generatedAt":NOW.isoformat(),"source":"ESPN — resultados públicos por jornada",
-      "fixtureGeneratedAt":fixture_data.get("generatedAt"),
-      "count":len(result),"coverage":len(upcoming),"models":result,
-      "method":"Médias verificadas de golos casa/fora nas últimas seis semanas. Poisson exploratório, não xG oficial.",
-      "message":"Uma projeção estatística ESPN não cumpre sozinha as regras de consenso de apostas."
+    data=read_json(FIXTURES)
+    games=data.get("games") or []
+    divisions=set()
+    for game in games:
+        code=DIVISIONS.get(game.get("leagueCode"))
+        if code:divisions.add(code)
+    leagues={}
+    for div in sorted(divisions):
+        rows=download(div)
+        if rows:leagues[div]=rows
+    models={}
+    unmatched=set()
+    coverage=0
+    for game in games:
+        div=DIVISIONS.get(game.get("leagueCode"))
+        rows=leagues.get(div)
+        if not rows:continue
+        dt=datetime.fromisoformat(str(game.get("utc","")).replace("Z","+00:00")) if game.get("utc") else NOW
+        if not NOW<=dt or dt>NOW.replace(hour=0,minute=0,second=0,microsecond=0)+__import__("datetime").timedelta(days=11):
+            continue
+        coverage+=1
+        names={r["HomeTeam"] for r in rows}|{r["AwayTeam"] for r in rows}
+        ht=team_match(game.get("home"),names)
+        at=team_match(game.get("away"),names)
+        if not ht or not at or ht==at:
+            unmatched.add(f"{game.get('home')} vs {game.get('away')} ({div})")
+            continue
+        home=calculate_rates(form_for(ht,rows))
+        away=calculate_rates(form_for(at,rows))
+        if not home or not away:continue
+        result=project(home,away,game.get("division",1))
+        result["sources"]=[SOURCE]
+        result["sourceDate"]=max(str(r.get("Date") or "") for r in rows)
+        models[game["id"]]=result
+    payload={
+      "generatedAt":NOW.isoformat(),"source":SOURCE,"fixtureGeneratedAt":data.get("generatedAt"),
+      "count":len(models),"coverage":coverage,"models":models,
+      "method":"Resultados da época corrente via CSV; 12 jogos recentes (casa/fora), modelo de Poisson exploratório com parâmetros não calibrados.",
+      "message":"Projeção auxiliar. Não substitui a média ponderada da Statarea/SportyTrader, as odds justas ou as verificações contextuais.",
+      "csvLeagues":sorted(leagues),"unmatchedTeams":len(unmatched)
     }
-    write_json(OUTPUT,output)
-    errors=sum(1 for x in days.values() if x.get("error"))
-    print(f"Statistical models: {len(result)}/{len(upcoming)}; scoreboard daily requests: {len(wanted)}; failed days: {errors}")
-if __name__=="__main__":
-    main()
+    if DEST.exists():
+        old=read_json(DEST)
+        if old.get("models")==payload["models"] and old.get("csvLeagues")==payload["csvLeagues"]:
+            print("No changes in automatic model")
+            return
+    DEST.parent.mkdir(parents=True,exist_ok=True)
+    DEST.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    print(f"Models {len(models)}/{coverage}; leagues {len(leagues)}; unmatched {len(unmatched)}")
+    if unmatched:print("Unmatched examples:",", ".join(sorted(unmatched)[:8]))
+if __name__=="__main__":main()
