@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T16:48:09.658295Z",
+  "generatedAt": "2026-11-08T16:50:34.618648Z",
   "sources": [
     "ESPN (integração não oficial)",
     "TheSportsDB (plano gratuito limitado)"
@@ -729,7 +729,7 @@
       "utc": "2026-11-08T16:15:00Z",
       "status": "LIVE",
       "homeScore": 0,
-      "awayScore": 1,
+      "awayScore": 0,
       "homeId": "3988",
       "awayId": "2734",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3988.png",
@@ -813,7 +813,7 @@
       "division": 1,
       "utc": "2026-11-08T16:30:00Z",
       "status": "LIVE",
-      "homeScore": 1,
+      "homeScore": 0,
       "awayScore": 2,
       "homeId": "360",
       "awayId": "362",

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-08T16:49:05.327590+00:00",
-  "source": "ESPN — histórico de jogos; integração não oficial",
-  "fixtureGeneratedAt": "2026-11-08T16:48:09.658295Z",
+  "generatedAt": "2026-11-08T16:51:08.443067+00:00",
+  "source": "ESPN — resultados públicos por jornada",
+  "fixtureGeneratedAt": "2026-11-08T16:50:34.618648Z",
   "count": 0,
   "coverage": 125,
   "models": {},
-  "method": "Médias de golos dos últimos 12 jogos de cada equipa, separadas por casa/fora; Poisson exploratório. SEM confirmação de odds ou outras fontes.",
+  "method": "Médias verificadas de golos casa/fora nas últimas seis semanas. Poisson exploratório, não xG oficial.",
   "message": "Uma projeção estatística ESPN não cumpre sozinha as regras de consenso de apostas."
 }
