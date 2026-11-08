@@ -7,18 +7,18 @@ const localTime=d=>new Intl.DateTimeFormat("pt-PT",{timeZone:"Europe/Lisbon",hou
 const niceDate=d=>new Intl.DateTimeFormat("pt-PT",{timeZone:"Europe/Lisbon",weekday:"long",day:"numeric",month:"long"}).format(new Date(d));
 const n=(v,d=1)=>Number.isFinite(v)?new Intl.NumberFormat("pt-PT",{minimumFractionDigits:d,maximumFractionDigits:d}).format(v):"—";
 const readSaved=()=>{try{let list=JSON.parse(localStorage.getItem("edgy_betting_saved_v1")||"[]");return Array.isArray(list)?list.filter(x=>x&&x.matchId):[]}catch{return []}};
-const state={games:[],source:"",generated:null,error:"",selected:null,filter:"all",league:"all",query:"",view:"matches",saved:readSaved(),current:null};
+const state={games:[],source:"",generated:null,error:"",selected:null,filter:"all",league:"all",query:"",view:"matches",saved:readSaved(),current:null,radar:"all",analysis:{models:{},generatedAt:null},odds:{matches:{},generatedAt:null}};
 function store(){try{localStorage.setItem("edgy_betting_saved_v1",JSON.stringify(state.saved))}catch{}}
 function isLive(game){return ["LIVE","IN_PLAY","HT","1H","2H","ET","PEN"].includes(game.status);}
 function statusText(g){if(isLive(g))return "AO VIVO";if(["FT","FINISHED"].includes(g.status))return "TERMINADO";if(["POSTPONED","PST"].includes(g.status))return "ADIADO";return "AGENDADO";}
 function logo(src,name){return safeImg(src)?'<img loading="lazy" referrerpolicy="no-referrer" alt="" src="'+esc(src)+'">':'<span class="placeholder-logo" aria-hidden="true"></span>';}
 function uniqueGames(list){const ids=new Set();return list.filter(g=>{if(!g||!g.id||!g.home||!g.away||!g.utc||!Number.isFinite(Date.parse(g.utc)))return false;const key=g.home.toLowerCase()+"|"+g.away.toLowerCase()+"|"+localDate(g.utc);if(ids.has(key))return false;ids.add(key);return true;}).sort((a,b)=>a.utc.localeCompare(b.utc));}
 function updateCounters(){
- $("gameCount").textContent=String(state.games.length);$("analysisCount").textContent=String(state.saved.length);$("confirmedCount").textContent=String(state.saved.filter(x=>x.priceSource==="betano").length);
+ $("gameCount").textContent=String(state.games.length);$("analysisCount").textContent=String(Object.keys(state.analysis.models||{}).length);$("confirmedCount").textContent=String(Object.keys(state.odds.matches||{}).length);
  $("sidebarCount").textContent=String(state.games.length);$("savedCount").textContent=String(state.saved.length);
  $("gamesUpdated").textContent=state.generated?"Atualizado: "+localTime(state.generated):"Sem atualização confirmada";
  $("syncStatus").textContent=state.generated?"Dados: "+localTime(state.generated):"Sem sincronização";
- $("sourceLabel").textContent=state.source||"fonte não disponível";
+ $("sourceLabel").textContent=state.source||"fonte não disponível";renderRadarOverview();
 }
 async function fallback(){
  // Fallback limitado: a chave pública gratuita devolve apenas alguns jogos por liga.
@@ -46,7 +46,8 @@ async function loadGames(){
  }catch(error){
   state.error=error.message;state.generated=null;state.games=uniqueGames(await fallback());state.source=state.games.length?"TheSportsDB (fallback limitado)":"";
  }
- $("reload").disabled=false;updateCounters();renderLeagues();renderGames();refreshSelection();
+ await loadIntelligence();
+ $("reload").disabled=false;updateCounters();renderLeagues();renderGames();refreshSelection();renderAutoPanel();
 }
 function renderLeagues(){
  const available=Array.from(new Map(state.games.map(g=>[g.leagueCode||g.league,{key:g.leagueCode||g.league,label:g.league}])).values()).sort((a,b)=>a.label.localeCompare(b.label,"pt"));
@@ -64,6 +65,9 @@ function filteredGames(){
  if(state.filter==="today"&&localDate(g.utc)!==today)return false;
  if(state.filter==="tomorrow"&&localDate(g.utc)!==tomorrow)return false;
  if(state.filter==="live"&&!isLive(g))return false;
+ if(state.radar==="modeled"&&!state.analysis.models?.[g.id])return false;
+ if(state.radar==="priced"&&!Object.keys(state.odds.matches?.[g.id]||{}).length)return false;
+ if(state.radar==="unmodeled"&&state.analysis.models?.[g.id])return false;
  return true;
  });
 }
@@ -91,7 +95,8 @@ function refreshSelection(){
 }
 function selectGame(id){
  const game=state.games.find(x=>x.id===id);if(!game)return;
- state.selected=game;state.current=null;$("analysisForm").reset();$("analysisFields").disabled=false;$("analyze").disabled=false;$("resultPanel").hidden=true;updatePushField();refreshSelection();renderGames();
+ state.selected=game;state.current=null;$("analysisForm").reset();$("analysisFields").disabled=false;$("analyze").disabled=false;$("resultPanel").hidden=true;updatePushField();refreshSelection();renderAutoPanel();renderGames();
+ $("manualDetails").open=false;
  if(matchMedia("(max-width:1020px)").matches)$("inspector").scrollIntoView({behavior:"smooth",block:"start"});
 }
 function formInput(){
