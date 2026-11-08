@@ -99,7 +99,7 @@ function formInput(){
  const probs={};for(const key of ["fair","statarea","sporty","soccer","stataGoals","espn"])probs[key]=$("p_"+key).value;
  const adjustments={};for(const key of ["statarea","sporty","soccer","stataGoals","espn"])adjustments[key]=ctx;
  const bookmakers=Array.from(document.querySelectorAll(".movement-grid")).map(div=>({name:div.dataset.book,open:div.querySelector(".open").value,current:div.querySelector(".now").value}));
- return {matchId:selected?.id||"",day:selected?localDate(selected.utc):"",market:g,selection:$("selection").value.trim(),odds:$("odds").value,priceSource:$("priceSource").value,probabilities:probs,adjustments,bookmakers,pushProbability:$("pushProbability").value,crossLeague:$("crossLeague").checked,secondDivision:selected?.division===2,confirmedLineups:$("confirmedLineups").checked,criticalRotation:$("criticalRotation").checked,criticalWeather:$("criticalWeather").checked,bank:$("bankroll").value,weeklyLoss:$("weeklyLoss").value,maxPerDay:$("maxPerDay").value,minOdds:$("minOdds").value,maxOdds:$("maxOdds").value,prudence:$("prudence").value};
+ return {matchId:selected?.id||"",kickoff:selected?.utc||null,day:selected?localDate(selected.utc):"",market:g,selection:$("selection").value.trim(),odds:$("odds").value,priceSource:$("priceSource").value,probabilities:probs,adjustments,bookmakers,pushProbability:$("pushProbability").value,crossLeague:$("crossLeague").checked,secondDivision:selected?.division===2,confirmedLineups:$("confirmedLineups").checked,criticalRotation:$("criticalRotation").checked,criticalWeather:$("criticalWeather").checked,bank:$("bankroll").value,weeklyLoss:$("weeklyLoss").value,maxPerDay:$("maxPerDay").value,minOdds:$("minOdds").value,maxOdds:$("maxOdds").value,prudence:$("prudence").value};
 }
 function showResult(input,result){
  const statusMap={APOSTA:"✓ Aposta",VERIFICAR:"⌕ Verificar",OBSERVAR:"◉ Observar",EXCLUIDA:"⛔ Excluída"};
@@ -119,8 +119,8 @@ function showResult(input,result){
 function saveResult(input,result){
  if(!state.selected||!input.selection||!result.sources.length||result.status==="EXCLUIDA")return;
  const same=state.saved.filter(x=>x.matchId===input.matchId);
- if(same.length>=2||same.some(x=>x.group===result.market.group)){alert("Máximo duas análises por jogo e não podem partilhar o mesmo grupo de mercado.");return;}
- const obj={id:Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,7),matchId:input.matchId,day:input.day,home:state.selected.home,away:state.selected.away,market:input.market,group:result.market.group,selection:input.selection,odds:Number(input.odds),priceSource:input.priceSource,status:result.status,edgeAdjusted:result.adjusted,stake:result.stake,createdAt:new Date().toISOString()};
+ if(same.length>=2||same.some(x=>(x.deps||[x.group]).some(dep=>(result.market.deps||[result.market.group]).includes(dep)))){alert("Máximo duas análises por jogo e não podem partilhar o mesmo grupo de mercado.");return;}
+ const obj={id:Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,7),matchId:input.matchId,day:input.day,home:state.selected.home,away:state.selected.away,market:input.market,group:result.market.group,deps:result.market.deps,selection:input.selection,odds:Number(input.odds),priceSource:input.priceSource,status:result.status,edgeAdjusted:result.adjusted,stake:result.stake,createdAt:new Date().toISOString()};
  state.saved.push(obj);store();updateCounters();$("saveAnalysis").textContent="✓ Guardado";$("saveAnalysis").disabled=true;
 }
 function renderSaved(){
@@ -142,7 +142,7 @@ $("fairCalc").addEventListener("click",()=>{
  const raw=[$("fairA").value,$("fairB").value,$("fairC").value];
  const odds=raw.filter(x=>x!=="").map(Number);
  const picked=Number($("fairOutcome").value);
- if(odds.length<2 || odds.length>3 || odds.some(x=>!Number.isFinite(x)||x<=1) || (raw[2]===""&&picked===2)){
+ if(raw[0]==="" || raw[1]==="" || odds.length<2 || odds.length>3 || odds.some(x=>!Number.isFinite(x)||x<=1) || (raw[2]===""&&picked===2)){
   $("fairMessage").textContent="Indica duas ou três odds válidas e escolhe o resultado correspondente.";
   return;
  }
