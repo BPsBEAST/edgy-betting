@@ -42,12 +42,11 @@ def key_for(bet,value):
         return "HT_"+home if home else None
     if bet in ("draw no bet","draw no bet (dnb)","home/away") and value in ("home","away","1","2"):
         return "DNB_"+home
-    if bet in ("goals over/under","goals over under","over/under","total goals",
-      "total - over/under","total - over / under","over/under 2.5","over/under 1.5"):
-        value=(bet+" "+value)
-        match=re.search(r"(over|under)\\s*(1[.,]5|2[.,]5|3[.,]5|4[.,]5)",value)
-        if match:
-            return ("O" if match.group(1)=="over" else "U")+match.group(2).replace(",","").replace(".","")
+    if ("over/under" in bet or "over under" in bet or bet=="total goals"):
+        operation=re.search(r"^(over|under)\\b",value)
+        line=re.search(r"([1-4][.,]5)",value) or re.search(r"([1-4][.,]5)",bet)
+        if operation and line:
+            return ("O" if operation.group(1)=="over" else "U")+line.group(1).replace(",","").replace(".","")
     if bet in ("both teams score","both teams to score","btts","both teams to score (btts)"):
         return {"yes":"BTTS_Y","no":"BTTS_N"}.get(value)
     if bet in ("correct score","correct score - fulltime","exact score","fulltime correct score"):
