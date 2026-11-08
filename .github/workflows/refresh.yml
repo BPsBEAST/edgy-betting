@@ -51,7 +51,7 @@ jobs:
           node --check app.js
           node --check src/engine.js
           node --check src/radar.js
-          python -m py_compile scripts/sync_fixtures.py scripts/sync_analysis.py scripts/sync_odds.py scripts/link_odds.py scripts/sync_context.py scripts/sync_free_predictions.py
+          python -m py_compile scripts/sync_fixtures.py scripts/sync_analysis.py scripts/sync_odds.py scripts/link_odds.py scripts/sync_context.py scripts/sync_free_predictions.py scripts/sync_free_odds.py
           npm test
           python -m unittest discover -s tests -p "test_*.py"
       - name: Fetch actual football fixtures
@@ -66,6 +66,10 @@ jobs:
         run: python scripts/sync_analysis.py
       - name: Collect optional free third-party forecasts (no API keys)
         run: python scripts/sync_free_predictions.py
+      - name: Optional EU odds from free monthly The Odds API tier
+        env:
+          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
+        run: python scripts/sync_free_odds.py
       - name: Load reference odds where API-Football is configured
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
@@ -106,7 +110,7 @@ jobs:
           mkdir -p ./site/src ./site/data
           cp index.html styles.css app.js manifest.webmanifest sw.js ./site/
           cp src/engine.js src/radar.js ./site/src/
-          cp data/fixtures.json data/analysis.json data/market_odds.json data/context.json data/free_predictions.json ./site/data/
+          cp data/fixtures.json data/analysis.json data/market_odds.json data/context.json data/free_predictions.json data/free_odds.json ./site/data/
           mkdir -p ./site/assets
           cp assets/edgy-mark.svg assets/edgy-icon-180.png assets/edgy-icon-192.png assets/edgy-icon-512.png ./site/assets/
           touch ./site/.nojekyll
