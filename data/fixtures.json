@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T17:54:38.697347Z",
+  "generatedAt": "2026-11-08T17:59:13.969150Z",
   "sources": [
     "ESPN (integração não oficial)",
     "TheSportsDB (plano gratuito limitado)"
@@ -711,7 +711,7 @@
       "division": 1,
       "utc": "2026-11-08T16:30:00Z",
       "status": "LIVE",
-      "homeScore": 1,
+      "homeScore": 2,
       "awayScore": 0,
       "homeId": "126",
       "awayId": "598",
