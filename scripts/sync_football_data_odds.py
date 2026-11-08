@@ -136,6 +136,7 @@ def main():
     unknown=0
     future_rows=0
     future_supported=0
+    unmatched_future=[]
     for row in rows:
         t=kickoff(row)
         if t and NOW<t<=NOW+timedelta(days=8):
@@ -144,6 +145,10 @@ def main():
         gid=fixture_for(row,games)
         if not gid:
             unknown+=1
+            if t and NOW<t<=NOW+timedelta(days=8) and CODES.get(str(row.get("Div") or "").strip()):
+                unmatched_future.append({"division":str(row.get("Div") or ""),"date":str(row.get("Date") or ""),
+                   "time":str(row.get("Time") or ""),"home":str(row.get("HomeTeam") or ""),
+                   "away":str(row.get("AwayTeam") or "")})
             continue
         quotes=decode(row)
         if quotes and gid not in matches:
@@ -155,12 +160,13 @@ def main():
         "generatedAt":NOW.isoformat(),"source":"Football-Data.co.uk — free pre-match fixture CSV",
         "sourceUrl":url or URLS[0],"downloaded":bool(rows),"csvRows":len(rows),
         "unmatchedRows":unknown,"futureRows":future_rows,"futureSupportedRows":future_supported,
+        "unmatchedFutureExamples":unmatched_future[:5],
         "matchedGames":len(matches),"matches":matches,
         "matchEvidence":identity,
         "note":"Internacional: odds recolhidas periodicamente pelo publisher, não ao vivo. Não inclui Betano Portugal e nunca confirma o boletim."
     }
     old=read(DEST)
-    if old.get("matches")==matches and old.get("downloaded")==output["downloaded"] and old.get("csvRows")==len(rows) and old.get("futureRows")==future_rows and old.get("futureSupportedRows")==future_supported:
+    if old.get("matches")==matches and old.get("downloaded")==output["downloaded"] and old.get("csvRows")==len(rows) and old.get("futureRows")==future_rows and old.get("futureSupportedRows")==future_supported and old.get("unmatchedFutureExamples")==unmatched_future[:5]:
         print("Football-Data fixtures odds unchanged;",len(matches),"matches");return
     DEST.parent.mkdir(parents=True,exist_ok=True)
     DEST.write_text(json.dumps(output,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
