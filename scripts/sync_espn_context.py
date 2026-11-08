@@ -71,8 +71,10 @@ def extract_team_injuries(data,team):
         athlete=item.get("athlete") or {}
         name=str(athlete.get("displayName") or athlete.get("name") or "").strip()
         if not name:continue
+        raw_status=item.get("status") or ""
+        st=raw_status.get("type") if isinstance(raw_status,dict) else raw_status
         entries.append({"name":name[:90],"team":str(team.get("name"))[:80],
-          "status":str((item.get("status") or {}).get("type") or item.get("status") or "")[:50],
+          "status":str(st or "")[:50],
           "detail":str(item.get("details") or "")[:120]})
     return entries
 def main():
