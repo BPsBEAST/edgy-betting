@@ -1,34 +1,12 @@
 {
-  "generatedAt": "2026-11-08T19:57:20.694181+00:00",
+  "generatedAt": "2026-11-08T20:19:45.642903+00:00",
   "source": "API-Football (opcional; preços de referência, não confirmados no boletim)",
   "hasCredentials": true,
   "matches": {},
-  "message": "Cobertura de odds limitada pelo plano da API-Football; {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}",
-  "targetedQueries": [
-    {
-      "league": 140,
-      "season": 2026,
-      "date": "2026-11-08",
-      "code": "esp.1"
-    },
-    {
-      "league": 94,
-      "season": 2026,
-      "date": "2026-11-08",
-      "code": "por.1"
-    },
-    {
-      "league": 141,
-      "season": 2026,
-      "date": "2026-11-09",
-      "code": "esp.2"
-    }
-  ],
+  "message": "API-Football gratuita: odds da época 2026/27 indisponíveis. Evitados pedidos inúteis; alternativa gratuita The Odds API opcional.",
   "providerRestrictions": [
-    "{'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+    "Free plans do not have access to season 2026/27 (blocked by supplier)."
   ],
-  "fixtureMetadata": {},
-  "pagesFetched": [],
   "linkedFixtureIds": {},
   "linkedFixtureCount": 0,
   "provisionalFixtureIds": {},

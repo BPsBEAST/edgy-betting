@@ -1,19 +1,19 @@
 {
-  "generatedAt": null,
+  "generatedAt": "2026-11-08T20:19:45.028859+00:00",
   "matches": {},
   "matchedGames": 0,
   "withTwoSources": 0,
   "providers": {
     "KiqIQ": {
-      "status": "Ainda não sincronizado",
+      "status": "Sem feed atualizado (máximo 48 h)",
       "matches": 0,
       "url": "https://kiqiq.com/api"
     },
     "Skorbot": {
-      "status": "Ainda não sincronizado",
+      "status": "Feed indisponível ou expirado (máximo 48 h)",
       "matches": 0,
       "url": "https://skorbot.live/en/api/"
     }
   },
-  "note": "Fontes gratuitas são opcionais; dados em falta nunca são inventados."
+  "note": "APIs públicas e gratuitas; não substituem Statarea/SportyTrader nem garantem independência dos dados. Sem odds Betano e contexto não podem aprovar apostas."
 }
