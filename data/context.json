@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T20:45:52.288998+00:00",
+  "generatedAt": "2026-11-08T21:02:05.187589+00:00",
   "sources": {
     "weather": "Open-Meteo (requires verified venue city)",
     "lineups": "API-Football optional",
@@ -112,16 +112,16 @@
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
     },
-    "espn-401928551": {
+    "espn-401928506": {
       "weather": {
-        "city": "Madrid",
+        "city": "Ciudad Real",
         "countryCode": "ES",
-        "temperatureC": 13.8,
+        "temperatureC": 14.9,
         "precipitationMm": 0.0,
-        "gustKmh": 42.1,
+        "gustKmh": 40.0,
         "alert": false,
         "risk": null,
-        "forecastHourUtc": "2026-11-12T18:00Z",
+        "forecastHourUtc": "2026-11-12T17:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
