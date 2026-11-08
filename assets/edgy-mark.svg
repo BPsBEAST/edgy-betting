@@ -1,11 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-label="EDGY Betting">
-<defs>
-  <linearGradient id="surface" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1D2B34"/><stop offset="1" stop-color="#0A111A"/></linearGradient>
-  <linearGradient id="signal" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#87DF68"/><stop offset="1" stop-color="#D0FF86"/></linearGradient>
-</defs>
-<path d="M23 5H71L91 25V72L71 91H23L5 73V23Z" fill="url(#surface)" stroke="#4A7454" stroke-width="2.4"/>
-<path d="M22 24H67L60 34H34V44H55L49 54H34V64H67L59 75H22Z" fill="url(#signal)"/>
-<path d="M48 16L61 24L73 14" fill="none" stroke="#D6FC9C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="73" cy="14" r="5" fill="#D6FC9C"/>
-<path d="M23 85H71" stroke="#ACF66C" stroke-opacity=".22" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-label="EDGY Betting — logótipo E ponto">
+<rect width="96" height="96" rx="23" fill="#090d16"/>
+<g transform="translate(4 2) skewX(-8)">
+<rect x="13" y="10" width="73" height="73" rx="21" fill="#b8fb65"/>
+<path d="M35 27H68V38H47V43H64V53H47V60H69V71H35Z" fill="#101807"/>
+</g>
+<circle cx="73" cy="70" r="6" fill="#101807"/>
 </svg>
