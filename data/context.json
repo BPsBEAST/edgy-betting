@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T02:42:17.381464+00:00",
+  "generatedAt": "2026-11-09T13:57:13.250090+00:00",
   "sources": {
     "weather": "Open-Meteo (requires verified venue city)",
     "lineups": "API-Football optional",
@@ -18,9 +18,9 @@
       "weather": {
         "city": "Sabadell",
         "countryCode": "ES",
-        "temperatureC": 15.5,
+        "temperatureC": 16.3,
         "precipitationMm": 0.0,
-        "gustKmh": 4.3,
+        "gustKmh": 3.2,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-09T19:00Z",
@@ -32,9 +32,9 @@
       "weather": {
         "city": "Las Palmas de Gran Canaria",
         "countryCode": "ES",
-        "temperatureC": 22.8,
+        "temperatureC": 23.4,
         "precipitationMm": 0.0,
-        "gustKmh": 10.1,
+        "gustKmh": 8.3,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-09T19:00Z",
@@ -46,9 +46,9 @@
       "weather": {
         "city": "Plymouth",
         "countryCode": "GB",
-        "temperatureC": 11.5,
+        "temperatureC": 11.2,
         "precipitationMm": 0.0,
-        "gustKmh": 55.8,
+        "gustKmh": 56.9,
         "alert": true,
         "risk": "Chuva intensa ou rajadas fortes previstas na zona urbana",
         "forecastHourUtc": "2026-11-09T19:00Z",
@@ -60,9 +60,9 @@
       "weather": {
         "city": "Azkoitia",
         "countryCode": "ES",
-        "temperatureC": 19.3,
+        "temperatureC": 20.4,
         "precipitationMm": 0.0,
-        "gustKmh": 33.5,
+        "gustKmh": 38.2,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-10T18:00Z",
@@ -74,9 +74,9 @@
       "weather": {
         "city": "Amorebieta",
         "countryCode": "ES",
-        "temperatureC": 20.4,
+        "temperatureC": 20.1,
         "precipitationMm": 0.0,
-        "gustKmh": 33.1,
+        "gustKmh": 29.9,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-10T19:00Z",
@@ -88,9 +88,9 @@
       "weather": {
         "city": "Estepona",
         "countryCode": "ES",
-        "temperatureC": 19.2,
+        "temperatureC": 19.4,
         "precipitationMm": 0.1,
-        "gustKmh": 22.3,
+        "gustKmh": 21.6,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-10T19:00Z",
@@ -102,9 +102,9 @@
       "weather": {
         "city": "Manises",
         "countryCode": "ES",
-        "temperatureC": 18.0,
+        "temperatureC": 18.7,
         "precipitationMm": 0.0,
-        "gustKmh": 10.8,
+        "gustKmh": 8.6,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-10T20:00Z",
@@ -116,12 +116,26 @@
       "weather": {
         "city": "Ciudad Real",
         "countryCode": "ES",
-        "temperatureC": 14.7,
-        "precipitationMm": 0.1,
-        "gustKmh": 39.2,
+        "temperatureC": 14.8,
+        "precipitationMm": 0.4,
+        "gustKmh": 46.8,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-12T17:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401928551": {
+      "weather": {
+        "city": "Madrid",
+        "countryCode": "ES",
+        "temperatureC": 13.7,
+        "precipitationMm": 0.0,
+        "gustKmh": 40.7,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-12T18:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
@@ -130,9 +144,9 @@
       "weather": {
         "city": "Cuenca",
         "countryCode": "ES",
-        "temperatureC": 12.5,
-        "precipitationMm": 0.0,
-        "gustKmh": 32.4,
+        "temperatureC": 12.3,
+        "precipitationMm": 0.1,
+        "gustKmh": 34.9,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-12T18:00Z",
@@ -144,9 +158,9 @@
       "weather": {
         "city": "Chambery",
         "countryCode": "FR",
-        "temperatureC": 12.3,
-        "precipitationMm": 0.8,
-        "gustKmh": 9.7,
+        "temperatureC": 13.3,
+        "precipitationMm": 1.2,
+        "gustKmh": 7.6,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-12T18:00Z",
@@ -158,9 +172,9 @@
       "weather": {
         "city": "Dijon",
         "countryCode": "FR",
-        "temperatureC": 5.1,
+        "temperatureC": 4.6,
         "precipitationMm": 0.0,
-        "gustKmh": 40.3,
+        "gustKmh": 30.6,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-13T19:00Z",
@@ -172,26 +186,12 @@
       "weather": {
         "city": "Saint-Philbert-de-Grand-Lieu",
         "countryCode": "FR",
-        "temperatureC": 6.9,
+        "temperatureC": 6.2,
         "precipitationMm": 0.0,
-        "gustKmh": 30.6,
+        "gustKmh": 25.9,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-13T19:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401928487": {
-      "weather": {
-        "city": "Villares de la Reina",
-        "countryCode": "ES",
-        "temperatureC": 10.6,
-        "precipitationMm": 0.0,
-        "gustKmh": 15.8,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-13T20:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
@@ -200,9 +200,9 @@
       "weather": {
         "city": "Dijon",
         "countryCode": "FR",
-        "temperatureC": 5.9,
+        "temperatureC": 6.5,
         "precipitationMm": 0.0,
-        "gustKmh": 19.8,
+        "gustKmh": 4.3,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-14T17:00Z",
