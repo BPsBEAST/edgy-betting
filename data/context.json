@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T21:13:46.283250+00:00",
+  "generatedAt": "2026-11-09T02:42:17.381464+00:00",
   "sources": {
     "weather": "Open-Meteo (requires verified venue city)",
     "lineups": "API-Football optional",
@@ -18,9 +18,9 @@
       "weather": {
         "city": "Sabadell",
         "countryCode": "ES",
-        "temperatureC": 15.4,
+        "temperatureC": 15.5,
         "precipitationMm": 0.0,
-        "gustKmh": 6.5,
+        "gustKmh": 4.3,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-09T19:00Z",
@@ -32,9 +32,9 @@
       "weather": {
         "city": "Las Palmas de Gran Canaria",
         "countryCode": "ES",
-        "temperatureC": 23.1,
+        "temperatureC": 22.8,
         "precipitationMm": 0.0,
-        "gustKmh": 13.0,
+        "gustKmh": 10.1,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-09T19:00Z",
@@ -46,9 +46,9 @@
       "weather": {
         "city": "Plymouth",
         "countryCode": "GB",
-        "temperatureC": 11.8,
+        "temperatureC": 11.5,
         "precipitationMm": 0.0,
-        "gustKmh": 56.5,
+        "gustKmh": 55.8,
         "alert": true,
         "risk": "Chuva intensa ou rajadas fortes previstas na zona urbana",
         "forecastHourUtc": "2026-11-09T19:00Z",
@@ -60,9 +60,9 @@
       "weather": {
         "city": "Azkoitia",
         "countryCode": "ES",
-        "temperatureC": 19.5,
+        "temperatureC": 19.3,
         "precipitationMm": 0.0,
-        "gustKmh": 35.1,
+        "gustKmh": 33.5,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-10T18:00Z",
@@ -74,9 +74,9 @@
       "weather": {
         "city": "Amorebieta",
         "countryCode": "ES",
-        "temperatureC": 19.0,
+        "temperatureC": 20.4,
         "precipitationMm": 0.0,
-        "gustKmh": 27.4,
+        "gustKmh": 33.1,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-10T19:00Z",
@@ -88,9 +88,9 @@
       "weather": {
         "city": "Estepona",
         "countryCode": "ES",
-        "temperatureC": 19.6,
-        "precipitationMm": 0.0,
-        "gustKmh": 6.8,
+        "temperatureC": 19.2,
+        "precipitationMm": 0.1,
+        "gustKmh": 22.3,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-10T19:00Z",
@@ -102,9 +102,9 @@
       "weather": {
         "city": "Manises",
         "countryCode": "ES",
-        "temperatureC": 19.0,
+        "temperatureC": 18.0,
         "precipitationMm": 0.0,
-        "gustKmh": 13.0,
+        "gustKmh": 10.8,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-10T20:00Z",
@@ -116,9 +116,9 @@
       "weather": {
         "city": "Ciudad Real",
         "countryCode": "ES",
-        "temperatureC": 14.9,
-        "precipitationMm": 0.0,
-        "gustKmh": 40.0,
+        "temperatureC": 14.7,
+        "precipitationMm": 0.1,
+        "gustKmh": 39.2,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-12T17:00Z",
@@ -126,13 +126,13 @@
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
     },
-    "espn-401928551": {
+    "espn-401928527": {
       "weather": {
-        "city": "Madrid",
+        "city": "Cuenca",
         "countryCode": "ES",
-        "temperatureC": 13.8,
+        "temperatureC": 12.5,
         "precipitationMm": 0.0,
-        "gustKmh": 42.1,
+        "gustKmh": 32.4,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-12T18:00Z",
@@ -144,9 +144,9 @@
       "weather": {
         "city": "Chambery",
         "countryCode": "FR",
-        "temperatureC": 12.7,
-        "precipitationMm": 0.1,
-        "gustKmh": 14.8,
+        "temperatureC": 12.3,
+        "precipitationMm": 0.8,
+        "gustKmh": 9.7,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-12T18:00Z",
@@ -172,9 +172,9 @@
       "weather": {
         "city": "Saint-Philbert-de-Grand-Lieu",
         "countryCode": "FR",
-        "temperatureC": 7.1,
+        "temperatureC": 6.9,
         "precipitationMm": 0.0,
-        "gustKmh": 34.6,
+        "gustKmh": 30.6,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-13T19:00Z",
