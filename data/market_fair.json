@@ -1,35 +1,11 @@
 {
-  "generatedAt": "2026-11-09T13:57:09.864644+00:00",
+  "generatedAt": "2026-11-10T00:43:23.970056+00:00",
   "provider": "TipsAudit (API pública gratuita, atribuição obrigatória)",
   "sourceUrl": "https://tipsaudit.com/api",
   "status": "Disponível",
-  "feedGeneratedAt": "2026-11-09T13:57:10+00:00",
+  "feedGeneratedAt": "2026-11-10T00:43:24+00:00",
   "matchedGames": 7,
   "matches": {
-    "espn-401883140": {
-      "provider": "TipsAudit",
-      "sourceUrl": "https://tipsaudit.com/match/15675/las-palmas-vs-eldense-2026-11-09",
-      "fairProbability": {
-        "1X2_H": 0.475,
-        "1X2_D": 0.2658,
-        "1X2_A": 0.2592
-      },
-      "readAt": "2026-11-09T12:34:57+00:00",
-      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": null
-    },
-    "espn-401883139": {
-      "provider": "TipsAudit",
-      "sourceUrl": "https://tipsaudit.com/match/16007/sabadell-vs-real-sociedad-ii-2026-11-09",
-      "fairProbability": {
-        "1X2_H": 0.5513,
-        "1X2_D": 0.2575,
-        "1X2_A": 0.1913
-      },
-      "readAt": "2026-11-09T12:34:57+00:00",
-      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": null
-    },
     "espn-401883136": {
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/16669/leganes-vs-burgos-2026-11-13",
@@ -38,7 +14,19 @@
         "1X2_D": 0.2976,
         "1X2_A": 0.2718
       },
-      "readAt": "2026-11-09T12:34:57+00:00",
+      "readAt": "2026-11-09T22:35:09+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401883134": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/17057/real-sociedad-ii-vs-sporting-gijon-2026-11-14",
+      "fairProbability": {
+        "1X2_H": 0.372,
+        "1X2_D": 0.2877,
+        "1X2_A": 0.3403
+      },
+      "readAt": "2026-11-09T22:35:09+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -50,7 +38,7 @@
         "1X2_D": 0.2331,
         "1X2_A": 0.208
       },
-      "readAt": "2026-11-09T12:34:57+00:00",
+      "readAt": "2026-11-09T22:35:09+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -62,7 +50,7 @@
         "1X2_D": 0.2217,
         "1X2_A": 0.207
       },
-      "readAt": "2026-11-09T12:34:57+00:00",
+      "readAt": "2026-11-09T22:35:09+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -70,20 +58,13 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/17564/granada-cf-vs-las-palmas-2026-11-15",
       "fairProbability": {
-        "1X2_H": 0.5745,
-        "1X2_D": 0.2462,
-        "1X2_A": 0.1793
+        "1X2_H": 0.5583,
+        "1X2_D": 0.2531,
+        "1X2_A": 0.1886
       },
-      "readAt": "2026-11-09T12:34:57+00:00",
+      "readAt": "2026-11-09T22:35:09+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": {
-        "market": "1X2_H",
-        "odd": 1.77,
-        "bookmaker": "Unibet (NL)",
-        "source": "TipsAudit / soft-book market",
-        "referenceOnly": true,
-        "betanoConfirmedOnSlip": false
-      }
+      "quote": null
     },
     "espn-401883117": {
       "provider": "TipsAudit",
@@ -93,11 +74,23 @@
         "1X2_D": 0.2273,
         "1X2_A": 0.1722
       },
-      "readAt": "2026-11-09T12:34:57+00:00",
+      "readAt": "2026-11-09T22:35:09+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401883137": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/17568/eldense-vs-sabadell-2026-11-15",
+      "fairProbability": {
+        "1X2_H": 0.3693,
+        "1X2_D": 0.2964,
+        "1X2_A": 0.3343
+      },
+      "readAt": "2026-11-09T23:20:04+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
-        "market": "1X2_H",
-        "odd": 1.71,
+        "market": "1X2_A",
+        "odd": 3.15,
         "bookmaker": "Unibet (NL)",
         "source": "TipsAudit / soft-book market",
         "referenceOnly": true,
