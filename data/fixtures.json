@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T00:42:34.573021Z",
+  "generatedAt": "2026-11-10T13:29:27.960018Z",
   "sources": [
     "ESPN (integração não oficial)"
   ],
@@ -271,7 +271,7 @@
       "awayId": "6732",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6732.png",
-      "venueCity": null,
+      "venueCity": "Bétheny",
       "source": "ESPN"
     },
     {
@@ -1325,7 +1325,7 @@
       "league": "França · Coupe de France",
       "leagueCode": "fra.coupe_de_france",
       "division": 1,
-      "utc": "2026-11-14T20:00:00Z",
+      "utc": "2026-11-14T21:00:00Z",
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
@@ -1334,24 +1334,6 @@
       "homeLogo": "",
       "awayLogo": "",
       "venueCity": null,
-      "source": "ESPN"
-    },
-    {
-      "id": "espn-401933060",
-      "home": "Chateaubriant",
-      "away": "Horizon Patho",
-      "league": "França · Coupe de France",
-      "leagueCode": "fra.coupe_de_france",
-      "division": 1,
-      "utc": "2026-11-14T20:00:00Z",
-      "status": "STATUS_SCHEDULED",
-      "homeScore": 0,
-      "awayScore": 0,
-      "homeId": "7729",
-      "awayId": "134074",
-      "homeLogo": "",
-      "awayLogo": "",
-      "venueCity": "Châteaubriant",
       "source": "ESPN"
     },
     {
@@ -1370,6 +1352,24 @@
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/245.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/5404.png",
       "venueCity": "Santa Cruz de Tenerife",
+      "source": "ESPN"
+    },
+    {
+      "id": "espn-401933060",
+      "home": "Chateaubriant",
+      "away": "Horizon Patho",
+      "league": "França · Coupe de France",
+      "leagueCode": "fra.coupe_de_france",
+      "division": 1,
+      "utc": "2026-11-15T13:00:00Z",
+      "status": "STATUS_SCHEDULED",
+      "homeScore": 0,
+      "awayScore": 0,
+      "homeId": "7729",
+      "awayId": "134074",
+      "homeLogo": "",
+      "awayLogo": "",
+      "venueCity": "Châteaubriant",
       "source": "ESPN"
     },
     {
@@ -1477,7 +1477,7 @@
       "awayId": "134119",
       "homeLogo": "",
       "awayLogo": "",
-      "venueCity": null,
+      "venueCity": "Amiens",
       "source": "ESPN"
     },
     {
@@ -1729,7 +1729,7 @@
       "awayId": "165",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/165.png",
-      "venueCity": null,
+      "venueCity": "Rennes",
       "source": "ESPN"
     },
     {
@@ -1783,7 +1783,7 @@
       "awayId": "134077",
       "homeLogo": "",
       "awayLogo": "",
-      "venueCity": null,
+      "venueCity": "Paris",
       "source": "ESPN"
     },
     {

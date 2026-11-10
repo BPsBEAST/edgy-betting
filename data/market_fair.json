@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-10T00:43:23.970056+00:00",
+  "generatedAt": "2026-11-10T13:30:05.846444+00:00",
   "provider": "TipsAudit (API pública gratuita, atribuição obrigatória)",
   "sourceUrl": "https://tipsaudit.com/api",
   "status": "Disponível",
-  "feedGeneratedAt": "2026-11-10T00:43:24+00:00",
+  "feedGeneratedAt": "2026-11-10T13:30:06+00:00",
   "matchedGames": 7,
   "matches": {
     "espn-401883136": {
@@ -14,7 +14,7 @@
         "1X2_D": 0.2976,
         "1X2_A": 0.2718
       },
-      "readAt": "2026-11-09T22:35:09+00:00",
+      "readAt": "2026-11-10T10:35:03+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -22,11 +22,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/17057/real-sociedad-ii-vs-sporting-gijon-2026-11-14",
       "fairProbability": {
-        "1X2_H": 0.372,
-        "1X2_D": 0.2877,
-        "1X2_A": 0.3403
+        "1X2_H": 0.3601,
+        "1X2_D": 0.3121,
+        "1X2_A": 0.3278
       },
-      "readAt": "2026-11-09T22:35:09+00:00",
+      "readAt": "2026-11-10T11:20:03+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -38,7 +38,7 @@
         "1X2_D": 0.2331,
         "1X2_A": 0.208
       },
-      "readAt": "2026-11-09T22:35:09+00:00",
+      "readAt": "2026-11-10T10:35:03+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -46,11 +46,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/17063/mallorca-vs-cordoba-2026-11-14",
       "fairProbability": {
-        "1X2_H": 0.5713,
-        "1X2_D": 0.2217,
-        "1X2_A": 0.207
+        "1X2_H": 0.5555,
+        "1X2_D": 0.2242,
+        "1X2_A": 0.2203
       },
-      "readAt": "2026-11-09T22:35:09+00:00",
+      "readAt": "2026-11-10T10:35:03+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -62,7 +62,7 @@
         "1X2_D": 0.2531,
         "1X2_A": 0.1886
       },
-      "readAt": "2026-11-09T22:35:09+00:00",
+      "readAt": "2026-11-10T10:35:03+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -74,7 +74,7 @@
         "1X2_D": 0.2273,
         "1X2_A": 0.1722
       },
-      "readAt": "2026-11-09T22:35:09+00:00",
+      "readAt": "2026-11-10T10:35:03+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -86,16 +86,9 @@
         "1X2_D": 0.2964,
         "1X2_A": 0.3343
       },
-      "readAt": "2026-11-09T23:20:04+00:00",
+      "readAt": "2026-11-10T10:35:03+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": {
-        "market": "1X2_A",
-        "odd": 3.15,
-        "bookmaker": "Unibet (NL)",
-        "source": "TipsAudit / soft-book market",
-        "referenceOnly": true,
-        "betanoConfirmedOnSlip": false
-      }
+      "quote": null
     }
   },
   "note": "Probabilidade justa do mercado sharp. Não conta como prognóstico Statarea/SportyTrader, não confirma Betano Portugal. URL de origem obrigatória."
