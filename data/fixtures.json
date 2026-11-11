@@ -1,121 +1,13 @@
 {
-  "generatedAt": "2026-11-11T12:44:50.087167Z",
+  "generatedAt": "2026-11-11T23:28:36.458215Z",
   "sources": [
     "ESPN (integração não oficial)",
     "TheSportsDB (plano gratuito limitado)"
   ],
   "games": [
     {
-      "id": "espn-401928514",
-      "home": "Anaitasuna",
-      "away": "Alavés",
-      "league": "Espanha · Copa del Rey",
-      "leagueCode": "esp.copa_del_rey",
-      "division": 1,
-      "utc": "2026-11-10T18:00:00Z",
-      "status": "STATUS_FULL_TIME",
-      "homeScore": 1,
-      "awayScore": 6,
-      "homeId": "20776",
-      "awayId": "96",
-      "homeLogo": "",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/96.png",
-      "venueCity": "Azkoitia",
-      "source": "ESPN"
-    },
-    {
-      "id": "espn-401928516",
-      "home": "CD Pamplona",
-      "away": "Eibar",
-      "league": "Espanha · Copa del Rey",
-      "leagueCode": "esp.copa_del_rey",
-      "division": 1,
-      "utc": "2026-11-10T18:00:00Z",
-      "status": "STATUS_FULL_TIME",
-      "homeScore": 0,
-      "awayScore": 3,
-      "homeId": "133835",
-      "awayId": "3752",
-      "homeLogo": "",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3752.png",
-      "venueCity": "Valle de Aranguren",
-      "source": "ESPN"
-    },
-    {
-      "id": "espn-401928519",
-      "home": "Amorebieta",
-      "away": "UD Logroñés",
-      "league": "Espanha · Copa del Rey",
-      "leagueCode": "esp.copa_del_rey",
-      "division": 1,
-      "utc": "2026-11-10T19:00:00Z",
-      "status": "STATUS_FULL_TIME",
-      "homeScore": 1,
-      "awayScore": 0,
-      "homeId": "12587",
-      "awayId": "7206",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/12587.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/7206.png",
-      "venueCity": "Amorebieta",
-      "source": "ESPN"
-    },
-    {
-      "id": "espn-401928528",
-      "home": "Mijas Las Lagunas",
-      "away": "Real Jaen CF",
-      "league": "Espanha · Copa del Rey",
-      "leagueCode": "esp.copa_del_rey",
-      "division": 1,
-      "utc": "2026-11-10T19:00:00Z",
-      "status": "STATUS_FULL_TIME",
-      "homeScore": 1,
-      "awayScore": 2,
-      "homeId": "22043",
-      "awayId": "5401",
-      "homeLogo": "",
-      "awayLogo": "",
-      "venueCity": "Estepona",
-      "source": "ESPN"
-    },
-    {
-      "id": "espn-401928550",
-      "home": "Trival Valderas",
-      "away": "Leganés",
-      "league": "Espanha · Copa del Rey",
-      "leagueCode": "esp.copa_del_rey",
-      "division": 1,
-      "utc": "2026-11-10T19:00:00Z",
-      "status": "STATUS_FULL_TIME",
-      "homeScore": 0,
-      "awayScore": 1,
-      "homeId": "17573",
-      "awayId": "17534",
-      "homeLogo": "",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/17534.png",
-      "venueCity": "Leganés, Madrid",
-      "source": "ESPN"
-    },
-    {
-      "id": "espn-401928504",
-      "home": "Tavernes de la Valldigna",
-      "away": "Valencia",
-      "league": "Espanha · Copa del Rey",
-      "leagueCode": "esp.copa_del_rey",
-      "division": 1,
-      "utc": "2026-11-10T20:00:00Z",
-      "status": "STATUS_FULL_TIME",
-      "homeScore": 0,
-      "awayScore": 6,
-      "homeId": "133846",
-      "awayId": "94",
-      "homeLogo": "",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/94.png",
-      "venueCity": "Manises",
-      "source": "ESPN"
-    },
-    {
       "id": "espn-401928506",
-      "home": "Calvo Sotelo",
+      "home": "CS Puertollano",
       "away": "Albacete",
       "league": "Espanha · Copa del Rey",
       "leagueCode": "esp.copa_del_rey",
@@ -218,7 +110,7 @@
       "awayId": "6732",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/6732.png",
-      "venueCity": "Bétheny",
+      "venueCity": "Béthany",
       "source": "ESPN"
     },
     {
@@ -452,7 +344,7 @@
       "awayId": "2927",
       "homeLogo": "",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2927.png",
-      "venueCity": null,
+      "venueCity": "Paris",
       "source": "ESPN"
     },
     {
@@ -488,7 +380,7 @@
       "awayId": "3788",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/20983.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3788.png",
-      "venueCity": "San Sebastian",
+      "venueCity": "Donostia-San Sebastian",
       "source": "ESPN"
     },
     {
@@ -1100,7 +992,7 @@
       "awayId": "7720",
       "homeLogo": "",
       "awayLogo": "",
-      "venueCity": null,
+      "venueCity": "Brive-la-Gaillarde",
       "source": "ESPN"
     },
     {
@@ -1532,7 +1424,7 @@
       "awayId": "10685",
       "homeLogo": "",
       "awayLogo": "",
-      "venueCity": null,
+      "venueCity": "Valence",
       "source": "ESPN"
     },
     {
@@ -2159,6 +2051,23 @@
       "awayId": "133627",
       "homeLogo": "https://r2.thesportsdb.com/images/media/team/badge/ggqtd01621593274.png",
       "awayLogo": "https://r2.thesportsdb.com/images/media/team/badge/jioo4z1557155744.png",
+      "source": "TheSportsDB"
+    },
+    {
+      "id": "tsdb-2482248",
+      "home": "Lazio",
+      "away": "Lecce",
+      "league": "Itália · Serie A",
+      "leagueCode": "tsdb-4332",
+      "division": 1,
+      "utc": "2026-11-21T14:00:00Z",
+      "status": "NS",
+      "homeScore": null,
+      "awayScore": null,
+      "homeId": "133668",
+      "awayId": "133678",
+      "homeLogo": "https://r2.thesportsdb.com/images/media/team/badge/rwqyvs1448806608.png",
+      "awayLogo": "https://r2.thesportsdb.com/images/media/team/badge/j4vznr1567365249.png",
       "source": "TheSportsDB"
     }
   ],
