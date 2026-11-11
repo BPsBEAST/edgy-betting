@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T02:49:17.944900Z",
+  "generatedAt": "2026-11-11T12:44:50.087167Z",
   "sources": [
     "ESPN (integração não oficial)",
     "TheSportsDB (plano gratuito limitado)"
@@ -834,6 +834,24 @@
       "source": "ESPN"
     },
     {
+      "id": "espn-401932818",
+      "home": "Sag Cestas",
+      "away": "Bayonne",
+      "league": "França · Coupe de France",
+      "leagueCode": "fra.coupe_de_france",
+      "division": 1,
+      "utc": "2026-11-14T17:00:00Z",
+      "status": "STATUS_SCHEDULED",
+      "homeScore": 0,
+      "awayScore": 0,
+      "homeId": "134082",
+      "awayId": "7733",
+      "homeLogo": "",
+      "awayLogo": "",
+      "venueCity": "Bordeaux",
+      "source": "ESPN"
+    },
+    {
       "id": "espn-401932831",
       "home": "Saint-Brieuc",
       "away": "Rouen",
@@ -1272,7 +1290,7 @@
       "league": "França · Coupe de France",
       "leagueCode": "fra.coupe_de_france",
       "division": 1,
-      "utc": "2026-11-14T21:00:00Z",
+      "utc": "2026-11-15T04:00:00Z",
       "status": "STATUS_SCHEDULED",
       "homeScore": 0,
       "awayScore": 0,
@@ -1370,7 +1388,7 @@
       "awayId": "134098",
       "homeLogo": "",
       "awayLogo": "",
-      "venueCity": "Massay",
+      "venueCity": null,
       "source": "ESPN"
     },
     {
@@ -1533,24 +1551,6 @@
       "homeLogo": "",
       "awayLogo": "",
       "venueCity": null,
-      "source": "ESPN"
-    },
-    {
-      "id": "espn-401932818",
-      "home": "Sag Cestas",
-      "away": "Bayonne",
-      "league": "França · Coupe de France",
-      "leagueCode": "fra.coupe_de_france",
-      "division": 1,
-      "utc": "2026-11-15T13:00:00Z",
-      "status": "STATUS_SCHEDULED",
-      "homeScore": 0,
-      "awayScore": 0,
-      "homeId": "134082",
-      "awayId": "7733",
-      "homeLogo": "",
-      "awayLogo": "",
-      "venueCity": "Bordeaux",
       "source": "ESPN"
     },
     {
@@ -2125,6 +2125,40 @@
       "awayId": "133862",
       "homeLogo": "https://r2.thesportsdb.com/images/media/team/badge/sl5kzg1766617559.png",
       "awayLogo": "https://r2.thesportsdb.com/images/media/team/badge/aikowk1546475003.png",
+      "source": "TheSportsDB"
+    },
+    {
+      "id": "tsdb-2494105",
+      "home": "Manchester City",
+      "away": "Fulham",
+      "league": "Inglaterra · Premier League",
+      "leagueCode": "tsdb-4328",
+      "division": 1,
+      "utc": "2026-11-21T12:30:00Z",
+      "status": "NS",
+      "homeScore": null,
+      "awayScore": null,
+      "homeId": "133613",
+      "awayId": "133600",
+      "homeLogo": "https://r2.thesportsdb.com/images/media/team/badge/vwpvry1467462651.png",
+      "awayLogo": "https://r2.thesportsdb.com/images/media/team/badge/xwwvyt1448811086.png",
+      "source": "TheSportsDB"
+    },
+    {
+      "id": "tsdb-2501430",
+      "home": "Southampton",
+      "away": "Derby County",
+      "league": "Inglaterra · Championship",
+      "leagueCode": "tsdb-4329",
+      "division": 2,
+      "utc": "2026-11-21T12:30:00Z",
+      "status": "NS",
+      "homeScore": null,
+      "awayScore": null,
+      "homeId": "134778",
+      "awayId": "133627",
+      "homeLogo": "https://r2.thesportsdb.com/images/media/team/badge/ggqtd01621593274.png",
+      "awayLogo": "https://r2.thesportsdb.com/images/media/team/badge/jioo4z1557155744.png",
       "source": "TheSportsDB"
     }
   ],
