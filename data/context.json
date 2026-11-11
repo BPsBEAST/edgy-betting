@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T22:24:30.764803+00:00",
+  "generatedAt": "2026-11-11T02:50:17.577021+00:00",
   "sources": {
     "weather": "Open-Meteo (requires verified venue city)",
     "lineups": "API-Football optional",
@@ -12,7 +12,7 @@
   },
   "hasApiFootballKey": true,
   "apiCalls": 0,
-  "matchedGames": 15,
+  "matchedGames": 16,
   "contexts": {
     "espn-401928506": {
       "weather": {
@@ -60,7 +60,7 @@
       "weather": {
         "city": "Chambery",
         "countryCode": "FR",
-        "temperatureC": 12.3,
+        "temperatureC": 12.4,
         "precipitationMm": 1.5,
         "gustKmh": 6.1,
         "alert": false,
@@ -91,20 +91,6 @@
         "temperatureC": 4.9,
         "precipitationMm": 0.0,
         "gustKmh": 6.5,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-13T19:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401932845": {
-      "weather": {
-        "city": "Saint-Philbert-de-Grand-Lieu",
-        "countryCode": "FR",
-        "temperatureC": 8.3,
-        "precipitationMm": 0.0,
-        "gustKmh": 36.4,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-13T19:00Z",
@@ -182,20 +168,6 @@
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
     },
-    "espn-401932843": {
-      "weather": {
-        "city": "Boulay-Moselle",
-        "countryCode": "FR",
-        "temperatureC": 7.5,
-        "precipitationMm": 0.0,
-        "gustKmh": 35.3,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-14T13:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
     "espn-401932776": {
       "weather": {
         "city": "Guilherand-Granges",
@@ -220,6 +192,48 @@
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-14T17:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401932823": {
+      "weather": {
+        "city": "Paris",
+        "countryCode": "FR",
+        "temperatureC": 9.7,
+        "precipitationMm": 0.4,
+        "gustKmh": 16.6,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-15T13:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401932797": {
+      "weather": {
+        "city": "Paris",
+        "countryCode": "FR",
+        "temperatureC": 9.7,
+        "precipitationMm": 0.4,
+        "gustKmh": 16.6,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-15T13:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401932796": {
+      "weather": {
+        "city": "Paris",
+        "countryCode": "FR",
+        "temperatureC": 9.7,
+        "precipitationMm": 0.4,
+        "gustKmh": 16.6,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-15T13:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }

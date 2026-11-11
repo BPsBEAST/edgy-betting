@@ -1,10 +1,95 @@
 {
-  "generatedAt": "2026-11-10T22:24:27.097921+00:00",
+  "generatedAt": "2026-11-11T02:50:13.363366+00:00",
   "provider": "TipsAudit (API pública gratuita, atribuição obrigatória)",
   "sourceUrl": "https://tipsaudit.com/api",
-  "status": "Feed recente, sem correspondências seguras nas ligas e jogos selecionados",
-  "feedGeneratedAt": "2026-11-10T22:24:27+00:00",
-  "matchedGames": 0,
-  "matches": {},
+  "status": "Disponível",
+  "feedGeneratedAt": "2026-11-11T02:50:13+00:00",
+  "matchedGames": 7,
+  "matches": {
+    "espn-401883136": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/16669/leganes-vs-burgos-2026-11-13",
+      "fairProbability": {
+        "1X2_H": 0.4307,
+        "1X2_D": 0.2967,
+        "1X2_A": 0.2726
+      },
+      "readAt": "2026-11-10T22:35:05+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401883134": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/17057/real-sociedad-ii-vs-sporting-gijon-2026-11-14",
+      "fairProbability": {
+        "1X2_H": 0.3591,
+        "1X2_D": 0.3115,
+        "1X2_A": 0.3294
+      },
+      "readAt": "2026-11-10T22:35:05+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401883118": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/17062/almeria-vs-fc-andorra-2026-11-14",
+      "fairProbability": {
+        "1X2_H": 0.5558,
+        "1X2_D": 0.2316,
+        "1X2_A": 0.2127
+      },
+      "readAt": "2026-11-10T22:35:05+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401883135": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/17063/mallorca-vs-cordoba-2026-11-14",
+      "fairProbability": {
+        "1X2_H": 0.5555,
+        "1X2_D": 0.2242,
+        "1X2_A": 0.2203
+      },
+      "readAt": "2026-11-10T22:35:05+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401883116": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/17564/granada-cf-vs-las-palmas-2026-11-15",
+      "fairProbability": {
+        "1X2_H": 0.5515,
+        "1X2_D": 0.2559,
+        "1X2_A": 0.1926
+      },
+      "readAt": "2026-11-10T22:35:05+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401883117": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/17567/eibar-vs-cadiz-2026-11-15",
+      "fairProbability": {
+        "1X2_H": 0.6005,
+        "1X2_D": 0.2273,
+        "1X2_A": 0.1722
+      },
+      "readAt": "2026-11-10T22:35:05+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401883137": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/17568/eldense-vs-sabadell-2026-11-15",
+      "fairProbability": {
+        "1X2_H": 0.3959,
+        "1X2_D": 0.297,
+        "1X2_A": 0.3071
+      },
+      "readAt": "2026-11-10T22:35:05+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    }
+  },
   "note": "Probabilidade justa do mercado sharp. Não conta como prognóstico Statarea/SportyTrader, não confirma Betano Portugal. URL de origem obrigatória."
 }
