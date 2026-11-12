@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T23:28:36.458215Z",
+  "generatedAt": "2026-11-12T13:47:32.711164Z",
   "sources": [
     "ESPN (integração não oficial)",
     "TheSportsDB (plano gratuito limitado)"
@@ -561,6 +561,24 @@
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2927.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/11880.png",
       "venueCity": "Caen",
+      "source": "ESPN"
+    },
+    {
+      "id": "espn-401933060",
+      "home": "Chateaubriant",
+      "away": "Horizon Patho",
+      "league": "França · Coupe de France",
+      "leagueCode": "fra.coupe_de_france",
+      "division": 1,
+      "utc": "2026-11-14T17:00:00Z",
+      "status": "STATUS_SCHEDULED",
+      "homeScore": 0,
+      "awayScore": 0,
+      "homeId": "7729",
+      "awayId": "134074",
+      "homeLogo": "",
+      "awayLogo": "",
+      "venueCity": "Châteaubriant",
       "source": "ESPN"
     },
     {
@@ -1209,24 +1227,6 @@
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/245.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/5404.png",
       "venueCity": "Santa Cruz de Tenerife",
-      "source": "ESPN"
-    },
-    {
-      "id": "espn-401933060",
-      "home": "Chateaubriant",
-      "away": "Horizon Patho",
-      "league": "França · Coupe de France",
-      "leagueCode": "fra.coupe_de_france",
-      "division": 1,
-      "utc": "2026-11-15T13:00:00Z",
-      "status": "STATUS_SCHEDULED",
-      "homeScore": 0,
-      "awayScore": 0,
-      "homeId": "7729",
-      "awayId": "134074",
-      "homeLogo": "",
-      "awayLogo": "",
-      "venueCity": "Châteaubriant",
       "source": "ESPN"
     },
     {
@@ -2017,6 +2017,23 @@
       "awayId": "133862",
       "homeLogo": "https://r2.thesportsdb.com/images/media/team/badge/sl5kzg1766617559.png",
       "awayLogo": "https://r2.thesportsdb.com/images/media/team/badge/aikowk1546475003.png",
+      "source": "TheSportsDB"
+    },
+    {
+      "id": "tsdb-2506290",
+      "home": "Athletic Bilbao",
+      "away": "Espanyol",
+      "league": "Espanha · La Liga",
+      "leagueCode": "tsdb-4335",
+      "division": 1,
+      "utc": "2026-11-20T20:00:00Z",
+      "status": "NS",
+      "homeScore": null,
+      "awayScore": null,
+      "homeId": "133727",
+      "awayId": "133734",
+      "homeLogo": "https://r2.thesportsdb.com/images/media/team/badge/68w7fe1639408210.png",
+      "awayLogo": "https://r2.thesportsdb.com/images/media/team/badge/867nzz1681703222.png",
       "source": "TheSportsDB"
     },
     {
