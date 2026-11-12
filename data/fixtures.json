@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T13:47:32.711164Z",
+  "generatedAt": "2026-11-12T22:45:09.316716Z",
   "sources": [
     "ESPN (integração não oficial)",
     "TheSportsDB (plano gratuito limitado)"
@@ -13,9 +13,9 @@
       "leagueCode": "esp.copa_del_rey",
       "division": 1,
       "utc": "2026-11-12T17:30:00Z",
-      "status": "STATUS_SCHEDULED",
+      "status": "STATUS_FULL_TIME",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 3,
       "homeId": "21291",
       "awayId": "2737",
       "homeLogo": "",
@@ -31,9 +31,9 @@
       "leagueCode": "esp.copa_del_rey",
       "division": 1,
       "utc": "2026-11-12T18:00:00Z",
-      "status": "STATUS_SCHEDULED",
-      "homeScore": 0,
-      "awayScore": 0,
+      "status": "STATUS_FINAL_AET",
+      "homeScore": 2,
+      "awayScore": 3,
       "homeId": "19288",
       "awayId": "244",
       "homeLogo": "",
@@ -49,9 +49,9 @@
       "leagueCode": "esp.copa_del_rey",
       "division": 1,
       "utc": "2026-11-12T18:00:00Z",
-      "status": "STATUS_SCHEDULED",
-      "homeScore": 0,
-      "awayScore": 0,
+      "status": "STATUS_FINAL_AET",
+      "homeScore": 1,
+      "awayScore": 2,
       "homeId": "133837",
       "awayId": "1538",
       "homeLogo": "",
@@ -67,9 +67,9 @@
       "leagueCode": "fra.coupe_de_france",
       "division": 1,
       "utc": "2026-11-12T18:00:00Z",
-      "status": "STATUS_SCHEDULED",
+      "status": "STATUS_FULL_TIME",
       "homeScore": 0,
-      "awayScore": 0,
+      "awayScore": 2,
       "homeId": "134117",
       "awayId": "6994",
       "homeLogo": "",
@@ -380,7 +380,7 @@
       "awayId": "3788",
       "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/20983.png",
       "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/3788.png",
-      "venueCity": "Donostia-San Sebastian",
+      "venueCity": "San Sebastian",
       "source": "ESPN"
     },
     {
@@ -1442,7 +1442,7 @@
       "awayId": "134093",
       "homeLogo": "",
       "awayLogo": "",
-      "venueCity": null,
+      "venueCity": "Perigny",
       "source": "ESPN"
     },
     {
@@ -1514,7 +1514,7 @@
       "awayId": "19386",
       "homeLogo": "",
       "awayLogo": "",
-      "venueCity": null,
+      "venueCity": "Senlis",
       "source": "ESPN"
     },
     {

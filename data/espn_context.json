@@ -1,23 +1,11 @@
 {
-  "generatedAt": "2026-11-10T22:24:28.809913+00:00",
+  "generatedAt": "2026-11-12T22:46:01.856614+00:00",
   "provider": "ESPN site API pública, integração não oficial",
   "calls": 12,
   "matchedGames": 8,
   "withLineups": 0,
   "withInjuries": 0,
   "contexts": {
-    "espn-401928506": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401928506"
-    },
-    "espn-401928551": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401928551"
-    },
-    "espn-401928527": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401928527"
-    },
-    "espn-401932846": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401932846"
-    },
     "espn-401932838": {
       "matchPage": "https://www.espn.com/soccer/match/_/gameId/401932838"
     },
@@ -29,6 +17,18 @@
     },
     "espn-401883136": {
       "matchPage": "https://www.espn.com/soccer/match/_/gameId/401883136"
+    },
+    "espn-401928487": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401928487"
+    },
+    "espn-401883114": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401883114"
+    },
+    "espn-401932858": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401932858"
+    },
+    "espn-401932857": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401932857"
     }
   },
   "note": "Só se confirma XI ao encontrar 11 titulares identificados para cada equipa no resumo, nas 2h antes do jogo. Sem registo não significa que não existam ausências."
