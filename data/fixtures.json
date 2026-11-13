@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T03:26:05.455317Z",
+  "generatedAt": "2026-11-13T13:08:55.872026Z",
   "sources": [
     "ESPN (integração não oficial)",
     "TheSportsDB (plano gratuito limitado)"
@@ -1280,7 +1280,7 @@
       "awayId": "134098",
       "homeLogo": "",
       "awayLogo": "",
-      "venueCity": null,
+      "venueCity": "Vierzon",
       "source": "ESPN"
     },
     {
