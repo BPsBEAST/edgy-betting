@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-13T22:40:28.474703+00:00",
+  "generatedAt": "2026-11-14T03:20:17.636089+00:00",
   "provider": "TipsAudit (API pública gratuita, atribuição obrigatória)",
   "sourceUrl": "https://tipsaudit.com/api",
   "status": "Disponível",
-  "feedGeneratedAt": "2026-11-13T22:40:28+00:00",
-  "matchedGames": 6,
+  "feedGeneratedAt": "2026-11-14T03:20:18+00:00",
+  "matchedGames": 11,
   "matches": {
     "espn-401883134": {
       "provider": "TipsAudit",
@@ -14,7 +14,7 @@
         "1X2_D": 0.3058,
         "1X2_A": 0.3183
       },
-      "readAt": "2026-11-13T21:34:58+00:00",
+      "readAt": "2026-11-14T02:34:57+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
         "market": "1X2_D",
@@ -33,7 +33,7 @@
         "1X2_D": 0.2289,
         "1X2_A": 0.2055
       },
-      "readAt": "2026-11-13T21:34:58+00:00",
+      "readAt": "2026-11-14T02:34:57+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -45,7 +45,7 @@
         "1X2_D": 0.2465,
         "1X2_A": 0.2635
       },
-      "readAt": "2026-11-13T21:34:58+00:00",
+      "readAt": "2026-11-14T02:34:57+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -57,7 +57,7 @@
         "1X2_D": 0.2653,
         "1X2_A": 0.2044
       },
-      "readAt": "2026-11-13T21:34:58+00:00",
+      "readAt": "2026-11-14T02:34:57+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -69,7 +69,7 @@
         "1X2_D": 0.2245,
         "1X2_A": 0.1714
       },
-      "readAt": "2026-11-13T21:34:58+00:00",
+      "readAt": "2026-11-14T02:34:57+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -81,7 +81,7 @@
         "1X2_D": 0.3154,
         "1X2_A": 0.294
       },
-      "readAt": "2026-11-13T21:34:58+00:00",
+      "readAt": "2026-11-14T02:34:57+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
         "market": "1X2_D",
@@ -91,6 +91,66 @@
         "referenceOnly": true,
         "betanoConfirmedOnSlip": false
       }
+    },
+    "espn-401885049": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/18151/arminia-bielefeld-vs-1-fc-magdeburg-2026-11-20",
+      "fairProbability": {
+        "1X2_H": 0.4049,
+        "1X2_D": 0.2607,
+        "1X2_A": 0.3343
+      },
+      "readAt": "2026-11-13T22:33:59+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401876685": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/18160/red-star-fc-93-vs-pau-2026-11-20",
+      "fairProbability": {
+        "1X2_H": 0.4798,
+        "1X2_D": 0.276,
+        "1X2_A": 0.2442
+      },
+      "readAt": "2026-11-13T22:34:36+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401876688": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/18161/metz-vs-boulogne-2026-11-20",
+      "fairProbability": {
+        "1X2_H": 0.4559,
+        "1X2_D": 0.2795,
+        "1X2_A": 0.2646
+      },
+      "readAt": "2026-11-13T22:34:36+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401876691": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/18164/annecy-vs-clermont-foot-2026-11-20",
+      "fairProbability": {
+        "1X2_H": 0.4556,
+        "1X2_D": 0.2809,
+        "1X2_A": 0.2635
+      },
+      "readAt": "2026-11-13T22:34:36+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401882805": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/18172/athletic-club-vs-espanyol-2026-11-20",
+      "fairProbability": {
+        "1X2_H": 0.6587,
+        "1X2_D": 0.2062,
+        "1X2_A": 0.1351
+      },
+      "readAt": "2026-11-13T22:34:52+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
     }
   },
   "note": "Probabilidade justa do mercado sharp. Não conta como prognóstico Statarea/SportyTrader, não confirma Betano Portugal. URL de origem obrigatória."
