@@ -1,73 +1,34 @@
 {
-  "generatedAt": "2026-11-14T12:14:47.077841+00:00",
+  "generatedAt": "2026-11-14T21:32:27.339435+00:00",
   "provider": "ESPN site API pública, integração não oficial",
   "calls": 12,
   "matchedGames": 8,
-  "withLineups": 1,
+  "withLineups": 0,
   "withInjuries": 0,
   "contexts": {
-    "espn-401883114": {
-      "lineups": {
-        "provider": "ESPN (integração pública não oficial)",
-        "confirmed": true,
-        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
-        "teams": [
-          {
-            "team": "Real Valladolid",
-            "startingXI": [
-              "Álvaro Aceves",
-              "Miguel Rubio",
-              "David Torres",
-              "Carlos Clerc",
-              "Trilli",
-              "Tai Abed",
-              "Thiago Ojeda",
-              "Julien Ponceau",
-              "Stanko Juric",
-              "Víctor Fernández",
-              "Adrián Arnun"
-            ]
-          },
-          {
-            "team": "Castellón",
-            "startingXI": [
-              "Romain Matthys",
-              "Agustín Sienra",
-              "Alberto",
-              "Jeremy Mellot",
-              "Juanjo",
-              "Álvaro Martín",
-              "Pablo Santiago",
-              "Diego Hernández Barriuso",
-              "Iñigo Córdoba",
-              "Adam Jakobsen",
-              "Ousmane Camara"
-            ]
-          }
-        ]
-      },
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401883114"
+    "espn-401933039": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401933039"
     },
-    "espn-401932858": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401932858"
+    "espn-401883113": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401883113"
     },
-    "espn-401932857": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401932857"
+    "espn-401932823": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401932823"
     },
-    "espn-401933096": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401933096"
+    "espn-401932773": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401932773"
     },
-    "espn-401932840": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401932840"
+    "espn-401932755": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401932755"
     },
-    "espn-401932856": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401932856"
+    "espn-401932772": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401932772"
     },
-    "espn-401932843": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401932843"
+    "espn-401932767": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401932767"
     },
-    "espn-401932776": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401932776"
+    "espn-401932770": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401932770"
     }
   },
   "note": "Só se confirma XI ao encontrar 11 titulares identificados para cada equipa no resumo, nas 2h antes do jogo. Sem registo não significa que não existam ausências."

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T12:14:48.862092+00:00",
+  "generatedAt": "2026-11-14T21:32:29.317874+00:00",
   "sources": {
     "weather": "Open-Meteo (requires verified venue city)",
     "lineups": "API-Football optional",
@@ -12,214 +12,18 @@
   },
   "hasApiFootballKey": true,
   "apiCalls": 0,
-  "matchedGames": 21,
+  "matchedGames": 19,
   "contexts": {
-    "espn-401883114": {
+    "espn-401883113": {
       "weather": {
-        "city": "Valladolid",
+        "city": "Santa Cruz de Tenerife",
         "countryCode": "ES",
-        "temperatureC": 14.0,
-        "precipitationMm": 0.4,
-        "gustKmh": 36.7,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-14T13:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401932858": {
-      "weather": {
-        "city": "Corsica",
-        "countryCode": "FR",
-        "temperatureC": 8.6,
-        "precipitationMm": 0.0,
-        "gustKmh": 28.4,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-14T13:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401932857": {
-      "weather": {
-        "city": "Espaly-Saint-Marcel",
-        "countryCode": "FR",
-        "temperatureC": 13.1,
-        "precipitationMm": 0.0,
-        "gustKmh": 49.0,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-14T13:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401932856": {
-      "weather": {
-        "city": "Paris",
-        "countryCode": "FR",
-        "temperatureC": 10.3,
-        "precipitationMm": 0.0,
-        "gustKmh": 25.2,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-14T13:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401932843": {
-      "weather": {
-        "city": "Boulay-Moselle",
-        "countryCode": "FR",
-        "temperatureC": 7.5,
-        "precipitationMm": 0.0,
-        "gustKmh": 27.7,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-14T13:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401932776": {
-      "weather": {
-        "city": "Guilherand-Granges",
-        "countryCode": "FR",
-        "temperatureC": 11.0,
-        "precipitationMm": 0.0,
-        "gustKmh": 22.7,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-14T14:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401932777": {
-      "weather": {
-        "city": "Paris",
-        "countryCode": "FR",
-        "temperatureC": 10.5,
-        "precipitationMm": 0.0,
-        "gustKmh": 25.2,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-14T15:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401932833": {
-      "weather": {
-        "city": "Fontenay-le-Comte",
-        "countryCode": "FR",
-        "temperatureC": 7.5,
-        "precipitationMm": 0.0,
-        "gustKmh": 17.6,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-14T15:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401883134": {
-      "weather": {
-        "city": "San Sebastian",
-        "countryCode": "ES",
-        "temperatureC": 14.9,
-        "precipitationMm": 0.0,
-        "gustKmh": 29.3,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-14T15:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401932832": {
-      "weather": {
-        "city": "Croix",
-        "countryCode": "FR",
-        "temperatureC": 5.9,
-        "precipitationMm": 0.0,
-        "gustKmh": 13.7,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-14T16:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401932834": {
-      "weather": {
-        "city": "Pont-de-Chéruy",
-        "countryCode": "FR",
-        "temperatureC": 11.0,
+        "temperatureC": 23.9,
         "precipitationMm": 0.0,
         "gustKmh": 20.9,
         "alert": false,
         "risk": null,
-        "forecastHourUtc": "2026-11-14T16:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401932758": {
-      "weather": {
-        "city": "Saint-Sébastien-sur-Loire",
-        "countryCode": "FR",
-        "temperatureC": 9.4,
-        "precipitationMm": 0.0,
-        "gustKmh": 13.9,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-14T16:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401932844": {
-      "weather": {
-        "city": "Rennes",
-        "countryCode": "FR",
-        "temperatureC": 9.9,
-        "precipitationMm": 0.0,
-        "gustKmh": 21.1,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-14T16:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401932765": {
-      "weather": {
-        "city": "Rennes",
-        "countryCode": "FR",
-        "temperatureC": 8.6,
-        "precipitationMm": 0.0,
-        "gustKmh": 16.8,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-14T17:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401932825": {
-      "weather": {
-        "city": "Rennes",
-        "countryCode": "FR",
-        "temperatureC": 7.4,
-        "precipitationMm": 0.0,
-        "gustKmh": 13.0,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-14T18:00Z",
+        "forecastHourUtc": "2026-11-15T13:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
@@ -228,9 +32,65 @@
       "weather": {
         "city": "Paris",
         "countryCode": "FR",
-        "temperatureC": 12.4,
-        "precipitationMm": 0.5,
-        "gustKmh": 36.9,
+        "temperatureC": 13.6,
+        "precipitationMm": 0.0,
+        "gustKmh": 36.0,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-15T13:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401932773": {
+      "weather": {
+        "city": "Metz",
+        "countryCode": "FR",
+        "temperatureC": 10.9,
+        "precipitationMm": 0.1,
+        "gustKmh": 28.8,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-15T13:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401932755": {
+      "weather": {
+        "city": "Vierzon",
+        "countryCode": "FR",
+        "temperatureC": 13.0,
+        "precipitationMm": 1.0,
+        "gustKmh": 45.4,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-15T13:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401932772": {
+      "weather": {
+        "city": "Metz",
+        "countryCode": "FR",
+        "temperatureC": 10.9,
+        "precipitationMm": 0.1,
+        "gustKmh": 28.8,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-15T13:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401932770": {
+      "weather": {
+        "city": "Amiens",
+        "countryCode": "FR",
+        "temperatureC": 9.8,
+        "precipitationMm": 0.6,
+        "gustKmh": 40.7,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-15T13:00Z",
@@ -242,9 +102,9 @@
       "weather": {
         "city": "Paris",
         "countryCode": "FR",
-        "temperatureC": 12.4,
-        "precipitationMm": 0.5,
-        "gustKmh": 36.9,
+        "temperatureC": 13.6,
+        "precipitationMm": 0.0,
+        "gustKmh": 36.0,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-15T13:00Z",
@@ -252,13 +112,111 @@
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
     },
-    "espn-401932855": {
+    "espn-401932759": {
       "weather": {
-        "city": "Rennes",
+        "city": "Villenave",
         "countryCode": "FR",
-        "temperatureC": 14.0,
+        "temperatureC": 16.2,
         "precipitationMm": 0.0,
-        "gustKmh": 46.4,
+        "gustKmh": 33.1,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-15T13:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401932741": {
+      "weather": {
+        "city": "Riom",
+        "countryCode": "FR",
+        "temperatureC": 14.9,
+        "precipitationMm": 0.0,
+        "gustKmh": 31.0,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-15T13:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401932819": {
+      "weather": {
+        "city": "Valence",
+        "countryCode": "FR",
+        "temperatureC": 13.5,
+        "precipitationMm": 0.0,
+        "gustKmh": 42.1,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-15T13:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401932805": {
+      "weather": {
+        "city": "Perigny",
+        "countryCode": "FR",
+        "temperatureC": 13.7,
+        "precipitationMm": 0.2,
+        "gustKmh": 70.2,
+        "alert": true,
+        "risk": "Chuva intensa ou rajadas fortes previstas na zona urbana",
+        "forecastHourUtc": "2026-11-15T13:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401932860": {
+      "weather": {
+        "city": "Saint-Renan",
+        "countryCode": "FR",
+        "temperatureC": 11.9,
+        "precipitationMm": 5.7,
+        "gustKmh": 44.3,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-15T13:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401932798": {
+      "weather": {
+        "city": "Sedan",
+        "countryCode": "FR",
+        "temperatureC": 8.9,
+        "precipitationMm": 0.0,
+        "gustKmh": 37.4,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-15T13:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401932807": {
+      "weather": {
+        "city": "Senlis",
+        "countryCode": "FR",
+        "temperatureC": 12.5,
+        "precipitationMm": 0.1,
+        "gustKmh": 39.6,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-15T13:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401932821": {
+      "weather": {
+        "city": "Seyssinet-Pariset",
+        "countryCode": "FR",
+        "temperatureC": 14.9,
+        "precipitationMm": 0.0,
+        "gustKmh": 15.5,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-15T13:00Z",
@@ -270,12 +228,26 @@
       "weather": {
         "city": "Paris",
         "countryCode": "FR",
-        "temperatureC": 12.4,
-        "precipitationMm": 0.5,
-        "gustKmh": 36.9,
+        "temperatureC": 13.6,
+        "precipitationMm": 0.0,
+        "gustKmh": 36.0,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-15T13:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401876688": {
+      "weather": {
+        "city": "Metz",
+        "countryCode": "FR",
+        "temperatureC": 10.0,
+        "precipitationMm": 0.0,
+        "gustKmh": 45.0,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-20T19:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
@@ -284,9 +256,9 @@
       "weather": {
         "city": "Paris",
         "countryCode": "FR",
-        "temperatureC": 6.0,
+        "temperatureC": 11.3,
         "precipitationMm": 0.0,
-        "gustKmh": 8.3,
+        "gustKmh": 39.2,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-20T19:00Z",
@@ -294,16 +266,16 @@
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
     },
-    "espn-401883108": {
+    "espn-401883107": {
       "weather": {
-        "city": "San Sebastian",
+        "city": "Santa Cruz de Tenerife",
         "countryCode": "ES",
-        "temperatureC": 15.8,
-        "precipitationMm": 0.5,
-        "gustKmh": 37.4,
+        "temperatureC": 22.3,
+        "precipitationMm": 0.0,
+        "gustKmh": 24.8,
         "alert": false,
         "risk": null,
-        "forecastHourUtc": "2026-11-21T15:00Z",
+        "forecastHourUtc": "2026-11-21T20:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
