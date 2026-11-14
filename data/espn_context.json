@@ -1,12 +1,51 @@
 {
-  "generatedAt": "2026-11-13T22:40:29.566787+00:00",
+  "generatedAt": "2026-11-14T12:14:47.077841+00:00",
   "provider": "ESPN site API pública, integração não oficial",
   "calls": 12,
   "matchedGames": 8,
-  "withLineups": 0,
+  "withLineups": 1,
   "withInjuries": 0,
   "contexts": {
     "espn-401883114": {
+      "lineups": {
+        "provider": "ESPN (integração pública não oficial)",
+        "confirmed": true,
+        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
+        "teams": [
+          {
+            "team": "Real Valladolid",
+            "startingXI": [
+              "Álvaro Aceves",
+              "Miguel Rubio",
+              "David Torres",
+              "Carlos Clerc",
+              "Trilli",
+              "Tai Abed",
+              "Thiago Ojeda",
+              "Julien Ponceau",
+              "Stanko Juric",
+              "Víctor Fernández",
+              "Adrián Arnun"
+            ]
+          },
+          {
+            "team": "Castellón",
+            "startingXI": [
+              "Romain Matthys",
+              "Agustín Sienra",
+              "Alberto",
+              "Jeremy Mellot",
+              "Juanjo",
+              "Álvaro Martín",
+              "Pablo Santiago",
+              "Diego Hernández Barriuso",
+              "Iñigo Córdoba",
+              "Adam Jakobsen",
+              "Ousmane Camara"
+            ]
+          }
+        ]
+      },
       "matchPage": "https://www.espn.com/soccer/match/_/gameId/401883114"
     },
     "espn-401932858": {
