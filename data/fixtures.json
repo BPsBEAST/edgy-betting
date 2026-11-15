@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T02:42:11.785025Z",
+  "generatedAt": "2026-11-15T12:45:52.861099Z",
   "sources": [
     "ESPN (integração não oficial)",
     "TheSportsDB (plano gratuito limitado)"
@@ -1021,7 +1021,7 @@
       "leagueCode": "fra.coupe_de_france",
       "division": 1,
       "utc": "2026-11-15T04:00:00Z",
-      "status": "STATUS_SCHEDULED",
+      "status": "STATUS_FULL_TIME",
       "homeScore": 0,
       "awayScore": 0,
       "homeId": "134076",
@@ -1213,7 +1213,7 @@
     },
     {
       "id": "espn-401932741",
-      "home": "RIOM",
+      "home": "Riom",
       "away": "FC Limonest",
       "league": "França · Coupe de France",
       "leagueCode": "fra.coupe_de_france",

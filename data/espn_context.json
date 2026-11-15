@@ -1,15 +1,51 @@
 {
-  "generatedAt": "2026-11-14T21:32:27.339435+00:00",
+  "generatedAt": "2026-11-15T12:46:37.739670+00:00",
   "provider": "ESPN site API pública, integração não oficial",
   "calls": 12,
   "matchedGames": 8,
-  "withLineups": 0,
+  "withLineups": 1,
   "withInjuries": 0,
   "contexts": {
-    "espn-401933039": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401933039"
-    },
     "espn-401883113": {
+      "lineups": {
+        "provider": "ESPN (integração pública não oficial)",
+        "confirmed": true,
+        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
+        "teams": [
+          {
+            "team": "Tenerife",
+            "startingXI": [
+              "Gabriel Lozano",
+              "Neal Viereck",
+              "Anthony Landázuri",
+              "David Rodríguez Ramos",
+              "César Álvarez",
+              "Jesús Álvarez",
+              "Fabricio",
+              "Nacho Gil",
+              "Noel López",
+              "Enric Gallego",
+              "Christian Gomis"
+            ]
+          },
+          {
+            "team": "Ceuta",
+            "startingXI": [
+              "Guillermo",
+              "Yann Bodiger",
+              "Carlos Hernández",
+              "Redru",
+              "Alex Petxarromán",
+              "Alejandro Meléndez",
+              "Marino Illescas",
+              "Kuki Zalazar",
+              "Jordi Escobar",
+              "Alejandro Camacho",
+              "Edgar Sevikyan"
+            ]
+          }
+        ]
+      },
       "matchPage": "https://www.espn.com/soccer/match/_/gameId/401883113"
     },
     "espn-401932823": {
@@ -29,6 +65,9 @@
     },
     "espn-401932770": {
       "matchPage": "https://www.espn.com/soccer/match/_/gameId/401932770"
+    },
+    "espn-401932800": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401932800"
     }
   },
   "note": "Só se confirma XI ao encontrar 11 titulares identificados para cada equipa no resumo, nas 2h antes do jogo. Sem registo não significa que não existam ausências."
