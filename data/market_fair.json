@@ -1,29 +1,22 @@
 {
-  "generatedAt": "2026-11-14T21:32:25.861086+00:00",
+  "generatedAt": "2026-11-15T02:43:18.965064+00:00",
   "provider": "TipsAudit (API pública gratuita, atribuição obrigatória)",
   "sourceUrl": "https://tipsaudit.com/api",
   "status": "Disponível",
-  "feedGeneratedAt": "2026-11-14T21:32:26+00:00",
+  "feedGeneratedAt": "2026-11-15T02:43:19+00:00",
   "matchedGames": 37,
   "matches": {
     "espn-401883116": {
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/17564/granada-cf-vs-las-palmas-2026-11-15",
       "fairProbability": {
-        "1X2_H": 0.4826,
-        "1X2_D": 0.2797,
-        "1X2_A": 0.2378
+        "1X2_H": 0.4829,
+        "1X2_D": 0.2791,
+        "1X2_A": 0.238
       },
-      "readAt": "2026-11-14T20:34:58+00:00",
+      "readAt": "2026-11-15T01:34:35+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": {
-        "market": "1X2_H",
-        "odd": 2.12,
-        "bookmaker": "Coolbet",
-        "source": "TipsAudit / soft-book market",
-        "referenceOnly": true,
-        "betanoConfirmedOnSlip": false
-      }
+      "quote": null
     },
     "espn-401883117": {
       "provider": "TipsAudit",
@@ -33,7 +26,7 @@
         "1X2_D": 0.2263,
         "1X2_A": 0.1728
       },
-      "readAt": "2026-11-14T20:34:58+00:00",
+      "readAt": "2026-11-15T01:34:35+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -45,16 +38,9 @@
         "1X2_D": 0.3135,
         "1X2_A": 0.2787
       },
-      "readAt": "2026-11-14T20:34:58+00:00",
+      "readAt": "2026-11-15T01:34:35+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": {
-        "market": "1X2_H",
-        "odd": 2.5,
-        "bookmaker": "Coolbet",
-        "source": "TipsAudit / soft-book market",
-        "referenceOnly": true,
-        "betanoConfirmedOnSlip": false
-      }
+      "quote": null
     },
     "espn-401885049": {
       "provider": "TipsAudit",
@@ -64,7 +50,7 @@
         "1X2_D": 0.2519,
         "1X2_A": 0.3247
       },
-      "readAt": "2026-11-14T16:34:50+00:00",
+      "readAt": "2026-11-14T22:34:54+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -76,7 +62,7 @@
         "1X2_D": 0.276,
         "1X2_A": 0.2442
       },
-      "readAt": "2026-11-14T16:35:05+00:00",
+      "readAt": "2026-11-14T22:34:53+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -88,7 +74,7 @@
         "1X2_D": 0.2795,
         "1X2_A": 0.2646
       },
-      "readAt": "2026-11-14T16:35:05+00:00",
+      "readAt": "2026-11-14T22:34:53+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -100,7 +86,7 @@
         "1X2_D": 0.2809,
         "1X2_A": 0.2635
       },
-      "readAt": "2026-11-14T16:35:05+00:00",
+      "readAt": "2026-11-14T22:34:53+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -112,7 +98,7 @@
         "1X2_D": 0.2634,
         "1X2_A": 0.2375
       },
-      "readAt": "2026-11-14T20:34:58+00:00",
+      "readAt": "2026-11-15T01:34:35+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -120,11 +106,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18172/athletic-club-vs-espanyol-2026-11-20",
       "fairProbability": {
-        "1X2_H": 0.6587,
-        "1X2_D": 0.2062,
-        "1X2_A": 0.1351
+        "1X2_H": 0.6599,
+        "1X2_D": 0.2056,
+        "1X2_A": 0.1345
       },
-      "readAt": "2026-11-14T16:35:07+00:00",
+      "readAt": "2026-11-14T22:34:51+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -136,7 +122,7 @@
         "1X2_D": 0.2108,
         "1X2_A": 0.2197
       },
-      "readAt": "2026-11-14T16:34:50+00:00",
+      "readAt": "2026-11-14T22:34:54+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -148,7 +134,7 @@
         "1X2_D": 0.2218,
         "1X2_A": 0.2218
       },
-      "readAt": "2026-11-14T16:34:50+00:00",
+      "readAt": "2026-11-14T22:34:54+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -160,7 +146,7 @@
         "1X2_D": 0.2072,
         "1X2_A": 0.2058
       },
-      "readAt": "2026-11-14T16:34:50+00:00",
+      "readAt": "2026-11-14T22:34:54+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -172,7 +158,7 @@
         "1X2_D": 0.1714,
         "1X2_A": 0.1272
       },
-      "readAt": "2026-11-14T16:34:27+00:00",
+      "readAt": "2026-11-14T22:35:04+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -184,7 +170,7 @@
         "1X2_D": 0.3016,
         "1X2_A": 0.3046
       },
-      "readAt": "2026-11-14T16:34:50+00:00",
+      "readAt": "2026-11-14T22:35:09+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -196,7 +182,7 @@
         "1X2_D": 0.2322,
         "1X2_A": 0.1707
       },
-      "readAt": "2026-11-14T16:34:50+00:00",
+      "readAt": "2026-11-14T22:35:09+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -208,7 +194,7 @@
         "1X2_D": 0.2932,
         "1X2_A": 0.3493
       },
-      "readAt": "2026-11-14T17:20:05+00:00",
+      "readAt": "2026-11-14T22:35:09+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -220,7 +206,7 @@
         "1X2_D": 0.2934,
         "1X2_A": 0.4384
       },
-      "readAt": "2026-11-14T17:20:06+00:00",
+      "readAt": "2026-11-14T22:35:09+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -232,7 +218,7 @@
         "1X2_D": 0.1727,
         "1X2_A": 0.105
       },
-      "readAt": "2026-11-14T16:35:03+00:00",
+      "readAt": "2026-11-14T22:35:08+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -244,7 +230,7 @@
         "1X2_D": 0.152,
         "1X2_A": 0.0904
       },
-      "readAt": "2026-11-14T16:35:03+00:00",
+      "readAt": "2026-11-14T22:35:08+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -256,7 +242,7 @@
         "1X2_D": 0.122,
         "1X2_A": 0.0976
       },
-      "readAt": "2026-11-14T16:35:00+00:00",
+      "readAt": "2026-11-14T22:34:49+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -268,7 +254,7 @@
         "1X2_D": 0.2029,
         "1X2_A": 0.6195
       },
-      "readAt": "2026-11-14T16:35:00+00:00",
+      "readAt": "2026-11-14T22:34:49+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -280,7 +266,7 @@
         "1X2_D": 0.2112,
         "1X2_A": 0.5969
       },
-      "readAt": "2026-11-14T16:35:00+00:00",
+      "readAt": "2026-11-14T22:34:49+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -292,7 +278,7 @@
         "1X2_D": 0.2543,
         "1X2_A": 0.4827
       },
-      "readAt": "2026-11-14T16:35:00+00:00",
+      "readAt": "2026-11-14T22:34:49+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -304,7 +290,7 @@
         "1X2_D": 0.2268,
         "1X2_A": 0.176
       },
-      "readAt": "2026-11-14T16:35:02+00:00",
+      "readAt": "2026-11-14T22:34:49+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -316,7 +302,7 @@
         "1X2_D": 0.1742,
         "1X2_A": 0.1223
       },
-      "readAt": "2026-11-14T16:35:02+00:00",
+      "readAt": "2026-11-14T22:34:49+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -328,7 +314,7 @@
         "1X2_D": 0.2469,
         "1X2_A": 0.2066
       },
-      "readAt": "2026-11-14T16:34:27+00:00",
+      "readAt": "2026-11-14T22:35:04+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -340,7 +326,7 @@
         "1X2_D": 0.2642,
         "1X2_A": 0.2533
       },
-      "readAt": "2026-11-14T16:34:27+00:00",
+      "readAt": "2026-11-14T22:35:04+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -352,7 +338,7 @@
         "1X2_D": 0.2689,
         "1X2_A": 0.2334
       },
-      "readAt": "2026-11-14T16:35:07+00:00",
+      "readAt": "2026-11-14T22:34:51+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -364,7 +350,7 @@
         "1X2_D": 0.1771,
         "1X2_A": 0.6725
       },
-      "readAt": "2026-11-14T16:35:04+00:00",
+      "readAt": "2026-11-14T22:34:32+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -376,7 +362,7 @@
         "1X2_D": 0.154,
         "1X2_A": 0.7574
       },
-      "readAt": "2026-11-14T16:35:03+00:00",
+      "readAt": "2026-11-14T22:35:08+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -388,7 +374,7 @@
         "1X2_D": 0.228,
         "1X2_A": 0.5338
       },
-      "readAt": "2026-11-14T16:35:00+00:00",
+      "readAt": "2026-11-14T22:34:49+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -400,7 +386,7 @@
         "1X2_D": 0.2652,
         "1X2_A": 0.4265
       },
-      "readAt": "2026-11-14T16:35:07+00:00",
+      "readAt": "2026-11-14T22:34:51+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -412,7 +398,7 @@
         "1X2_D": 0.26,
         "1X2_A": 0.2725
       },
-      "readAt": "2026-11-14T16:34:50+00:00",
+      "readAt": "2026-11-14T22:34:54+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -424,7 +410,7 @@
         "1X2_D": 0.2005,
         "1X2_A": 0.1409
       },
-      "readAt": "2026-11-14T16:35:03+00:00",
+      "readAt": "2026-11-14T22:35:08+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -436,7 +422,7 @@
         "1X2_D": 0.2276,
         "1X2_A": 0.239
       },
-      "readAt": "2026-11-14T16:35:04+00:00",
+      "readAt": "2026-11-14T22:34:32+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -448,7 +434,7 @@
         "1X2_D": 0.293,
         "1X2_A": 0.3075
       },
-      "readAt": "2026-11-14T16:35:04+00:00",
+      "readAt": "2026-11-14T22:34:32+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -460,7 +446,7 @@
         "1X2_D": 0.1253,
         "1X2_A": 0.0597
       },
-      "readAt": "2026-11-14T16:35:07+00:00",
+      "readAt": "2026-11-14T22:34:51+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     }
