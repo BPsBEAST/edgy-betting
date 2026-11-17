@@ -1,21 +1,13 @@
 {
-  "generatedAt": "2026-11-15T21:51:47.781267+00:00",
+  "generatedAt": "2026-11-17T00:50:55.377871+00:00",
   "source": "Football-Data.co.uk — free pre-match fixture CSV",
   "sourceUrl": "https://www.football-data.co.uk/fixtures.csv",
   "downloaded": true,
   "csvRows": 51,
   "unmatchedRows": 51,
-  "futureRows": 1,
-  "futureSupportedRows": 1,
-  "unmatchedFutureExamples": [
-    {
-      "division": "SP2",
-      "date": "16/11/2026",
-      "time": "19:30",
-      "home": "Albacete",
-      "away": "Celta B"
-    }
-  ],
+  "futureRows": 0,
+  "futureSupportedRows": 0,
+  "unmatchedFutureExamples": [],
   "matchedGames": 0,
   "matches": {},
   "matchEvidence": {},
