@@ -1,28 +1,10 @@
 {
-  "generatedAt": "2026-11-17T00:49:46.750720Z",
+  "generatedAt": "2026-11-17T23:51:25.005233Z",
   "sources": [
     "ESPN (integração não oficial)",
     "TheSportsDB (plano gratuito limitado)"
   ],
   "games": [
-    {
-      "id": "espn-401883305",
-      "home": "Albacete",
-      "away": "RC Celta Fortuna",
-      "league": "Espanha · Segunda División",
-      "leagueCode": "esp.2",
-      "division": 2,
-      "utc": "2026-11-16T19:30:00Z",
-      "status": "STATUS_FULL_TIME",
-      "homeScore": 1,
-      "awayScore": 0,
-      "homeId": "2737",
-      "awayId": "131858",
-      "homeLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/2737.png",
-      "awayLogo": "https://a.espncdn.com/i/teamlogos/soccer/500/131858.png",
-      "venueCity": "Albacete",
-      "source": "ESPN"
-    },
     {
       "id": "espn-401928518",
       "home": "Portugalete",
