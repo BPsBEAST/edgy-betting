@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T00:51:02.337068+00:00",
+  "generatedAt": "2026-11-17T14:28:28.879696+00:00",
   "sources": {
     "weather": "Open-Meteo (requires verified venue city)",
     "lineups": "API-Football optional",
@@ -12,7 +12,204 @@
   },
   "hasApiFootballKey": true,
   "apiCalls": 0,
-  "matchedGames": 0,
-  "contexts": {},
+  "matchedGames": 14,
+  "contexts": {
+    "espn-401928518": {
+      "weather": {
+        "city": "Portugalete",
+        "countryCode": "ES",
+        "temperatureC": 17.8,
+        "precipitationMm": 0.0,
+        "gustKmh": 23.0,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-18T18:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401928497": {
+      "weather": {
+        "city": "Utebo",
+        "countryCode": "ES",
+        "temperatureC": 19.3,
+        "precipitationMm": 0.0,
+        "gustKmh": 11.9,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-18T18:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401928505": {
+      "weather": {
+        "city": "Manises",
+        "countryCode": "ES",
+        "temperatureC": 22.1,
+        "precipitationMm": 0.0,
+        "gustKmh": 27.0,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-18T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401928532": {
+      "weather": {
+        "city": "Badajoz",
+        "countryCode": "ES",
+        "temperatureC": 19.3,
+        "precipitationMm": 0.5,
+        "gustKmh": 54.0,
+        "alert": true,
+        "risk": "Chuva intensa ou rajadas fortes previstas na zona urbana",
+        "forecastHourUtc": "2026-11-18T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401928524": {
+      "weather": {
+        "city": "Murcia",
+        "countryCode": "ES",
+        "temperatureC": 24.1,
+        "precipitationMm": 0.0,
+        "gustKmh": 18.7,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-18T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401885049": {
+      "weather": {
+        "city": "Bielefeld",
+        "countryCode": "DE",
+        "temperatureC": 4.0,
+        "precipitationMm": 0.0,
+        "gustKmh": 6.5,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-20T17:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401885053": {
+      "weather": {
+        "city": "Darmstadt",
+        "countryCode": "DE",
+        "temperatureC": 9.3,
+        "precipitationMm": 0.6,
+        "gustKmh": 27.0,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-20T17:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401876691": {
+      "weather": {
+        "city": "Annecy",
+        "countryCode": "FR",
+        "temperatureC": 8.3,
+        "precipitationMm": 0.8,
+        "gustKmh": 24.8,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-20T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401876687": {
+      "weather": {
+        "city": "Nancy",
+        "countryCode": "FR",
+        "temperatureC": 9.3,
+        "precipitationMm": 0.5,
+        "gustKmh": 35.6,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-20T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401876690": {
+      "weather": {
+        "city": "Guingamp",
+        "countryCode": "FR",
+        "temperatureC": 9.5,
+        "precipitationMm": 0.0,
+        "gustKmh": 23.4,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-20T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401876688": {
+      "weather": {
+        "city": "Metz",
+        "countryCode": "FR",
+        "temperatureC": 9.5,
+        "precipitationMm": 0.8,
+        "gustKmh": 33.5,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-20T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401899543": {
+      "weather": {
+        "city": "Verona",
+        "countryCode": "IT",
+        "temperatureC": 6.8,
+        "precipitationMm": 0.0,
+        "gustKmh": 13.3,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-20T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401884736": {
+      "weather": {
+        "city": "München",
+        "countryCode": "DE",
+        "temperatureC": 2.8,
+        "precipitationMm": 0.0,
+        "gustKmh": 8.3,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-20T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401882802": {
+      "weather": {
+        "city": "Manises",
+        "countryCode": "ES",
+        "temperatureC": 15.7,
+        "precipitationMm": 0.0,
+        "gustKmh": 10.4,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-23T20:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    }
+  },
   "message": "Missing data is reported as unavailable. No automatic critical exclusion without confirmed match-specific evidence."
 }
