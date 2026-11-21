@@ -1,133 +1,23 @@
 {
-  "generatedAt": "2026-11-21T04:00:43.912704+00:00",
+  "generatedAt": "2026-11-21T13:30:53.749583+00:00",
   "provider": "TipsAudit (API pública gratuita, atribuição obrigatória)",
   "sourceUrl": "https://tipsaudit.com/api",
   "status": "Disponível",
-  "feedGeneratedAt": "2026-11-21T04:00:44+00:00",
-  "matchedGames": 63,
+  "feedGeneratedAt": "2026-11-21T13:30:54+00:00",
+  "matchedGames": 106,
   "matches": {
-    "espn-401885056": {
-      "provider": "TipsAudit",
-      "sourceUrl": "https://tipsaudit.com/match/18382/vfl-wolfsburg-vs-holstein-kiel-2026-11-21",
-      "fairProbability": {
-        "1X2_H": 0.6062,
-        "1X2_D": 0.2012,
-        "1X2_A": 0.1926
-      },
-      "readAt": "2026-11-21T02:35:03+00:00",
-      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": {
-        "market": "1X2_H",
-        "odd": 1.68,
-        "bookmaker": "Unibet (NL)",
-        "source": "TipsAudit / soft-book market",
-        "referenceOnly": true,
-        "betanoConfirmedOnSlip": false
-      }
-    },
-    "espn-401885054": {
-      "provider": "TipsAudit",
-      "sourceUrl": "https://tipsaudit.com/match/18383/hannover-96-vs-spvgg-greuther-furth-2026-11-21",
-      "fairProbability": {
-        "1X2_H": 0.5514,
-        "1X2_D": 0.2278,
-        "1X2_A": 0.2208
-      },
-      "readAt": "2026-11-21T02:35:03+00:00",
-      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": null
-    },
-    "espn-401885051": {
-      "provider": "TipsAudit",
-      "sourceUrl": "https://tipsaudit.com/match/18384/1-fc-nurnberg-vs-eintracht-braunschweig-2026-11-21",
-      "fairProbability": {
-        "1X2_H": 0.5703,
-        "1X2_D": 0.2166,
-        "1X2_A": 0.2131
-      },
-      "readAt": "2026-11-21T02:35:03+00:00",
-      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": null
-    },
-    "espn-401879233": {
-      "provider": "TipsAudit",
-      "sourceUrl": "https://tipsaudit.com/match/18405/manchester-city-vs-fulham-2026-11-21",
-      "fairProbability": {
-        "1X2_H": 0.7045,
-        "1X2_D": 0.1661,
-        "1X2_A": 0.1294
-      },
-      "readAt": "2026-11-21T02:34:39+00:00",
-      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": null
-    },
-    "espn-401882299": {
-      "provider": "TipsAudit",
-      "sourceUrl": "https://tipsaudit.com/match/18417/sabadell-vs-granada-cf-2026-11-21",
-      "fairProbability": {
-        "1X2_H": 0.3792,
-        "1X2_D": 0.317,
-        "1X2_A": 0.3037
-      },
-      "readAt": "2026-11-21T02:35:02+00:00",
-      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": {
-        "market": "1X2_D",
-        "odd": 3.2,
-        "bookmaker": "Coolbet",
-        "source": "TipsAudit / soft-book market",
-        "referenceOnly": true,
-        "betanoConfirmedOnSlip": false
-      }
-    },
     "espn-401899546": {
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18435/carrarese-vs-virtus-entella-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.4168,
-        "1X2_D": 0.3141,
-        "1X2_A": 0.2691
+        "1X2_H": 0.4422,
+        "1X2_D": 0.306,
+        "1X2_A": 0.2518
       },
-      "readAt": "2026-11-21T02:35:02+00:00",
-      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": null
-    },
-    "espn-401899542": {
-      "provider": "TipsAudit",
-      "sourceUrl": "https://tipsaudit.com/match/18438/modena-vs-juve-stabia-2026-11-21",
-      "fairProbability": {
-        "1X2_H": 0.5947,
-        "1X2_D": 0.2367,
-        "1X2_A": 0.1686
-      },
-      "readAt": "2026-11-21T02:35:02+00:00",
-      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": null
-    },
-    "espn-401899541": {
-      "provider": "TipsAudit",
-      "sourceUrl": "https://tipsaudit.com/match/18439/sampdoria-vs-benevento-2026-11-21",
-      "fairProbability": {
-        "1X2_H": 0.3483,
-        "1X2_D": 0.2968,
-        "1X2_A": 0.3549
-      },
-      "readAt": "2026-11-21T02:35:02+00:00",
-      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": null
-    },
-    "espn-401899540": {
-      "provider": "TipsAudit",
-      "sourceUrl": "https://tipsaudit.com/match/18440/sudtirol-vs-cremonese-2026-11-21",
-      "fairProbability": {
-        "1X2_H": 0.2542,
-        "1X2_D": 0.3074,
-        "1X2_A": 0.4384
-      },
-      "readAt": "2026-11-21T02:35:02+00:00",
+      "readAt": "2026-11-21T13:24:52+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
-        "market": "1X2_A",
+        "market": "1X2_H",
         "odd": 2.3,
         "bookmaker": "Unibet (NL)",
         "source": "TipsAudit / soft-book market",
@@ -135,58 +25,101 @@
         "betanoConfirmedOnSlip": false
       }
     },
+    "espn-401899542": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/18438/modena-vs-juve-stabia-2026-11-21",
+      "fairProbability": {
+        "1X2_H": 0.5911,
+        "1X2_D": 0.2399,
+        "1X2_A": 0.169
+      },
+      "readAt": "2026-11-21T13:24:52+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401899541": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/18439/sampdoria-vs-benevento-2026-11-21",
+      "fairProbability": {
+        "1X2_H": 0.3147,
+        "1X2_D": 0.3016,
+        "1X2_A": 0.3837
+      },
+      "readAt": "2026-11-21T13:24:52+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401899540": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/18440/sudtirol-vs-cremonese-2026-11-21",
+      "fairProbability": {
+        "1X2_H": 0.2412,
+        "1X2_D": 0.3019,
+        "1X2_A": 0.4569
+      },
+      "readAt": "2026-11-21T13:24:52+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
     "espn-401874981": {
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18420/lazio-vs-lecce-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.6842,
-        "1X2_D": 0.1929,
-        "1X2_A": 0.123
+        "1X2_H": 0.6402,
+        "1X2_D": 0.214,
+        "1X2_A": 0.1458
       },
-      "readAt": "2026-11-21T02:35:00+00:00",
-      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": null
-    },
-    "espn-401875056": {
-      "provider": "TipsAudit",
-      "sourceUrl": "https://tipsaudit.com/match/18421/como-vs-cagliari-2026-11-21",
-      "fairProbability": {
-        "1X2_H": 0.7594,
-        "1X2_D": 0.151,
-        "1X2_A": 0.0896
-      },
-      "readAt": "2026-11-21T02:35:00+00:00",
-      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": null
-    },
-    "espn-401884735": {
-      "provider": "TipsAudit",
-      "sourceUrl": "https://tipsaudit.com/match/18448/bayer-leverkusen-vs-sc-paderborn-07-2026-11-21",
-      "fairProbability": {
-        "1X2_H": 0.7823,
-        "1X2_D": 0.1226,
-        "1X2_A": 0.0951
-      },
-      "readAt": "2026-11-21T02:34:40+00:00",
+      "readAt": "2026-11-21T13:24:50+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
         "market": "1X2_H",
-        "odd": 1.31,
+        "odd": 1.58,
         "bookmaker": "1xBet",
         "source": "TipsAudit / soft-book market",
         "referenceOnly": true,
         "betanoConfirmedOnSlip": false
       }
     },
+    "espn-401875056": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/18421/como-vs-cagliari-2026-11-21",
+      "fairProbability": {
+        "1X2_H": 0.7547,
+        "1X2_D": 0.1545,
+        "1X2_A": 0.0907
+      },
+      "readAt": "2026-11-21T13:24:50+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": {
+        "market": "1X2_H",
+        "odd": 1.34,
+        "bookmaker": "1xBet",
+        "source": "TipsAudit / soft-book market",
+        "referenceOnly": true,
+        "betanoConfirmedOnSlip": false
+      }
+    },
+    "espn-401884735": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/18448/bayer-leverkusen-vs-sc-paderborn-07-2026-11-21",
+      "fairProbability": {
+        "1X2_H": 0.7528,
+        "1X2_D": 0.1372,
+        "1X2_A": 0.11
+      },
+      "readAt": "2026-11-21T13:25:03+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
     "espn-401884732": {
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18450/union-berlin-vs-rb-leipzig-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.1498,
-        "1X2_D": 0.1941,
-        "1X2_A": 0.6561
+        "1X2_H": 0.153,
+        "1X2_D": 0.1931,
+        "1X2_A": 0.6539
       },
-      "readAt": "2026-11-21T02:34:40+00:00",
+      "readAt": "2026-11-21T13:25:03+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -194,11 +127,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18451/borussia-monchengladbach-vs-borussia-dortmund-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.1846,
-        "1X2_D": 0.2087,
-        "1X2_A": 0.6067
+        "1X2_H": 0.173,
+        "1X2_D": 0.2072,
+        "1X2_A": 0.6198
       },
-      "readAt": "2026-11-21T02:34:40+00:00",
+      "readAt": "2026-11-21T13:25:03+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -206,11 +139,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18452/sv-elversberg-vs-sc-freiburg-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.2617,
-        "1X2_D": 0.2539,
-        "1X2_A": 0.4844
+        "1X2_H": 0.2631,
+        "1X2_D": 0.2624,
+        "1X2_A": 0.4745
       },
-      "readAt": "2026-11-21T02:34:40+00:00",
+      "readAt": "2026-11-21T13:25:03+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -218,11 +151,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18456/sheffield-utd-vs-watford-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.6205,
-        "1X2_D": 0.2178,
-        "1X2_A": 0.1618
+        "1X2_H": 0.618,
+        "1X2_D": 0.2216,
+        "1X2_A": 0.1604
       },
-      "readAt": "2026-11-21T02:34:57+00:00",
+      "readAt": "2026-11-21T13:24:47+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
         "market": "1X2_H",
@@ -237,11 +170,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18458/middlesbrough-vs-bristol-city-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.7018,
-        "1X2_D": 0.1754,
-        "1X2_A": 0.1228
+        "1X2_H": 0.7085,
+        "1X2_D": 0.1722,
+        "1X2_A": 0.1193
       },
-      "readAt": "2026-11-21T02:34:57+00:00",
+      "readAt": "2026-11-21T13:24:47+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -249,11 +182,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18487/aston-villa-vs-sunderland-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.5481,
-        "1X2_D": 0.2446,
-        "1X2_A": 0.2073
+        "1X2_H": 0.5525,
+        "1X2_D": 0.2492,
+        "1X2_A": 0.1983
       },
-      "readAt": "2026-11-21T02:34:39+00:00",
+      "readAt": "2026-11-21T13:25:03+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -261,61 +194,54 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18488/bournemouth-vs-nottingham-forest-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.5078,
-        "1X2_D": 0.2626,
-        "1X2_A": 0.2296
+        "1X2_H": 0.5042,
+        "1X2_D": 0.2712,
+        "1X2_A": 0.2246
       },
-      "readAt": "2026-11-21T02:34:39+00:00",
+      "readAt": "2026-11-21T13:25:03+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": {
-        "market": "1X2_H",
-        "odd": 2.01,
-        "bookmaker": "GTbets",
-        "source": "TipsAudit / soft-book market",
-        "referenceOnly": true,
-        "betanoConfirmedOnSlip": false
-      }
+      "quote": null
     },
     "espn-401882799": {
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18493/rayo-vallecano-vs-valencia-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.5184,
-        "1X2_D": 0.2628,
-        "1X2_A": 0.2188
+        "1X2_H": 0.4964,
+        "1X2_D": 0.2752,
+        "1X2_A": 0.2285
       },
-      "readAt": "2026-11-21T02:35:00+00:00",
+      "readAt": "2026-11-21T13:24:49+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": {
-        "market": "1X2_H",
-        "odd": 1.97,
-        "bookmaker": "1xBet",
-        "source": "TipsAudit / soft-book market",
-        "referenceOnly": true,
-        "betanoConfirmedOnSlip": false
-      }
+      "quote": null
     },
     "espn-401883108": {
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18494/real-sociedad-ii-vs-cadiz-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.4687,
-        "1X2_D": 0.2641,
-        "1X2_A": 0.2672
+        "1X2_H": 0.5305,
+        "1X2_D": 0.2486,
+        "1X2_A": 0.2209
       },
-      "readAt": "2026-11-21T02:35:02+00:00",
+      "readAt": "2026-11-21T13:24:52+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": null
+      "quote": {
+        "market": "1X2_H",
+        "odd": 1.95,
+        "bookmaker": "Unibet (SE)",
+        "source": "TipsAudit / soft-book market",
+        "referenceOnly": true,
+        "betanoConfirmedOnSlip": false
+      }
     },
     "espn-401899545": {
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18436/catanzaro-vs-palermo-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.2167,
-        "1X2_D": 0.2339,
-        "1X2_A": 0.5494
+        "1X2_H": 0.2372,
+        "1X2_D": 0.25,
+        "1X2_A": 0.5127
       },
-      "readAt": "2026-11-21T02:35:02+00:00",
+      "readAt": "2026-11-21T13:24:52+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -323,11 +249,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18503/nice-vs-paris-saint-germain-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.1595,
-        "1X2_D": 0.1795,
-        "1X2_A": 0.661
+        "1X2_H": 0.1559,
+        "1X2_D": 0.1811,
+        "1X2_A": 0.663
       },
-      "readAt": "2026-11-21T02:34:42+00:00",
+      "readAt": "2026-11-21T12:35:07+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -335,30 +261,23 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18507/parma-vs-as-roma-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.0838,
-        "1X2_D": 0.1453,
-        "1X2_A": 0.7708
+        "1X2_H": 0.0693,
+        "1X2_D": 0.1277,
+        "1X2_A": 0.803
       },
-      "readAt": "2026-11-21T02:35:00+00:00",
+      "readAt": "2026-11-21T13:24:50+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": {
-        "market": "1X2_A",
-        "odd": 1.32,
-        "bookmaker": "Unibet (SE)",
-        "source": "TipsAudit / soft-book market",
-        "referenceOnly": true,
-        "betanoConfirmedOnSlip": false
-      }
+      "quote": null
     },
     "espn-401884729": {
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18525/fc-schalke-04-vs-vfb-stuttgart-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.2312,
-        "1X2_D": 0.2324,
-        "1X2_A": 0.5364
+        "1X2_H": 0.2334,
+        "1X2_D": 0.2346,
+        "1X2_A": 0.532
       },
-      "readAt": "2026-11-21T02:34:40+00:00",
+      "readAt": "2026-11-21T13:25:03+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -366,11 +285,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18526/sevilla-vs-real-betis-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.3102,
-        "1X2_D": 0.2919,
-        "1X2_A": 0.3978
+        "1X2_H": 0.3207,
+        "1X2_D": 0.286,
+        "1X2_A": 0.3933
       },
-      "readAt": "2026-11-21T02:35:00+00:00",
+      "readAt": "2026-11-21T13:24:49+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -378,11 +297,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18527/castellon-vs-eldense-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.6777,
-        "1X2_D": 0.1861,
-        "1X2_A": 0.1362
+        "1X2_H": 0.7031,
+        "1X2_D": 0.1759,
+        "1X2_A": 0.121
       },
-      "readAt": "2026-11-21T02:35:02+00:00",
+      "readAt": "2026-11-21T13:24:52+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -390,23 +309,30 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18437/empoli-vs-pisa-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.2308,
-        "1X2_D": 0.2581,
-        "1X2_A": 0.5111
+        "1X2_H": 0.2117,
+        "1X2_D": 0.2494,
+        "1X2_A": 0.5389
       },
-      "readAt": "2026-11-21T02:35:02+00:00",
+      "readAt": "2026-11-21T13:24:52+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": null
+      "quote": {
+        "market": "1X2_A",
+        "odd": 1.88,
+        "bookmaker": "Unibet (NL)",
+        "source": "TipsAudit / soft-book market",
+        "referenceOnly": true,
+        "betanoConfirmedOnSlip": false
+      }
     },
     "espn-401885055": {
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18540/fc-st-pauli-vs-vfl-bochum-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.4666,
-        "1X2_D": 0.2556,
-        "1X2_A": 0.2778
+        "1X2_H": 0.4707,
+        "1X2_D": 0.2609,
+        "1X2_A": 0.2684
       },
-      "readAt": "2026-11-21T02:35:03+00:00",
+      "readAt": "2026-11-21T12:34:48+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -414,11 +340,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18542/napoli-vs-torino-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.6516,
-        "1X2_D": 0.2038,
-        "1X2_A": 0.1446
+        "1X2_H": 0.6409,
+        "1X2_D": 0.2158,
+        "1X2_A": 0.1433
       },
-      "readAt": "2026-11-21T02:35:00+00:00",
+      "readAt": "2026-11-21T13:24:50+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -426,11 +352,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18545/lens-vs-toulouse-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.4703,
-        "1X2_D": 0.2462,
-        "1X2_A": 0.2835
+        "1X2_H": 0.4444,
+        "1X2_D": 0.266,
+        "1X2_A": 0.2895
       },
-      "readAt": "2026-11-21T02:34:42+00:00",
+      "readAt": "2026-11-21T12:35:07+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -438,30 +364,23 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18546/lille-vs-lyon-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.4226,
-        "1X2_D": 0.2909,
-        "1X2_A": 0.2865
+        "1X2_H": 0.4153,
+        "1X2_D": 0.2937,
+        "1X2_A": 0.291
       },
-      "readAt": "2026-11-21T02:34:42+00:00",
+      "readAt": "2026-11-21T12:35:07+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": {
-        "market": "1X2_H",
-        "odd": 2.4,
-        "bookmaker": "LeoVegas (SE)",
-        "source": "TipsAudit / soft-book market",
-        "referenceOnly": true,
-        "betanoConfirmedOnSlip": false
-      }
+      "quote": null
     },
     "espn-401882798": {
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18552/real-madrid-vs-celta-vigo-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.8452,
-        "1X2_D": 0.109,
-        "1X2_A": 0.0458
+        "1X2_H": 0.8535,
+        "1X2_D": 0.0993,
+        "1X2_A": 0.0472
       },
-      "readAt": "2026-11-21T02:35:00+00:00",
+      "readAt": "2026-11-21T13:24:49+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
         "market": "1X2_H",
@@ -476,13 +395,20 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18553/tenerife-vs-mallorca-2026-11-21",
       "fairProbability": {
-        "1X2_H": 0.2752,
-        "1X2_D": 0.3061,
-        "1X2_A": 0.4187
+        "1X2_H": 0.274,
+        "1X2_D": 0.3332,
+        "1X2_A": 0.3928
       },
-      "readAt": "2026-11-21T02:35:02+00:00",
+      "readAt": "2026-11-21T13:24:52+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
-      "quote": null
+      "quote": {
+        "market": "1X2_D",
+        "odd": 3.12,
+        "bookmaker": "1xBet",
+        "source": "TipsAudit / soft-book market",
+        "referenceOnly": true,
+        "betanoConfirmedOnSlip": false
+      }
     },
     "espn-401875008": {
       "provider": "TipsAudit",
@@ -492,7 +418,7 @@
         "1X2_D": 0.171,
         "1X2_A": 0.1091
       },
-      "readAt": "2026-11-21T02:35:00+00:00",
+      "readAt": "2026-11-21T13:24:50+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
         "market": "1X2_H",
@@ -507,11 +433,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18715/1-fc-kaiserslautern-vs-dynamo-dresden-2026-11-22",
       "fairProbability": {
-        "1X2_H": 0.4459,
-        "1X2_D": 0.2615,
-        "1X2_A": 0.2926
+        "1X2_H": 0.4496,
+        "1X2_D": 0.2602,
+        "1X2_A": 0.2902
       },
-      "readAt": "2026-11-21T02:35:03+00:00",
+      "readAt": "2026-11-21T12:34:48+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -519,11 +445,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18716/karlsruher-sc-vs-vfl-osnabruck-2026-11-22",
       "fairProbability": {
-        "1X2_H": 0.4157,
-        "1X2_D": 0.2607,
-        "1X2_A": 0.3236
+        "1X2_H": 0.4151,
+        "1X2_D": 0.2606,
+        "1X2_A": 0.3244
       },
-      "readAt": "2026-11-21T02:35:03+00:00",
+      "readAt": "2026-11-21T12:34:48+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -531,15 +457,15 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18732/barcelona-vs-villarreal-2026-11-22",
       "fairProbability": {
-        "1X2_H": 0.8162,
-        "1X2_D": 0.1218,
-        "1X2_A": 0.062
+        "1X2_H": 0.8166,
+        "1X2_D": 0.1201,
+        "1X2_A": 0.0633
       },
-      "readAt": "2026-11-21T02:35:00+00:00",
+      "readAt": "2026-11-21T13:24:49+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
         "market": "1X2_H",
-        "odd": 1.24,
+        "odd": 1.26,
         "bookmaker": "1xBet",
         "source": "TipsAudit / soft-book market",
         "referenceOnly": true,
@@ -550,11 +476,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18434/avellino-vs-mantova-2026-11-22",
       "fairProbability": {
-        "1X2_H": 0.4116,
-        "1X2_D": 0.2847,
-        "1X2_A": 0.3037
+        "1X2_H": 0.3893,
+        "1X2_D": 0.2905,
+        "1X2_A": 0.3201
       },
-      "readAt": "2026-11-21T02:35:02+00:00",
+      "readAt": "2026-11-21T13:24:52+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -562,11 +488,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18741/sassuolo-vs-genoa-2026-11-22",
       "fairProbability": {
-        "1X2_H": 0.3537,
-        "1X2_D": 0.2844,
-        "1X2_A": 0.3618
+        "1X2_H": 0.3588,
+        "1X2_D": 0.2851,
+        "1X2_A": 0.3561
       },
-      "readAt": "2026-11-21T02:35:00+00:00",
+      "readAt": "2026-11-21T13:24:50+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -574,11 +500,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18742/bologna-vs-udinese-2026-11-22",
       "fairProbability": {
-        "1X2_H": 0.5602,
-        "1X2_D": 0.2469,
-        "1X2_A": 0.1929
+        "1X2_H": 0.5611,
+        "1X2_D": 0.2472,
+        "1X2_A": 0.1917
       },
-      "readAt": "2026-11-21T02:35:00+00:00",
+      "readAt": "2026-11-21T13:24:50+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -586,11 +512,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18748/paris-fc-vs-angers-2026-11-22",
       "fairProbability": {
-        "1X2_H": 0.7469,
-        "1X2_D": 0.1617,
-        "1X2_A": 0.0915
+        "1X2_H": 0.7476,
+        "1X2_D": 0.1608,
+        "1X2_A": 0.0917
       },
-      "readAt": "2026-11-21T02:34:42+00:00",
+      "readAt": "2026-11-21T12:35:07+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
         "market": "1X2_H",
@@ -605,11 +531,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18755/racing-santander-vs-real-sociedad-2026-11-22",
       "fairProbability": {
-        "1X2_H": 0.2916,
-        "1X2_D": 0.226,
-        "1X2_A": 0.4824
+        "1X2_H": 0.291,
+        "1X2_D": 0.2248,
+        "1X2_A": 0.4842
       },
-      "readAt": "2026-11-21T02:35:00+00:00",
+      "readAt": "2026-11-21T13:24:49+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
         "market": "1X2_A",
@@ -624,11 +550,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18756/sporting-gijon-vs-las-palmas-2026-11-22",
       "fairProbability": {
-        "1X2_H": 0.4577,
-        "1X2_D": 0.2711,
-        "1X2_A": 0.2711
+        "1X2_H": 0.4627,
+        "1X2_D": 0.2699,
+        "1X2_A": 0.2675
       },
-      "readAt": "2026-11-21T02:35:02+00:00",
+      "readAt": "2026-11-21T13:24:52+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -636,11 +562,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18432/arezzo-vs-padova-2026-11-22",
       "fairProbability": {
-        "1X2_H": 0.4102,
-        "1X2_D": 0.2916,
-        "1X2_A": 0.2982
+        "1X2_H": 0.4114,
+        "1X2_D": 0.29,
+        "1X2_A": 0.2986
       },
-      "readAt": "2026-11-21T02:35:02+00:00",
+      "readAt": "2026-11-21T13:24:52+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
         "market": "1X2_H",
@@ -655,16 +581,16 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18775/werder-bremen-vs-hamburger-sv-2026-11-22",
       "fairProbability": {
-        "1X2_H": 0.5913,
-        "1X2_D": 0.2112,
-        "1X2_A": 0.1975
+        "1X2_H": 0.6064,
+        "1X2_D": 0.2078,
+        "1X2_A": 0.1858
       },
-      "readAt": "2026-11-21T02:34:40+00:00",
+      "readAt": "2026-11-21T13:25:03+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
         "market": "1X2_H",
         "odd": 1.71,
-        "bookmaker": "1xBet",
+        "bookmaker": "Unibet (SE)",
         "source": "TipsAudit / soft-book market",
         "referenceOnly": true,
         "betanoConfirmedOnSlip": false
@@ -674,11 +600,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18776/liverpool-vs-manchester-united-2026-11-22",
       "fairProbability": {
-        "1X2_H": 0.5742,
-        "1X2_D": 0.2181,
-        "1X2_A": 0.2077
+        "1X2_H": 0.5732,
+        "1X2_D": 0.2186,
+        "1X2_A": 0.2082
       },
-      "readAt": "2026-11-21T02:34:39+00:00",
+      "readAt": "2026-11-21T13:25:03+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -686,11 +612,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18777/ac-milan-vs-frosinone-2026-11-22",
       "fairProbability": {
-        "1X2_H": 0.6384,
-        "1X2_D": 0.1989,
-        "1X2_A": 0.1627
+        "1X2_H": 0.6391,
+        "1X2_D": 0.1979,
+        "1X2_A": 0.163
       },
-      "readAt": "2026-11-21T02:35:00+00:00",
+      "readAt": "2026-11-21T13:24:50+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
         "market": "1X2_H",
@@ -709,7 +635,7 @@
         "1X2_D": 0.2621,
         "1X2_A": 0.2087
       },
-      "readAt": "2026-11-21T02:35:00+00:00",
+      "readAt": "2026-11-21T13:24:49+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -721,7 +647,7 @@
         "1X2_D": 0.2438,
         "1X2_A": 0.2138
       },
-      "readAt": "2026-11-21T02:35:02+00:00",
+      "readAt": "2026-11-21T13:24:52+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -729,15 +655,15 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18794/atalanta-vs-inter-2026-11-22",
       "fairProbability": {
-        "1X2_H": 0.1822,
-        "1X2_D": 0.1994,
-        "1X2_A": 0.6184
+        "1X2_H": 0.1776,
+        "1X2_D": 0.1965,
+        "1X2_A": 0.6259
       },
-      "readAt": "2026-11-21T02:35:00+00:00",
+      "readAt": "2026-11-21T13:24:50+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
         "market": "1X2_A",
-        "odd": 1.65,
+        "odd": 1.64,
         "bookmaker": "1xBet",
         "source": "TipsAudit / soft-book market",
         "referenceOnly": true,
@@ -748,11 +674,11 @@
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18795/marseille-vs-le-mans-2026-11-22",
       "fairProbability": {
-        "1X2_H": 0.6648,
-        "1X2_D": 0.1895,
-        "1X2_A": 0.1457
+        "1X2_H": 0.661,
+        "1X2_D": 0.192,
+        "1X2_A": 0.147
       },
-      "readAt": "2026-11-21T02:34:42+00:00",
+      "readAt": "2026-11-21T12:35:07+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -764,7 +690,7 @@
         "1X2_D": 0.2277,
         "1X2_A": 0.6298
       },
-      "readAt": "2026-11-21T02:35:00+00:00",
+      "readAt": "2026-11-21T13:24:49+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
         "market": "1X2_A",
@@ -783,7 +709,7 @@
         "1X2_D": 0.283,
         "1X2_A": 0.238
       },
-      "readAt": "2026-11-21T02:35:02+00:00",
+      "readAt": "2026-11-21T13:24:52+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -795,7 +721,7 @@
         "1X2_D": 0.2437,
         "1X2_A": 0.5048
       },
-      "readAt": "2026-11-21T02:35:00+00:00",
+      "readAt": "2026-11-21T13:24:50+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
         "market": "1X2_A",
@@ -806,6 +732,18 @@
         "betanoConfirmedOnSlip": false
       }
     },
+    "espn-401876686": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/18156/nantes-vs-grenoble-2026-11-23",
+      "fairProbability": {
+        "1X2_H": 0.6708,
+        "1X2_D": 0.2146,
+        "1X2_A": 0.1145
+      },
+      "readAt": "2026-11-21T12:44:52+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
     "espn-401876683": {
       "provider": "TipsAudit",
       "sourceUrl": "https://tipsaudit.com/match/18162/sochaux-vs-dunkerque-2026-11-23",
@@ -814,7 +752,7 @@
         "1X2_D": 0.2943,
         "1X2_A": 0.3116
       },
-      "readAt": "2026-11-21T02:35:03+00:00",
+      "readAt": "2026-11-21T12:44:51+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -826,7 +764,7 @@
         "1X2_D": 0.2664,
         "1X2_A": 0.2912
       },
-      "readAt": "2026-11-21T02:35:00+00:00",
+      "readAt": "2026-11-21T13:24:49+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -838,7 +776,223 @@
         "1X2_D": 0.2742,
         "1X2_A": 0.2791
       },
-      "readAt": "2026-11-21T02:34:39+00:00",
+      "readAt": "2026-11-21T13:25:03+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915380": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/18973/bodoglimt-vs-lask-linz-2026-11-24",
+      "fairProbability": {
+        "1X2_H": 0.6325,
+        "1X2_D": 0.1806,
+        "1X2_A": 0.1869
+      },
+      "readAt": "2026-11-21T10:35:04+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915300": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/18974/galatasaray-vs-aston-villa-2026-11-24",
+      "fairProbability": {
+        "1X2_H": 0.3613,
+        "1X2_D": 0.2432,
+        "1X2_A": 0.3955
+      },
+      "readAt": "2026-11-21T10:35:04+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915298": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/18984/real-madrid-vs-psv-eindhoven-2026-11-24",
+      "fairProbability": {
+        "1X2_H": 0.8334,
+        "1X2_D": 0.0953,
+        "1X2_A": 0.0713
+      },
+      "readAt": "2026-11-21T10:35:04+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915379": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/18985/manchester-city-vs-napoli-2026-11-24",
+      "fairProbability": {
+        "1X2_H": 0.7908,
+        "1X2_D": 0.1279,
+        "1X2_A": 0.0813
+      },
+      "readAt": "2026-11-21T10:35:04+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915296": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/18986/como-vs-aek-athens-fc-2026-11-24",
+      "fairProbability": {
+        "1X2_H": 0.742,
+        "1X2_D": 0.1567,
+        "1X2_A": 0.1013
+      },
+      "readAt": "2026-11-21T10:35:04+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915299": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/18987/rb-leipzig-vs-lens-2026-11-24",
+      "fairProbability": {
+        "1X2_H": 0.6824,
+        "1X2_D": 0.1587,
+        "1X2_A": 0.159
+      },
+      "readAt": "2026-11-21T10:35:04+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915297": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/18989/slovan-bratislava-vs-real-betis-2026-11-24",
+      "fairProbability": {
+        "1X2_H": 0.0802,
+        "1X2_D": 0.1224,
+        "1X2_A": 0.7974
+      },
+      "readAt": "2026-11-21T10:35:04+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915378": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19070/sabah-fa-vs-barcelona-2026-11-25",
+      "fairProbability": {
+        "1X2_H": 0.0365,
+        "1X2_D": 0.0484,
+        "1X2_A": 0.9151
+      },
+      "readAt": "2026-11-21T10:35:04+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915376": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19075/inter-vs-vfb-stuttgart-2026-11-25",
+      "fairProbability": {
+        "1X2_H": 0.6929,
+        "1X2_D": 0.1601,
+        "1X2_A": 0.1471
+      },
+      "readAt": "2026-11-21T10:35:04+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915373": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19076/sporting-cp-vs-manchester-united-2026-11-25",
+      "fairProbability": {
+        "1X2_H": 0.3758,
+        "1X2_D": 0.256,
+        "1X2_A": 0.3682
+      },
+      "readAt": "2026-11-21T10:35:04+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915374": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19077/paris-saint-germain-vs-as-roma-2026-11-25",
+      "fairProbability": {
+        "1X2_H": 0.7371,
+        "1X2_D": 0.1504,
+        "1X2_A": 0.1125
+      },
+      "readAt": "2026-11-21T10:35:04+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915375": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19078/shakhtar-donetsk-vs-fenerbahce-2026-11-25",
+      "fairProbability": {
+        "1X2_H": 0.3603,
+        "1X2_D": 0.2706,
+        "1X2_A": 0.369
+      },
+      "readAt": "2026-11-21T10:35:04+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915377": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19079/lille-vs-bayern-munchen-2026-11-25",
+      "fairProbability": {
+        "1X2_H": 0.1811,
+        "1X2_D": 0.1941,
+        "1X2_A": 0.6248
+      },
+      "readAt": "2026-11-21T10:35:04+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915816": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19165/kairat-almaty-vs-mjallby-aif-2026-11-26",
+      "fairProbability": {
+        "1X2_H": 0.4304,
+        "1X2_D": 0.2762,
+        "1X2_A": 0.2934
+      },
+      "readAt": "2026-11-21T10:35:08+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915519": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19176/celta-vigo-vs-bournemouth-2026-11-26",
+      "fairProbability": {
+        "1X2_H": 0.2357,
+        "1X2_D": 0.2596,
+        "1X2_A": 0.5047
+      },
+      "readAt": "2026-11-21T10:35:02+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915507": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19177/marseille-vs-levski-sofia-2026-11-26",
+      "fairProbability": {
+        "1X2_H": 0.6922,
+        "1X2_D": 0.1832,
+        "1X2_A": 0.1245
+      },
+      "readAt": "2026-11-21T10:35:02+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915517": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19180/dinamo-zagreb-vs-bayer-leverkusen-2026-11-26",
+      "fairProbability": {
+        "1X2_H": 0.2124,
+        "1X2_D": 0.2199,
+        "1X2_A": 0.5677
+      },
+      "readAt": "2026-11-21T10:35:02+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915508": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19182/union-st-gilloise-vs-lech-poznan-2026-11-26",
+      "fairProbability": {
+        "1X2_H": 0.7251,
+        "1X2_D": 0.1608,
+        "1X2_A": 0.1141
+      },
+      "readAt": "2026-11-21T10:35:02+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -850,7 +1004,139 @@
         "1X2_D": 0.2439,
         "1X2_A": 0.4586
       },
-      "readAt": "2026-11-20T23:20:04+00:00",
+      "readAt": "2026-11-21T10:35:08+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915813": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19184/fc-iberia-1999-vs-getafe-2026-11-26",
+      "fairProbability": {
+        "1X2_H": 0.1315,
+        "1X2_D": 0.2159,
+        "1X2_A": 0.6527
+      },
+      "readAt": "2026-11-21T11:20:03+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915739": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19185/kauno-zalgiris-vs-riga-2026-11-26",
+      "fairProbability": {
+        "1X2_H": 0.2655,
+        "1X2_D": 0.2896,
+        "1X2_A": 0.445
+      },
+      "readAt": "2026-11-21T10:35:08+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915809": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19188/pafos-vs-fc-midtjylland-2026-11-26",
+      "fairProbability": {
+        "1X2_H": 0.2905,
+        "1X2_D": 0.2534,
+        "1X2_A": 0.4561
+      },
+      "readAt": "2026-11-21T10:35:08+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915807": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19201/fc-nordsjaelland-vs-panathinaikos-2026-11-26",
+      "fairProbability": {
+        "1X2_H": 0.3431,
+        "1X2_D": 0.27,
+        "1X2_A": 0.387
+      },
+      "readAt": "2026-11-21T10:35:08+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915803": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19202/cska-sofia-vs-trabzonspor-2026-11-26",
+      "fairProbability": {
+        "1X2_H": 0.2603,
+        "1X2_D": 0.2366,
+        "1X2_A": 0.5031
+      },
+      "readAt": "2026-11-21T10:35:08+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915801": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19204/sc-freiburg-vs-twente-2026-11-26",
+      "fairProbability": {
+        "1X2_H": 0.4472,
+        "1X2_D": 0.2322,
+        "1X2_A": 0.3206
+      },
+      "readAt": "2026-11-21T11:20:04+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915806": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/8845/borac-banja-luka-vs-atalanta-2026-11-26",
+      "fairProbability": {
+        "1X2_H": 0.1903,
+        "1X2_D": 0.2063,
+        "1X2_A": 0.6035
+      },
+      "readAt": "2026-11-21T10:35:08+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915502": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19190/juventus-vs-omonia-nicosia-2026-11-26",
+      "fairProbability": {
+        "1X2_H": 0.8337,
+        "1X2_D": 0.1088,
+        "1X2_A": 0.0574
+      },
+      "readAt": "2026-11-21T10:35:02+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915512": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19191/torreense-vs-celtic-2026-11-26",
+      "fairProbability": {
+        "1X2_H": 0.1945,
+        "1X2_D": 0.2234,
+        "1X2_A": 0.5821
+      },
+      "readAt": "2026-11-21T10:35:02+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915501": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19195/lyon-vs-lillestrom-2026-11-26",
+      "fairProbability": {
+        "1X2_H": 0.8337,
+        "1X2_D": 0.1084,
+        "1X2_A": 0.0579
+      },
+      "readAt": "2026-11-21T10:35:02+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401915504": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19198/crystal-palace-vs-real-sociedad-2026-11-26",
+      "fairProbability": {
+        "1X2_H": 0.4719,
+        "1X2_D": 0.2339,
+        "1X2_A": 0.2942
+      },
+      "readAt": "2026-11-21T10:35:02+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -862,7 +1148,7 @@
         "1X2_D": 0.2145,
         "1X2_A": 0.2301
       },
-      "readAt": "2026-11-21T02:34:40+00:00",
+      "readAt": "2026-11-21T13:25:03+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
         "market": "1X2_H",
@@ -881,7 +1167,7 @@
         "1X2_D": 0.2658,
         "1X2_A": 0.4768
       },
-      "readAt": "2026-11-21T02:35:00+00:00",
+      "readAt": "2026-11-21T13:24:50+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": null
     },
@@ -893,7 +1179,7 @@
         "1X2_D": 0.2681,
         "1X2_A": 0.3827
       },
-      "readAt": "2026-11-21T02:34:39+00:00",
+      "readAt": "2026-11-21T13:25:03+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
         "market": "1X2_H",
@@ -912,11 +1198,255 @@
         "1X2_D": 0.2414,
         "1X2_A": 0.2961
       },
-      "readAt": "2026-11-21T02:35:00+00:00",
+      "readAt": "2026-11-21T13:24:49+00:00",
       "fairSource": "Mercado sharp sem margem (não é previsão independente)",
       "quote": {
         "market": "1X2_H",
         "odd": 2.19,
+        "bookmaker": "1xBet",
+        "source": "TipsAudit / soft-book market",
+        "referenceOnly": true,
+        "betanoConfirmedOnSlip": false
+      }
+    },
+    "espn-401882796": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19709/real-betis-vs-rayo-vallecano-2026-11-28",
+      "fairProbability": {
+        "1X2_H": 0.6375,
+        "1X2_D": 0.2007,
+        "1X2_A": 0.1618
+      },
+      "readAt": "2026-11-21T13:24:49+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401875081": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19713/frosinone-vs-parma-2026-11-28",
+      "fairProbability": {
+        "1X2_H": 0.6593,
+        "1X2_D": 0.1812,
+        "1X2_A": 0.1594
+      },
+      "readAt": "2026-11-21T13:24:50+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": {
+        "market": "1X2_H",
+        "odd": 1.57,
+        "bookmaker": "1xBet",
+        "source": "TipsAudit / soft-book market",
+        "referenceOnly": true,
+        "betanoConfirmedOnSlip": false
+      }
+    },
+    "espn-401884722": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19727/hamburger-sv-vs-bayern-munchen-2026-11-28",
+      "fairProbability": {
+        "1X2_H": 0.0874,
+        "1X2_D": 0.1158,
+        "1X2_A": 0.7969
+      },
+      "readAt": "2026-11-21T13:25:03+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": {
+        "market": "1X2_A",
+        "odd": 1.27,
+        "bookmaker": "Unibet (SE)",
+        "source": "TipsAudit / soft-book market",
+        "referenceOnly": true,
+        "betanoConfirmedOnSlip": false
+      }
+    },
+    "espn-401884719": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19729/sc-paderborn-07-vs-fc-schalke-04-2026-11-28",
+      "fairProbability": {
+        "1X2_H": 0.4027,
+        "1X2_D": 0.2796,
+        "1X2_A": 0.3177
+      },
+      "readAt": "2026-11-21T13:25:03+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401879226": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19770/manchester-united-vs-brentford-2026-11-28",
+      "fairProbability": {
+        "1X2_H": 0.491,
+        "1X2_D": 0.2458,
+        "1X2_A": 0.2632
+      },
+      "readAt": "2026-11-21T13:25:03+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401882790": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19771/malaga-vs-athletic-club-2026-11-28",
+      "fairProbability": {
+        "1X2_H": 0.2064,
+        "1X2_D": 0.2517,
+        "1X2_A": 0.5419
+      },
+      "readAt": "2026-11-21T13:24:49+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401885392": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19773/arouca-vs-rio-ave-2026-11-28",
+      "fairProbability": {
+        "1X2_H": 0.5677,
+        "1X2_D": 0.2451,
+        "1X2_A": 0.1873
+      },
+      "readAt": "2026-11-21T10:35:01+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401885388": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19774/moreirense-vs-santa-clara-2026-11-28",
+      "fairProbability": {
+        "1X2_H": 0.2621,
+        "1X2_D": 0.3096,
+        "1X2_A": 0.4284
+      },
+      "readAt": "2026-11-21T10:35:01+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401876394": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19782/angers-vs-lens-2026-11-28",
+      "fairProbability": {
+        "1X2_H": 0.2135,
+        "1X2_D": 0.2285,
+        "1X2_A": 0.5579
+      },
+      "readAt": "2026-11-21T12:35:07+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401874826": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19785/torino-vs-lazio-2026-11-28",
+      "fairProbability": {
+        "1X2_H": 0.2637,
+        "1X2_D": 0.2742,
+        "1X2_A": 0.4621
+      },
+      "readAt": "2026-11-21T13:24:50+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401882793": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19801/elche-vs-atletico-madrid-2026-11-28",
+      "fairProbability": {
+        "1X2_H": 0.1907,
+        "1X2_D": 0.2156,
+        "1X2_A": 0.5938
+      },
+      "readAt": "2026-11-21T13:24:49+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401884726": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19802/vfb-stuttgart-vs-eintracht-frankfurt-2026-11-28",
+      "fairProbability": {
+        "1X2_H": 0.5683,
+        "1X2_D": 0.1964,
+        "1X2_A": 0.2353
+      },
+      "readAt": "2026-11-21T13:25:03+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401885393": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19807/academico-viseu-vs-alverca-2026-11-28",
+      "fairProbability": {
+        "1X2_H": 0.3751,
+        "1X2_D": 0.3125,
+        "1X2_A": 0.3125
+      },
+      "readAt": "2026-11-21T11:20:04+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401874977": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19818/inter-vs-genoa-2026-11-28",
+      "fairProbability": {
+        "1X2_H": 0.7776,
+        "1X2_D": 0.1414,
+        "1X2_A": 0.081
+      },
+      "readAt": "2026-11-21T13:24:50+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401876391": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19821/le-havre-vs-strasbourg-2026-11-28",
+      "fairProbability": {
+        "1X2_H": 0.3282,
+        "1X2_D": 0.2598,
+        "1X2_A": 0.412
+      },
+      "readAt": "2026-11-21T12:35:07+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401876390": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19822/le-mans-vs-lille-2026-11-28",
+      "fairProbability": {
+        "1X2_H": 0.2218,
+        "1X2_D": 0.2632,
+        "1X2_A": 0.515
+      },
+      "readAt": "2026-11-21T12:35:07+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": null
+    },
+    "espn-401876387": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19824/paris-saint-germain-vs-lorient-2026-11-28",
+      "fairProbability": {
+        "1X2_H": 0.8178,
+        "1X2_D": 0.1118,
+        "1X2_A": 0.0703
+      },
+      "readAt": "2026-11-21T12:35:07+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": {
+        "market": "1X2_H",
+        "odd": 1.25,
+        "bookmaker": "LeoVegas (SE)",
+        "source": "TipsAudit / soft-book market",
+        "referenceOnly": true,
+        "betanoConfirmedOnSlip": false
+      }
+    },
+    "espn-401882789": {
+      "provider": "TipsAudit",
+      "sourceUrl": "https://tipsaudit.com/match/19827/real-madrid-vs-alaves-2026-11-28",
+      "fairProbability": {
+        "1X2_H": 0.8566,
+        "1X2_D": 0.0902,
+        "1X2_A": 0.0532
+      },
+      "readAt": "2026-11-21T13:24:49+00:00",
+      "fairSource": "Mercado sharp sem margem (não é previsão independente)",
+      "quote": {
+        "market": "1X2_H",
+        "odd": 1.18,
         "bookmaker": "1xBet",
         "source": "TipsAudit / soft-book market",
         "referenceOnly": true,

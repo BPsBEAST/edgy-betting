@@ -1,34 +1,307 @@
 {
-  "generatedAt": "2026-11-20T23:07:33.623244+00:00",
+  "generatedAt": "2026-11-21T13:30:55.568288+00:00",
   "provider": "ESPN site API pública, integração não oficial",
   "calls": 12,
   "matchedGames": 8,
-  "withLineups": 0,
+  "withLineups": 7,
   "withInjuries": 0,
   "contexts": {
-    "espn-401931813": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401931813"
+    "espn-401875056": {
+      "lineups": {
+        "provider": "ESPN (integração pública não oficial)",
+        "confirmed": true,
+        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
+        "teams": [
+          {
+            "team": "Como",
+            "startingXI": [
+              "Mattia Liberali",
+              "Tasos Douvikas",
+              "Yan Couto",
+              "Jean Butez",
+              "Lucas Da Cunha",
+              "Marc-Oliver Kempf",
+              "Kaiki",
+              "Jacobo Ramón",
+              "Samuele Ricci",
+              "Martin Baturina",
+              "Luis Milla"
+            ]
+          },
+          {
+            "team": "Cagliari",
+            "startingXI": [
+              "Elia Caprile",
+              "Alessandro Deiola",
+              "Raphael Kofler",
+              "Zé Pedro",
+              "Adam Obert",
+              "Nicola Grandu",
+              "Jacopo Fazzini",
+              "Alessandro Romano",
+              "Daniel Maldini",
+              "Michel Adopo",
+              "Paul Mendy"
+            ]
+          }
+        ]
+      },
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401875056"
     },
-    "espn-401885051": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401885051"
+    "espn-401874981": {
+      "lineups": {
+        "provider": "ESPN (integração pública não oficial)",
+        "confirmed": true,
+        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
+        "teams": [
+          {
+            "team": "Lazio",
+            "startingXI": [
+              "Christos Mandas",
+              "Diogo Leite",
+              "Danilho Doekhi",
+              "Alfonso Pedraza",
+              "Romano Floriani",
+              "Reda Belahyane",
+              "Kenneth Taylor",
+              "Davide Frattesi",
+              "Andrea Pinamonti",
+              "Tijjani Noslin",
+              "Gustav Isaksen"
+            ]
+          },
+          {
+            "team": "Lecce",
+            "startingXI": [
+              "Wladimiro Falcone",
+              "Tiago Gabriel",
+              "Jamil Siebert",
+              "Antonino Gallo",
+              "Danilo Veiga",
+              "Mohamed Kaba",
+              "Youssef Maleh",
+              "Lassana Coulibaly",
+              "Willem Geubbels",
+              "Amar Ahmed",
+              "Konan N’Dri"
+            ]
+          }
+        ]
+      },
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401874981"
     },
-    "espn-401885054": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401885054"
+    "espn-401899548": {
+      "lineups": {
+        "provider": "ESPN (integração pública não oficial)",
+        "confirmed": true,
+        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
+        "teams": [
+          {
+            "team": "Ascoli",
+            "startingXI": [
+              "Samuele Vitale",
+              "Marcos Curado",
+              "Nicholas Rizzo",
+              "Lorenzo Venuti",
+              "Don Bolsius",
+              "Giovanni Corradini",
+              "Samuele Damiani",
+              "Abdoul Guiebre",
+              "Andrea Silipo",
+              "Simone D'Uffizi",
+              "Matteo Brunori Sandri"
+            ]
+          },
+          {
+            "team": "Vicenza",
+            "startingXI": [
+              "Riccardo Gagno",
+              "Niccolò Brighenti",
+              "Thomas Sandon",
+              "Giuseppe Cuomo",
+              "Alessandro Bellemo",
+              "Armand Rada",
+              "Filippo Alessio",
+              "Tommaso Corazza",
+              "Lorenzo Caferri",
+              "Silvio Merkaj",
+              "Gabriele Moncini"
+            ]
+          }
+        ]
+      },
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401899548"
     },
-    "espn-401885056": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401885056"
+    "espn-401899546": {
+      "lineups": {
+        "provider": "ESPN (integração pública não oficial)",
+        "confirmed": true,
+        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
+        "teams": [
+          {
+            "team": "Carrarese",
+            "startingXI": [
+              "Semuel Pizzignacco",
+              "Filippo Oliana",
+              "Lorenzo Romani",
+              "Fabio Ruggeri",
+              "Matthias Braunöder",
+              "Gabriele Parlanti",
+              "Nicholas Schiavi",
+              "Jonas Rouhi",
+              "Niccolò Belloni",
+              "Tommaso Rubino",
+              "Fabio Abiuso"
+            ]
+          },
+          {
+            "team": "Virtus Entella",
+            "startingXI": [
+              "Federico Del Frate",
+              "Riccardo Turicchia",
+              "Ivan Marconi",
+              "Nicolas Previtali",
+              "Bernat Guiu",
+              "Andrea Franzoni",
+              "Niccolò Squizzato",
+              "Stefano Di Mario",
+              "Francesco Mezzoni",
+              "Mattia Tirelli",
+              "Francesco Forte"
+            ]
+          }
+        ]
+      },
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401899546"
     },
-    "espn-401879233": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401879233"
+    "espn-401899542": {
+      "lineups": {
+        "provider": "ESPN (integração pública não oficial)",
+        "confirmed": true,
+        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
+        "teams": [
+          {
+            "team": "Modena",
+            "startingXI": [
+              "Leandro Chichizola",
+              "Davide Adorni",
+              "Bryant Nieling",
+              "Francesco Folino",
+              "Alessandro Bianco",
+              "Simone Santoro",
+              "Gastón Brugman",
+              "Paulo Azzi",
+              "Antonio Imputato",
+              "Giuseppe Ambrosino",
+              "Andrea Belotti"
+            ]
+          },
+          {
+            "team": "Juve Stabia",
+            "startingXI": [
+              "Ante Vukovic",
+              "Marco Bellich",
+              "Davide Bettella",
+              "Terrence Douglas",
+              "Tommaso Maggioni",
+              "Federico Artioli",
+              "Christian Pierobon",
+              "Nermin Karic",
+              "Antonio Di Nardo",
+              "Giuseppe Sibilli",
+              "Fabio Maistro"
+            ]
+          }
+        ]
+      },
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401899542"
     },
-    "espn-401880156": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401880156"
+    "espn-401899541": {
+      "lineups": {
+        "provider": "ESPN (integração pública não oficial)",
+        "confirmed": true,
+        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
+        "teams": [
+          {
+            "team": "Sampdoria",
+            "startingXI": [
+              "Andrey Krastev",
+              "Filippo Delli Carri",
+              "Stefan Gartenmann",
+              "Luca Ravanelli",
+              "Kevin Mbabu",
+              "Lorenzo Insigne",
+              "Oliver Abildgaard",
+              "Liam Henderson",
+              "Gennaro Tutino",
+              "Tjas Begic",
+              "Lorenzo Mezzotero"
+            ]
+          },
+          {
+            "team": "Benevento",
+            "startingXI": [
+              "Gianmarco Vannucchi",
+              "Pietro Saio",
+              "Stefano Scognamillo",
+              "Mattia Maita",
+              "Pietro Beruatto",
+              "Leonardo Sernicola",
+              "Christian Kouan",
+              "Antonis Siatounis",
+              "Luigi Cherubini",
+              "Davide Lamesta",
+              "Francesco Salvemini"
+            ]
+          }
+        ]
+      },
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401899541"
     },
-    "espn-401880155": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401880155"
+    "espn-401899540": {
+      "lineups": {
+        "provider": "ESPN (integração pública não oficial)",
+        "confirmed": true,
+        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
+        "teams": [
+          {
+            "team": "Sudtirol",
+            "startingXI": [
+              "Alessandro Plizzari",
+              "Andrea Giorgini",
+              "Elias Schrott",
+              "Riccardo Stivanello",
+              "Simone Davi",
+              "Salvatore Molina",
+              "Simone Tronchin",
+              "Fabio Rispoli",
+              "Rares Burnete",
+              "Vasco Lopes",
+              "Okoro Obinna"
+            ]
+          },
+          {
+            "team": "Cremonese",
+            "startingXI": [
+              "Andrea Fulignati",
+              "Tommaso Barbieri",
+              "Giuseppe Pezzella",
+              "Federico Baschirotto",
+              "Sebastiano Luperto",
+              "Jari Vandeputte",
+              "Simone Lottici Tessadri",
+              "Morten Thorsby",
+              "Tommaso Berti",
+              "Michele Collocolo",
+              "Federico Bonazzoli"
+            ]
+          }
+        ]
+      },
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401899540"
     },
-    "espn-401880153": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401880153"
+    "espn-401931809": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401931809"
     }
   },
   "note": "Só se confirma XI ao encontrar 11 titulares identificados para cada equipa no resumo, nas 2h antes do jogo. Sem registo não significa que não existam ausências."
