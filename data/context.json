@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T23:07:35.895240+00:00",
+  "generatedAt": "2026-11-21T04:00:47.929909+00:00",
   "sources": {
     "weather": "Open-Meteo (requires verified venue city)",
     "lineups": "API-Football optional",
@@ -12,15 +12,15 @@
   },
   "hasApiFootballKey": true,
   "apiCalls": 0,
-  "matchedGames": 22,
+  "matchedGames": 27,
   "contexts": {
     "espn-401931813": {
       "weather": {
         "city": "Lisbon",
         "countryCode": "PT",
-        "temperatureC": 19.1,
+        "temperatureC": 19.2,
         "precipitationMm": 0.0,
-        "gustKmh": 61.2,
+        "gustKmh": 67.3,
         "alert": true,
         "risk": "Chuva intensa ou rajadas fortes previstas na zona urbana",
         "forecastHourUtc": "2026-11-21T11:00Z",
@@ -32,9 +32,9 @@
       "weather": {
         "city": "Hannover",
         "countryCode": "DE",
-        "temperatureC": 6.7,
+        "temperatureC": 6.2,
         "precipitationMm": 0.0,
-        "gustKmh": 34.2,
+        "gustKmh": 33.1,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-21T12:00Z",
@@ -46,9 +46,9 @@
       "weather": {
         "city": "Wolfsburg",
         "countryCode": "DE",
-        "temperatureC": 5.6,
+        "temperatureC": 5.4,
         "precipitationMm": 0.0,
-        "gustKmh": 40.3,
+        "gustKmh": 36.0,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-21T12:00Z",
@@ -60,9 +60,9 @@
       "weather": {
         "city": "Manchester",
         "countryCode": "GB",
-        "temperatureC": 6.7,
+        "temperatureC": 6.4,
         "precipitationMm": 0.0,
-        "gustKmh": 10.4,
+        "gustKmh": 9.4,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-21T12:00Z",
@@ -74,9 +74,9 @@
       "weather": {
         "city": "London",
         "countryCode": "GB",
-        "temperatureC": 8.7,
+        "temperatureC": 8.2,
         "precipitationMm": 0.0,
-        "gustKmh": 19.4,
+        "gustKmh": 22.7,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-21T12:00Z",
@@ -88,9 +88,9 @@
       "weather": {
         "city": "Norwich",
         "countryCode": "GB",
-        "temperatureC": 5.4,
+        "temperatureC": 4.9,
         "precipitationMm": 0.0,
-        "gustKmh": 6.1,
+        "gustKmh": 5.0,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-21T12:00Z",
@@ -102,9 +102,9 @@
       "weather": {
         "city": "Southampton",
         "countryCode": "GB",
-        "temperatureC": 10.6,
+        "temperatureC": 10.2,
         "precipitationMm": 0.0,
-        "gustKmh": 13.3,
+        "gustKmh": 15.5,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-21T12:00Z",
@@ -116,23 +116,9 @@
       "weather": {
         "city": "Vitoria-Gasteiz",
         "countryCode": "ES",
-        "temperatureC": 12.1,
+        "temperatureC": 12.5,
         "precipitationMm": 0.8,
-        "gustKmh": 23.0,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-21T13:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401882299": {
-      "weather": {
-        "city": "Sabadell",
-        "countryCode": "ES",
-        "temperatureC": 16.7,
-        "precipitationMm": 0.0,
-        "gustKmh": 17.3,
+        "gustKmh": 21.2,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-21T13:00Z",
@@ -144,9 +130,9 @@
       "weather": {
         "city": "Laval",
         "countryCode": "FR",
-        "temperatureC": 12.8,
+        "temperatureC": 12.5,
         "precipitationMm": 0.0,
-        "gustKmh": 25.6,
+        "gustKmh": 26.3,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-21T13:00Z",
@@ -158,9 +144,9 @@
       "weather": {
         "city": "Como",
         "countryCode": "IT",
-        "temperatureC": 15.1,
+        "temperatureC": 15.0,
         "precipitationMm": 0.0,
-        "gustKmh": 8.6,
+        "gustKmh": 10.8,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-21T14:00Z",
@@ -172,9 +158,9 @@
       "weather": {
         "city": "Roma",
         "countryCode": "IT",
-        "temperatureC": 12.4,
+        "temperatureC": 12.1,
         "precipitationMm": 0.0,
-        "gustKmh": 2.5,
+        "gustKmh": 5.8,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-21T14:00Z",
@@ -186,9 +172,9 @@
       "weather": {
         "city": "Ascoli Piceno",
         "countryCode": "IT",
-        "temperatureC": 18.0,
+        "temperatureC": 18.5,
         "precipitationMm": 0.0,
-        "gustKmh": 11.5,
+        "gustKmh": 11.9,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-21T14:00Z",
@@ -214,9 +200,9 @@
       "weather": {
         "city": "Modena",
         "countryCode": "IT",
-        "temperatureC": 13.3,
+        "temperatureC": 12.4,
         "precipitationMm": 0.0,
-        "gustKmh": 6.8,
+        "gustKmh": 8.6,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-21T14:00Z",
@@ -228,7 +214,7 @@
       "weather": {
         "city": "London",
         "countryCode": "GB",
-        "temperatureC": 10.1,
+        "temperatureC": 9.8,
         "precipitationMm": 0.0,
         "gustKmh": 18.7,
         "alert": false,
@@ -242,7 +228,7 @@
       "weather": {
         "city": "London",
         "countryCode": "GB",
-        "temperatureC": 10.1,
+        "temperatureC": 9.8,
         "precipitationMm": 0.0,
         "gustKmh": 18.7,
         "alert": false,
@@ -256,7 +242,7 @@
       "weather": {
         "city": "London",
         "countryCode": "GB",
-        "temperatureC": 10.1,
+        "temperatureC": 9.8,
         "precipitationMm": 0.0,
         "gustKmh": 18.7,
         "alert": false,
@@ -270,9 +256,9 @@
       "weather": {
         "city": "Lisbon",
         "countryCode": "PT",
-        "temperatureC": 18.4,
-        "precipitationMm": 0.1,
-        "gustKmh": 47.9,
+        "temperatureC": 18.3,
+        "precipitationMm": 0.2,
+        "gustKmh": 49.3,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-21T18:00Z",
@@ -318,6 +304,90 @@
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-27T20:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401899528": {
+      "weather": {
+        "city": "Ascoli Piceno",
+        "countryCode": "IT",
+        "temperatureC": 11.6,
+        "precipitationMm": 0.0,
+        "gustKmh": 16.2,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-28T14:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401899527": {
+      "weather": {
+        "city": "Carrara",
+        "countryCode": "IT",
+        "temperatureC": 12.4,
+        "precipitationMm": 0.0,
+        "gustKmh": 12.6,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-28T14:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401879226": {
+      "weather": {
+        "city": "Manchester",
+        "countryCode": "GB",
+        "temperatureC": 6.0,
+        "precipitationMm": 0.0,
+        "gustKmh": 31.3,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-28T15:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401880132": {
+      "weather": {
+        "city": "London",
+        "countryCode": "GB",
+        "temperatureC": 7.9,
+        "precipitationMm": 0.0,
+        "gustKmh": 29.9,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-28T15:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401880130": {
+      "weather": {
+        "city": "London",
+        "countryCode": "GB",
+        "temperatureC": 7.9,
+        "precipitationMm": 0.0,
+        "gustKmh": 29.9,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-28T15:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401880126": {
+      "weather": {
+        "city": "London",
+        "countryCode": "GB",
+        "temperatureC": 7.9,
+        "precipitationMm": 0.0,
+        "gustKmh": 29.9,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-28T15:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
