@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T22:13:02.853545+00:00",
+  "generatedAt": "2026-11-22T03:13:31.511836+00:00",
   "sources": {
     "weather": "Open-Meteo (requires verified venue city)",
     "lineups": "API-Football optional",
@@ -12,15 +12,15 @@
   },
   "hasApiFootballKey": true,
   "apiCalls": 0,
-  "matchedGames": 16,
+  "matchedGames": 17,
   "contexts": {
     "espn-401875008": {
       "weather": {
         "city": "Torino",
         "countryCode": "IT",
-        "temperatureC": 8.5,
-        "precipitationMm": 0.2,
-        "gustKmh": 17.3,
+        "temperatureC": 8.2,
+        "precipitationMm": 0.0,
+        "gustKmh": 18.4,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-22T11:00Z",
@@ -32,7 +32,7 @@
       "weather": {
         "city": "Burnley",
         "countryCode": "GB",
-        "temperatureC": 6.5,
+        "temperatureC": 6.3,
         "precipitationMm": 0.0,
         "gustKmh": 32.0,
         "alert": false,
@@ -46,9 +46,9 @@
       "weather": {
         "city": "Cottbus",
         "countryCode": "DE",
-        "temperatureC": 4.5,
+        "temperatureC": 4.9,
         "precipitationMm": 0.0,
-        "gustKmh": 25.9,
+        "gustKmh": 26.6,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-22T12:00Z",
@@ -60,9 +60,9 @@
       "weather": {
         "city": "Kaiserslautern",
         "countryCode": "DE",
-        "temperatureC": 4.2,
+        "temperatureC": 4.0,
         "precipitationMm": 0.0,
-        "gustKmh": 20.5,
+        "gustKmh": 23.4,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-22T12:00Z",
@@ -74,7 +74,7 @@
       "weather": {
         "city": "Karlsruhe",
         "countryCode": "DE",
-        "temperatureC": 5.8,
+        "temperatureC": 5.3,
         "precipitationMm": 0.0,
         "gustKmh": 27.4,
         "alert": false,
@@ -88,9 +88,9 @@
       "weather": {
         "city": "Barcelona",
         "countryCode": "ES",
-        "temperatureC": 18.8,
+        "temperatureC": 18.9,
         "precipitationMm": 0.0,
-        "gustKmh": 51.5,
+        "gustKmh": 52.2,
         "alert": true,
         "risk": "Chuva intensa ou rajadas fortes previstas na zona urbana",
         "forecastHourUtc": "2026-11-22T13:00Z",
@@ -102,7 +102,7 @@
       "weather": {
         "city": "Córdoba",
         "countryCode": "ES",
-        "temperatureC": 17.8,
+        "temperatureC": 18.1,
         "precipitationMm": 0.0,
         "gustKmh": 11.5,
         "alert": false,
@@ -116,9 +116,9 @@
       "weather": {
         "city": "Hull",
         "countryCode": "GB",
-        "temperatureC": 8.8,
+        "temperatureC": 8.9,
         "precipitationMm": 0.0,
-        "gustKmh": 20.5,
+        "gustKmh": 23.0,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-22T14:00Z",
@@ -130,9 +130,9 @@
       "weather": {
         "city": "Bologna",
         "countryCode": "IT",
-        "temperatureC": 8.5,
-        "precipitationMm": 1.5,
-        "gustKmh": 24.5,
+        "temperatureC": 8.7,
+        "precipitationMm": 0.6,
+        "gustKmh": 26.6,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-22T14:00Z",
@@ -144,9 +144,9 @@
       "weather": {
         "city": "Avellino",
         "countryCode": "IT",
-        "temperatureC": 16.0,
+        "temperatureC": 15.9,
         "precipitationMm": 0.0,
-        "gustKmh": 56.9,
+        "gustKmh": 56.5,
         "alert": true,
         "risk": "Chuva intensa ou rajadas fortes previstas na zona urbana",
         "forecastHourUtc": "2026-11-22T14:00Z",
@@ -158,9 +158,9 @@
       "weather": {
         "city": "Paris",
         "countryCode": "FR",
-        "temperatureC": 8.4,
-        "precipitationMm": 1.1,
-        "gustKmh": 11.5,
+        "temperatureC": 8.9,
+        "precipitationMm": 0.0,
+        "gustKmh": 6.8,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-22T14:00Z",
@@ -172,9 +172,9 @@
       "weather": {
         "city": "Barcelos",
         "countryCode": "PT",
-        "temperatureC": 15.5,
+        "temperatureC": 15.6,
         "precipitationMm": 0.0,
-        "gustKmh": 23.8,
+        "gustKmh": 26.6,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-22T14:00Z",
@@ -186,9 +186,9 @@
       "weather": {
         "city": "Viana do Castelo",
         "countryCode": "PT",
-        "temperatureC": 15.6,
+        "temperatureC": 15.9,
         "precipitationMm": 0.0,
-        "gustKmh": 26.3,
+        "gustKmh": 27.0,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-22T14:00Z",
@@ -200,9 +200,9 @@
       "weather": {
         "city": "Burnley",
         "countryCode": "GB",
-        "temperatureC": 3.8,
+        "temperatureC": 3.3,
         "precipitationMm": 0.0,
-        "gustKmh": 44.6,
+        "gustKmh": 21.2,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-25T19:00Z",
@@ -234,6 +234,20 @@
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-28T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401885390": {
+      "weather": {
+        "city": "Barcelos",
+        "countryCode": "PT",
+        "temperatureC": 12.7,
+        "precipitationMm": 0.3,
+        "gustKmh": 34.6,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-29T18:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
