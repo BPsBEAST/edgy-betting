@@ -1,27 +1,13 @@
 {
-  "generatedAt": "2026-11-21T22:12:57.056066+00:00",
+  "generatedAt": "2026-11-22T13:24:07.296018+00:00",
   "source": "Football-Data.co.uk — free pre-match fixture CSV",
   "sourceUrl": "https://www.football-data.co.uk/fixtures.csv",
   "downloaded": true,
   "csvRows": 190,
-  "unmatchedRows": 166,
-  "futureRows": 52,
-  "futureSupportedRows": 33,
+  "unmatchedRows": 169,
+  "futureRows": 40,
+  "futureSupportedRows": 26,
   "unmatchedFutureExamples": [
-    {
-      "division": "D2",
-      "date": "22/11/2026",
-      "time": "12:30",
-      "home": "Cottbus",
-      "away": "Hertha"
-    },
-    {
-      "division": "D2",
-      "date": "22/11/2026",
-      "time": "12:30",
-      "home": "Kaiserslautern",
-      "away": "Dresden"
-    },
     {
       "division": "E0",
       "date": "22/11/2026",
@@ -30,21 +16,35 @@
       "away": "Brighton"
     },
     {
-      "division": "E1",
-      "date": "22/11/2026",
-      "time": "12:00",
-      "home": "Burnley",
-      "away": "Blackburn"
-    },
-    {
       "division": "F1",
       "date": "22/11/2026",
       "time": "16:15",
       "home": "Lorient",
       "away": "Rennes"
+    },
+    {
+      "division": "SP1",
+      "date": "22/11/2026",
+      "time": "15:15",
+      "home": "Santander",
+      "away": "Sociedad"
+    },
+    {
+      "division": "SP2",
+      "date": "22/11/2026",
+      "time": "15:15",
+      "home": "Sp Gijon",
+      "away": "Las Palmas"
+    },
+    {
+      "division": "SP2",
+      "date": "22/11/2026",
+      "time": "17:30",
+      "home": "Celta B",
+      "away": "Valladolid"
     }
   ],
-  "matchedGames": 24,
+  "matchedGames": 21,
   "matches": {
     "espn-401884733": {
       "1X2_A": {
@@ -365,153 +365,6 @@
             "bookmaker": "Bet365",
             "odd": 2.5,
             "fairProbability": 0.379653
-          }
-        ],
-        "priceCategory": "published-reference-not-live"
-      }
-    },
-    "espn-401885050": {
-      "1X2_A": {
-        "odd": 2.88,
-        "bookmaker": "Bet365",
-        "source": "Football-Data.co.uk — fixtures.csv",
-        "betanoInFeed": false,
-        "betanoConfirmedOnSlip": false,
-        "verifiedTeams": true,
-        "fairProbability": 0.31929,
-        "fairMarketConsensus": 0.325763,
-        "fairBooks": 4,
-        "availableBookmakers": 4,
-        "quotes": [
-          {
-            "bookmaker": "Bet365",
-            "odd": 2.88,
-            "fairProbability": 0.31929
-          },
-          {
-            "bookmaker": "bwin",
-            "odd": 2.87,
-            "fairProbability": 0.328402
-          },
-          {
-            "bookmaker": "Betfred",
-            "odd": 2.8,
-            "fairProbability": 0.325948
-          },
-          {
-            "bookmaker": "Paddy Power",
-            "odd": 2.75,
-            "fairProbability": 0.329412
-          }
-        ],
-        "priceCategory": "published-reference-not-live"
-      },
-      "1X2_D": {
-        "odd": 3.6,
-        "bookmaker": "bwin",
-        "source": "Football-Data.co.uk — fixtures.csv",
-        "betanoInFeed": false,
-        "betanoConfirmedOnSlip": false,
-        "verifiedTeams": true,
-        "fairProbability": 0.261809,
-        "fairMarketConsensus": 0.262948,
-        "fairBooks": 4,
-        "availableBookmakers": 4,
-        "quotes": [
-          {
-            "bookmaker": "Bet365",
-            "odd": 3.5,
-            "fairProbability": 0.26273
-          },
-          {
-            "bookmaker": "bwin",
-            "odd": 3.6,
-            "fairProbability": 0.261809
-          },
-          {
-            "bookmaker": "Betfred",
-            "odd": 3.4,
-            "fairProbability": 0.268428
-          },
-          {
-            "bookmaker": "Paddy Power",
-            "odd": 3.5,
-            "fairProbability": 0.258824
-          }
-        ],
-        "priceCategory": "published-reference-not-live"
-      },
-      "1X2_H": {
-        "odd": 2.3,
-        "bookmaker": "bwin",
-        "source": "Football-Data.co.uk — fixtures.csv",
-        "betanoInFeed": false,
-        "betanoConfirmedOnSlip": false,
-        "verifiedTeams": true,
-        "fairProbability": 0.409789,
-        "fairMarketConsensus": 0.411289,
-        "fairBooks": 4,
-        "availableBookmakers": 4,
-        "quotes": [
-          {
-            "bookmaker": "Bet365",
-            "odd": 2.2,
-            "fairProbability": 0.41798
-          },
-          {
-            "bookmaker": "bwin",
-            "odd": 2.3,
-            "fairProbability": 0.409789
-          },
-          {
-            "bookmaker": "Betfred",
-            "odd": 2.25,
-            "fairProbability": 0.405624
-          },
-          {
-            "bookmaker": "Paddy Power",
-            "odd": 2.2,
-            "fairProbability": 0.411765
-          }
-        ],
-        "priceCategory": "published-reference-not-live"
-      },
-      "O25": {
-        "odd": 1.62,
-        "bookmaker": "Bet365",
-        "source": "Football-Data.co.uk — fixtures.csv",
-        "betanoInFeed": false,
-        "betanoConfirmedOnSlip": false,
-        "verifiedTeams": true,
-        "fairProbability": 0.581395,
-        "fairMarketConsensus": null,
-        "fairBooks": 1,
-        "availableBookmakers": 1,
-        "quotes": [
-          {
-            "bookmaker": "Bet365",
-            "odd": 1.62,
-            "fairProbability": 0.581395
-          }
-        ],
-        "priceCategory": "published-reference-not-live"
-      },
-      "U25": {
-        "odd": 2.25,
-        "bookmaker": "Bet365",
-        "source": "Football-Data.co.uk — fixtures.csv",
-        "betanoInFeed": false,
-        "betanoConfirmedOnSlip": false,
-        "verifiedTeams": true,
-        "fairProbability": 0.418605,
-        "fairMarketConsensus": null,
-        "fairBooks": 1,
-        "availableBookmakers": 1,
-        "quotes": [
-          {
-            "bookmaker": "Bet365",
-            "odd": 2.25,
-            "fairProbability": 0.418605
           }
         ],
         "priceCategory": "published-reference-not-live"
@@ -1469,168 +1322,6 @@
             "bookmaker": "Bet365",
             "odd": 1.95,
             "fairProbability": 0.486842
-          }
-        ],
-        "priceCategory": "published-reference-not-live"
-      }
-    },
-    "espn-401875008": {
-      "1X2_A": {
-        "odd": 8.5,
-        "bookmaker": "Bet365",
-        "source": "Football-Data.co.uk — fixtures.csv",
-        "betanoInFeed": false,
-        "betanoConfirmedOnSlip": false,
-        "verifiedTeams": true,
-        "fairProbability": 0.112752,
-        "fairMarketConsensus": 0.115713,
-        "fairBooks": 5,
-        "availableBookmakers": 5,
-        "quotes": [
-          {
-            "bookmaker": "Bet365",
-            "odd": 8.5,
-            "fairProbability": 0.112752
-          },
-          {
-            "bookmaker": "bwin",
-            "odd": 7.75,
-            "fairProbability": 0.121848
-          },
-          {
-            "bookmaker": "Betfred",
-            "odd": 8.0,
-            "fairProbability": 0.117892
-          },
-          {
-            "bookmaker": "BetVictor",
-            "odd": 8.5,
-            "fairProbability": 0.109999
-          },
-          {
-            "bookmaker": "Paddy Power",
-            "odd": 8.0,
-            "fairProbability": 0.116076
-          }
-        ],
-        "priceCategory": "published-reference-not-live"
-      },
-      "1X2_D": {
-        "odd": 5.25,
-        "bookmaker": "Bet365",
-        "source": "Football-Data.co.uk — fixtures.csv",
-        "betanoInFeed": false,
-        "betanoConfirmedOnSlip": false,
-        "verifiedTeams": true,
-        "fairProbability": 0.18255,
-        "fairMarketConsensus": 0.186553,
-        "fairBooks": 5,
-        "availableBookmakers": 5,
-        "quotes": [
-          {
-            "bookmaker": "Bet365",
-            "odd": 5.25,
-            "fairProbability": 0.18255
-          },
-          {
-            "bookmaker": "bwin",
-            "odd": 5.0,
-            "fairProbability": 0.188865
-          },
-          {
-            "bookmaker": "Betfred",
-            "odd": 5.0,
-            "fairProbability": 0.188627
-          },
-          {
-            "bookmaker": "BetVictor",
-            "odd": 5.0,
-            "fairProbability": 0.186999
-          },
-          {
-            "bookmaker": "Paddy Power",
-            "odd": 5.0,
-            "fairProbability": 0.185722
-          }
-        ],
-        "priceCategory": "published-reference-not-live"
-      },
-      "1X2_H": {
-        "odd": 1.37,
-        "bookmaker": "bwin",
-        "source": "Football-Data.co.uk — fixtures.csv",
-        "betanoInFeed": false,
-        "betanoConfirmedOnSlip": false,
-        "verifiedTeams": true,
-        "fairProbability": 0.689287,
-        "fairMarketConsensus": 0.697734,
-        "fairBooks": 5,
-        "availableBookmakers": 5,
-        "quotes": [
-          {
-            "bookmaker": "Bet365",
-            "odd": 1.36,
-            "fairProbability": 0.704698
-          },
-          {
-            "bookmaker": "bwin",
-            "odd": 1.37,
-            "fairProbability": 0.689287
-          },
-          {
-            "bookmaker": "Betfred",
-            "odd": 1.36,
-            "fairProbability": 0.693481
-          },
-          {
-            "bookmaker": "BetVictor",
-            "odd": 1.33,
-            "fairProbability": 0.703002
-          },
-          {
-            "bookmaker": "Paddy Power",
-            "odd": 1.33,
-            "fairProbability": 0.698202
-          }
-        ],
-        "priceCategory": "published-reference-not-live"
-      },
-      "O25": {
-        "odd": 1.62,
-        "bookmaker": "Bet365",
-        "source": "Football-Data.co.uk — fixtures.csv",
-        "betanoInFeed": false,
-        "betanoConfirmedOnSlip": false,
-        "verifiedTeams": true,
-        "fairProbability": 0.586735,
-        "fairMarketConsensus": null,
-        "fairBooks": 1,
-        "availableBookmakers": 1,
-        "quotes": [
-          {
-            "bookmaker": "Bet365",
-            "odd": 1.62,
-            "fairProbability": 0.586735
-          }
-        ],
-        "priceCategory": "published-reference-not-live"
-      },
-      "U25": {
-        "odd": 2.3,
-        "bookmaker": "Bet365",
-        "source": "Football-Data.co.uk — fixtures.csv",
-        "betanoInFeed": false,
-        "betanoConfirmedOnSlip": false,
-        "verifiedTeams": true,
-        "fairProbability": 0.413265,
-        "fairMarketConsensus": null,
-        "fairBooks": 1,
-        "availableBookmakers": 1,
-        "quotes": [
-          {
-            "bookmaker": "Bet365",
-            "odd": 2.3,
-            "fairProbability": 0.413265
           }
         ],
         "priceCategory": "published-reference-not-live"
@@ -2770,168 +2461,6 @@
         "priceCategory": "published-reference-not-live"
       }
     },
-    "espn-401882804": {
-      "1X2_A": {
-        "odd": 12.0,
-        "bookmaker": "Paddy Power",
-        "source": "Football-Data.co.uk — fixtures.csv",
-        "betanoInFeed": false,
-        "betanoConfirmedOnSlip": false,
-        "verifiedTeams": true,
-        "fairProbability": 0.077782,
-        "fairMarketConsensus": 0.090636,
-        "fairBooks": 5,
-        "availableBookmakers": 5,
-        "quotes": [
-          {
-            "bookmaker": "Bet365",
-            "odd": 10.0,
-            "fairProbability": 0.09375
-          },
-          {
-            "bookmaker": "bwin",
-            "odd": 10.0,
-            "fairProbability": 0.094966
-          },
-          {
-            "bookmaker": "Betfred",
-            "odd": 10.0,
-            "fairProbability": 0.094966
-          },
-          {
-            "bookmaker": "BetVictor",
-            "odd": 10.0,
-            "fairProbability": 0.091717
-          },
-          {
-            "bookmaker": "Paddy Power",
-            "odd": 12.0,
-            "fairProbability": 0.077782
-          }
-        ],
-        "priceCategory": "published-reference-not-live"
-      },
-      "1X2_D": {
-        "odd": 7.5,
-        "bookmaker": "Bet365",
-        "source": "Football-Data.co.uk — fixtures.csv",
-        "betanoInFeed": false,
-        "betanoConfirmedOnSlip": false,
-        "verifiedTeams": true,
-        "fairProbability": 0.125,
-        "fairMarketConsensus": 0.126744,
-        "fairBooks": 5,
-        "availableBookmakers": 5,
-        "quotes": [
-          {
-            "bookmaker": "Bet365",
-            "odd": 7.5,
-            "fairProbability": 0.125
-          },
-          {
-            "bookmaker": "bwin",
-            "odd": 7.5,
-            "fairProbability": 0.126622
-          },
-          {
-            "bookmaker": "Betfred",
-            "odd": 7.5,
-            "fairProbability": 0.126622
-          },
-          {
-            "bookmaker": "BetVictor",
-            "odd": 7.0,
-            "fairProbability": 0.131024
-          },
-          {
-            "bookmaker": "Paddy Power",
-            "odd": 7.5,
-            "fairProbability": 0.124452
-          }
-        ],
-        "priceCategory": "published-reference-not-live"
-      },
-      "1X2_H": {
-        "odd": 1.22,
-        "bookmaker": "bwin",
-        "source": "Football-Data.co.uk — fixtures.csv",
-        "betanoInFeed": false,
-        "betanoConfirmedOnSlip": false,
-        "verifiedTeams": true,
-        "fairProbability": 0.778412,
-        "fairMarketConsensus": 0.78262,
-        "fairBooks": 5,
-        "availableBookmakers": 5,
-        "quotes": [
-          {
-            "bookmaker": "Bet365",
-            "odd": 1.2,
-            "fairProbability": 0.78125
-          },
-          {
-            "bookmaker": "bwin",
-            "odd": 1.22,
-            "fairProbability": 0.778412
-          },
-          {
-            "bookmaker": "Betfred",
-            "odd": 1.22,
-            "fairProbability": 0.778412
-          },
-          {
-            "bookmaker": "BetVictor",
-            "odd": 1.18,
-            "fairProbability": 0.77726
-          },
-          {
-            "bookmaker": "Paddy Power",
-            "odd": 1.17,
-            "fairProbability": 0.797766
-          }
-        ],
-        "priceCategory": "published-reference-not-live"
-      },
-      "O25": {
-        "odd": 1.17,
-        "bookmaker": "Bet365",
-        "source": "Football-Data.co.uk — fixtures.csv",
-        "betanoInFeed": false,
-        "betanoConfirmedOnSlip": false,
-        "verifiedTeams": true,
-        "fairProbability": 0.810373,
-        "fairMarketConsensus": null,
-        "fairBooks": 1,
-        "availableBookmakers": 1,
-        "quotes": [
-          {
-            "bookmaker": "Bet365",
-            "odd": 1.17,
-            "fairProbability": 0.810373
-          }
-        ],
-        "priceCategory": "published-reference-not-live"
-      },
-      "U25": {
-        "odd": 5.0,
-        "bookmaker": "Bet365",
-        "source": "Football-Data.co.uk — fixtures.csv",
-        "betanoInFeed": false,
-        "betanoConfirmedOnSlip": false,
-        "verifiedTeams": true,
-        "fairProbability": 0.189627,
-        "fairMarketConsensus": null,
-        "fairBooks": 1,
-        "availableBookmakers": 1,
-        "quotes": [
-          {
-            "bookmaker": "Bet365",
-            "odd": 5.0,
-            "fairProbability": 0.189627
-          }
-        ],
-        "priceCategory": "published-reference-not-live"
-      }
-    },
     "espn-401882801": {
       "1X2_A": {
         "odd": 4.5,
@@ -3918,12 +3447,6 @@
       "publishedAway": "Hamburg",
       "kickoffUtc": "2026-11-22T16:30:00+00:00"
     },
-    "espn-401885050": {
-      "competition": "D2",
-      "publishedHome": "Karlsruhe",
-      "publishedAway": "Osnabruck",
-      "kickoffUtc": "2026-11-22T12:30:00+00:00"
-    },
     "espn-401878755": {
       "competition": "E0",
       "publishedHome": "Liverpool",
@@ -3959,12 +3482,6 @@
       "publishedHome": "Sochaux",
       "publishedAway": "Dunkerque",
       "kickoffUtc": "2026-11-23T19:45:00+00:00"
-    },
-    "espn-401875008": {
-      "competition": "I1",
-      "publishedHome": "Juventus",
-      "publishedAway": "Venezia",
-      "kickoffUtc": "2026-11-22T11:30:00+00:00"
     },
     "espn-401875047": {
       "competition": "I1",
@@ -4007,12 +3524,6 @@
       "publishedHome": "Arezzo",
       "publishedAway": "Padova",
       "kickoffUtc": "2026-11-22T16:15:00+00:00"
-    },
-    "espn-401882804": {
-      "competition": "SP1",
-      "publishedHome": "Barcelona",
-      "publishedAway": "Villarreal",
-      "kickoffUtc": "2026-11-22T13:00:00+00:00"
     },
     "espn-401882801": {
       "competition": "SP1",

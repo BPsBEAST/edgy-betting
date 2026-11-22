@@ -1,34 +1,190 @@
 {
-  "generatedAt": "2026-11-21T22:13:00.838163+00:00",
+  "generatedAt": "2026-11-22T13:24:11.703617+00:00",
   "provider": "ESPN site API pública, integração não oficial",
   "calls": 12,
   "matchedGames": 8,
-  "withLineups": 0,
+  "withLineups": 4,
   "withInjuries": 0,
   "contexts": {
-    "espn-401931818": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401931818"
+    "espn-401879234": {
+      "lineups": {
+        "provider": "ESPN (integração pública não oficial)",
+        "confirmed": true,
+        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
+        "teams": [
+          {
+            "team": "Hull City",
+            "startingXI": [
+              "Konstantinos Tzolakis",
+              "Nobel Mendy",
+              "Semi Ajayi",
+              "Elliot Stroud",
+              "Lewie Coyle",
+              "Matt Crooks",
+              "Tim Iroegbunam",
+              "Regan Slater",
+              "Oliver McBurnie",
+              "Mohamed-Ali Cho",
+              "Mohamed Belloumi"
+            ]
+          },
+          {
+            "team": "Brighton & Hove Albion",
+            "startingXI": [
+              "Bart Verbruggen",
+              "Lewis Dunk",
+              "Luka Vuskovic",
+              "Olivier Boscagli",
+              "Costinha",
+              "Yasin Ayari",
+              "Chema Andrés",
+              "Pascal Gross",
+              "Georginio Rutter",
+              "Maxim De Cuyper",
+              "Diego Gómez"
+            ]
+          }
+        ]
+      },
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401879234"
     },
-    "espn-401875008": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401875008"
+    "espn-401875047": {
+      "lineups": {
+        "provider": "ESPN (integração pública não oficial)",
+        "confirmed": true,
+        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
+        "teams": [
+          {
+            "team": "Bologna",
+            "startingXI": [
+              "Lukasz Skorupski",
+              "Nicoló Casale",
+              "Arthur Theate",
+              "Matteo Darmian",
+              "Tommaso Pobega",
+              "Lewis Ferguson",
+              "Federico Bernardeschi",
+              "Nadir Zortea",
+              "Jens Odgaard",
+              "Nicolò Cambiaghi",
+              "Riccardo Orsolini"
+            ]
+          },
+          {
+            "team": "Udinese",
+            "startingXI": [
+              "Maduka Okoye",
+              "Christian Kabasele",
+              "Oumar Solet",
+              "Matteo Palma",
+              "Jesper Karlström",
+              "Jakub Piotrowski",
+              "Hassane Kamara",
+              "James Abankwah",
+              "Sandi Lovric",
+              "Jurgen Ekkelenkamp",
+              "Nicolò Zaniolo"
+            ]
+          }
+        ]
+      },
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401875047"
     },
-    "espn-401880159": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401880159"
+    "espn-401874960": {
+      "lineups": {
+        "provider": "ESPN (integração pública não oficial)",
+        "confirmed": true,
+        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
+        "teams": [
+          {
+            "team": "Sassuolo",
+            "startingXI": [
+              "Arijanet Muric",
+              "Jay Idzes",
+              "Sebastian Walukiewicz",
+              "Fali Candé",
+              "Rafael Obrador",
+              "Ignace van der Brempt",
+              "Nemanja Matic",
+              "Kristian Thorstvedt",
+              "Armand Laurienté",
+              "Domenico Berardi",
+              "Sebastiano Esposito"
+            ]
+          },
+          {
+            "team": "Genoa",
+            "startingXI": [
+              "Justin Bijlow",
+              "Leo Østigard",
+              "Johan Vásquez",
+              "Alessandro Marcandalli",
+              "Mikael Ellertsson",
+              "Hamed Traoré",
+              "Junior Messias",
+              "Kingsley Ehizibue",
+              "Tommaso Baldanzi",
+              "Alexsandro Amorim",
+              "Milutin Osmajic"
+            ]
+          }
+        ]
+      },
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401874960"
     },
-    "espn-401885048": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401885048"
+    "espn-401899547": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401899547"
     },
-    "espn-401885052": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401885052"
+    "espn-401876397": {
+      "lineups": {
+        "provider": "ESPN (integração pública não oficial)",
+        "confirmed": true,
+        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
+        "teams": [
+          {
+            "team": "Paris FC",
+            "startingXI": [
+              "Kevin Trapp",
+              "Luca Koleosho",
+              "Pablo Pagis",
+              "Ilan Kebbal",
+              "Pierre Lees-Melou",
+              "Diego Coppola",
+              "Rudy Matondo",
+              "Maxime López",
+              "Samir Chergui",
+              "Otavio",
+              "Zabi Gueu"
+            ]
+          },
+          {
+            "team": "Angers",
+            "startingXI": [
+              "Anthony Lopes",
+              "Maël Gernigon",
+              "Joseph Kalulu Kyatengwa",
+              "Carlens Arcus",
+              "Ousmane Camara",
+              "Haris Belkebla",
+              "Amine Sbaï",
+              "Yassin Belkhdim",
+              "Branco van den Boomen",
+              "Anthony Bermont",
+              "Mamadou Simbakoli"
+            ]
+          }
+        ]
+      },
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401876397"
     },
-    "espn-401885050": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401885050"
+    "espn-401931812": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401931812"
     },
-    "espn-401882804": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401882804"
+    "espn-401931811": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401931811"
     },
-    "espn-401882300": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401882300"
+    "espn-401931808": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401931808"
     }
   },
   "note": "Só se confirma XI ao encontrar 11 titulares identificados para cada equipa no resumo, nas 2h antes do jogo. Sem registo não significa que não existam ausências."

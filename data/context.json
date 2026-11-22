@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T03:13:31.511836+00:00",
+  "generatedAt": "2026-11-22T13:24:12.502697+00:00",
   "sources": {
     "weather": "Open-Meteo (requires verified venue city)",
     "lineups": "API-Football optional",
@@ -12,214 +12,18 @@
   },
   "hasApiFootballKey": true,
   "apiCalls": 0,
-  "matchedGames": 17,
+  "matchedGames": 6,
   "contexts": {
-    "espn-401875008": {
+    "espn-401884720": {
       "weather": {
-        "city": "Torino",
-        "countryCode": "IT",
-        "temperatureC": 8.2,
-        "precipitationMm": 0.0,
-        "gustKmh": 18.4,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-22T11:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401880159": {
-      "weather": {
-        "city": "Burnley",
-        "countryCode": "GB",
-        "temperatureC": 6.3,
-        "precipitationMm": 0.0,
-        "gustKmh": 32.0,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-22T12:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401885048": {
-      "weather": {
-        "city": "Cottbus",
+        "city": "Bremen",
         "countryCode": "DE",
-        "temperatureC": 4.9,
+        "temperatureC": -1.9,
         "precipitationMm": 0.0,
-        "gustKmh": 26.6,
+        "gustKmh": 20.9,
         "alert": false,
         "risk": null,
-        "forecastHourUtc": "2026-11-22T12:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401885052": {
-      "weather": {
-        "city": "Kaiserslautern",
-        "countryCode": "DE",
-        "temperatureC": 4.0,
-        "precipitationMm": 0.0,
-        "gustKmh": 23.4,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-22T12:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401885050": {
-      "weather": {
-        "city": "Karlsruhe",
-        "countryCode": "DE",
-        "temperatureC": 5.3,
-        "precipitationMm": 0.0,
-        "gustKmh": 27.4,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-22T12:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401882804": {
-      "weather": {
-        "city": "Barcelona",
-        "countryCode": "ES",
-        "temperatureC": 18.9,
-        "precipitationMm": 0.0,
-        "gustKmh": 52.2,
-        "alert": true,
-        "risk": "Chuva intensa ou rajadas fortes previstas na zona urbana",
-        "forecastHourUtc": "2026-11-22T13:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401882300": {
-      "weather": {
-        "city": "Córdoba",
-        "countryCode": "ES",
-        "temperatureC": 18.1,
-        "precipitationMm": 0.0,
-        "gustKmh": 11.5,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-22T13:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401879234": {
-      "weather": {
-        "city": "Hull",
-        "countryCode": "GB",
-        "temperatureC": 8.9,
-        "precipitationMm": 0.0,
-        "gustKmh": 23.0,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-22T14:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401875047": {
-      "weather": {
-        "city": "Bologna",
-        "countryCode": "IT",
-        "temperatureC": 8.7,
-        "precipitationMm": 0.6,
-        "gustKmh": 26.6,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-22T14:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401899547": {
-      "weather": {
-        "city": "Avellino",
-        "countryCode": "IT",
-        "temperatureC": 15.9,
-        "precipitationMm": 0.0,
-        "gustKmh": 56.5,
-        "alert": true,
-        "risk": "Chuva intensa ou rajadas fortes previstas na zona urbana",
-        "forecastHourUtc": "2026-11-22T14:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401876397": {
-      "weather": {
-        "city": "Paris",
-        "countryCode": "FR",
-        "temperatureC": 8.9,
-        "precipitationMm": 0.0,
-        "gustKmh": 6.8,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-22T14:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401931812": {
-      "weather": {
-        "city": "Barcelos",
-        "countryCode": "PT",
-        "temperatureC": 15.6,
-        "precipitationMm": 0.0,
-        "gustKmh": 26.6,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-22T14:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401931811": {
-      "weather": {
-        "city": "Viana do Castelo",
-        "countryCode": "PT",
-        "temperatureC": 15.9,
-        "precipitationMm": 0.0,
-        "gustKmh": 27.0,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-22T14:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401880139": {
-      "weather": {
-        "city": "Burnley",
-        "countryCode": "GB",
-        "temperatureC": 3.3,
-        "precipitationMm": 0.0,
-        "gustKmh": 21.2,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-25T19:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401874826": {
-      "weather": {
-        "city": "Torino",
-        "countryCode": "IT",
-        "temperatureC": 5.7,
-        "precipitationMm": 0.0,
-        "gustKmh": 25.6,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-28T17:00Z",
+        "forecastHourUtc": "2026-11-27T19:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
@@ -228,12 +32,40 @@
       "weather": {
         "city": "Paris",
         "countryCode": "FR",
-        "temperatureC": -0.4,
-        "precipitationMm": 0.0,
-        "gustKmh": 19.1,
+        "temperatureC": 7.6,
+        "precipitationMm": 0.8,
+        "gustKmh": 26.6,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-28T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401879229": {
+      "weather": {
+        "city": "Liverpool",
+        "countryCode": "GB",
+        "temperatureC": 4.9,
+        "precipitationMm": 0.4,
+        "gustKmh": 46.4,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-29T12:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401874992": {
+      "weather": {
+        "city": "Reggio Emilia",
+        "countryCode": "IT",
+        "temperatureC": 7.8,
+        "precipitationMm": 0.0,
+        "gustKmh": 20.5,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-29T14:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
@@ -242,11 +74,25 @@
       "weather": {
         "city": "Barcelos",
         "countryCode": "PT",
-        "temperatureC": 12.7,
-        "precipitationMm": 0.3,
-        "gustKmh": 34.6,
+        "temperatureC": 9.3,
+        "precipitationMm": 0.0,
+        "gustKmh": 26.3,
         "alert": false,
         "risk": null,
+        "forecastHourUtc": "2026-11-29T18:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401899529": {
+      "weather": {
+        "city": "Arezzo",
+        "countryCode": "IT",
+        "temperatureC": 4.2,
+        "precipitationMm": 0.0,
+        "gustKmh": 53.3,
+        "alert": true,
+        "risk": "Chuva intensa ou rajadas fortes previstas na zona urbana",
         "forecastHourUtc": "2026-11-29T18:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
