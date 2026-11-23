@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T03:44:49.515277+00:00",
+  "generatedAt": "2026-11-23T16:01:17.869945+00:00",
   "sources": {
     "weather": "Open-Meteo (requires verified venue city)",
     "lineups": "API-Football optional",
@@ -12,15 +12,127 @@
   },
   "hasApiFootballKey": true,
   "apiCalls": 0,
-  "matchedGames": 19,
+  "matchedGames": 27,
   "contexts": {
+    "espn-401883110": {
+      "weather": {
+        "city": "Ceuta",
+        "countryCode": "ES",
+        "temperatureC": 18.2,
+        "precipitationMm": 0.0,
+        "gustKmh": 22.0,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-23T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401875009": {
+      "weather": {
+        "city": "Monza",
+        "countryCode": "IT",
+        "temperatureC": 7.6,
+        "precipitationMm": 0.0,
+        "gustKmh": 9.7,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-23T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401876686": {
+      "weather": {
+        "city": "Nantes",
+        "countryCode": "FR",
+        "temperatureC": 10.0,
+        "precipitationMm": 0.0,
+        "gustKmh": 5.1,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-23T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401876683": {
+      "weather": {
+        "city": "Montbéliard",
+        "countryCode": "FR",
+        "temperatureC": 2.6,
+        "precipitationMm": 0.1,
+        "gustKmh": 20.9,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-23T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401879237": {
+      "weather": {
+        "city": "Brentford",
+        "countryCode": "GB",
+        "temperatureC": 3.8,
+        "precipitationMm": 0.0,
+        "gustKmh": 18.0,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-23T20:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401882802": {
+      "weather": {
+        "city": "Manises",
+        "countryCode": "ES",
+        "temperatureC": 11.6,
+        "precipitationMm": 0.0,
+        "gustKmh": 10.8,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-23T20:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401899536": {
+      "weather": {
+        "city": "Castellammare di Stabia",
+        "countryCode": "IT",
+        "temperatureC": 14.3,
+        "precipitationMm": 0.0,
+        "gustKmh": 5.8,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-24T18:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401899539": {
+      "weather": {
+        "city": "Benevento",
+        "countryCode": "IT",
+        "temperatureC": 7.4,
+        "precipitationMm": 0.0,
+        "gustKmh": 5.0,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-24T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
     "espn-401899538": {
       "weather": {
         "city": "Cesena",
         "countryCode": "IT",
-        "temperatureC": 8.4,
+        "temperatureC": 8.2,
         "precipitationMm": 0.0,
-        "gustKmh": 3.6,
+        "gustKmh": 5.0,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-24T19:00Z",
@@ -34,7 +146,7 @@
         "countryCode": "IT",
         "temperatureC": 14.6,
         "precipitationMm": 0.0,
-        "gustKmh": 11.2,
+        "gustKmh": 9.4,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-24T19:00Z",
@@ -46,9 +158,9 @@
       "weather": {
         "city": "Vicenza",
         "countryCode": "IT",
-        "temperatureC": 7.8,
+        "temperatureC": 8.0,
         "precipitationMm": 0.0,
-        "gustKmh": 14.4,
+        "gustKmh": 11.5,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-24T19:00Z",
@@ -60,9 +172,9 @@
       "weather": {
         "city": "Chiavari",
         "countryCode": "IT",
-        "temperatureC": 11.0,
+        "temperatureC": 10.7,
         "precipitationMm": 0.0,
-        "gustKmh": 13.7,
+        "gustKmh": 14.4,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-24T19:00Z",
@@ -74,9 +186,9 @@
       "weather": {
         "city": "Bristol",
         "countryCode": "GB",
-        "temperatureC": 9.2,
+        "temperatureC": 9.0,
         "precipitationMm": 0.0,
-        "gustKmh": 32.8,
+        "gustKmh": 28.1,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-24T19:00Z",
@@ -88,9 +200,9 @@
       "weather": {
         "city": "Cardiff",
         "countryCode": "GB",
-        "temperatureC": 9.6,
-        "precipitationMm": 0.1,
-        "gustKmh": 30.2,
+        "temperatureC": 10.0,
+        "precipitationMm": 0.0,
+        "gustKmh": 31.7,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-24T19:00Z",
@@ -102,9 +214,9 @@
       "weather": {
         "city": "London",
         "countryCode": "GB",
-        "temperatureC": 6.3,
+        "temperatureC": 5.9,
         "precipitationMm": 0.0,
-        "gustKmh": 31.3,
+        "gustKmh": 32.4,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-24T19:00Z",
@@ -116,9 +228,9 @@
       "weather": {
         "city": "Middlesbrough",
         "countryCode": "GB",
-        "temperatureC": 5.8,
-        "precipitationMm": 0.1,
-        "gustKmh": 20.5,
+        "temperatureC": 5.6,
+        "precipitationMm": 0.0,
+        "gustKmh": 22.7,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-24T19:00Z",
@@ -130,9 +242,9 @@
       "weather": {
         "city": "Manises",
         "countryCode": "ES",
-        "temperatureC": 9.1,
+        "temperatureC": 9.2,
         "precipitationMm": 0.0,
-        "gustKmh": 10.4,
+        "gustKmh": 10.1,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-27T20:00Z",
@@ -144,9 +256,9 @@
       "weather": {
         "city": "London",
         "countryCode": "GB",
-        "temperatureC": 3.3,
+        "temperatureC": 6.0,
         "precipitationMm": 0.0,
-        "gustKmh": 31.3,
+        "gustKmh": 27.0,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-28T15:00Z",
@@ -158,9 +270,9 @@
       "weather": {
         "city": "London",
         "countryCode": "GB",
-        "temperatureC": 3.3,
+        "temperatureC": 6.0,
         "precipitationMm": 0.0,
-        "gustKmh": 31.3,
+        "gustKmh": 27.0,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-28T15:00Z",
@@ -172,9 +284,9 @@
       "weather": {
         "city": "London",
         "countryCode": "GB",
-        "temperatureC": 3.3,
+        "temperatureC": 6.0,
         "precipitationMm": 0.0,
-        "gustKmh": 31.3,
+        "gustKmh": 27.0,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-28T15:00Z",
@@ -186,9 +298,9 @@
       "weather": {
         "city": "Vicenza",
         "countryCode": "IT",
-        "temperatureC": 6.2,
+        "temperatureC": 7.1,
         "precipitationMm": 0.0,
-        "gustKmh": 5.4,
+        "gustKmh": 4.0,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-28T16:00Z",
@@ -200,9 +312,9 @@
       "weather": {
         "city": "Palermo",
         "countryCode": "IT",
-        "temperatureC": 13.7,
-        "precipitationMm": 0.0,
-        "gustKmh": 56.5,
+        "temperatureC": 13.5,
+        "precipitationMm": 0.1,
+        "gustKmh": 52.2,
         "alert": true,
         "risk": "Chuva intensa ou rajadas fortes previstas na zona urbana",
         "forecastHourUtc": "2026-11-28T18:00Z",
@@ -214,9 +326,9 @@
       "weather": {
         "city": "Manises",
         "countryCode": "ES",
-        "temperatureC": 20.4,
+        "temperatureC": 18.4,
         "precipitationMm": 0.0,
-        "gustKmh": 15.8,
+        "gustKmh": 14.0,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-29T13:00Z",
@@ -228,9 +340,9 @@
       "weather": {
         "city": "London",
         "countryCode": "GB",
-        "temperatureC": 6.1,
-        "precipitationMm": 0.0,
-        "gustKmh": 16.6,
+        "temperatureC": 8.9,
+        "precipitationMm": 0.1,
+        "gustKmh": 22.7,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-29T14:00Z",
@@ -242,9 +354,9 @@
       "weather": {
         "city": "London",
         "countryCode": "GB",
-        "temperatureC": 6.1,
-        "precipitationMm": 0.0,
-        "gustKmh": 16.6,
+        "temperatureC": 8.9,
+        "precipitationMm": 0.1,
+        "gustKmh": 22.7,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-29T14:00Z",
@@ -256,9 +368,9 @@
       "weather": {
         "city": "Nantes",
         "countryCode": "FR",
-        "temperatureC": 5.9,
-        "precipitationMm": 0.1,
-        "gustKmh": 17.6,
+        "temperatureC": 10.8,
+        "precipitationMm": 0.0,
+        "gustKmh": 31.0,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-29T15:00Z",
@@ -270,9 +382,9 @@
       "weather": {
         "city": "London",
         "countryCode": "GB",
-        "temperatureC": 5.5,
-        "precipitationMm": 0.0,
-        "gustKmh": 14.8,
+        "temperatureC": 8.5,
+        "precipitationMm": 0.1,
+        "gustKmh": 26.3,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-29T16:00Z",
