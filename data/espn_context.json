@@ -1,34 +1,34 @@
 {
-  "generatedAt": "2026-11-24T03:21:43.962071+00:00",
+  "generatedAt": "2026-11-25T01:28:24.192987+00:00",
   "provider": "ESPN site API pública, integração não oficial",
   "calls": 12,
   "matchedGames": 8,
   "withLineups": 0,
   "withInjuries": 0,
   "contexts": {
-    "espn-401915380": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401915380"
+    "espn-401915378": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401915378"
     },
-    "espn-401915300": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401915300"
+    "espn-401915293": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401915293"
     },
-    "espn-401899536": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401899536"
+    "espn-401899537": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401899537"
     },
-    "espn-401899539": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401899539"
+    "espn-401899534": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401899534"
     },
-    "espn-401899538": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401899538"
+    "espn-401899533": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401899533"
     },
-    "espn-401899532": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401899532"
+    "espn-401899531": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401899531"
     },
-    "espn-401899535": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401899535"
+    "espn-401880140": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401880140"
     },
-    "espn-401899530": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401899530"
+    "espn-401880139": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401880139"
     }
   },
   "note": "Só se confirma XI ao encontrar 11 titulares identificados para cada equipa no resumo, nas 2h antes do jogo. Sem registo não significa que não existam ausências."

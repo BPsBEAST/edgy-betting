@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T15:56:03.250297+00:00",
+  "generatedAt": "2026-11-25T01:28:26.666200+00:00",
   "sources": {
     "weather": "Open-Meteo (requires verified venue city)",
     "lineups": "API-Football optional",
@@ -12,197 +12,15 @@
   },
   "hasApiFootballKey": true,
   "apiCalls": 0,
-  "matchedGames": 22,
+  "matchedGames": 15,
   "contexts": {
-    "espn-401899536": {
-      "weather": {
-        "city": "Castellammare di Stabia",
-        "countryCode": "IT",
-        "temperatureC": 14.5,
-        "precipitationMm": 0.0,
-        "gustKmh": 8.6,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-24T18:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401899539": {
-      "weather": {
-        "city": "Benevento",
-        "countryCode": "IT",
-        "temperatureC": 7.5,
-        "precipitationMm": 0.0,
-        "gustKmh": 4.3,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-24T19:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401899538": {
-      "weather": {
-        "city": "Cesena",
-        "countryCode": "IT",
-        "temperatureC": 8.9,
-        "precipitationMm": 0.0,
-        "gustKmh": 4.7,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-24T19:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401899532": {
-      "weather": {
-        "city": "Palermo",
-        "countryCode": "IT",
-        "temperatureC": 14.4,
-        "precipitationMm": 0.0,
-        "gustKmh": 10.8,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-24T19:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401899535": {
-      "weather": {
-        "city": "Vicenza",
-        "countryCode": "IT",
-        "temperatureC": 8.0,
-        "precipitationMm": 0.0,
-        "gustKmh": 12.6,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-24T19:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401899530": {
-      "weather": {
-        "city": "Chiavari",
-        "countryCode": "IT",
-        "temperatureC": 10.5,
-        "precipitationMm": 0.0,
-        "gustKmh": 14.8,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-24T19:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401880148": {
-      "weather": {
-        "city": "Bristol",
-        "countryCode": "GB",
-        "temperatureC": 8.7,
-        "precipitationMm": 0.0,
-        "gustKmh": 31.7,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-24T19:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401880147": {
-      "weather": {
-        "city": "Cardiff",
-        "countryCode": "GB",
-        "temperatureC": 9.0,
-        "precipitationMm": 0.1,
-        "gustKmh": 30.2,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-24T19:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401880146": {
-      "weather": {
-        "city": "London",
-        "countryCode": "GB",
-        "temperatureC": 5.1,
-        "precipitationMm": 0.0,
-        "gustKmh": 29.9,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-24T19:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401880144": {
-      "weather": {
-        "city": "Norwich",
-        "countryCode": "GB",
-        "temperatureC": 4.0,
-        "precipitationMm": 0.0,
-        "gustKmh": 24.1,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-24T19:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401880143": {
-      "weather": {
-        "city": "Portsmouth",
-        "countryCode": "GB",
-        "temperatureC": 9.5,
-        "precipitationMm": 0.0,
-        "gustKmh": 34.2,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-24T19:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401880142": {
-      "weather": {
-        "city": "Sheffield",
-        "countryCode": "GB",
-        "temperatureC": 4.3,
-        "precipitationMm": 0.0,
-        "gustKmh": 21.2,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-24T19:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401880141": {
-      "weather": {
-        "city": "Wolverhampton",
-        "countryCode": "GB",
-        "temperatureC": 4.6,
-        "precipitationMm": 0.0,
-        "gustKmh": 36.4,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-24T20:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
     "espn-401899537": {
       "weather": {
         "city": "Cremona",
         "countryCode": "IT",
-        "temperatureC": 7.5,
-        "precipitationMm": 0.3,
-        "gustKmh": 10.1,
+        "temperatureC": 8.1,
+        "precipitationMm": 0.6,
+        "gustKmh": 9.0,
         "alert": false,
         "risk": null,
         "forecastHourUtc": "2026-11-25T18:00Z",
@@ -210,114 +28,198 @@
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
     },
-    "espn-401880132": {
+    "espn-401899533": {
       "weather": {
-        "city": "London",
-        "countryCode": "GB",
-        "temperatureC": 8.6,
-        "precipitationMm": 0.6,
-        "gustKmh": 26.3,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-28T15:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401880130": {
-      "weather": {
-        "city": "London",
-        "countryCode": "GB",
-        "temperatureC": 8.6,
-        "precipitationMm": 0.6,
-        "gustKmh": 26.3,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-28T15:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401880126": {
-      "weather": {
-        "city": "London",
-        "countryCode": "GB",
-        "temperatureC": 8.6,
-        "precipitationMm": 0.6,
-        "gustKmh": 26.3,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-28T15:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401899524": {
-      "weather": {
-        "city": "Vicenza",
+        "city": "Padova",
         "countryCode": "IT",
-        "temperatureC": 7.8,
+        "temperatureC": 7.2,
         "precipitationMm": 0.0,
-        "gustKmh": 6.8,
+        "gustKmh": 5.8,
         "alert": false,
         "risk": null,
-        "forecastHourUtc": "2026-11-28T16:00Z",
+        "forecastHourUtc": "2026-11-25T19:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
     },
-    "espn-401899522": {
+    "espn-401899531": {
       "weather": {
-        "city": "Palermo",
+        "city": "Pisa",
         "countryCode": "IT",
-        "temperatureC": 13.8,
+        "temperatureC": 14.0,
+        "precipitationMm": 0.0,
+        "gustKmh": 18.7,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-25T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401880140": {
+      "weather": {
+        "city": "Bolton",
+        "countryCode": "GB",
+        "temperatureC": 4.0,
+        "precipitationMm": 0.0,
+        "gustKmh": 20.9,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-25T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401880139": {
+      "weather": {
+        "city": "Burnley",
+        "countryCode": "GB",
+        "temperatureC": 3.2,
+        "precipitationMm": 0.0,
+        "gustKmh": 20.5,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-25T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401880137": {
+      "weather": {
+        "city": "Watford",
+        "countryCode": "GB",
+        "temperatureC": 4.6,
+        "precipitationMm": 0.0,
+        "gustKmh": 27.7,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-25T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401880138": {
+      "weather": {
+        "city": "Stoke-on-Trent",
+        "countryCode": "GB",
+        "temperatureC": 3.1,
+        "precipitationMm": 0.0,
+        "gustKmh": 17.3,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-25T20:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401885047": {
+      "weather": {
+        "city": "Heidenheim",
+        "countryCode": "DE",
+        "temperatureC": -1.6,
+        "precipitationMm": 0.1,
+        "gustKmh": 10.1,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-27T17:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401885045": {
+      "weather": {
+        "city": "Bochum",
+        "countryCode": "DE",
+        "temperatureC": -1.4,
+        "precipitationMm": 0.0,
+        "gustKmh": 20.2,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-27T17:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401934489": {
+      "weather": {
+        "city": "Cannes",
+        "countryCode": "FR",
+        "temperatureC": 8.9,
+        "precipitationMm": 0.0,
+        "gustKmh": 9.4,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-27T18:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401934500": {
+      "weather": {
+        "city": "Le Plessis-Belleville",
+        "countryCode": "FR",
+        "temperatureC": -0.6,
+        "precipitationMm": 0.0,
+        "gustKmh": 15.8,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-27T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401934495": {
+      "weather": {
+        "city": "Saint-Omer",
+        "countryCode": "FR",
+        "temperatureC": -1.3,
+        "precipitationMm": 0.0,
+        "gustKmh": 23.4,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-27T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401884720": {
+      "weather": {
+        "city": "Bremen",
+        "countryCode": "DE",
+        "temperatureC": -3.3,
+        "precipitationMm": 0.0,
+        "gustKmh": 20.2,
+        "alert": false,
+        "risk": null,
+        "forecastHourUtc": "2026-11-27T19:00Z",
+        "provider": "Open-Meteo",
+        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
+      }
+    },
+    "espn-401875004": {
+      "weather": {
+        "city": "Venezia",
+        "countryCode": "IT",
+        "temperatureC": 7.5,
         "precipitationMm": 0.0,
         "gustKmh": 14.8,
         "alert": false,
         "risk": null,
-        "forecastHourUtc": "2026-11-28T18:00Z",
+        "forecastHourUtc": "2026-11-27T19:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
     },
-    "espn-401879230": {
+    "espn-401932918": {
       "weather": {
-        "city": "London",
-        "countryCode": "GB",
-        "temperatureC": 9.1,
+        "city": "Bochum",
+        "countryCode": "DE",
+        "temperatureC": 5.3,
         "precipitationMm": 0.0,
-        "gustKmh": 16.9,
+        "gustKmh": 25.6,
         "alert": false,
         "risk": null,
-        "forecastHourUtc": "2026-11-29T14:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401879228": {
-      "weather": {
-        "city": "London",
-        "countryCode": "GB",
-        "temperatureC": 9.1,
-        "precipitationMm": 0.0,
-        "gustKmh": 16.9,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-29T14:00Z",
-        "provider": "Open-Meteo",
-        "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
-      }
-    },
-    "espn-401878753": {
-      "weather": {
-        "city": "London",
-        "countryCode": "GB",
-        "temperatureC": 9.4,
-        "precipitationMm": 0.0,
-        "gustKmh": 19.1,
-        "alert": false,
-        "risk": null,
-        "forecastHourUtc": "2026-11-29T16:00Z",
+        "forecastHourUtc": "2026-12-02T19:00Z",
         "provider": "Open-Meteo",
         "scope": "Aproximação por cidade; não representa condições verificadas no estádio."
       }
