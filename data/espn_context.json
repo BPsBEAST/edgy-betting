@@ -1,12 +1,51 @@
 {
-  "generatedAt": "2026-11-26T01:00:55.170080+00:00",
+  "generatedAt": "2026-11-26T15:22:30.369555+00:00",
   "provider": "ESPN site API pública, integração não oficial",
   "calls": 12,
   "matchedGames": 8,
-  "withLineups": 0,
+  "withLineups": 1,
   "withInjuries": 0,
   "contexts": {
     "espn-401915816": {
+      "lineups": {
+        "provider": "ESPN (integração pública não oficial)",
+        "confirmed": true,
+        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
+        "teams": [
+          {
+            "team": "Kairat Almaty",
+            "startingXI": [
+              "Temirlan Anarbekov",
+              "Aleksandr Shirobokov",
+              "Luis Mata",
+              "Damir Kasabulat",
+              "Alyaksandr Martynovich",
+              "Jaakko Oksanen",
+              "Oiva Jukkola",
+              "Gustavo Mendonça",
+              "Erkin Tapalov",
+              "Edmilson",
+              "Marc Gual"
+            ]
+          },
+          {
+            "team": "Mjällby AIF",
+            "startingXI": [
+              "Alexander Lundin",
+              "Viktor Gustafson",
+              "Romeo Leandersson",
+              "Villiam Granath",
+              "Ali Youssef",
+              "Abdullah Iqbal",
+              "Tom Pettersson",
+              "Jeppe Kjaer Jensen",
+              "Martin Agnarsson",
+              "Jesper Gustavsson",
+              "Axel Norén"
+            ]
+          }
+        ]
+      },
       "matchPage": "https://www.espn.com/soccer/match/_/gameId/401915816"
     },
     "espn-401915506": {
