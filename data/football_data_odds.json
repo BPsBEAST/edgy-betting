@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-26T01:00:51.803598+00:00",
+  "generatedAt": "2026-11-27T01:02:40.233876+00:00",
   "source": "Football-Data.co.uk — free pre-match fixture CSV",
   "sourceUrl": "https://www.football-data.co.uk/fixtures.csv",
   "downloaded": true,
   "csvRows": 43,
   "unmatchedRows": 43,
-  "futureRows": 1,
+  "futureRows": 0,
   "futureSupportedRows": 0,
   "unmatchedFutureExamples": [],
   "matchedGames": 0,

@@ -1,73 +1,34 @@
 {
-  "generatedAt": "2026-11-26T15:22:30.369555+00:00",
+  "generatedAt": "2026-11-27T01:02:43.351071+00:00",
   "provider": "ESPN site API pública, integração não oficial",
   "calls": 12,
   "matchedGames": 8,
-  "withLineups": 1,
+  "withLineups": 0,
   "withInjuries": 0,
   "contexts": {
-    "espn-401915816": {
-      "lineups": {
-        "provider": "ESPN (integração pública não oficial)",
-        "confirmed": true,
-        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
-        "teams": [
-          {
-            "team": "Kairat Almaty",
-            "startingXI": [
-              "Temirlan Anarbekov",
-              "Aleksandr Shirobokov",
-              "Luis Mata",
-              "Damir Kasabulat",
-              "Alyaksandr Martynovich",
-              "Jaakko Oksanen",
-              "Oiva Jukkola",
-              "Gustavo Mendonça",
-              "Erkin Tapalov",
-              "Edmilson",
-              "Marc Gual"
-            ]
-          },
-          {
-            "team": "Mjällby AIF",
-            "startingXI": [
-              "Alexander Lundin",
-              "Viktor Gustafson",
-              "Romeo Leandersson",
-              "Villiam Granath",
-              "Ali Youssef",
-              "Abdullah Iqbal",
-              "Tom Pettersson",
-              "Jeppe Kjaer Jensen",
-              "Martin Agnarsson",
-              "Jesper Gustavsson",
-              "Axel Norén"
-            ]
-          }
-        ]
-      },
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401915816"
+    "espn-401885047": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401885047"
     },
-    "espn-401915506": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401915506"
+    "espn-401885045": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401885045"
     },
-    "espn-401915519": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401915519"
+    "espn-401934489": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401934489"
     },
-    "espn-401915517": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401915517"
+    "espn-401934500": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401934500"
     },
-    "espn-401915507": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401915507"
+    "espn-401934495": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401934495"
     },
-    "espn-401915521": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401915521"
+    "espn-401883102": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401883102"
     },
-    "espn-401915520": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401915520"
+    "espn-401884720": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401884720"
     },
-    "espn-401915508": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401915508"
+    "espn-401875004": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401875004"
     }
   },
   "note": "Só se confirma XI ao encontrar 11 titulares identificados para cada equipa no resumo, nas 2h antes do jogo. Sem registo não significa que não existam ausências."
