@@ -1,34 +1,307 @@
 {
-  "generatedAt": "2026-11-28T00:33:54.384064+00:00",
+  "generatedAt": "2026-11-28T14:15:53.043947+00:00",
   "provider": "ESPN site API pública, integração não oficial",
   "calls": 12,
   "matchedGames": 8,
-  "withLineups": 0,
+  "withLineups": 7,
   "withInjuries": 0,
   "contexts": {
-    "espn-401885044": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401885044"
+    "espn-401884721": {
+      "lineups": {
+        "provider": "ESPN (integração pública não oficial)",
+        "confirmed": true,
+        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
+        "teams": [
+          {
+            "team": "FC Cologne",
+            "startingXI": [
+              "Marvin Schwäbe",
+              "Jahmai Simpson-Pusey",
+              "Tom Krauss",
+              "Joel Schmied",
+              "Paul Okon-Engstler",
+              "Mikey Moore",
+              "Linton Maina",
+              "Borna Sosa",
+              "Sebastian Sebulonsen",
+              "Said El Mala",
+              "Marius Bulter"
+            ]
+          },
+          {
+            "team": "SV Elversberg",
+            "startingXI": [
+              "Nicolas Kristof",
+              "Jan Gyamerah",
+              "Lasse Günther",
+              "Maximilian Rohr",
+              "Lukas Finn Pinckert",
+              "Maurice Krattenmacher",
+              "Lukasz Poreba",
+              "Lukas Petkov",
+              "Francis-Ikechukwu Onyeka",
+              "Felix Keidel",
+              "David Mokwa"
+            ]
+          }
+        ]
+      },
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401884721"
     },
-    "espn-401885046": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401885046"
+    "espn-401884722": {
+      "lineups": {
+        "provider": "ESPN (integração pública não oficial)",
+        "confirmed": true,
+        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
+        "teams": [
+          {
+            "team": "Hamburg SV",
+            "startingXI": [
+              "Daniel Heuer Fernandes",
+              "Sebastiaan Bornauw",
+              "Warmed Omari",
+              "Mario Vuskovic",
+              "David Møller Wolfe",
+              "Albert Grønbaek",
+              "Martin Adeline",
+              "Louis Lemke",
+              "Zakaria El Ouahdi",
+              "Alexander Røssing-Lelesiit",
+              "Patson Daka"
+            ]
+          },
+          {
+            "team": "Bayern Munich",
+            "startingXI": [
+              "Jonas Urbig",
+              "Kim Min-Jae",
+              "Jonathan Tah",
+              "Josip Stanisic",
+              "Sacha Boey",
+              "Tom Bischof",
+              "Aleksandar Pavlovic",
+              "Joshua Kimmich",
+              "Noah Codjo-Evora",
+              "Bara Sapoko Ndiaye",
+              "Lennart Karl"
+            ]
+          }
+        ]
+      },
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401884722"
     },
-    "espn-401885043": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401885043"
+    "espn-401884723": {
+      "lineups": {
+        "provider": "ESPN (integração pública não oficial)",
+        "confirmed": true,
+        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
+        "teams": [
+          {
+            "team": "Mainz",
+            "startingXI": [
+              "Kaishu Sano",
+              "Ransford-Yeboah Königsdörffer",
+              "Stefan Posch",
+              "Eric Martel",
+              "Anthony Caci",
+              "Fabio Gruber",
+              "Kacper Potulski",
+              "Nadiem Amiri",
+              "Sheraldo Becker",
+              "Silvan Widmer",
+              "Robin Zentner"
+            ]
+          },
+          {
+            "team": "1. FC Union Berlin",
+            "startingXI": [
+              "Frederik Ronnow",
+              "Marvin Friedrich",
+              "Derrick Köhn",
+              "Janik Haberer",
+              "Leopold Querfeld",
+              "Jeong Woo-Yeong",
+              "Kastriot Imeri",
+              "Michel Aebischer",
+              "András Schäfer",
+              "Oliver Burke",
+              "Andrej Ilić"
+            ]
+          }
+        ]
+      },
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401884723"
     },
-    "espn-401880135": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401880135"
+    "espn-401884719": {
+      "lineups": {
+        "provider": "ESPN (integração pública não oficial)",
+        "confirmed": true,
+        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
+        "teams": [
+          {
+            "team": "SC Paderborn 07",
+            "startingXI": [
+              "Nahuel Nicolas Noll",
+              "Jano Horst",
+              "Mattes Hansen",
+              "Tjark Scheller",
+              "Santiago Castaneda",
+              "Ruben Müller",
+              "Tom Baack",
+              "Laurin Curda",
+              "Stefano Marino",
+              "Raphael Obermair",
+              "Steffen Tigges"
+            ]
+          },
+          {
+            "team": "Schalke 04",
+            "startingXI": [
+              "Loris Karius",
+              "Hasan Kurucay",
+              "Nikola Katic",
+              "Vitalie Becker",
+              "Junior Dina Ebimbe",
+              "Kenan Karaman",
+              "Soufian El-Faouzi",
+              "Junior Adamu",
+              "Adil Aouchiche",
+              "Dejan Ljubicic",
+              "Edin Dzeko"
+            ]
+          }
+        ]
+      },
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401884719"
     },
-    "espn-401880133": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401880133"
+    "espn-401934501": {
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401934501"
     },
-    "espn-401880131": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401880131"
+    "espn-401879227": {
+      "lineups": {
+        "provider": "ESPN (integração pública não oficial)",
+        "confirmed": true,
+        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
+        "teams": [
+          {
+            "team": "Leeds United",
+            "startingXI": [
+              "James Trafford",
+              "Nico Elvedi",
+              "Tarik Muharemovic",
+              "James Justin",
+              "Ao Tanaka",
+              "Ethan Ampadu",
+              "Gabriel Gudmundsson",
+              "Jayden Bogle",
+              "Dominic Calvert-Lewin",
+              "Noah Okafor",
+              "Sean Longstaff"
+            ]
+          },
+          {
+            "team": "Coventry City",
+            "startingXI": [
+              "Carl Rushworth",
+              "Bobby Thomas",
+              "Gustavo Hamer",
+              "Ethan Pinnock",
+              "Frank Onyeka",
+              "Tatsuhiro Sakamoto",
+              "Stephen Mfuni",
+              "Milan van Ewijk",
+              "Sidiki Cherif",
+              "Jay Da Silva",
+              "Jack Rudoni"
+            ]
+          }
+        ]
+      },
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401879227"
     },
-    "espn-401934478": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401934478"
+    "espn-401879226": {
+      "lineups": {
+        "provider": "ESPN (integração pública não oficial)",
+        "confirmed": true,
+        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
+        "teams": [
+          {
+            "team": "Manchester United",
+            "startingXI": [
+              "Senne Lammens",
+              "Harry Maguire",
+              "Leny Yoro",
+              "Lisandro Martínez",
+              "Diogo Dalot",
+              "Youri Tielemans",
+              "Kobbie Mainoo",
+              "Bruno Fernandes",
+              "Amad Diallo",
+              "Patrick Dorgu",
+              "Joshua Zirkzee"
+            ]
+          },
+          {
+            "team": "Brentford",
+            "startingXI": [
+              "Caoimhín Kelleher",
+              "Sepp van den Berg",
+              "Michael Kayode",
+              "Kristoffer Ajer",
+              "Keane Lewis-Potter",
+              "Mikkel Damsgaard",
+              "Jaidon Anthony",
+              "Mamadou Sangare",
+              "Vitaly Janelt",
+              "Dango Ouattara",
+              "Callum Wilson"
+            ]
+          }
+        ]
+      },
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401879226"
     },
-    "espn-401934487": {
-      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401934487"
+    "espn-401880136": {
+      "lineups": {
+        "provider": "ESPN (integração pública não oficial)",
+        "confirmed": true,
+        "verifiedBy": "11 atletas marcados como starter para cada equipa no resumo do encontro, ≤2 horas antes",
+        "teams": [
+          {
+            "team": "Birmingham City",
+            "startingXI": [
+              "James Beadle",
+              "Bright Osayi-Samuel",
+              "Christoph Klarer",
+              "Phil Neumann",
+              "Kristoffer Lund",
+              "Jay Stansfield",
+              "Tomoki Iwata",
+              "Liam Millar",
+              "Patrick Roberts",
+              "Jhon Solis",
+              "August Priske"
+            ]
+          },
+          {
+            "team": "Bolton Wanderers",
+            "startingXI": [
+              "Gavin Bazunu",
+              "Christian Forino Joseph",
+              "Max Conway",
+              "Ben Davies",
+              "Luca Stephenson",
+              "Xavier Simons",
+              "Gaizka Larrazabal",
+              "Josh Sheehan",
+              "Samuel Iling-Junior",
+              "Ruben Rodrigues",
+              "Sam Dalby"
+            ]
+          }
+        ]
+      },
+      "matchPage": "https://www.espn.com/soccer/match/_/gameId/401880136"
     }
   },
   "note": "Só se confirma XI ao encontrar 11 titulares identificados para cada equipa no resumo, nas 2h antes do jogo. Sem registo não significa que não existam ausências."
